@@ -1,11 +1,12 @@
 import Slider from "../../components/Common/Slider/Slider";
+import styles from "./SubmitClaim.module.css"
 
 function Main() {
     return (
         <main>
             <Slider />
-            <p>/submit-claim</p>
-        </main>
+            <button className={styles.submitClaimImage}>Submit Claim </button>
+            </main>
     )
 }
 
