@@ -1,7 +1,9 @@
+import logo from "../Logo/LogoPic/LogoFly.png"
+
 const Logo = () => {
     return (
         <h1>
-        LOGO
+        <img src={logo} alt="Logo" className="logo" />
         </h1>
     )
 }
