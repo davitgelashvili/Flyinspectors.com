@@ -62,10 +62,10 @@ const Form = ({value, setValue, uploadFile}) => {
         },
         {
             id: 485845,
-            name: "fightNumber",
+            name: "flightNumber",
             type: "text",
             value: value.fightNumber,
-            placeholder: "fightNumber",
+            placeholder: "flightNumber",
             icon: "linl"
         },
         {
@@ -108,10 +108,10 @@ const Form = ({value, setValue, uploadFile}) => {
                     )
                 })}
             </form>
-            <UploadWidget value={value} valueName={"pasportImage"} setValue={setValue}/>
+            <UploadWidget value={value} valueName={"passportImage"} setValue={setValue}/>
             <UploadWidget value={value} valueName={"ticketImage"} setValue={setValue}/>
-            <button onClick={(e) => uploadFile(e)}>send</button>
-            {value.pasportImage && <img src={value.pasportImage} alt="" />}
+            <button onClick={(e) => uploadFile(e)}>Submit Form</button>
+            {value.passportImage && <img src={value.passportImage} alt="" />}
         </div>
     )
 }
