@@ -1,10 +1,10 @@
 import logo from "../Logo/LogoPic/LogoFly.png"
-import './logo.css'
+import styles from './Logo.module.scss'
 
 const Logo = () => {
     return (
         <h1>
-        <img src={logo} alt="Logo" className="logo" />
+        <img src={logo} alt="Logo" className={styles.logo} />
         </h1>
     )
 }
