@@ -10,7 +10,16 @@ const Menu = () => {
         {
             link: '/submit-claim',
             title: 'Your Rights'
+        },
+        {
+            link: '/About-Us',
+            title: 'About Us'
+        },
+        {
+            link: 'Contact-Us',
+            title: 'Contact Us'
         }
+
     ]
     return (
         <ul className={styles.nav}>
