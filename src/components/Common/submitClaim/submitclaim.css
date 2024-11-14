@@ -1,0 +1,13 @@
+.submitClaim {
+    width: 223px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 44px;
+    font-weight: 700;
+    padding-bottom: 43px;
+    /* align-items: center; */
+    border-radius: 14px;
+    background-color: #FD9B28;
+    border: none;
+    color: #FFFFFF;
+  }
