@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import './menu.css'
+import styles from './Menu.module.scss'
 
 const Menu = () => {
     const data = [
@@ -13,11 +13,11 @@ const Menu = () => {
         }
     ]
     return (
-        <ul className="nav">
+        <ul className={styles.nav}>
             {data?.map((item)=>{
                 return (
-                    <li className="nav-item" key={item.title}>
-                        <Link className="pages" to={item.link}>
+                    <li className={styles.nav_item} key={item.title}>
+                        <Link className={styles.pages} to={item.link}>
                             {item.title}
                         </Link>
                     </li>

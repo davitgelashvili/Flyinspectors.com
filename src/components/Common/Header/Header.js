@@ -1,10 +1,10 @@
 import Logo from "./Logo/Logo";
 import Menu from "./Menu/Menu";
-import './header.module.css'
+import styles from './Header.module.scss'
 
 function Header() {
     return (
-        <header className="navbar">
+        <header className={styles.navbar}>
             <div className="container">
                 <div className="row">
                     <div className="col-2">

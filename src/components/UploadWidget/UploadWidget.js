@@ -17,7 +17,6 @@ const UploadWidget = ({value, valueName, setValue}) => {
                     ...value,
                     [valueName]: result?.data?.info?.files?.[0]?.uploadInfo?.secure_url
                 })
-                console.log("upload img:",value)
             }
         })
     return (
