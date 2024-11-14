@@ -64,7 +64,7 @@ const Form = ({value, setValue, uploadFile}) => {
             id: 485845,
             name: "flightNumber",
             type: "text",
-            value: value.fightNumber,
+            value: value.flightNumber,
             placeholder: "flightNumber",
             icon: "linl"
         },
