@@ -9,7 +9,7 @@ const Menu = () => {
         },
         {
             link: '/submit-claim',
-            title: 'Send Form'
+            title: 'Your Rights'
         }
     ]
     return (
