@@ -64,15 +64,9 @@ const Form = ({value, setValue, uploadFile}) => {
             id: 485845,
             name: "flightNumber",
             type: "text",
-<<<<<<< Updated upstream
-            value: value.flightNumber,
-            placeholder: "flightNumber",
-            icon: "linl"
-=======
             value: value.fightNumber,
             placeholder: "fightNumber",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/mn0qzrqet0padkpm6rgj.svg"
->>>>>>> Stashed changes
         },
         {
             id: 457853,
