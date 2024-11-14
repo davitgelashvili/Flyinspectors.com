@@ -1,9 +1,12 @@
 import { placeholder } from "@cloudinary/react"
+import styles from './TextInput.module.scss'
 
-const TextInput = ({type, value, placeholder, name, onChange}) => {
+const TextInput = ({type, value, placeholder, name, icon, onChange}) => {
     return (
-        <label>
+        <label className={`${styles['textinput']}`}>
+            <img src={icon} alt="icon" className={`${styles['textinput__icon']}`} />
             <input 
+                className={`${styles['textinput__input']}`}
                 type={type}
                 value={value}
                 placeholder={placeholder}

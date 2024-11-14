@@ -5,19 +5,12 @@ import '../submitClaim/submitclaim.css'
 
 function Header() {
     return (
-        <header className={styles.navbar}>
+        <header className={styles.header}>
             <div className="container">
-                <div className="row">
-                    <div className="col-2">
-                        <Logo />
-
-                    </div>
-                    <div className="col-8">
-                        <Menu />
-                    </div>
-                    <div className="col-2">
+                <div className={styles.navbar}>
+                    <Logo />
+                    <Menu />
                     <button className="submitClaim">Submit Claim ➜</button>
-                    </div>
                 </div>
             </div>
         </header>
