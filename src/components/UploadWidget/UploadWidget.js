@@ -6,8 +6,8 @@ const UploadWidget = ({value, valueName, setValue}) => {
 
     cloudinaryRef.current = window.cloudinary
         widgetRef.current = cloudinaryRef.current.createUploadWidget({
-            cloudName: 'dkcr1v0dl',
-            uploadPreset: 'da3kj3f',
+            cloudName: 'dluqxr8lw',
+            uploadPreset: 'hi5bzww0',
             sources: ['local'],
             multiple: false,
             maxFiles: 1

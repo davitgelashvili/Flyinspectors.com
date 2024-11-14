@@ -10,7 +10,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.firstName,
             placeholder: "firstname",
-            icon: "linl"
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600392/Form%20icons/ijhlmpfbajgs0ypeymoy.svg"
         },
         {
             id: 1574,
@@ -18,7 +18,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.lastName,
             placeholder: "lastName",
-            icon: "linl"
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600392/Form%20icons/ijhlmpfbajgs0ypeymoy.svg"
         },
         {
             id: 46477,
@@ -26,7 +26,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.phone,
             placeholder: "phone",
-            icon: "linl"
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600390/Form%20icons/ifezno0nleyy8tyuclzg.svg"
         },
         {
             id: 5703,
@@ -34,7 +34,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.email,
             placeholder: "email",
-            icon: "linl"
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/nslmitrcambiai6wmfen.svg"
         },
         {
             id: 34643,
@@ -42,7 +42,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.city,
             placeholder: "city",
-            icon: "linl"
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/kuhub9sf2shcfwtecvy9.svg"
         },
         {
             id: 753235,
@@ -50,7 +50,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.address,
             placeholder: "address",
-            icon: "linl"
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/chfs24yjcgkltrezdbzn.svg"
         },
         {
             id: 36273,
@@ -58,15 +58,21 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.problem,
             placeholder: "problem",
-            icon: "linl"
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/sfew5nqowhazn00o76ho.svg"
         },
         {
             id: 485845,
             name: "flightNumber",
             type: "text",
+<<<<<<< Updated upstream
             value: value.flightNumber,
             placeholder: "flightNumber",
             icon: "linl"
+=======
+            value: value.fightNumber,
+            placeholder: "fightNumber",
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/mn0qzrqet0padkpm6rgj.svg"
+>>>>>>> Stashed changes
         },
         {
             id: 457853,
@@ -74,7 +80,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.date,
             placeholder: "date",
-            icon: "linl"
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/ivmgutc8eckheli6at9q.svg"
         },
         ,
         {
@@ -83,7 +89,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.description,
             placeholder: "description",
-            icon: "linl"
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/nzxyqpypgliouotsa6ie.svg"
         },
     ]
 
