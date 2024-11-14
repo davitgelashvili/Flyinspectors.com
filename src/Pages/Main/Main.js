@@ -1,5 +1,5 @@
 import Slider from "../../components/Common/Slider/Slider";
-import styles from "./SubmitClaim.module.css"
+import styles from "./SubmitClaim.module.scss"
 
 function Main() {
     return (
