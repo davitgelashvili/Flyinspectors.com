@@ -1,6 +1,7 @@
 import Logo from "./Logo/Logo";
 import Menu from "./Menu/Menu";
 import './header.module.css'
+import '../submitClaim/submitclaim.css'
 
 function Header() {
     return (
@@ -15,7 +16,7 @@ function Header() {
                         <Menu />
                     </div>
                     <div className="col-2">
-                        <button>send form</button>
+                    <button className="submitClaim">Submit Claim ➜</button>
                     </div>
                 </div>
             </div>
