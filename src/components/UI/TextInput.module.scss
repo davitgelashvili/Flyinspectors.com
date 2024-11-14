@@ -1,0 +1,12 @@
+.textinput {
+    position: relative;
+
+    &__icon {
+        position: absolute;
+        z-index: 1;
+    }
+
+    &__input {
+        padding: 7px 12px 7px 40px;
+    }
+}

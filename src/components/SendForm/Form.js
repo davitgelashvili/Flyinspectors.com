@@ -10,6 +10,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.firstName,
             placeholder: "firstname",
+            icon: "linl"
         },
         {
             id: 1574,
@@ -17,6 +18,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.lastName,
             placeholder: "lastName",
+            icon: "linl"
         },
         {
             id: 46477,
@@ -24,6 +26,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.phone,
             placeholder: "phone",
+            icon: "linl"
         },
         {
             id: 5703,
@@ -31,6 +34,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.email,
             placeholder: "email",
+            icon: "linl"
         },
         {
             id: 34643,
@@ -38,6 +42,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.city,
             placeholder: "city",
+            icon: "linl"
         },
         {
             id: 753235,
@@ -45,6 +50,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.address,
             placeholder: "address",
+            icon: "linl"
         },
         {
             id: 36273,
@@ -52,6 +58,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.problem,
             placeholder: "problem",
+            icon: "linl"
         },
         {
             id: 485845,
@@ -59,6 +66,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.fightNumber,
             placeholder: "fightNumber",
+            icon: "linl"
         },
         {
             id: 457853,
@@ -66,6 +74,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.date,
             placeholder: "date",
+            icon: "linl"
         },
         ,
         {
@@ -74,6 +83,7 @@ const Form = ({value, setValue, uploadFile}) => {
             type: "text",
             value: value.description,
             placeholder: "description",
+            icon: "linl"
         },
     ]
 
@@ -92,6 +102,7 @@ const Form = ({value, setValue, uploadFile}) => {
                             value={input.value}
                             placeholder={input.placeholder}
                             name={input.name}
+                            icon={input.icon}
                             onChange={handleChange}
                             />
                     )

@@ -1,0 +1,11 @@
+.slider {
+    display: block;
+
+    &__item {
+        display: block;
+        &--cover {
+            width: 100%;
+            height: 550px;
+        }
+    }
+}
