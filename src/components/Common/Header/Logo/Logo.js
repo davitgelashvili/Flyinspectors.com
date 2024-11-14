@@ -1,4 +1,5 @@
 import logo from "../Logo/LogoPic/LogoFly.png"
+import './logo.css'
 
 const Logo = () => {
     return (
