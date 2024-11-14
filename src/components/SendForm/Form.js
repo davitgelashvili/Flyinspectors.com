@@ -76,7 +76,6 @@ const Form = ({value, setValue, uploadFile}) => {
             placeholder: "date",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/ivmgutc8eckheli6at9q.svg"
         },
-        ,
         {
             id: 2542645,
             name: "description",
