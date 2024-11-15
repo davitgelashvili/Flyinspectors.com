@@ -34,7 +34,8 @@
 }
 
 .problemLabel {
-  width: 50%;
+  width: 553px;
+  height: 161px;
   margin-top: 10px;
 }
 
@@ -44,13 +45,13 @@
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical; /* Allows resizing vertically */
+  border-radius: 6px;
+  resize: vertical;
   outline: none;
   
 }
 
 .problemTextarea:focus {
-  border-color: #007bff; /* Highlight border on focus */
+  border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
