@@ -29,11 +29,12 @@
 
 .problemSection {
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .problemLabel {
-  display: block;
-  width: 100%;
+  width: 50%;
   margin-top: 10px;
 }
 
@@ -46,6 +47,7 @@
   border-radius: 4px;
   resize: vertical; /* Allows resizing vertically */
   outline: none;
+  
 }
 
 .problemTextarea:focus {
