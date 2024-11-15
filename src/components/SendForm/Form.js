@@ -113,9 +113,7 @@ const Form = ({ value, setValue, uploadFile }) => {
             />
           ))}
         </form>
-      </div>
-
-      {/* Separate Problem Description Area */}
+              {/* Separate Problem Description Area */}
       <div className={styles.problemSection}>
         <label className={styles.problemLabel}>
           <textarea
@@ -127,6 +125,9 @@ const Form = ({ value, setValue, uploadFile }) => {
           />
         </label>
       </div>
+      </div>
+
+
 
       <div className={styles.btnDiv}>
         <UploadWidget value={value} valueName={"passportImage"} setValue={setValue} />
