@@ -103,7 +103,6 @@ const Form = ({value, setValue, uploadFile}) => {
             {inputs.map((input)=>{
                 return (
                     <TextInput 
-                        className={styles.inputStyle}
                         key={input.id}
                         type={input.type}
                         value={input.value}

@@ -1,9 +1,16 @@
-.textinput {
+.textInput {
     position: relative;
+    width: 263px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 6px;
 
     &__icon {
         position: absolute;
         z-index: 1;
+        width: 13px;
+        height: 13px;
+        margin: 14px;
     }
 
     &__input {

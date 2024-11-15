@@ -1,26 +1,26 @@
 .formContainer {
-    display: grid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 100%;
+}
+
+.headerForm {
+  display: flex;
+  justify-content: center;
+  gap: 125px;
+  margin: 30px;
+}
+
+
+
+.formDiv {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .formContainer {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px; 
-    max-width: 100%;
   }
-
-  .headerForm {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    position: relative;
-    left: 415px;
-    margin: 30px;
-  }
-
-  .formDiv {
-    display: flex;
-    justify-content: center;
-  }
-  
-  @media (max-width: 768px) {
-    .formContainer {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
+}
