@@ -51,6 +51,9 @@
   background-color:#F5F5F5;
   ;
 }
+.problemTextarea::placeholder {
+  font-weight: 700;
+}
 
 .problemTextarea:focus {
   border-color: #007bff;

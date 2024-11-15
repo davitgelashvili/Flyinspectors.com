@@ -11,7 +11,7 @@ const Form = ({ value, setValue, uploadFile }) => {
             name: "firstName",
             type: "text",
             value: value.firstName,
-            placeholder: "firstname",
+            placeholder: "Firstname",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600392/Form%20icons/ijhlmpfbajgs0ypeymoy.svg"
         },
         {
@@ -19,7 +19,7 @@ const Form = ({ value, setValue, uploadFile }) => {
             name: "lastName",
             type: "text",
             value: value.lastName,
-            placeholder: "lastName",
+            placeholder: "LastName",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600392/Form%20icons/ijhlmpfbajgs0ypeymoy.svg"
         },
         {
@@ -27,7 +27,7 @@ const Form = ({ value, setValue, uploadFile }) => {
             name: "phone",
             type: "text",
             value: value.phone,
-            placeholder: "phone",
+            placeholder: "Phone",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600390/Form%20icons/ifezno0nleyy8tyuclzg.svg"
         },
         {
@@ -35,7 +35,7 @@ const Form = ({ value, setValue, uploadFile }) => {
             name: "email",
             type: "text",
             value: value.email,
-            placeholder: "email",
+            placeholder: "Email",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/nslmitrcambiai6wmfen.svg"
         },
         {
@@ -43,7 +43,7 @@ const Form = ({ value, setValue, uploadFile }) => {
             name: "city",
             type: "text",
             value: value.city,
-            placeholder: "city",
+            placeholder: "City",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/kuhub9sf2shcfwtecvy9.svg"
         },
         {
@@ -51,7 +51,7 @@ const Form = ({ value, setValue, uploadFile }) => {
             name: "address",
             type: "text",
             value: value.address,
-            placeholder: "address",
+            placeholder: "Address",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/chfs24yjcgkltrezdbzn.svg"
         },
         {
@@ -67,7 +67,7 @@ const Form = ({ value, setValue, uploadFile }) => {
             name: "flightNumber",
             type: "text",
             value: value.fightNumber,
-            placeholder: "flightNumber",
+            placeholder: "FlightNumber",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/mn0qzrqet0padkpm6rgj.svg"
         },
         {
@@ -75,7 +75,7 @@ const Form = ({ value, setValue, uploadFile }) => {
             name: "date",
             type: "text",
             value: value.date,
-            placeholder: "date",
+            placeholder: "Date",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/ivmgutc8eckheli6at9q.svg"
         },
         {
