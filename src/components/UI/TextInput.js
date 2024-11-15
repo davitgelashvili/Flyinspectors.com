@@ -4,9 +4,9 @@ import styles from './TextInput.module.scss'
 const TextInput = ({type, value, placeholder, name, icon, onChange}) => {
     return (
         <label className={`${styles['textInput']}`}>
-            <img src={icon} alt="icon" className={`${styles['textinput__icon']}`} />
+            <img src={icon} alt="icon" className={`${styles['textInput__icon']}`} />
             <input 
-                className={`${styles['textinput__input']}`}
+                className={`${styles['textInput__input']}`}
                 type={type}
                 value={value}
                 placeholder={placeholder}

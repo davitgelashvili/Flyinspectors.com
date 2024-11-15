@@ -93,7 +93,7 @@ const Form = ({value, setValue, uploadFile}) => {
     }
 
     return (
-        <div>
+        <div className={styles.bgColor}>
             <div className={styles.headerForm}>
             <h3>Fill Form</h3>
             <h3> Check the Status</h3>
