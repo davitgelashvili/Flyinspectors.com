@@ -86,6 +86,15 @@ const Form = ({value, setValue, uploadFile}) => {
             placeholder: "description",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/nzxyqpypgliouotsa6ie.svg"
         },
+        {
+            id: 36273,
+            name: "problem",
+            type: "text",
+            value: value.problem,
+            placeholder: "პრობლემის აღწერა...",
+            icon: null, // ამ ველში ხატულა არ არის საჭირო
+            isTextArea: true, // მიუთითებს, რომ ეს არის ტექსტარეუ
+          },
     ]
 
     const handleChange = (e) =>{
