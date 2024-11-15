@@ -118,7 +118,7 @@ const Form = ({ value, setValue, uploadFile }) => {
       <div className={styles.problemSection}>
         <label className={styles.problemLabel}>
           <textarea
-            name="problem"
+            name="descriptionProblem"
             // value={value.problem || ""}
             placeholder="Describe the problem..."
             onChange={handleChange}
