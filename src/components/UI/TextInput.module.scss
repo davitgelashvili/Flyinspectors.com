@@ -1,19 +1,49 @@
+// .textInput {
+//     position: relative;
+//     width: 263px;
+//     height: 40px;
+//     border: 1px solid;
+//     border-radius: 6px;
+
+//     &__icon {
+//         position: absolute;
+//         z-index: 1;
+//         width: 13px;
+//         height: 13px;
+//         margin: 14px;
+//     }
+
+//     &__input {
+//         padding: 7px 12px 7px 40px;
+//     }
+// }
+
 .textInput {
-    position: relative;
-    width: 263px;
-    height: 40px;
-    border: 1px solid;
-    border-radius: 6px;
-
-    &__icon {
-        position: absolute;
-        z-index: 1;
-        width: 13px;
-        height: 13px;
-        margin: 14px;
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Add padding for better spacing */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  
+    &:focus-within {
+      border-color: #007bff; /* Change border color when focused */
     }
-
-    &__input {
-        padding: 7px 12px 7px 40px;
-    }
-}
+  }
+  
+  .textinput__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; /* Space between icon and input */
+  }
+  
+  .textinput__input {
+    flex: 1; /* Allow input to take up remaining space */
+    border: none; /* Remove default input border */
+    outline: none; /* Remove blue outline */
+    font-size: 1rem;
+    padding: 0; /* Remove padding inside input */
+    background: transparent; /* Match background with label */
+  }
+  
