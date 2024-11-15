@@ -94,11 +94,11 @@ const Form = ({value, setValue, uploadFile}) => {
 
     return (
         <div>
-            <div className="headerForm">
+            <div className={styles.headerForm}>
             <h3>Fill Form</h3>
             <h3> Check the Status</h3>
             </div>
-            <div>
+            <div className={styles.formDiv}>
         <form className={styles.formContainer}>
             {inputs.map((input)=>{
                 return (
@@ -116,10 +116,12 @@ const Form = ({value, setValue, uploadFile}) => {
             })}
         </form>   
     </div>
-    <UploadWidget value={value} valueName={"passportImage"} setValue={setValue}/>
+    <div className="btnDiv">
+        <UploadWidget value={value} valueName={"passportImage"} setValue={setValue}/>
         <UploadWidget value={value} valueName={"ticketImage"} setValue={setValue}/>
         <button onClick={(e) => uploadFile(e)}>Submit Form</button>
         {value.passportImage && <img src={value.passportImage} alt="" />}
+    </div>
         </div>
         
     )
