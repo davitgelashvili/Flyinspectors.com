@@ -1,0 +1,22 @@
+.formContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; 
+    max-width: 100%;
+  }
+  
+//   .inputStyle {
+//     width: 100%;
+//     padding: 8px;
+//     font-size: 1rem;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     box-sizing: border-box;
+//   }
+  
+  @media (max-width: 768px) {
+    .formContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  

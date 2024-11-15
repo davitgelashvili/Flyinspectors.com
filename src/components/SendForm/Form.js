@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import UploadWidget from "../UploadWidget/UploadWidget"
 import TextInput from "../UI/TextInput"
+import styles from './form.module.scss'
+
 
 const Form = ({value, setValue, uploadFile}) => {
     const inputs = [
@@ -93,26 +95,34 @@ const Form = ({value, setValue, uploadFile}) => {
 
     return (
         <div>
-            <form>
-                {inputs.map((input)=>{
-                    return (
-                        <TextInput 
-                            key={input.id}
-                            type={input.type}
-                            value={input.value}
-                            placeholder={input.placeholder}
-                            name={input.name}
-                            icon={input.icon}
-                            onChange={handleChange}
-                            />
-                    )
-                })}
-            </form>
-            <UploadWidget value={value} valueName={"passportImage"} setValue={setValue}/>
-            <UploadWidget value={value} valueName={"ticketImage"} setValue={setValue}/>
-            <button onClick={(e) => uploadFile(e)}>Submit Form</button>
-            {value.passportImage && <img src={value.passportImage} alt="" />}
+            <div className="headerForm">
+            <h3>Fill Form</h3>
+            <h3> Check the Status</h3>
+            </div>
+            <div>
+        <form className={styles.formContainer}>
+            {inputs.map((input)=>{
+                return (
+                    <TextInput 
+                        className={styles.inputStyle}
+                        key={input.id}
+                        type={input.type}
+                        value={input.value}
+                        placeholder={input.placeholder}
+                        name={input.name}
+                        icon={input.icon}
+                        onChange={handleChange}
+                        />
+                )
+            })}
+        </form>   
+    </div>
+    <UploadWidget value={value} valueName={"passportImage"} setValue={setValue}/>
+        <UploadWidget value={value} valueName={"ticketImage"} setValue={setValue}/>
+        <button onClick={(e) => uploadFile(e)}>Submit Form</button>
+        {value.passportImage && <img src={value.passportImage} alt="" />}
         </div>
+        
     )
 }
 
