@@ -62,12 +62,20 @@
 
 .btnDiv {
   display: flex;
-  justify-content: center;
-  gap: 70px;
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .uploadSection {
   display: flex;
-  flex-direction: column;
-  align-items: center; 
+  flex-direction: column; 
+  align-items: center;
+  gap: 8px; 
+}
+
+.otherDoc {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 8px;
 }

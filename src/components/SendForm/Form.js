@@ -129,14 +129,14 @@ const Form = ({ value, setValue, uploadFile }) => {
 
       <div className={styles.btnDiv}>
         <div className={styles.uploadSection}>
-        <UploadWidget  value={value} valueName={"passportImage"} setValue={setValue} />
         <p>Passport Photo</p>
+        <UploadWidget  value={value} valueName={"passportImage"} setValue={setValue} />
         </div>
         <div className={styles.uploadSection}>
         <p>Ticket</p>
         <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} />
         </div>
-        <div className="otherDoc">
+        <div className={styles.otherDoc}>
         <p>Other documents</p>
         <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} />
         </div>
