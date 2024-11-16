@@ -109,14 +109,15 @@
 }
 
 
-
+.sectionThree {
+  margin-left: 130px;
+  margin-right: 130px;
+}
 
 .cards {
   display: flex;
   justify-content: space-between; 
   gap: 40px;
-  margin-right: 100px;
-  margin-left: 100px;
   padding: 20px 0; 
 }
 
