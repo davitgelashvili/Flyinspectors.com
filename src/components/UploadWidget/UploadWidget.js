@@ -21,7 +21,7 @@ const UploadWidget = ({value, valueName, setValue}) => {
         })
     return (
         <label>
-            <button onClick={() => widgetRef.current.open()}>
+            <button className="btn btn-primary" onClick={() => widgetRef.current.open()}>
                 upload
             </button>
         </label>
