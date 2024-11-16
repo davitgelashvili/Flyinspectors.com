@@ -46,7 +46,6 @@
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-  resize: vertical;
   outline: none;
   background-color:#F5F5F5;
   ;
@@ -64,6 +63,7 @@
   display: flex;
    justify-content: center;
   align-items: center; 
+  gap: 250px;
 }
 
 .uploadSection {
