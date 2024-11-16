@@ -83,27 +83,29 @@
 
 
 .headerOfSection {
-  text-align: center; /* Center align the text */
-  margin-bottom: 20px; /* Add spacing below the section */
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 20px; 
 }
 
 .headerOfSection h3 {
-  margin: 10px 0; /* Add spacing between the headings */
-  font-size: 1.5rem; /* Adjust the font size */
-  line-height: 1.4; /* Improve readability */
+  margin: 10px 0;
+  font-size: 30px;
+  line-height: 44px;
+  font-weight: 700;
 }
 
 .headerOfSection h3:first-of-type {
-  color: #0D6693; /* Default color for the first h3 */
+  color: #0D6693; 
 }
 
 .headerOfSection h3:first-of-type span {
-  color: #FD9B28; /* Change the color of "FLYINSPECTORS" */
-  font-weight: bold; /* Optional: Make it bold for emphasis */
+  color: #FD9B28; 
+  font-weight: bold;
 }
 
 .headerOfSection h3:last-of-type {
-  color: #FD9B28; /* Set color for the second h3 */
+  color: #FD9B28; 
 }
 
 
@@ -111,16 +113,19 @@
 
 .cards {
   display: flex;
-  justify-content: space-between; /* Space out the cards */
-  gap: 20px; /* Add spacing between the cards */
-  padding: 20px 0; /* Add padding around the card section */
+  justify-content: space-between; 
+  gap: 70px;
+  padding: 20px 0; 
 }
 
 .cards > div {
-  width: 30%; /* Each card takes up roughly one-third of the container */
-  background-color: #ffffff; /* Background color for the card */
-  border-radius: 8px; /* Add rounded corners to the card */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for a card effect */
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 308px;
+  height: 342px;
+  background-color: #ffffff; 
+  border-radius: 5px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   overflow: hidden; /* Prevent content overflow */
 }
 
