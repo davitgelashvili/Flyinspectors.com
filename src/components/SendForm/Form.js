@@ -128,10 +128,12 @@ const Form = ({ value, setValue, uploadFile }) => {
       </div>
 
       <div className={styles.btnDiv}>
-        <div className="passTicket">
-        <p>Passport Photo</p>
-        <p>Ticket</p>
+        <div className={styles.uploadSection}>
         <UploadWidget  value={value} valueName={"passportImage"} setValue={setValue} />
+        <p>Passport Photo</p>
+        </div>
+        <div className={styles.uploadSection}>
+        <p>Ticket</p>
         <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} />
         </div>
         <div className="otherDoc">
