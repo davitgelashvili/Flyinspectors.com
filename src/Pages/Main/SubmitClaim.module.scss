@@ -82,6 +82,33 @@
 }
 
 
+.headerOfSection {
+  text-align: center; /* Center align the text */
+  margin-bottom: 20px; /* Add spacing below the section */
+}
+
+.headerOfSection h3 {
+  margin: 10px 0; /* Add spacing between the headings */
+  font-size: 1.5rem; /* Adjust the font size */
+  line-height: 1.4; /* Improve readability */
+}
+
+.headerOfSection h3:first-of-type {
+  color: #0D6693; /* Default color for the first h3 */
+}
+
+.headerOfSection h3:first-of-type span {
+  color: #FD9B28; /* Change the color of "FLYINSPECTORS" */
+  font-weight: bold; /* Optional: Make it bold for emphasis */
+}
+
+.headerOfSection h3:last-of-type {
+  color: #FD9B28; /* Set color for the second h3 */
+}
+
+
+
+
 .cards {
   display: flex;
   justify-content: space-between; /* Space out the cards */
