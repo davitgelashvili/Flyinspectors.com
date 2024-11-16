@@ -24,7 +24,7 @@ function Main() {
                 </div>
                 <hr></hr>
                 <p>Problem with flight cancellation without prior notice
-                     (or less then 14 days)? According to EU regulations, 
+                     or less then 14 days? According to EU regulations, 
                      you are eligible for compensation.</p>
 
                 <div className="option3">
