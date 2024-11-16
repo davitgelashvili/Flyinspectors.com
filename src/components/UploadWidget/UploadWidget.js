@@ -22,7 +22,7 @@ const UploadWidget = ({value, valueName, setValue}) => {
     return (
         <label>
             <button className="btn btn-primary" onClick={() => widgetRef.current.open()}>
-                upload
+                upload Ticket
             </button>
         </label>
     )
