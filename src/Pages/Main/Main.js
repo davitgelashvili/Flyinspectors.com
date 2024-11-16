@@ -21,11 +21,11 @@ function Main() {
 
             <div className="option2">
             <h3> Flight Cancellation Compensation</h3>
-                </div>
                 <hr></hr>
                 <p>Problem with flight cancellation without prior notice
                      or less then 14 days? According to EU regulations, 
                      you are eligible for compensation.</p>
+                </div>
 
                 <div className="option3">
                 <h3>Missed Connection Compensation </h3>
