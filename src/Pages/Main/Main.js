@@ -57,7 +57,7 @@ function Main() {
                     <h3>FLYINSPECTORS HELPED MANY PASSENGERS</h3>
                     <h3>WE CAN HELP YOU TOO</h3>
                 </div>
-                <div className="cards">
+                <div className={styles.cards}>
                     <div>
                         <h3>SUBMIT CLAIM</h3>
                         <p>
