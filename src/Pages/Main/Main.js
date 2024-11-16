@@ -66,7 +66,7 @@ function Main() {
         </div>
       </div>
       <div className="sectionThree">
-        <div className="headerOfSection">
+        <div className={styles.headerOfSection}>
           <h3>
             <span>FLYINSPECTORS</span> HELPED MANY PASSENGERS
           </h3>
