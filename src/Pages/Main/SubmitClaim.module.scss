@@ -114,13 +114,13 @@
 .cards {
   display: flex;
   justify-content: space-between; 
-  gap: 70px;
+  gap: 40px;
+  margin-right: 100px;
+  margin-left: 100px;
   padding: 20px 0; 
 }
 
 .cards > div {
-  margin-left: 100px;
-  margin-right: 100px;
   width: 308px;
   height: 342px;
   background-color: #ffffff; 
