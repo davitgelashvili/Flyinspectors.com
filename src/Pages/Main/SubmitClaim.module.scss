@@ -82,3 +82,50 @@
 }
 
 
+.cards {
+  display: flex;
+  justify-content: space-between; /* Space out the cards */
+  gap: 20px; /* Add spacing between the cards */
+  padding: 20px 0; /* Add padding around the card section */
+}
+
+.cards > div {
+  width: 30%; /* Each card takes up roughly one-third of the container */
+  background-color: #ffffff; /* Background color for the card */
+  border-radius: 8px; /* Add rounded corners to the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for a card effect */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.cards h3 {
+  background-color: #0D6693; /* Heading background color */
+  color: #ffffff; /* Heading font color */
+  padding: 15px; /* Add padding inside the heading */
+  margin: 0; /* Remove default margin */
+  font-size: 1.2rem; /* Adjust heading size */
+  text-align: center; /* Center align the heading text */
+}
+
+.cards p {
+  background-color: #ffffff; /* Paragraph background color */
+  color: #717171; /* Paragraph font color */
+  padding: 15px; /* Add padding inside the paragraph */
+  font-size: 1rem; /* Adjust font size */
+  line-height: 1.6; /* Improve text spacing */
+  margin: 0; /* Remove default margin */
+  text-align: justify; /* Align text neatly */
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-wrap: wrap; /* Allow the cards to wrap on smaller screens */
+    gap: 15px; /* Adjust spacing for smaller screens */
+  }
+
+  .cards > div {
+    width: 100%; /* Each card takes up full width on small screens */
+  }
+}
+
+
+
