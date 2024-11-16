@@ -29,27 +29,28 @@
 
 .optionsProblem {
   display: flex;
-  flex-wrap: wrap; 
-  gap: 80px; 
+  flex-wrap: wrap;
+  gap: 80px;
   justify-content: center;
   margin-left: 100px;
   margin-right: 100px;
 }
 
-.optionsProblem > div {
-  width: 358px; 
+.optionsProblem>div {
+  width: 358px;
   height: 199px;
   min-width: 250px;
-  text-align: center; 
-  background-color: #FFFFFF; 
-  padding: 20px; 
+  text-align: center;
+  background-color: #FFFFFF;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .optionsProblem h3 {
   margin-bottom: 10px;
-  font-size: 16px; /* Adjust heading size */
+  font-size: 16px;
+  /* Adjust heading size */
   color: #4D4D4D;
   font-weight: 700;
   line-height: 22px;
@@ -57,27 +58,34 @@
 }
 
 .optionsProblem hr {
-  border: none; /* Remove the default border */
-  border-top: 2px solid #0D6693; /* Customize the color and thickness */
-  margin: 10px 0; /* Add spacing above and below the hr */
+  border: none;
+  /* Remove the default border */
+  border-top: 2px solid #0D6693;
+  /* Customize the color and thickness */
+  margin: 10px 0;
+  /* Add spacing above and below the hr */
 }
 
 .optionsProblem p {
-  font-size: 15px; /* Adjust font size for better readability */
-  line-height: 20px; /* Improve text spacing */
+  font-size: 15px;
+  /* Adjust font size for better readability */
+  line-height: 20px;
+  /* Improve text spacing */
   color: #717171;
   font-weight: 400;
 }
 
 @media (max-width: 768px) {
-  .optionsProblem > div {
-    width: 45%; /* Two options per row */
+  .optionsProblem>div {
+    width: 45%;
+    /* Two options per row */
   }
 }
 
 @media (max-width: 480px) {
-  .optionsProblem > div {
-    width: 100%; /* One option per row */
+  .optionsProblem>div {
+    width: 100%;
+    /* One option per row */
   }
 }
 
@@ -85,7 +93,7 @@
 .headerOfSection {
   margin-top: 50px;
   text-align: center;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .headerOfSection h3 {
@@ -96,69 +104,68 @@
 }
 
 .headerOfSection h3:first-of-type {
-  color: #0D6693; 
+  color: #0D6693;
 }
 
 .headerOfSection h3:first-of-type span {
-  color: #FD9B28; 
+  color: #FD9B28;
   font-weight: bold;
 }
 
 .headerOfSection h3:last-of-type {
-  color: #FD9B28; 
+  color: #FD9B28;
 }
 
 
 .sectionThree {
-  margin-left: 130px;
-  margin-right: 130px;
+  margin-left: 270px;
+  margin-right: 270px;
 }
 
 .cards {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   gap: 40px;
-  padding: 20px 0; 
+  padding-top: 40px;
 }
 
-.cards > div {
+.cards>div {
   width: 308px;
   height: 342px;
-  background-color: #ffffff; 
-  border-radius: 5px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  overflow: hidden; /* Prevent content overflow */
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .cards h3 {
-  background-color: #0D6693; /* Heading background color */
-  color: #ffffff; /* Heading font color */
-  padding: 15px; /* Add padding inside the heading */
-  margin: 0; /* Remove default margin */
-  font-size: 1.2rem; /* Adjust heading size */
-  text-align: center; /* Center align the heading text */
+  background-color: #0D6693;
+  color: #ffffff;
+  padding: 25px;
+  margin: 0;
+  font-weight: 700;
+  line-height: 22px;
+  font-size: 20px;
+  text-align: center;
 }
 
 .cards p {
-  background-color: #ffffff; /* Paragraph background color */
-  color: #717171; /* Paragraph font color */
-  padding: 15px; /* Add padding inside the paragraph */
-  font-size: 1rem; /* Adjust font size */
-  line-height: 1.6; /* Improve text spacing */
-  margin: 0; /* Remove default margin */
-  text-align: justify; /* Align text neatly */
+  background-color: #ffffff;
+  color: #717171;
+  padding: 25px;
+  font-size: 15px;
+  line-height: 22px;
+  margin: 0;
+  text-align: justify;
 }
 
 @media (max-width: 768px) {
   .cards {
-    flex-wrap: wrap; /* Allow the cards to wrap on smaller screens */
-    gap: 15px; /* Adjust spacing for smaller screens */
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
-  .cards > div {
-    width: 100%; /* Each card takes up full width on small screens */
+  .cards>div {
+    width: 100%;
   }
 }
-
-
-
