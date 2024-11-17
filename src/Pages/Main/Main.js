@@ -1,4 +1,5 @@
 import Slider from "../../components/Common/Slider/Slider";
+import OptionsSection from "../../components/OptionsSection/OptionsSection";
 import styles from "./SubmitClaim.module.scss";
 import submitClaim from "../../components/UI/submitClaim";
 
@@ -6,6 +7,7 @@ function Main() {
   return (
     <main>
       <Slider />
+<<<<<<< HEAD
       <submitClaim/>
       <div className={styles.question}>
         <h3>DO YOU QUALIFY FOR A COMPENSATION</h3>
@@ -67,6 +69,10 @@ function Main() {
         </div>
       </div>
 
+=======
+      <button className={styles.submitClaimImage}>Submit Claim </button>
+      <OptionsSection />
+>>>>>>> a87b7f8308aedd8dce4a91d55fee64abff1d6a6c
       {/* es undat rom dinamiuri iyos da mere gadavcvalot. */}
       <div className={styles.sectionThree}>
         <div className={styles.headerOfSection}>
