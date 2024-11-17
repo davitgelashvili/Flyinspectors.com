@@ -1,22 +1,33 @@
-
 .services {
-
+    margin-top: 60px;
 }
 
-.title {
+.mainDiv {
+    width: 750px;
+    height: 265px;
+    border-radius: 5px;
+}
 
+.header {
+    height: 62px;
+    font-weight: 700;
+    background-color: #0D6693;
+    color: #ffffff;
+    padding: 20px;
+    margin: 0 0 15px 0;
+    border-radius: 8px;
+    text-align: start;
+    font-size: 20px;
 }
 
 .item {
-
- &__head {
-
- } 
-
- &__title{
-
- }
+    // margin-right: 15px;
+    padding-left: 15px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #717171;
+    text-align: justify;
+    margin: 0;
 
 }
-
-

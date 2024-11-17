@@ -1,38 +1,39 @@
 import styles from "./ServicesOptions.module.scss";
 import Item from "./Item";
 
-
 const ServicesOptions = () => {
   const data = [
     {
-      title: "Overbooking Compensation",
-      desc: "Missed your flight because it was overbooked? You are eligible for a compensation.",
+      title: "SUBMIT CLAIM",
+      desc: "When having problems with your flight all you need to do is fill the compensation claim form on our website, you can even get compensation for up to 6 years prior. From there our experts will do all the necessary paper and routine works and present the complaint to the airline company.",
     },
     {
-      title: "Denied Boarding Compensation",
-      desc: "You were denied boarding a plane without any apparent reason or no reason at all? You are eligible for EU flight compensation.",
+      title: "SIT BACK AND RELAX",
+      desc: "After Flyinspectors engagement you do not have to do anything, except to wait for your flight compensation calmly.Yes, it's as easy as it sounds!",
     },
     {
-      title: "Delayed Baggage Compensation",
-      desc: "Was your baggage delayed or arrived damaged? You are eligible for compensation.",
+      title: "RECEIVE COMPENSATION",
+      desc: "After airlines transfer the compensation, we immediately transfer it to you, with the success fee of 25% deducted. If by any chance we are not successful you pay nothing.",
     },
   ];
   return (
-    <div className={styles.services}>
-      <div className="container">
-        <h3>
-          <span>FLYINSPECTORS</span> HELPED MANY PASSENGERS
-        </h3>
-        <h3>WE CAN HELP YOU TOO</h3>
-        <div className="row">
-          {data?.map((item) => {
-            return (
-              <div className="col-4" key={item.title}>
-                <Item title={item.title} desc={item.desc} icon={item.icon} />
-              </div>
-            );
-          })}
+    <div className={styles.mainContainer}>
+      <div className={styles.services}>
+        <div className="container">
+          <h3>
+            <span>FLYINSPECTORS</span> HELPED MANY PASSENGERS
+          </h3>
+          <h3>WE CAN HELP YOU TOO</h3>
         </div>
+      </div>
+      <div className="row">
+        {data?.map((item) => {
+          return (
+            <div className="col-4" key={item.title}>
+              <Item title={item.title} desc={item.desc} icon={item.icon} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
