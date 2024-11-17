@@ -1,11 +1,12 @@
 import Slider from "../../components/Common/Slider/Slider";
 import styles from "./SubmitClaim.module.scss";
+import submitClaim from "../../components/UI/submitClaim";
 
 function Main() {
   return (
     <main>
       <Slider />
-      <button className={styles.submitClaimImage}>Submit Claim </button>
+      <submitClaim/>
       <div className={styles.question}>
         <h3>DO YOU QUALIFY FOR A COMPENSATION</h3>
       </div>
