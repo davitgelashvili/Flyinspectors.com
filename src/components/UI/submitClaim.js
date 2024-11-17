@@ -1,9 +1,11 @@
-import styles from "./submitClaim.module.scss"
+import styles from "./SubmitClaim.module.scss";
 
-const submitClaim = ({}) => {
-    return (
-        <button className={styles.submitClaimImage}>Submit Claim </button>
-    )
-}
+const SubmitClaim = () => {
+  return (
+    <div className="d-flex justify-content-center">
+      <button className={styles.submitClaimImage}>Submit Claim </button>
+    </div>
+  );
+};
 
-export default submitClaim
+export default SubmitClaim;

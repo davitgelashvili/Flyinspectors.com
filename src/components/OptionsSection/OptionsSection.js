@@ -35,9 +35,9 @@ const OptionsSection = () => {
         },
     ]
     return (
-        <div className={styles.optionssection}>
+        <div className={styles.OptionsSection}>
             <div className="container">
-                <h3>DO YOU QUALIFY FOR A COMPENSATION</h3>
+                <h3 className={styles.title}>DO YOU QUALIFY FOR A COMPENSATION</h3>
                 <div className="row">
                     {data?.map((item)=>{
                         return (

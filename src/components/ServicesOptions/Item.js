@@ -1,11 +1,10 @@
-import styles from "./OptionsSection.module.scss"
+import styles from "./ServicesOptions.module.scss"
 
 
-const Item = ({title, desc, icon}) => {
+const Item = ({title, desc}) => {
     return (
         <div className={styles.item}>
             <div className={`${styles.item__head} d-flex align-center`}>
-                <img src={icon} alt="icon" />
                 <h3 className={styles.item__title}>{title}</h3>
             </div>
             <p className="item__desc">
@@ -16,7 +15,3 @@ const Item = ({title, desc, icon}) => {
 }
 
 export default Item
-
-
-
-  
