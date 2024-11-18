@@ -10,7 +10,6 @@ function Main() {
     <main>
       <Slider />
       <OptionsSection />
-      {/* es undat rom dinamiuri iyos da mere gadavcvalot. */}
       <ServicesOptions />
       <WhyWe />
       <Faq/>

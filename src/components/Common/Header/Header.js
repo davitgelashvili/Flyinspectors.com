@@ -1,7 +1,7 @@
 import Logo from "./Logo/Logo";
 import Menu from "./Menu/Menu";
 import styles from './Header.module.scss'
-import '../submitClaim/submitclaim.css'
+import SubmitLink from "../../UI/SubmitLink";
 
 function Header() {
     return (
@@ -10,7 +10,7 @@ function Header() {
                 <div className={styles.navbar}>
                     <Logo />
                     <Menu />
-                    <button className="submitClaim">Submit Claim ➜</button>
+                    <SubmitLink />
                 </div>
             </div>
         </header>

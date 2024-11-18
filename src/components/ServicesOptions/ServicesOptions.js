@@ -18,22 +18,22 @@ const ServicesOptions = () => {
   ];
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.services}>
-        <div className="container">
+      <div className="container"> 
+        <div className={styles.services}>
           <h3>
             <span>FLYINSPECTORS</span> HELPED MANY PASSENGERS
           </h3>
           <h3>WE CAN HELP YOU TOO</h3>
         </div>
-      </div>
-      <div className="row">
-        {data?.map((item) => {
-          return (
-            <div className="col-4" key={item.title}>
-              <Item title={item.title} desc={item.desc} icon={item.icon} />
-            </div>
-          );
-        })}
+        <div className="row">
+          {data?.map((item) => {
+            return (
+              <div className="col-4" key={item.title}>
+                <Item title={item.title} desc={item.desc} icon={item.icon} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
