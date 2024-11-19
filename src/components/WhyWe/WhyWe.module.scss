@@ -1,6 +1,14 @@
 .services {
     padding: 40px 0;
     background-color: #fff;
+
+    &__cover {
+        max-width: 100%;
+
+        @media (max-width: 994px) {
+            width: 100%;
+        }
+    }
 }
 
 .mainDiv {
