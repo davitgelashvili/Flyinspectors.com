@@ -6,7 +6,7 @@ const OptionsSection = () => {
         {
             title: "Flight Delay Compensation",
             desc: "If your flight delayed for 3+ hours you are eligible for compensation.",
-            icon: ""
+            icon: "https://res.cloudinary.com/dkcr1v0dl/image/upload/v1731876432/ic_schedule_24px_cetutr.svg"
         },
         {
             title: "Flight Cancellation Compensation",
@@ -36,8 +36,8 @@ const OptionsSection = () => {
     ]
     return (
         <div className={styles.OptionsSection}>
-            <div className="container">
                 <h3 className={styles.title}>DO YOU QUALIFY FOR A COMPENSATION</h3>
+            <div className="container">
                 <div className="row">
                     {data?.map((item)=>{
                         return (

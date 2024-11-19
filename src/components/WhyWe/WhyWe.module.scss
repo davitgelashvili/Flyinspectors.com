@@ -1,35 +1,32 @@
 .services {
-    margin-top: 60px;
+    padding: 40px 0;
+    background-color: #fff;
 }
 
 .mainDiv {
-    width: 750px;
-    height: 265px;
+    width: 100%;
     border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    p {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #717171;
+    }
 }
 
 .header {
-    height: 62px;
+    margin: 0;
     font-weight: 700;
     background-color: #0D6693;
     color: #ffffff;
     padding: 20px;
-    margin: 0 0 15px 0;
     border-radius: 8px;
     text-align: start;
     font-size: 20px;
-}
-
-.item {
-    // margin-right: 15px;
-    padding-left: 15px;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 22px;
-    color: #717171;
-    text-align: justify;
-    margin: 0;
-    cursor: default;
-
-
 }

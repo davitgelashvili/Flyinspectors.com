@@ -1,5 +1,5 @@
 .title {
-    margin-bottom: 30px;
+    margin-bottom: 64px;
     text-align: center;
     color: #0D6693;
     font-size: 30px;
@@ -9,35 +9,42 @@
 
 
 .OptionsSection {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 18px;
 }
 
 .item {
-    margin-bottom: 30px;
-    width: 358px;
-    height: 199px;
-    min-width: 250px;
-    text-align: center;
+    margin-bottom: 40px;
     background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: default;
+    display: flex;
+    flex-direction: column;
+
+    &__icon {
+        background-color: #f3f3f3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 50%;
+
+        &--img {
+            display: block;
+        }
+    }
+}
+
+.item__head {
+    height: 80px;
+    border-bottom: 2px solid #0D6693;
+    margin: 10px 0;
 }
 
 .item__title {
-    margin-bottom: 10px;
     font-size: 16px;
     color: #4D4D4D;
     font-weight: 700;
     line-height: 22px;
-    text-align: center;
-}
-
-.item__head {
-    border-bottom: 2px solid #0D6693;
-    margin: 10px 0;
 }
 
 .item__desc {

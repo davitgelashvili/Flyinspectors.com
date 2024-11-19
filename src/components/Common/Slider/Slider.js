@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import styles from './Slider.module.scss'
-import SubmitClaim from '../../UI/SubmitClaim.js';
+import SubmitLink from '../../UI/SubmitLink';
 
 function Slider() {
     const data = [
@@ -27,7 +27,9 @@ function Slider() {
                         <SwiperSlide key={item.title}>
                             <div className={`${styles['slider__item']}`}>
                                 <img src={item.img} alt={item.title} className={`${styles['slider__item--cover']}`}/>
-                                <SubmitClaim/>
+                                <div className="d-flex justify-content-center">
+                                    <SubmitLink  className={styles.link}/>
+                                </div>
                             </div>
                         </SwiperSlide>
                     )

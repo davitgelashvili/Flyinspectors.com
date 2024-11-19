@@ -4,13 +4,15 @@ import styles from "./OptionsSection.module.scss"
 const Item = ({title, desc, icon}) => {
     return (
         <div className={styles.item}>
-            <div className={`${styles.item__head} d-flex align-center`}>
-                <img src={icon} alt="icon" />
+            <div className={`${styles.item__head} d-flex align-items-center`}>
+                <figure className={styles.item__icon}>
+                    <img src={icon} alt="icon" className={`${styles['item__icon--img']}`}/>
+                </figure>
                 <h3 className={styles.item__title}>{title}</h3>
             </div>
-            <p className="item__desc">
+            <div className={styles.item__desc}>    
                 {desc}
-            </p>
+            </div>
         </div>
     )
 }
