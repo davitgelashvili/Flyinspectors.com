@@ -8,11 +8,11 @@ const Menu = () => {
             title: 'Home'
         },
         {
-            link: '/submit-claim',
+            link: '/your-rights',
             title: 'Your Rights'
         },
         {
-            link: '/About-Us',
+            link: '/submit-claim',
             title: 'About Us'
         },
         {
