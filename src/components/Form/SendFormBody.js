@@ -4,6 +4,7 @@ import UploadWidget from "../UploadWidget/UploadWidget";
 import DisableUploadWidget from "../UploadWidget/DisableUploadWidget";
 import TextInput from "../UI/TextInput";
 import styles from "./form.module.scss";
+import Signature from "./Signature";
 
 const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
     const inputs = [
@@ -106,12 +107,10 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
     <form>
       <div className="row">
         {inputs?.map((input) => {
-          return (
-            <>
-            {input.type === 'textarea' ? (
-              <div className="col-12">
+          if(input.type === 'textarea'){
+            return (
+              <div className="col-12" key={input.id}>
                 <TextInput
-                  key={input.id}
                   type={input.type}
                   value={input.value}
                   placeholder={input.placeholder}
@@ -120,10 +119,11 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
                   onChange={handleChange}
                 />
               </div>
-            ) : (
-              <div className="col-6">
+            )
+          }else {
+            return (
+              <div className="col-6" key={input.id}>
                 <TextInput
-                  key={input.id}
                   type={input.type}
                   value={input.value}
                   placeholder={input.placeholder}
@@ -132,9 +132,8 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
                   onChange={handleChange}
                 />
               </div>
-            )}
-            </>
-          )
+            )
+          }
         })}
         <div className="col-6">
           {
@@ -162,6 +161,9 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
               <DisableUploadWidget title={'Other documents'} name={'0 Upload Picture'}/>
             )
           }
+        </div>
+        <div className="col-12">
+          <Signature value={value} valueName={"ticketImage"} setValue={setValue} title={'Electronic signature:'} desc={'Please sign the electronic signature.'}/>
         </div>
         <div className="col-12">
           <button onClick={(e) => uploadFile(e)}>Submit Form</button>

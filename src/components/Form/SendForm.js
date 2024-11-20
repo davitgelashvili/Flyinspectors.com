@@ -4,19 +4,19 @@ import SendFormBody from "./SendFormBody"
 const SendForm = () => {
     const [accept, setAccept] = useState(false)
     const [value, setValue] = useState({
-        passportImage: "",
-        ticketImage: "",
-        firstName: "",
-        lastName: "",
-        phone: "",
-        email: "",
-        city: "",
-        address: "",
-        problem: "",
-        flightNumber: "",
-        date: "",
-        select: "",
-        description: "",
+        passportImage: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732114543/fnded4xmbkvadnqxxygk.jpg",
+        ticketImage: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732114543/fnded4xmbkvadnqxxygk.jpg",
+        firstName: "test",
+        lastName: "test",
+        phone: "test",
+        email: "test",
+        city: "test",
+        address: "test",
+        problem: "test",
+        flightNumber: "test",
+        date: "test",
+        select: "test",
+        description: "test",
     })
 
     useEffect(()=>{
