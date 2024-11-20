@@ -41,7 +41,7 @@ const OptionsSection = () => {
                 <div className="row">
                     {data?.map((item)=>{
                         return (
-                            <div className="col-4" key={item.title}>
+                            <div className="col-lg-4" key={item.title}>
                                 <Item title={item.title} desc={item.desc} icon={item.icon}/>
                             </div>
                         )

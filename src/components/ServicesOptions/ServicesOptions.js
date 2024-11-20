@@ -1,5 +1,6 @@
 import styles from "./ServicesOptions.module.scss";
 import Item from "./Item";
+import cover from './../../assetss/images/rb_63991.png'
 
 const ServicesOptions = () => {
   const data = [
@@ -18,6 +19,7 @@ const ServicesOptions = () => {
   ];
   return (
     <div className={styles.mainContainer}>
+      <img src={cover} alt="cover" className={styles.mainContainer__cover}/>
       <div className="container"> 
         <div className={styles.services}>
           <h3>
@@ -28,7 +30,7 @@ const ServicesOptions = () => {
         <div className="row">
           {data?.map((item) => {
             return (
-              <div className="col-4" key={item.title}>
+              <div className="col-lg-4" key={item.title}>
                 <Item title={item.title} desc={item.desc} icon={item.icon} />
               </div>
             );
