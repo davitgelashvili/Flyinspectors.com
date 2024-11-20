@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
+import styles from './UploadWidget.module.scss'
 
-const UploadWidget = ({value, valueName, setValue}) => {
+const UploadWidget = ({value, valueName, setValue, title, name}) => {
     const cloudinaryRef = useRef()
     const widgetRef = useRef()
 
@@ -20,9 +21,13 @@ const UploadWidget = ({value, valueName, setValue}) => {
             }
         })
     return (
-        <label>
-            <button className="btn btn-primary" onClick={() => widgetRef.current.open()}>
-                upload Ticket
+        <label className={styles.uploadwidget}>
+            <p className={styles.uploadwidget__title}>{title}</p>
+            <button className={styles.uploadwidget__btn} onClick={(e) => {
+                widgetRef.current.open()
+                e.preventDefault()
+            }}>
+                {name}
             </button>
         </label>
     )

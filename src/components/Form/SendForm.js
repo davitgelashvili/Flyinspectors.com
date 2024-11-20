@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import UploadWidget from "../UploadWidget/UploadWidget"
-import Form from "./Form"
+import SendFormBody from "./SendFormBody"
 
 const SendForm = () => {
+    const [accept, setAccept] = useState(false)
     const [value, setValue] = useState({
-        pasportImage: "",
+        passportImage: "",
         ticketImage: "",
         firstName: "",
         lastName: "",
@@ -13,13 +13,31 @@ const SendForm = () => {
         city: "",
         address: "",
         problem: "",
-        fightNumber: "",
+        flightNumber: "",
         date: "",
+        select: "",
         description: "",
     })
 
     useEffect(()=>{
-        console.log('change value:', value)
+        console.log(value)
+        if(
+            value.firstName !== "" &&
+            value.lastName !== "" &&
+            value.phone !== "" &&
+            value.email !== "" &&
+            value.city !== "" &&
+            value.address !== "" &&
+            value.problem !== "" &&
+            value.fightNumber !== "" &&
+            value.date !== "" &&
+            value.select !== "" &&
+            value.description !== "" 
+        ){
+            setAccept(true)
+        } else {
+            setAccept(false)
+        }
     }, [value])
 
     const uploadFile = (e) => {
@@ -55,9 +73,8 @@ const SendForm = () => {
         })
 
     }
-
     return (
-        <Form value={value} setValue={setValue} uploadFile={uploadFile}/>
+        <SendFormBody value={value} setValue={setValue} uploadFile={uploadFile} setAccept={setAccept} accept={accept}/>
     )
 }
 

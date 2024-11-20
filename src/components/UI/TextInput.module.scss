@@ -1,37 +1,46 @@
 
-.textInput {
+.textlabel {
+    width: 100%;
     display: flex;
     align-items: center;
-    padding: 10px; 
     border: 1px solid #0D6693;
     border-radius: 6px;
     background-color: #fff;
-    transition: border-color 0.3s ease;
-    width: 263px;
-    height: 40px;
-  
-    &:focus-within {
-      border-color: #007bff; 
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    &__icon {
+      margin-right: 8px;
+      margin-left: 13px;
     }
-  }
-  
-  .textInput__icon {
-    width: 13px;
-    height: 13px;
-    margin-right: 8px;
-  }
-  
-  .textInput__input {
-    flex: 1;
-    border: none;
-    outline: none; 
-    font-size: 1rem;
-    padding: 0; 
-    background: transparent; 
-  }
+
+    &__input {
+      flex: 1;
+      border: none;
+      outline: none; 
+      font-size: 1rem;
+      padding: 9px 0;
+    }
+    
+    &__textarea {
+        background-color: #F5F5F5;
+    }
+}
+
   
   .textInput__textarea {
     min-height: 100px; /* საკმარისი სივრცე მრავალსტრიქონიანი ტექსტისთვის */
     padding: 8px; /* ტექსტისთვის სივრცის დასამატებლად */
     resize: vertical; /* სურვილისამებრ: ვერტიკალური ზომის შეცვლის ნებართვა */
+  }
+
+  .textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    background-color:#F5F5F5;;
   }

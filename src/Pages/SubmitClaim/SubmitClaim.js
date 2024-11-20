@@ -1,10 +1,8 @@
-import SendForm from "../../components/SendForm/SendForm";
+import Form from "../../components/Form/Form";
 
 function SubmitClaim() {
     return (
-        <>
-        <SendForm />
-        </>
+        <Form />
     )
 }
 

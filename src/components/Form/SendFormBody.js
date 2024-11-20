@@ -1,10 +1,11 @@
 
 import { useEffect, useState } from "react";
 import UploadWidget from "../UploadWidget/UploadWidget";
+import DisableUploadWidget from "../UploadWidget/DisableUploadWidget";
 import TextInput from "../UI/TextInput";
 import styles from "./form.module.scss";
 
-const Form = ({ value, setValue, uploadFile }) => {
+const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
     const inputs = [
         {
             id: 32345,
@@ -57,7 +58,7 @@ const Form = ({ value, setValue, uploadFile }) => {
         {
             id: 36273,
             name: "problem",
-            type: "text",
+            type: "select",
             value: value.problem,
             placeholder: "Select problem",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/sfew5nqowhazn00o76ho.svg"
@@ -66,24 +67,32 @@ const Form = ({ value, setValue, uploadFile }) => {
             id: 485845,
             name: "flightNumber",
             type: "text",
-            value: value.fightNumber,
+            value: value.flightNumber,
             placeholder: "FlightNumber",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/mn0qzrqet0padkpm6rgj.svg"
         },
         {
             id: 457853,
             name: "date",
-            type: "text",
+            type: "date",
             value: value.date,
             placeholder: "Date",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/ivmgutc8eckheli6at9q.svg"
         },
         {
-            id: 2542645,
-            name: "Select",
-            type: "text",
-            value: value.description,
+            id: 35262,
+            name: "select",
+            type: "select",
+            value: value.select,
             placeholder: "Select",
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/nzxyqpypgliouotsa6ie.svg"
+        },
+        {
+            id: 64375,
+            name: "description",
+            type: "textarea",
+            value: value.description,
+            placeholder: "Describe the  problem",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/nzxyqpypgliouotsa6ie.svg"
         },
         
@@ -94,55 +103,73 @@ const Form = ({ value, setValue, uploadFile }) => {
   };
 
   return (
-    <div className={styles.bgColor}>
-      <div className={styles.headerForm}>
-        <h3>Fill Form</h3>
-        <h3>Check the Status</h3>
-      </div>
-      <div className={styles.formDiv}>
-        <form className={styles.formContainer}>
-          {inputs.map((input) => (
-            <TextInput
-              key={input.id}
-              type={input.type}
-              value={input.value}
-              placeholder={input.placeholder}
-              name={input.name}
-              icon={input.icon}
-              onChange={handleChange}
-            />
-          ))}
-        </form>
-      </div>
-      <div className={styles.problemSection}>
-        <label className={styles.problemLabel}>
-          <textarea
-            name="descriptionProblem"
-            placeholder="Describe the problem..."
-            onChange={handleChange}
-            className={styles.problemTextarea}
-          />
-        </label>
+    <form>
+      <div className="row">
+        {inputs?.map((input) => {
+          return (
+            <>
+            {input.type === 'textarea' ? (
+              <div className="col-12">
+                <TextInput
+                  key={input.id}
+                  type={input.type}
+                  value={input.value}
+                  placeholder={input.placeholder}
+                  name={input.name}
+                  icon={input.icon}
+                  onChange={handleChange}
+                />
+              </div>
+            ) : (
+              <div className="col-6">
+                <TextInput
+                  key={input.id}
+                  type={input.type}
+                  value={input.value}
+                  placeholder={input.placeholder}
+                  name={input.name}
+                  icon={input.icon}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
+            </>
+          )
+        })}
+        <div className="col-6">
+          {
+            accept ? (
+              <UploadWidget  value={value} valueName={"passportImage"} setValue={setValue} title={'Passport Photo'} name={'Upload Photo'} />
+            ) : (
+              <DisableUploadWidget title={'Passport Photo'} name={'0 Upload Photo'}/>
+            )
+          }
+        </div>
+        <div className="col-6">
+          {
+            accept ? (
+              <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} title={'Ticket'} name={'Upload Ticket'} />
+            ) : (
+              <DisableUploadWidget title={'Ticket'} name={'0 Upload Ticket'}/>
+            )
+          }
+        </div>
+        <div className="col-12">
+          {
+            accept ? (
+              <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} title={'Other documents'} name={'Upload Picture'} />
+            ) : (
+              <DisableUploadWidget title={'Other documents'} name={'0 Upload Picture'}/>
+            )
+          }
+        </div>
+        <div className="col-12">
+          <button onClick={(e) => uploadFile(e)}>Submit Form</button>
+        </div>
       </div>
 
-      <div className={styles.btnDiv}>
-        <div className={styles.uploadSection}>
-        <p>Passport Photo</p>
-        <UploadWidget  value={value} valueName={"passportImage"} setValue={setValue} />
-        </div>
-        <div className={styles.uploadSection}>
-        <p>Ticket</p>
-        <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} />
-        </div>
-        {value.passportImage && <img src={value.passportImage} alt="" />}
-      </div>
-        <div className={styles.otherDoc}>
-        <p>Other documents</p>
-        <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} />
-        </div>
-        <button onClick={(e) => uploadFile(e)}>Submit Form</button>
-    </div>
+    </form> 
   );
 };
 
-export default Form;
+export default SendFormBody;
