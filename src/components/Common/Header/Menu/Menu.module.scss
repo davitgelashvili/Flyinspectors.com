@@ -19,7 +19,7 @@
 
 
 .nav_item {
-    position: relative; 
+    position: relative;
 }
 
 
@@ -40,6 +40,7 @@
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
     z-index: 10;
+    flex-direction: column;
 }
 
 .nav_item:hover .dropdown {
@@ -61,4 +62,3 @@
         color: #fff;
     }
 }
-
