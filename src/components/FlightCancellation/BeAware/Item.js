@@ -11,6 +11,7 @@ const Item = () => {
         was purchased by your employer, you have the right to receive compensation 
         as a victim passenger and not a ticket buyer
         </p>
+        <br></br>
         <h4>Provision of food, communication facilities and accommodation</h4>
         <p>
         The EC 261 law imposes obligation to airline. You as a delayed flight passenger, 
@@ -18,6 +19,7 @@ const Item = () => {
         access to communications. You also have the right to request international call, 
         send mail or fax and stay in hotel.
         </p>
+        <br></br>
         <h4>Alternate flight</h4>
         <p>
          During the delayed flight, you have the option of a different flight,
@@ -25,6 +27,7 @@ const Item = () => {
          an alternative ticket. This is also possible even if the new flight class 
          exceeds the ticket class you purchased on the delayed flight.
         </p>
+        <br></br>
         <h4>Cash compensation or voucher</h4>
         <p>
         When your flight is delayed, your airline may offer you compensation in the form

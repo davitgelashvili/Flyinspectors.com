@@ -21,9 +21,9 @@ const Faq = () => {
       <div className="container">
         <div className="row">
           <div className="col-12 d-flex justify-content-center">
-            <h3> FREQUENTLY ASKED QUESTIONS</h3>
+            <div className={styles.faqHeader}> FREQUENTLY ASKED QUESTIONS</div>
           </div>
-          <div className="col-8">
+          <div className="col-12">
             <Item />
           </div>
         </div>

@@ -1,9 +1,9 @@
-import FlightDelay from "../../components/FlightDelay/FlightDelay";
+import MissedConnection from "../../components/MissedConnection/MissedConnection";
 
 function YourRights() {
   return (
     <div>
-      <FlightDelay />
+      <MissedConnection />
     </div>
   );
 }

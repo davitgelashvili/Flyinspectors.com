@@ -1,0 +1,53 @@
+.services {
+    margin-top: 60px;
+    width: 99%;
+}
+
+.TextOfQuestion {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 32px;
+    color: #000000;
+    text-align: start;
+    margin: 0;
+    cursor: default;
+    padding-left: 25px;
+}
+
+.headerOfQuestion {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 32px;
+    color: #000000;
+    text-align: justify;
+    margin: 0;
+    cursor: default;
+    padding-bottom: 20px;
+    padding-left: 25px;
+}
+
+.headerOfBullet {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 22px;
+    color: #000000;
+    text-align: justify;
+    cursor: default;
+    padding-bottom: 20px;
+}
+
+.bulletList {
+    list-style-type: disc;
+
+
+    li {
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 22px;
+        color: #000000;
+        text-align: justify;
+        margin: 0;
+        cursor: default;
+        margin-bottom: 10px;
+    }
+}

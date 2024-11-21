@@ -5,7 +5,12 @@
 .mainDiv {
     box-shadow: 0px 6px 6px 0px #0000000D;
     border-radius: 5px;
-    margin-right: 15px;
+}
+
+.image {
+    position: relative;
+    width: 493px;
+     height: 400px;
 }
 
 .header {
@@ -14,7 +19,7 @@
     color: #ffffff;
     padding: 20px;
     margin: 0 0 15px 0;
-    border-radius: 8px;
+    border-radius: 9px 9px 0 0;
     text-align: start;
     font-size: 20px;
 }

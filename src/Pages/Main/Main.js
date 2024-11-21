@@ -3,7 +3,7 @@ import OptionsSection from "../../components/OptionsSection/OptionsSection";
 import ServicesOptions from "../../components/ServicesOptions/ServicesOptions";
 import WhyWe from "../../components/WhyWe/WhyWe";
 import Faq from "../../components/FAQ/Faq"
-// import styles from "./SubmitClaim.module.scss";
+import WeGivesYou from "../../components/WeGivesYou/WeGivesYou";
 
 function Main() {
   return (
@@ -13,6 +13,7 @@ function Main() {
       <ServicesOptions />
       <WhyWe />
       <Faq/>
+      <WeGivesYou/>
     </main>
   );
 }

@@ -3,7 +3,7 @@ import CompensationHowMuch from "./CompensationHowMuch/CompensationHowMuch";
 import BeAware from "./BeAware/BeAware";
 import CompensationInfo from "./CompensationInfo/CompensationInfo";
 
-function YourRights() {
+function FlightCancellation() {
   return (
     <div>
       <CompensationInfo />
@@ -14,4 +14,4 @@ function YourRights() {
   );
 }
 
-export default YourRights;
+export default FlightCancellation;
