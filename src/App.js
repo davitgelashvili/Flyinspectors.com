@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import Footer from './components/Common/Footer/Footer';
 import Header from './components/Common/Header/Header';
 import Main from './Pages/Main/Main';
@@ -10,8 +10,10 @@ import FlightCancellation from './components/FlightCancellation/FlightCancellati
 import OverBooked from './components/OverBookedFlight/OverBooked'
 import MissedConnection from './components/MissedConnection/MissedConnection';
 import LostLuggage from './components/LostLuggage/LostLuggage';
+import AdminPanel from './Pages/AdminPanel/AdminPanel';
 
 function App() {
+
     return (
         <>
         <Header />
@@ -24,6 +26,7 @@ function App() {
             <Route path={'/your-rights/overbooked-flight'} element={<OverBooked />}/>
             <Route path={'/your-rights/missed-connection'} element={<MissedConnection />}/>
             <Route path={'/your-rights/lost-luggage'} element={<LostLuggage />}/>
+            <Route path={'/adminpanel'} element={<AdminPanel />}/>
         </Routes>
         <Footer />
         </>
