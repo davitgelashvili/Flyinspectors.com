@@ -1,0 +1,60 @@
+ul,
+li {
+
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.MainLogo {
+    width: 310px;
+    height: 126px;
+}
+
+.Footer {
+    background-color: #394149;
+}
+
+.Footer {
+    padding: 20px;
+    background-color: #394149;
+    color: #fff;
+
+    .LogoDiv {
+        gap: 15px;
+    }
+
+    .PageLinks {
+        text-align: left;
+    }
+}
+
+.MainDiv {
+
+    ul.List {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .List__link {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 22px;
+        color: inherit;
+        text-decoration: none;
+        margin-bottom: 10px;
+
+        &:hover {
+            color: #007bff;
+        }
+    }
+
+}
+
+.SocialMedia {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+}

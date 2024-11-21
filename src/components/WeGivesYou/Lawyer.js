@@ -13,8 +13,8 @@ const Lawyer = () => {
         <div className="card-body">
           <span className={styles.card__text}>Expensive, Complex </span>
           <span className={styles.card__text}>
-            Cost risk: several hundred euros (as much as the compensation you
-            may get)
+            Cost risk: several hundred euros as much as the compensation you
+            may get
           </span>
           <span className={styles.card__text}>Time-consuming </span>
           <span className={styles.card__text}>
