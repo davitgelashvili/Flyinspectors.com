@@ -4,9 +4,8 @@ import styles from "./RateSection.module.scss";
 const RateSection = () => {
   return (
     <div>
-      <div className={`${styles.services} container `}>
+      <div className={`${styles.services} `}>
         <div className="row">
-          <div className="col-12"></div>
           <Item />
         </div>
       </div>
