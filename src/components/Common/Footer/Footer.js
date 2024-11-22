@@ -6,26 +6,21 @@ import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <div className={`col-lg-12 column ${styles.Footer} `}>
-      <div className="row">
-        <div
-          className={`col-lg-3 col-12 d-flex flex-column align-items-start ${styles.LogoDiv}`}
-        >
-          <div>
-            <Logo />
+    <footer className={`${styles.footer} `}>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-3">
+            <div>
+              <Logo />
+              <SocialMedia />
+            </div>
           </div>
-          <div>
-            <div className={styles.SocialMedia}>Social Media</div>
-            <SocialMedia />
+          <div className="col-lg-9">
+            <PageLinks />
           </div>
-        </div>
-        <div
-          className={`col-lg-9 col-12  d-flex justify-content-start text-start align-items-center ${styles.PageLinks}`}
-        >
-          <PageLinks />
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

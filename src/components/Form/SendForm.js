@@ -2,10 +2,20 @@ import { useEffect, useState } from "react"
 import SendFormBody from "./SendFormBody"
 
 const SendForm = () => {
-    const [accept, setAccept] = useState(false)
+    const unicueID = 
+        Math.floor((Math.random() * 10) + 1) +''+
+        Math.floor((Math.random() * 10) + 1) +''+
+        Math.floor((Math.random() * 10) + 1) +''+
+        Math.floor((Math.random() * 10) + 1) +''+
+        Math.floor((Math.random() * 10) + 1)
+    const [accept, setAccept] = useState({
+        passport: false,
+        ticket: false,
+        other: false
+    })
     const [value, setValue] = useState({
-        passportImage: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732114543/fnded4xmbkvadnqxxygk.jpg",
-        ticketImage: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732114543/fnded4xmbkvadnqxxygk.jpg",
+        passportImage: "",
+        ticketImage: "",
         firstName: "test",
         lastName: "test",
         phone: "test",
@@ -16,11 +26,10 @@ const SendForm = () => {
         flightNumber: "test",
         date: "test",
         select: "test",
-        description: "test",
+        description: "",
     })
 
     useEffect(()=>{
-        console.log(value)
         if(
             value.firstName !== "" &&
             value.lastName !== "" &&
@@ -34,10 +43,34 @@ const SendForm = () => {
             value.select !== "" &&
             value.description !== "" 
         ){
-            setAccept(true)
+            setAccept({
+                passport: true,
+                ticket: false,
+                other: false
+            })
+            if(value.passportImage !== ""){
+                setAccept({
+                    passport: true,
+                    ticket: true,
+                    other: false
+                })
+            }
+            
+            if(value.ticketImage !== ""){
+                setAccept({
+                    passport: true,
+                    ticket: true,
+                    other: true
+                })
+            }
         } else {
-            setAccept(false)
+            setAccept({
+                passport: false,
+                ticket: false,
+                other: false
+            })
         }
+        console.log(unicueID)
     }, [value])
 
     const uploadFile = (e) => {

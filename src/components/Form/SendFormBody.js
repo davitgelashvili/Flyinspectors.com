@@ -5,6 +5,7 @@ import DisableUploadWidget from "../UploadWidget/DisableUploadWidget";
 import TextInput from "../UI/TextInput";
 import styles from "./form.module.scss";
 import Signature from "./Signature";
+import File from "../UploadWidget/File";
 
 const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
     const inputs = [
@@ -137,8 +138,10 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
         })}
         <div className="col-6">
           {
-            accept ? (
+            accept.passport ? (
               <UploadWidget  value={value} valueName={"passportImage"} setValue={setValue} title={'Passport Photo'} name={'Upload Photo'} />
+            ) : accept.ticket ? (
+              <File title={'Passport Photo'} name={'upoaded'}/>
             ) : (
               <DisableUploadWidget title={'Passport Photo'} name={'0 Upload Photo'}/>
             )
@@ -146,7 +149,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
         </div>
         <div className="col-6">
           {
-            accept ? (
+            accept.ticket ? (
               <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} title={'Ticket'} name={'Upload Ticket'} />
             ) : (
               <DisableUploadWidget title={'Ticket'} name={'0 Upload Ticket'}/>
@@ -155,7 +158,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
         </div>
         <div className="col-12">
           {
-            accept ? (
+            accept.other ? (
               <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} title={'Other documents'} name={'Upload Picture'} />
             ) : (
               <DisableUploadWidget title={'Other documents'} name={'0 Upload Picture'}/>

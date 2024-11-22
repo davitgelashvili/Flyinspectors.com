@@ -20,9 +20,13 @@ const UploadWidget = ({value, valueName, setValue, title, name}) => {
                 })
             }
         })
+
+    useEffect(()=>{console.log(value.passportImage, valueName)}, [value])
     return (
         <label className={styles.uploadwidget}>
             <p className={styles.uploadwidget__title}>{title}</p>
+            {console.log(value.valueName)}
+            {value.valueName !== undefined && "erti" }
             <button className={styles.uploadwidget__btn} onClick={(e) => {
                 widgetRef.current.open()
                 e.preventDefault()
