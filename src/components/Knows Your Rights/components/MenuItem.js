@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./BeAware.module.scss";
 
 const App = () => {
-  const [info, setInfo] = useState("Click an option to see information here.");
+  const [info, setInfo] = useState("Thousands of people every day struggle with the flight problems, yet 95% of them don’t know their rights. Here is all the information you need to get to know EC 261 regulation, and be aware of your rights as an airline passenger.");
 
   const options = [
     {
