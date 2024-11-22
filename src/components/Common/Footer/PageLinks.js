@@ -39,7 +39,7 @@ const PageLinks = () => {
         <ul className={`nav flex-column ${styles.List}`}>
           <li className={`nav-item mb-2 ${styles.List__item}`}>
             <Link
-              to="/your-rights/about-us"
+              to="/about-us"
               className={`nav-link ${styles.List__link}`}
             >
               About Us

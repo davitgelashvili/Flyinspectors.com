@@ -1,12 +1,13 @@
 import AboutUsSection from "./ABout Us Section/AboutUsSection";
+import OurCoreValues from "./Our core values/OurCoreValues";
 import RateSection from "./RateSection/RateSection";
-import BeAware from "./BeAware/BeAware"
+
 function AboutUs() {
   return (
     <div>
       <AboutUsSection />
       <RateSection />
-      <BeAware/>
+      <OurCoreValues />
     </div>
   );
 }
