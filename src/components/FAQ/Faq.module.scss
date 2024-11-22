@@ -2,15 +2,17 @@
   display: inline-block;
   justify-content: center;
   text-align: center;
-  border: 1px solid #ddd;
+  // border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   margin: 20px auto;
   font-family: Arial, sans-serif;
+  padding-bottom: 30px;
+  padding-top: 30px;
 
   &__item {
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 30px;
+    // border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
   }
 
   &__header {
@@ -24,6 +26,17 @@
     transition: background-color 0.3s;
   }
 
+}
+
+.Faq {
+  background-image: url(../Images/EarthPic.png);
+}
+
+.faqHeader {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 44px;
+  color: #0d6693;
 }
 
 .contentP {
