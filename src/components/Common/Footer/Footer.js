@@ -7,7 +7,7 @@ import styles from "./Footer.module.scss";
 const Footer = () => {
   return (
     <footer className={`${styles.footer} `}>
-      <div className="container">
+      <div className="">
         <div className="row">
           <div className="col-lg-3">
             <div>
@@ -15,7 +15,7 @@ const Footer = () => {
               <SocialMedia />
             </div>
           </div>
-          <div className="col-lg-9">
+          <div className="col-lg-9 align-items-center">
             <PageLinks />
           </div>
         </div>
