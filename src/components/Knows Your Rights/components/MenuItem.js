@@ -13,22 +13,22 @@ const App = () => {
     {
       icon: "#",
       label: "Flight Cancellation",
-      info: "Thousands of people every day struggle with the flight problems, yet 95% of them don’t know their rights. Here is all the information you need to get to know EC 261 regulation, and be aware of your rights as an airline passenger.",
+      info: "Just as delays, flight cancellations happen too. If you were not notified 14 days prior you are eligible for compensation.",
     },
     {
       icon: "#",
-      label: "Option 3",
-      info: "Thousands of people every day struggle with the flight problems, yet 95% of them don’t know their rights. Here is all the information you need to get to know EC 261 regulation, and be aware of your rights as an airline passenger.",
+      label: "Missed Connection",
+      info: "You can’t always get to desired destination with one flight, sometimes you have to use connecting flights. Which depends on the schedules of each other and can be missed even with the slightest delays.",
     },
     {
       icon: "#",
-      label: "Option 4",
-      info: "Thousands of people every day struggle with the flight problems, yet 95% of them don’t know their rights. Here is all the information you need to get to know EC 261 regulation, and be aware of your rights as an airline passenger.",
+      label: "Damaged / Lost Luggage",
+      info: "A lot of travelers leave their luggage for airlines to handle, there are cases when the luggage is lost, delayed or damaged.",
     },
     {
       icon: "#",
-      label: "Option 5",
-      info: "Thousands of people every day struggle with the flight problems, yet 95% of them don’t know their rights. Here is all the information you need to get to know EC 261 regulation, and be aware of your rights as an airline passenger.",
+      label: "Denied Boarding",
+      info: "Airlines tend to overbook their flights, and sometimes it so happens that when you show up to your flight there is no more room for you, so you are denied boarding, with or without the reason explained to you. Either way you are eligible for a compensation.",
     },
   ];
 
