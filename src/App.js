@@ -12,6 +12,7 @@ import MissedConnection from "./components/MissedConnection/MissedConnection";
 import LostLuggage from "./components/LostLuggage/LostLuggage";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
 import AboutUs from "./components/About Us/AboutUs";
+import BlogPage from "./components/Blog page/BlogPage";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path={"/your-rights/lost-luggage"} element={<LostLuggage />} />
         <Route path={"/adminpanel"} element={<AdminPanel />} />
         <Route path={"/about-us"} element={<AboutUs />} />
+        <Route path={"/about-us/blog"} element={<BlogPage />} />
       </Routes>
       <Footer />
     </>
