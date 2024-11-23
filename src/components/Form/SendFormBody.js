@@ -139,9 +139,11 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
         <div className="col-6">
           {
             accept.passport ? (
-              <UploadWidget  value={value} valueName={"passportImage"} setValue={setValue} title={'Passport Photo'} name={'Upload Photo'} />
-            ) : accept.ticket ? (
-              <File title={'Passport Photo'} name={'upoaded'}/>
+              accept.ticket ? (
+                <File title={'Passport Photo'} name={'IMG 1'}/>
+              ) : (
+                <UploadWidget  value={value} valueName={"passportImage"} setValue={setValue} title={'Passport Photo'} name={'Upload Photo'} />
+              )
             ) : (
               <DisableUploadWidget title={'Passport Photo'} name={'0 Upload Photo'}/>
             )
@@ -150,7 +152,11 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
         <div className="col-6">
           {
             accept.ticket ? (
-              <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} title={'Ticket'} name={'Upload Ticket'} />
+              accept.other ? (
+                <File title={'Passport Photo'} name={'IMG 2'}/>
+              ) : (
+                <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} title={'Ticket'} name={'Upload Ticket'} />
+              )
             ) : (
               <DisableUploadWidget title={'Ticket'} name={'0 Upload Ticket'}/>
             )
