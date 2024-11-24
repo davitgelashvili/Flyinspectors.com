@@ -12,6 +12,7 @@ import LostLuggage from "./Pages/LostLuggage/LostLuggage";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
 import AboutUs from "./Pages/About Us/AboutUs";
 import BlogPage from "./Pages/Blog page/BlogPage";
+import FaqPage from "./Pages/FAQ page/FaqPage";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path={"/adminpanel"} element={<AdminPanel />} />
         <Route path={"/about-us"} element={<AboutUs />} />
         <Route path={"/about-us/blog"} element={<BlogPage />} />
+        <Route path={"/about-us/faq"} element={<FaqPage />} />
       </Routes>
       <Footer />
     </>
