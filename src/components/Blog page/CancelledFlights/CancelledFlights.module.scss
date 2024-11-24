@@ -3,7 +3,7 @@
     width: 99%;
 
     &__header {
-        
+
         font-weight: 700;
         font-size: 36px;
         line-height: 48px;
@@ -24,7 +24,24 @@
         color: #6d6e76;
     }
 
+    &__image {
+
+        height: auto;
+
+        @media (max-width: 919px) {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
 }
+
+.card {
+    display: block; /* Default display for the card */
+  
+    @media (max-width: 768px) {
+      display: none; /* Hide card for tablets and smaller devices */
+    }
+  }
 
 .button {
     margin-top: 20px;

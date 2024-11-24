@@ -1,4 +1,4 @@
-import styles from "./BeAware.module.scss";
+import styles from "./MechanicalIssues.module.scss";
 import image from "../../Images/AirportPic.png";
 const Item = () => {
   return (

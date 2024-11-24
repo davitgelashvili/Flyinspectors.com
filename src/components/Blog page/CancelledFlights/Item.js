@@ -14,7 +14,7 @@ const Item = () => {
           Summer, vacations, holidays, these are periods when most people plan
           their dream trips. Everything is ready and only thing you have to do,
           is to go to the airport and get in your plane. What is the worst that
-          may happen when you are going to start your trip? – Words on the huge
+          may happen when you are going to start your trip? - Words on the huge
           screen: …..flight cancelled! Why happened so, that flights get
           cancelled?
         </p>

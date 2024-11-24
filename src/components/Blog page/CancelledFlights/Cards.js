@@ -2,6 +2,8 @@ import styles from "./CancelledFlights.module.scss";
 import image from "../../Images/TwoWomenPic.png";
 const Cards = () => {
   return (
+
+    <div className={styles.card}>
     <div className="container">
       <div className="col">
         <div className="card mb-3">
@@ -37,6 +39,7 @@ const Cards = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

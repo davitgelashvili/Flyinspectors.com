@@ -1,13 +1,14 @@
-import BeAware from "./BeAware/BeAware";
 import Slider from "./Slider/Slider";
 import CancelledFlights from "./CancelledFlights/CancelledFlights";
+import MechanicalIssues from "./Mechanical Issues/MechanicalIssues";
+
 
 function BlogPage() {
   return (
     <div>
       <Slider />
       <CancelledFlights />
-      <BeAware />
+      <MechanicalIssues />
     </div>
   );
 }

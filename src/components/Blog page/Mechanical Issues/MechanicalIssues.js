@@ -1,19 +1,18 @@
 import Item from "./Item.js";
-import styles from "./BeAware.module.scss";
-import image from "../../Images/MonitorImage.png"
+import styles from "./MechanicalIssues.module.scss";
 
-const BeAware = () => {
+
+const MechanicalIssues = () => {
   return (
     <div>
       <div className={`${styles.services} container`}>
+        <h3 className={styles.services__header}>Mechanical Issues</h3>
         <div className="row">
-          <div className={`${styles.item}`}>
             <Item />
-          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default BeAware;
+export default MechanicalIssues;
