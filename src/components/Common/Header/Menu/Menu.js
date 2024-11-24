@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import styles from "./Menu.module.scss";
 
 const Menu = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const location = useLocation();
 
   const data = [
     {
       link: "/",
       title: "Home",
     },
-
     {
       link: "/your-rights/flight-delay",
       title: "Your Rights",
@@ -25,13 +25,11 @@ const Menu = () => {
         { link: "/your-rights/lost-luggage", title: "Lost Luggage" },
       ],
     },
-
     {
-      link: "/",
+      link: "/about-us",
       title: "About Us",
       dropdown: [
         { link: "/about-us", title: "About Us" },
-
         {
           link: "/about-us/blog",
           title: "Blog",
@@ -42,7 +40,6 @@ const Menu = () => {
         },
       ],
     },
-
     {
       link: "/submit-claim",
       title: "Contact Us",
@@ -52,9 +49,13 @@ const Menu = () => {
   return (
     <ul className={styles.nav}>
       {data?.map((item) => {
+        const isActive =
+          item.link === location.pathname ||
+          item.dropdown?.some((subItem) => subItem.link === location.pathname);
+
         return (
           <li
-            className={styles.nav_item}
+            className={`${styles.nav_item} ${isActive ? styles.active : ""}`}
             key={item.title}
             onMouseEnter={() => item.dropdown && setShowDropdown(true)}
             onMouseLeave={() => item.dropdown && setShowDropdown(false)}
@@ -65,7 +66,14 @@ const Menu = () => {
             {item.dropdown && showDropdown && (
               <ul className={styles.dropdown}>
                 {item.dropdown.map((subItem) => (
-                  <li key={subItem.title}>
+                  <li
+                    key={subItem.title}
+                    className={`${
+                      subItem.link === location.pathname
+                        ? styles.activeDropdownItem
+                        : ""
+                    }`}
+                  >
                     <Link className={styles.dropdown_item} to={subItem.link}>
                       {subItem.title}
                     </Link>

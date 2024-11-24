@@ -1,5 +1,5 @@
 import styles from "./MechanicalIssues.module.scss";
-import image from "../../Images/AirportPic.png";
+import image from "../../../components/Images/AirportPic.png";
 const Item = () => {
   return (
     <div className={styles.mainDiv}>
