@@ -6,7 +6,6 @@ const Menu = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const data = [
-    
     {
       link: "/",
       title: "Home",
@@ -28,10 +27,15 @@ const Menu = () => {
     },
 
     {
-      link: "/about-us",
+      link: "/",
       title: "About Us",
       dropdown: [
-        { link: "/about-us/blog", title: "Blog" },
+        { link: "/about-us", title: "About Us" },
+
+        {
+          link: "/about-us/blog",
+          title: "Blog",
+        },
         {
           link: "/about-us/faq",
           title: "FAQ",
