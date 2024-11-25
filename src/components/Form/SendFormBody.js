@@ -165,14 +165,14 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
         <div className="col-12">
           {
             accept.other ? (
-              <UploadWidget  value={value} valueName={"ticketImage"} setValue={setValue} title={'Other documents'} name={'Upload Picture'} />
+              <UploadWidget  value={value} valueName={"otherImage"} setValue={setValue} title={'Other documents'} name={'Upload Picture'} />
             ) : (
               <DisableUploadWidget title={'Other documents'} name={'0 Upload Picture'}/>
             )
           }
         </div>
         <div className="col-12">
-          <Signature value={value} valueName={"ticketImage"} setValue={setValue} title={'Electronic signature:'} desc={'Please sign the electronic signature.'}/>
+          {/* <Signature value={value} valueName={"ticketImage"} setValue={setValue} title={'Electronic signature:'} desc={'Please sign the electronic signature.'}/> */}
         </div>
         <div className="col-12">
           <button onClick={(e) => uploadFile(e)}>Submit Form</button>

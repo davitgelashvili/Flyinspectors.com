@@ -10,7 +10,7 @@ function Header() {
                 <div className={styles.navbar}>
                     <Logo />
                     <Menu />
-                    <SubmitLink />
+                    <SubmitLink className={styles.submitlink} />
                 </div>
             </div>
         </header>

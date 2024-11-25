@@ -4,7 +4,7 @@ import image from "../Images/LogoLeptop.png";
 const Yourself = () => {
   return (
     <div className="gap-5 d-flex justify-content-center">
-      <div className="card bg-primary" style={{ width: "18rem" }}>
+      <div className={`${styles.card} bg-primary`} style={{ width: "18rem" }}>
         <img src={image} className={styles.image} alt="LogoLeptop" />
         <div className={styles.header}>YOURSELF</div>
         <div className="card-body">

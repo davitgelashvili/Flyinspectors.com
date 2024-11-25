@@ -1,5 +1,8 @@
 .logo {
-    width: 163px;
-    height: 58px;
-    cursor: pointer;
+    max-width: 163px;
+    margin: 0;
+
+    &__img {
+      width: 100%;
+    }
   }

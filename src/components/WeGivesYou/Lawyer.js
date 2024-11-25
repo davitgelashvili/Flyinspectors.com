@@ -3,7 +3,7 @@ import Operator from "../Images/Operator.png";
 const Lawyer = () => {
   return (
     <div className="gap-5 d-flex justify-content-center">
-      <div className="card bg-primary" style={{ width: "18rem" }}>
+      <div className={`${styles.card} bg-primary`} style={{ width: "18rem" }}>
         <img
           src={Operator}
           className={styles.OperatorLogo}
