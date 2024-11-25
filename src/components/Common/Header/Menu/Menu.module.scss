@@ -68,7 +68,8 @@
     font-size: 14px;
     transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 4px;
-
+    text-align: start;
+    padding-left: 15px;
     &:hover {
         color: #0d6693;
         background-color: #f0f0f0;

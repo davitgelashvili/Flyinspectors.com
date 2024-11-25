@@ -41,7 +41,7 @@ const Menu = () => {
       ],
     },
     {
-      link: "/submit-claim",
+      link: "/contactus",
       title: "Contact Us",
     },
   ];
