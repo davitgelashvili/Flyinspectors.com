@@ -7,6 +7,7 @@ const Item = ({item}) => {
                 <img src={item?.icon} className={styles.item__icon} alt="icon" />
             </div>
             <h1 className={styles.item__title}>{item?.title}</h1>
+            <p className={styles.item__subtitle}>{item?.subtitle}</p>
             <ul className={styles.item__list}>
                 {item?.list?.map((li)=>{
                     return (

@@ -12,7 +12,7 @@ const Menu = () => {
       title: "Home",
     },
     {
-      link: "/your-rights/flight-delay",
+      
       title: "Your Rights",
       dropdown: [
         { link: "/your-rights/flight-delay", title: "Flight Delay" },
@@ -26,7 +26,7 @@ const Menu = () => {
       ],
     },
     {
-      link: "/about-us",
+ 
       title: "About Us",
       dropdown: [
         { link: "/about-us", title: "About Us" },
