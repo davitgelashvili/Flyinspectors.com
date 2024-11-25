@@ -1,55 +1,43 @@
-.card {
+.item {
+  width: 100%;
   background-color: #0D6693;
   border-radius: 5px;
-}
+  padding: 15px 30px;
 
-.image {
-  width: 87px;
-  height: 83px;
-  margin-bottom: 15px;
-display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
-  margin: 0 auto; 
-}
+  &__cover {
+    width: 100%;
+    height: 116px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
 
-.OperatorLogo {
-  display: flex;
-  align-self: center;
-  width: 82px;
-  height: 79px;
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
-  margin: 0 auto; 
-  
-}
+  &__icon {
+    max-height: 100%;
+    max-width: 100%;
+  }
 
-.Main__logo {
-  display: flex;
-  align-items: center;
-  max-width: 280px;
-  height: 116px;
-}
+  &__title {
+    margin: 0;
+    font-size: 20PX;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+  }
 
-.header {
-  font-size: 20PX;
-  font-weight: 700;
-  line-height: 24px;
-  text-align: center;
-  color: #ffffff;
-}
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 
-.card__text {
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.5%;
-  color: #fff0f0;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin-bottom: 10px;
+    li {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.5%;
+      color: #fff0f0;
+    }
+  }
 }
