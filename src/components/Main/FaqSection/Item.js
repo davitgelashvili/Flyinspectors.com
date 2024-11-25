@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Faq.module.scss";
+import styles from "./FaqSection.module.scss";
 
 const Item = () => {
   const [activeIndex, setActiveIndex] = useState(null);

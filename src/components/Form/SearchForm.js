@@ -6,7 +6,7 @@ const SearchForm = () => {
     const [data, setData] = useState()
     function handleChange(e){
         e.preventDefault()
-        fetch('http://localhost:8000/id', {
+        fetch('https://flyinspectors-back.vercel.app/id', {
             method: "POST",
             headers: {
               'Content-type': 'application/json',

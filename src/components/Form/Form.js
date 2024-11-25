@@ -10,10 +10,10 @@ const Form = () => {
         <div className="container">
             <div  className={`${styles['form']}`}>
                 <div className={`${styles['form__head']}`}>
-                    <div className={`${styles['form__head--btn']} ${styles['active']}`} onClick={() => setFormActive(true)}>
+                    <div className={`${styles['form__head--btn']} ${formActive && styles['active']}`} onClick={() => setFormActive(true)}>
                         Fill Form
                     </div>
-                    <div className={`${styles['form__head--btn']}`}  onClick={() => setFormActive(false)}>
+                    <div className={`${styles['form__head--btn']} ${!formActive && styles['active']}`}  onClick={() => setFormActive(false)}>
                         Check The Status
                     </div>
                 </div>
