@@ -25,6 +25,7 @@ const Edit = () => {
                     <div className="col-6" key={item._id}>
                         <div>
                             <h2>{item.firstName} {item.lastName}</h2>
+                            <h2><strong>status:</strong>{item.status}</h2>
                             <p><strong>emaill:</strong>{item.email}</p>
                             <p><strong>phone:</strong>{item.phone}</p>
                             <p><strong>address:</strong>{item.date}</p>

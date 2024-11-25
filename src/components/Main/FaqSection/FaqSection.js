@@ -1,7 +1,8 @@
 import Item from "./Item.js";
-import styles from "./Faq.module.scss";
+import styles from "./FaqSection.module.scss";
 
-const Faq = () => {
+const FaqSection = () => {
+  
   return (
     <div className={styles.Faq}>
       <div className="container">
@@ -18,4 +19,4 @@ const Faq = () => {
   );
 };
 
-export default Faq;
+export default FaqSection;

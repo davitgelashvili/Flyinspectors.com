@@ -6,12 +6,16 @@ import SubmitLink from '../../UI/SubmitLink';
 function Slider() {
     const data = [
         {
-            img: 'https://s3-alpha-sig.figma.com/img/3262/7114/ddf321457f0170b49f5dcbd6a1f9af2b?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bGCpoddVPqyw-FV3v4bcfgT6IS0kFXD6GLaNTS3DK0WfVVyMDa0KGnBBpM35cle8gthy3A-GwGFtw~S4nBTUUfthC5UGU8c8O8HimXA10e3N33PVpSEsPYcBiNqnEbZo9KEIKFJa6r-6Ud0SbKE8Jp8hDmK1DBMKflDP~lBbIkuCLONFUOozSaoDN0Q5uM6lCrEzUO0-qisVjI3IIsYIOmbcI4o-8gXmq5eOAXDzjaFPWKrDKuxhsMOdmJOM9hVbQXv13ijai3DIJmyFbmNRV5St5Mq-zy2RRp0IFHzY8rDLsPR6YcfL~w-wuY59GGkfoPuL9H7BxH93rHibf~uhjA__',
-            title: 'Test'
+            img: 'https://res.cloudinary.com/dluqxr8lw/image/upload/v1732546905/561_glg7fd.png',
+            title: 'Test1'
         },
         {
-            img: 'https://s3-alpha-sig.figma.com/img/3262/7114/ddf321457f0170b49f5dcbd6a1f9af2b?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bGCpoddVPqyw-FV3v4bcfgT6IS0kFXD6GLaNTS3DK0WfVVyMDa0KGnBBpM35cle8gthy3A-GwGFtw~S4nBTUUfthC5UGU8c8O8HimXA10e3N33PVpSEsPYcBiNqnEbZo9KEIKFJa6r-6Ud0SbKE8Jp8hDmK1DBMKflDP~lBbIkuCLONFUOozSaoDN0Q5uM6lCrEzUO0-qisVjI3IIsYIOmbcI4o-8gXmq5eOAXDzjaFPWKrDKuxhsMOdmJOM9hVbQXv13ijai3DIJmyFbmNRV5St5Mq-zy2RRp0IFHzY8rDLsPR6YcfL~w-wuY59GGkfoPuL9H7BxH93rHibf~uhjA__',
+            img: 'https://res.cloudinary.com/dluqxr8lw/image/upload/v1732546906/1456_bdfodt.png',
             title: 'Test 2'
+        },
+        {
+            img: 'https://res.cloudinary.com/dluqxr8lw/image/upload/v1732546906/2149272103_hoips3.png',
+            title: 'Test 3'
         }
     ]
     return (
