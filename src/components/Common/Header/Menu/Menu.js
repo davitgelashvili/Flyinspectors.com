@@ -41,7 +41,7 @@ const Menu = () => {
       ],
     },
     {
-      link: "/contactus",
+      link: "/contact-us",
       title: "Contact Us",
     },
   ];
