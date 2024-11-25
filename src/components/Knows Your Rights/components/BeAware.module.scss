@@ -58,25 +58,31 @@
 
     &__option {
         padding: 10px 20px;
-        background: #C7CDD9;
-        color: #606E8D;
+        background: #c7cdd9;
+        color: #606e8d;
         border: none;
         cursor: pointer;
         text-align: left;
-        transition: background-color 0.3s ease;
-
+        transition: background-color 0.3s ease, color 0.3s ease;
+    
         &:first-child {
-            border-top-left-radius: 9px;
+          border-top-left-radius: 9px;
         }
-
+    
         &:last-child {
-            border-bottom-left-radius: 9px;
+          border-bottom-left-radius: 9px;
         }
-
+    
         &:hover {
-            background-color: #0D6693;
+          background-color: #0d6693;
+          color: #ffffff; /* Change color on hover */
         }
-    }
+      }
+    
+      &__option.active {
+        background-color: #0d6693;
+        color: #ffffff; /* Active button text color */
+      }
 
 
     &__infoarea {

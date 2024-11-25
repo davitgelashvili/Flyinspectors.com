@@ -16,6 +16,8 @@ const SendForm = () => {
     const [value, setValue] = useState({
         passportImage: "",
         ticketImage: "",
+        otherImage: "",
+        userId: unicueID,
         firstName: "test",
         lastName: "test",
         phone: "test",
@@ -70,7 +72,7 @@ const SendForm = () => {
                 other: false
             })
         }
-        console.log(unicueID)
+        console.log(value)
     }, [value])
 
     const uploadFile = (e) => {

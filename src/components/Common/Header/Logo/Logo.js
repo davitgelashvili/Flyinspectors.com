@@ -1,12 +1,15 @@
-import logo from "../Logo/LogoPic/LogoFly.png"
-import styles from './Logo.module.scss'
+import { Link } from "react-router-dom";
+import logo from "../Logo/LogoPic/LogoFly.png";
+import styles from './Logo.module.scss';
 
 const Logo = () => {
     return (
-        <h1>
-        <img src={logo} alt="Logo" className={styles.logo} />
+        <h1 className={styles.logo}>
+            <Link to="/">
+                <img src={logo} alt="Logo" className={styles.logo__img} />
+            </Link>
         </h1>
-    )
+    );
 }
 
-export default Logo
+export default Logo;

@@ -5,7 +5,7 @@ import rate from "../../../components/Images/ratePic.png";
 
 const Item = () => {
   return (
-    <div>
+
       <div className={`row ${styles.rowContainer} `}>
         <div className={`${styles.casesCompleted} col-md-3`}>
           <div className="card mb-3" style={{ maxWidth: "500px" }}>
@@ -78,7 +78,7 @@ const Item = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 
