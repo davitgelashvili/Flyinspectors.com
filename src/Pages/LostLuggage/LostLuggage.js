@@ -2,7 +2,6 @@ import CompensationIf from "./CompensationIf/CompensationIf";
 import BeAware from "./BeAware/BeAware";
 import CompensationInfo from "./CompensationInfo/CompensationInfo";
 
-
 function LostLuggage() {
   return (
     <div>

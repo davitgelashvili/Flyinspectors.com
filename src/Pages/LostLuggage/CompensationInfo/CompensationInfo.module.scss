@@ -8,8 +8,9 @@
 }
 
 .image {
-    width: 480px;
-    height: 392px;
+    width: 459px;
+    height: 386px;
+    position: relative;
 }
 
 .header {
@@ -24,12 +25,12 @@
 }
 
 .item {
-    padding: 0px 20px 70px 20px;
+    padding: 0px 20px 190px 20px;
 }
 
 .item h4 {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 22px;
     color: #000000;
     text-align: justify;

@@ -1,5 +1,6 @@
 import Item from "./Item.js";
 import styles from "./SubmitClaim.module.scss";
+import image from "../../../components/Images/SubmitPic.png";
 
 const SubmitClaim = () => {
   return (
@@ -12,6 +13,7 @@ const SubmitClaim = () => {
             <Item />
           </div>
         </div>
+        <img src={image} className={styles.services__image} alt="PayMethods" />
       </div>
     </div>
   );

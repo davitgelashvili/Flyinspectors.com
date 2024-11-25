@@ -1,5 +1,6 @@
+import Item from "./Item.js";
 import styles from "./CompensationInfo.module.scss";
-import Image from "../../../components/Images/PicOfSupport.png"
+import Image from "../../../components/Images/LostLuggage.png";
 
 
 const CompensationInfo = () => {
@@ -8,11 +9,14 @@ const CompensationInfo = () => {
       <div className={`${styles.services} container`}>
         <div className="row">
           <div className="col-lg-6 col-12">
-            <img className={styles.image} src={Image} alt="Pic Of canceled FLight"></img>
+            <img className={styles.image} src={Image} alt="Lost Luggage"></img>
           </div>
+          <div className={`${styles.item} col-lg-6 col-12`}>
+            <Item />
           </div>
         </div>
       </div>
+    </div>
   );
 };
 

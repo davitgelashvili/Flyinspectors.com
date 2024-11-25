@@ -13,6 +13,7 @@ import AdminPanel from "./Pages/AdminPanel/AdminPanel";
 import AboutUs from "./Pages/About Us/AboutUs";
 import BlogPage from "./Pages/Blog page/BlogPage";
 import FaqPage from "./Pages/FAQ page/FaqPage";
+import ContactUs from "./Pages/Contact Us/ContactUs";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path={"/about-us"} element={<AboutUs />} />
         <Route path={"/about-us/blog"} element={<BlogPage />} />
         <Route path={"/about-us/faq"} element={<FaqPage />} />
+        <Route path={"/contact-us"} element={<ContactUs />} />
       </Routes>
       <Footer />
     </>
