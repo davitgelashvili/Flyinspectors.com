@@ -1,10 +1,10 @@
-import AboutUsSection from "./ABout Us Section/AboutUsSection";
+import ContactUsSection from "./Contact Us Section/ContactUsSection";
 import FeedBackComp from "./Feedback Form/FeedBackComp";
 
 function ContactUs() {
   return (
     <div>
-      <AboutUsSection />
+      <ContactUsSection/>
       <FeedBackComp />
     </div>
   );

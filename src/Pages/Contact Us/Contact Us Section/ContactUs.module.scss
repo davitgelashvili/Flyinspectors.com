@@ -2,15 +2,11 @@
     margin-top: 60px;
 
     &__item {
-        padding: 0px 20px 70px 20px;
 
     }
 
     &__image {
-        position: relative;
-        bottom: 30px;
-        right: 40px;
-
+        max-width: 100%;
     }
 }
 
@@ -57,7 +53,6 @@
 .cardContainer {
     display: flex;
     flex-direction: column;
-    gap: 15px; // Space between cards
 }
 
 .card {

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./AboutUsSection.module.scss";
+import styles from "./ContactUs.module.scss";
 
 const Item = () => {
   const data = [

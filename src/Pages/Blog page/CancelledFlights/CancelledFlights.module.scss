@@ -35,14 +35,6 @@
     }
 }
 
-.card {
-    display: block; /* Default display for the card */
-  
-    @media (max-width: 768px) {
-      display: none; /* Hide card for tablets and smaller devices */
-    }
-  }
-
 .button {
     margin-top: 20px;
     background-color: #FD9B28;

@@ -8,11 +8,13 @@ const AboutUsSection = () => {
       <div className={`${styles.services} container`}>
         <div className="row">
           <div className="col-lg-6 col-12">
+            <div>
             <img
               className={styles.services__image}
               src={image}
               alt="EarthPic"
             ></img>
+            </div>
           </div>
           <div className={`${styles.services__item} col-lg-6 col-12`}>
             <Item />

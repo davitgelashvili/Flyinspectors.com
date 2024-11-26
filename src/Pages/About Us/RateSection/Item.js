@@ -8,12 +8,12 @@ const Item = () => {
 
       <div className={`row ${styles.rowContainer} `}>
         <div className={`${styles.casesCompleted} col-md-3`}>
-          <div className="card mb-3" style={{ maxWidth: "500px" }}>
+          <div className="card mb-3">
             <div className="row g-0 align-items-center">
               <div className="col-md-4">
                 <img
                   src={image}
-                  className="img-fluid rounded-start"
+                  className={styles.image}
                   alt="Card Image"
                 />
               </div>
@@ -21,9 +21,9 @@ const Item = () => {
                 <div className="card-body d-flex flex-row align-items-center ms-3">
                   <h4 className={`card-title ${styles.cardNumber}`}>2564</h4>
                   <br></br>
-                  <h5 className={`card-title ${styles.description}`}>
+                  <div className={`card-title ${styles.description}`}>
                     Cases Complete
-                  </h5>
+                  </div>
                 </div>
               </div>
             </div>
@@ -32,12 +32,12 @@ const Item = () => {
 
         {/* Happy Customers */}
         <div className={`${styles.happyCustomers} col-md-4`}>
-          <div className="card mb-3" style={{ maxWidth: "540px" }}>
+          <div className="card mb-3">
             <div className="row g-0 align-items-center">
               <div className="col-md-4">
                 <img
                   src={emotions}
-                  className="img-fluid rounded-start"
+                  className={styles.image}
                   alt="Card Image"
                 />
               </div>
@@ -45,9 +45,9 @@ const Item = () => {
                 <div className="card-body d-flex flex-row align-items-center ms-3">
                   <h4 className={`card-title ${styles.cardNumber}`}>1234</h4>
                   <br></br>
-                  <h5 className={`card-title ${styles.description}`}>
+                  <div className={`card-title ${styles.description}`}>
                     Happy Customers
-                  </h5>
+                  </div>
                 </div>
               </div>
             </div>
@@ -56,12 +56,12 @@ const Item = () => {
 
         {/* Success Rate */}
         <div className={`${styles.successRate} col-md-4`}>
-          <div className="card mb-3" style={{ maxWidth: "540px" }}>
+          <div className="card mb-3">
             <div className="row g-0 align-items-center">
               <div className="col-md-4">
                 <img
                   src={rate}
-                  className="img-fluid rounded-start"
+                  className={styles.image}
                   alt="Card Image"
                 />
               </div>
@@ -69,9 +69,9 @@ const Item = () => {
                 <div className="card-body d-flex flex-row align-items-center ms-3">
                   <h4 className={`card-title ${styles.cardNumber}`}>98%</h4>
                   <br></br>
-                  <h5 className={`card-title ${styles.description}`}>
+                  <div className={`card-title ${styles.description}`}>
                     Success Rate
-                  </h5>
+                  </div>
                 </div>
               </div>
             </div>

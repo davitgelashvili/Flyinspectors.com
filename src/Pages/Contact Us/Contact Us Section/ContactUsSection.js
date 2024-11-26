@@ -1,8 +1,8 @@
 import Item from "./Item.js";
-import styles from "./AboutUsSection.module.scss";
+import styles from "./ContactUs.module.scss";
 import image from "../../../components/Images/PicOfSupport.png";
 
-const AboutUsSection = () => {
+const ContactUsSection = () => {
   return (
     <div>
       <div className={`${styles.services} container`}>
@@ -23,4 +23,4 @@ const AboutUsSection = () => {
   );
 };
 
-export default AboutUsSection;
+export default ContactUsSection;

@@ -3,20 +3,42 @@
     border-radius: 5px;
     width: 409px;
     height: 50px;
-    // margin-top: 4px;
     padding: 15px;
 }
 
 .label {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 44px;
 }
 
 .textarea {
     margin-top: 50px;
-    height: 100%;
-    text-align: start;
+    width: 100%; 
+    height: 220px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    resize: vertical;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
+    &:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        outline: none;
+        background-color: #fff;
+      }
+
+      &::placeholder {
+        color: #aaa;
+        font-style: italic;
+      }
 }
 
+.containerInputs {
+    margin-left: 230px;
+}

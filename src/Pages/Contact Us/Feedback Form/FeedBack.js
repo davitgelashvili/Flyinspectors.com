@@ -2,9 +2,6 @@ import styles from "./FeedBack.module.scss";
 
 function FeedBack() {
   return (
-
-
-    <div className="container">
       <form className="col-4">
         <label htmlFor="firstname" className={styles.label}>
           First and Last Name
@@ -42,7 +39,6 @@ function FeedBack() {
           </div>
         </div>
       </form>
-    </div>
   );
 }
 

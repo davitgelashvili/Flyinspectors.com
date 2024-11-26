@@ -19,9 +19,6 @@ const Item = () => {
           cancelled?
         </p>
       </div>
-      <div className="cardsDiv d-flex justify-content-end">
-        <Cards />
-      </div>
     </div>
   );
 };

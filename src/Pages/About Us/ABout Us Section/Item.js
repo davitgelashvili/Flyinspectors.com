@@ -9,7 +9,6 @@ const Item = () => {
           “We have means to ease the process of getting the rightful
           compensation for our customers.”
         </h4>
-        <p>Founder - Zura Katsitadze</p>
       </div>
     </div>
   );
