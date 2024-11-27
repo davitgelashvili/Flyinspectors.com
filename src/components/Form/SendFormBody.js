@@ -4,8 +4,8 @@ import UploadWidget from "../UploadWidget/UploadWidget";
 import DisableUploadWidget from "../UploadWidget/DisableUploadWidget";
 import TextInput from "../UI/TextInput";
 import styles from "./form.module.scss";
-import Signature from "./Signature";
 import File from "../UploadWidget/File";
+import SignatureContent from "./SignatureContent";
 
 const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
     const inputs = [
@@ -172,6 +172,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
           }
         </div>
         <div className="col-12">
+          <SignatureContent />
           {/* <Signature value={value} valueName={"ticketImage"} setValue={setValue} title={'Electronic signature:'} desc={'Please sign the electronic signature.'}/> */}
         </div>
         <div className="col-12">
