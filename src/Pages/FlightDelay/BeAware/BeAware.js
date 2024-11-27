@@ -6,12 +6,11 @@ import SectionText from "../../../components/SectionTextAndCover/SectionText.js"
 
 const BeAware = () => {
   return (
-    <div>
-      <div className={`${styles.services} container`}>
+    <div className={styles.services}>
+      <div className="container">
         <div className="row">
           <div className="col-lg-5">
             <SectionCover image={image} />
-          {/* <img className={styles.image} src={image} alt="MonitorPic"></img> */}
           </div>
           <div className={`col-lg-7 col-12`}>
             <SectionText title={'Be Aware'}>

@@ -4,11 +4,12 @@ import BeAware from "./BeAware/BeAware";
 import CompensationInfo from "./CompensationInfo/CompensationInfo";
 import TableJust from "./TableJust/TableJust";
 import CompensationEU from "./CompensationEU/CompensationEU";
+import styles from "./MissedConnection.module.scss"
 
 
 function MissedConnection() {
   return (
-    <div>
+    <div className={styles.MainContainer}>
       <CompensationInfo />
       <CompensationIf />
       <TableJust/>

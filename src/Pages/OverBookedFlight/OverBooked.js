@@ -4,11 +4,12 @@ import BeAware from "./BeAware/BeAware";
 import CompensationInfo from "./CompensationInfo/CompensationInfo";
 import TableJust from "./TableJust/TableJust";
 import CompensationEU from "./CompensationEU/CompensationEU";
+import styles from "./OverBooked.module.scss"
 
 
 function OverBooked() {
   return (
-    <div>
+    <div className={styles.MainContainer}>
       <CompensationInfo />
       <CompensationIf />
       <TableJust/>
