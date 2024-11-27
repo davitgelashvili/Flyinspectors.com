@@ -29,26 +29,23 @@ const Item = () => {
   ];
 
   return (
-    <div className={styles.mainDiv}>
-      <h3 className={styles.mainDiv__header}>Contact Us</h3>
-      <div className={styles.mainDiv__item}>
-        <div className="row">
-          {data.map((section, index) => (
-            <div className={` col-5 ${styles.section}`} key={index}>
-              <h3 className={styles.countryHeader}>{section.country}</h3>
-              <div className={styles.cardContainer}>
-                {section.cards.map((card, cardIndex) => (
-                  <div className={styles.card} key={cardIndex}>
-                    <h5>{card.label}</h5>
-                    <p>{card.value}</p>
-                  </div>
-                ))}
-              </div>
+      <div className="row">
+        {data.map((section, index) => (
+          <div className={`col-6`} key={index}>
+            <div>
+            <h3 className={styles.countryHeader}>{section.country}</h3>
+            <div className={styles.cardContainer}>
+              {section.cards.map((card, cardIndex) => (
+                <div className={styles.card} key={cardIndex}>
+                  <h5>{card.label}</h5>
+                  <p>{card.value}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
   );
 };
 

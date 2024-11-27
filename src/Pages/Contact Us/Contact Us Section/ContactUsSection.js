@@ -1,6 +1,8 @@
 import Item from "./Item.js";
 import styles from "./ContactUs.module.scss";
 import image from "../../../components/Images/PicOfSupport.png";
+import SectionCover from "../../../components/SectionTextAndCover/SectionCover.js";
+import SectionText from "../../../components/SectionTextAndCover/SectionText.js";
 
 const ContactUsSection = () => {
   return (
@@ -8,14 +10,17 @@ const ContactUsSection = () => {
       <div className={`${styles.services} container`}>
         <div className="row">
           <div className="col-lg-6 col-12">
-            <img
+            <SectionCover image={image} />
+            {/* <img
               className={styles.services__image}
               src={image}
               alt="PicOfSupport"
-            ></img>
+            ></img> */}
           </div>
-          <div className={`${styles.services__item} col-lg-6 col-12`}>
-            <Item />
+          <div className={`col-lg-6 col-12`}>
+            <SectionText title={'Contact Us'}>
+              <Item />
+            </SectionText>
           </div>
         </div>
       </div>
