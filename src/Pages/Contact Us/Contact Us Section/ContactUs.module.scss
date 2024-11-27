@@ -2,12 +2,19 @@
     margin-top: 60px;
 
     &__item {
+<<<<<<< Updated upstream:src/Pages/Contact Us/Contact Us Section/ContactUs.module.scss
 
     }
 
     &__image {
         max-width: 100%;
     }
+=======
+        // padding: 0px 20px 70px 20px;
+
+    }
+
+>>>>>>> Stashed changes:src/Pages/Contact Us/ABout Us Section/AboutUsSection.module.scss
 }
 
 
@@ -45,7 +52,7 @@
 }
 
 .section {
-    margin-left: 25px;
+    // margin-left: 25px;
     display: flex;
     flex-direction: column;
 }
@@ -56,10 +63,6 @@
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    padding: 10px 15px;
 
     h5 {
         margin: 0;

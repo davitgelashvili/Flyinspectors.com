@@ -7,7 +7,7 @@ function Header() {
     return (
         <header className={styles.header}>
             <div className="container">
-                <div className={styles.navbar}>
+                <div className={styles.header__content}>
                     <Logo />
                     <Menu />
                     <SubmitLink className={styles.submitlink} />
