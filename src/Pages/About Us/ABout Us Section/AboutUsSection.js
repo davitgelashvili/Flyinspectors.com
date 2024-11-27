@@ -10,22 +10,12 @@ const AboutUsSection = () => {
       <div className={`${styles.services} container`}>
         <div className="row">
           <div className="col-lg-6 col-12">
-<<<<<<< Updated upstream
-            <div>
-            <img
-              className={styles.services__image}
-              src={image}
-              alt="EarthPic"
-            ></img>
-            </div>
-=======
             <SectionCover image={image} />
             {/* <img
               className={styles.services__image}
               src={image}
               alt="EarthPic"
             ></img> */}
->>>>>>> Stashed changes
           </div>
           <div className={`col-lg-6 col-12`}>
             <SectionText title={'About Us'}>
