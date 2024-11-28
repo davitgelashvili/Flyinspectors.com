@@ -10,7 +10,7 @@ const CompensationIf = () => {
           <div className="col-lg-5 col-12">
             <BulletPoint />
           </div>
-          <div className={`${styles.item} col-lg-7 col-12`}>
+          <div className={`col-lg-7 col-12`}>
             <Item />
           </div>
         </div>

@@ -1,3 +1,9 @@
 .MainContainer {
     background: #fff;
 }
+
+@media(max-width: 768px) {
+    .MainContainer {
+        overflow: hidden;
+    }
+}

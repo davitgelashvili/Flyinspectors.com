@@ -2,7 +2,7 @@ import FeedBack from "./FeedBack";
 import styles from "./FeedBack.module.scss";
 function FeedBackComp() {
   return (
-    <div className="mb-5 ms-5 container row">
+    <div className="mb-5 container row">
       <h3>FeedBack Form</h3>
       <div className="col-lg-6">
         <FeedBack />

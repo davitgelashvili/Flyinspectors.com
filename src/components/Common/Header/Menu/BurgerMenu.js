@@ -52,9 +52,7 @@ const BurgerMenu = () => {
   return (
     <div className={styles.container}>
       <nav>
-        <ul className={`${styles.nav} ${
-                  IsOpen ? styles.open : ""
-                }`}>
+        <ul className={`${styles.nav} ${IsOpen ? styles.open : ""}`}>
           {data?.map((item) => {
             const isActive =
               item.link === location.pathname ||
@@ -70,10 +68,14 @@ const BurgerMenu = () => {
                 key={item.title}
                 onMouseEnter={() => item.dropdown && setShowDropdown(true)}
                 onMouseLeave={() => item.dropdown && setShowDropdown(false)}
+                onClick={() => setShowDropdown(!showDropdown)}
               >
-                <Link className={styles.pages} to={item.link}>
-                  {item.title}
-                </Link>
+                <div className={styles.dropdownTrigger}>
+                  <Link className={styles.pages} to={item.link}>
+                    {item.title}
+                  </Link>
+                  {item.dropdown && <span className={styles.arrow}>˅</span>}
+                </div>
                 {item.dropdown && showDropdown && (
                   <ul className={styles.dropdown}>
                     {item.dropdown.map((subItem) => (
@@ -99,7 +101,9 @@ const BurgerMenu = () => {
             );
           })}
         </ul>
-        <div className={styles.icon} onClick={toggleMenu} >☰</div>
+        <div className={styles.icon} onClick={toggleMenu}>
+          ☰
+        </div>
       </nav>
     </div>
   );

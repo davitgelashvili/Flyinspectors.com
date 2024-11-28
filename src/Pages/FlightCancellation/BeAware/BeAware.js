@@ -11,7 +11,6 @@ const BeAware = () => {
         <div className="row">
           <div className="col-lg-5">
             <SectionCover image={image} />
-            {/* <img className={styles.image} src={image} alt="MonitorPic"></img> */}
           </div>
           <div className={`${styles.item} col-lg-7 col-12`}>
             <SectionText title={'Be Aware'}>
