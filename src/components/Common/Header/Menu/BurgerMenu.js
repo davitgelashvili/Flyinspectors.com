@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./BurgerMenu.module.scss";
 
 const BurgerMenu = () => {
@@ -10,6 +10,10 @@ const BurgerMenu = () => {
   const toggleMenu = () => {
     setIsOpen(!IsOpen);
   };
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   const data = [
     {
