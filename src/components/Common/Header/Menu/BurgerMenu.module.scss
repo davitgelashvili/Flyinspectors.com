@@ -89,7 +89,11 @@
 @media(max-width: 768px) {
     .icon {
         display: block;
+    }
 
+    .container{
+        margin: 10px 0 10px 0;
+        
     }
 
     .container .nav {
