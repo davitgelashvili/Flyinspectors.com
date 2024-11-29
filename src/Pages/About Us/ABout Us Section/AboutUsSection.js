@@ -1,4 +1,3 @@
-import Item from "./Item.js";
 import styles from "./AboutUsSection.module.scss";
 import image from "../../../components/Images/FlightAppPic.png";
 import SectionCover from "../../../components/SectionTextAndCover/SectionCover.js";

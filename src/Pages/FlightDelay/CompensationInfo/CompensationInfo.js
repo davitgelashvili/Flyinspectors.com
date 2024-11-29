@@ -1,4 +1,3 @@
-import Item from "./Item.js";
 import styles from "./CompensationInfo.module.scss";
 import image from "../../../components/Images/EarthPic.png"
 import SectionCover from "../../../components/SectionTextAndCover/SectionCover.js";

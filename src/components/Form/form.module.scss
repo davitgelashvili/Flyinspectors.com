@@ -21,6 +21,11 @@
       text-align: center;
       cursor: pointer;
 
+      @media (max-width: 991px) {
+        padding: 9px;
+        font-size: 18px;
+      }
+
       &.active {
         background-color: #FD9B28;
       }
@@ -29,6 +34,10 @@
 
   &__body {
     padding: 37px 32px;
+
+    @media (max-width: 991px) {
+      padding: 23px 18px;
+    }
   }
 }
 

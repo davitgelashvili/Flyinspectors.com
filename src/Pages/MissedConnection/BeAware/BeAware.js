@@ -1,4 +1,3 @@
-import Item from "./Item.js";
 import styles from "./BeAware.module.scss";
 import image from "../../../components/Images/MonitorImage.png"
 import SectionCover from "../../../components/SectionTextAndCover/SectionCover.js";
