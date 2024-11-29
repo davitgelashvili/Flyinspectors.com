@@ -1,24 +1,34 @@
 import styles from "./MechanicalIssues.module.scss";
-import image from "../../../components/Images/AirportPic.png";
+import { Link } from "react-router-dom";
+import image from "../../../components/Images/TeamPic.png";
 const Item = () => {
   return (
     <div className={styles.mainDiv}>
-      <div className="imageDiv column">
+      <div className="">
         <img
           className={styles.mainDiv__image}
           src={image}
           alt="Airplane image with logo"
         />
-        <p className={styles.mainDiv__text}>
-          Summer, vacations, holidays, these are periods when most people plan
-          their dream trips. Everything is ready and only thing you have to do,
-          is to go to the airport and get in your plane. What is the worst that
-          may happen when you are going to start your trip? – Words on the huge
-          screen: …..flight cancelled! Why happened so, that flights get
-          cancelled?
-        </p>
       </div>
-      
+      <div className="">
+        <h3 className={styles.services__header}>
+          Airports that you may never want to leave{" "}
+        </h3>
+        <p className={styles.mainDiv__text}>
+          International air travel is normally a pretty stressful affair. We
+          hustle just to get to the airport. Then we stand through long lines in
+          both security and passport check, pass all necessary stages. These
+          everything may be exhausting. But there are some airports out there
+          that you may never want to leave. These airports were built to impress
+          travelers, not just to shuttle them around the world.
+        </p>
+        <button type="button" className={styles.button}>
+          <Link to="/about-us/blog-page-more" className={styles.link}>
+            Read More
+          </Link>{" "}
+        </button>
+      </div>
     </div>
   );
 };

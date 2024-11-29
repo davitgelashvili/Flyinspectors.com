@@ -6,16 +6,11 @@ import SectionText from "../../../components/SectionTextAndCover/SectionText.js"
 
 const ContactUsSection = () => {
   return (
-    <div>
-      <div className={`${styles.services} container`}>
+    <div className={styles.services}>
+      <div className={`mb-4 container`}>
         <div className="row">
           <div className="col-lg-6 col-12">
             <SectionCover image={image} />
-            {/* <img
-              className={styles.services__image}
-              src={image}
-              alt="PicOfSupport"
-            ></img> */}
           </div>
           <div className={`col-lg-6 col-12`}>
             <SectionText title={'Contact Us'}>

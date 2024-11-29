@@ -1,18 +1,18 @@
 import Item from "./Item.js";
 import styles from "./MechanicalIssues.module.scss";
 
-
-const MechanicalIssues = () => {
+const CancelledFlights = () => {
   return (
-    <div>
-      <div className={`${styles.services} container`}>
-        <h3 className={styles.services__header}>Mechanical Issues</h3>
-        <div className="row">
+    <div className={styles.services}>
+      <div className={`container`}>
+          <div className="">
+          </div>
+          <div className={`${styles.item}`}>
             <Item />
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 
-export default MechanicalIssues;
+export default CancelledFlights;
