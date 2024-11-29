@@ -7,7 +7,7 @@ import SectionText from "../../../components/SectionTextAndCover/SectionText.js"
 const ContactUsSection = () => {
   return (
     <div className={styles.services}>
-      <div className={`mb-4 container`}>
+      <div className={`container`}>
         <div className="row">
           <div className="col-lg-6 col-12">
             <SectionCover image={image} />

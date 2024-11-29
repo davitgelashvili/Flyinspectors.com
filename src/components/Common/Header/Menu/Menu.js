@@ -1,15 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import styles from "./Menu.module.scss";
+import { useTranslation } from "react-i18next";
 
 const Menu = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
+  const {t} = useTranslation()
 
   const data = [
     {
       link: "/",
-      title: "Home",
+      title: t('menu.home'),
     },
     {
       

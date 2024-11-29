@@ -7,7 +7,7 @@ import styles from "./form.module.scss";
 import File from "../UploadWidget/File";
 import SignatureContent from "./SignatureContent";
 
-const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
+const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad, load }) => {
     const inputs = [
         {
             id: 32345,
@@ -176,7 +176,13 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept }) => {
           {/* <Signature value={value} valueName={"ticketImage"} setValue={setValue} title={'Electronic signature:'} desc={'Please sign the electronic signature.'}/> */}
         </div>
         <div className="col-lg-12">
-          <button onClick={(e) => uploadFile(e)}>Submit Form</button>
+          <button onClick={(e) => uploadFile(e)}>
+            {load ? (
+              'იგზავნება'
+            ) : (
+              'გაგზავნა'
+            )}
+          </button>
         </div>
       </div>
 

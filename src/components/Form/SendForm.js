@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react"
 import SendFormBody from "./SendFormBody"
+import PopUp from "./PopUp"
 
 const SendForm = () => {
-    const unicueID = 
+    const [load, setLoad] = useState(false)
+    const [popup, setPopup] = useState(false)
+    const [unicueID, setUnicueID] = useState(
         Math.floor((Math.random() * 10) + 1) +''+
         Math.floor((Math.random() * 10) + 1) +''+
         Math.floor((Math.random() * 10) + 1) +''+
         Math.floor((Math.random() * 10) + 1) +''+
         Math.floor((Math.random() * 10) + 1)
+    )
     const [accept, setAccept] = useState({
         passport: false,
         ticket: false,
@@ -77,6 +81,8 @@ const SendForm = () => {
 
     const uploadFile = (e) => {
         e.preventDefault()
+        setPopup(true)
+        setLoad(true)
         fetch('https://flyinspectors-back.vercel.app/email', {
             method: "POST",
             headers: {
@@ -90,26 +96,32 @@ const SendForm = () => {
         .then((res) => res.json())
         .then(res => {
             console.log("send email:", res);
-        })
-
-        fetch('https://flyinspectors-back.vercel.app/client', {
-            method: "POST",
-            headers: {
-              'Content-type': 'application/json',
-              'Access-Control-Allow-Origin': '*'
-            },
-            body: JSON.stringify({
-                ...value
+        }).finally(()=>{
+            fetch('https://flyinspectors-back.vercel.app/client', {
+                method: "POST",
+                headers: {
+                  'Content-type': 'application/json',
+                  'Access-Control-Allow-Origin': '*'
+                },
+                body: JSON.stringify({
+                    ...value
+                })
+            })
+            .then((res) => res.json())
+            .then(res => {
+                console.log("save data:", res);
+            }).finally(()=>{
+                setLoad(false)
             })
         })
-        .then((res) => res.json())
-        .then(res => {
-            console.log("save data:", res);
-        })
+
 
     }
     return (
-        <SendFormBody value={value} setValue={setValue} uploadFile={uploadFile} setAccept={setAccept} accept={accept}/>
+        <>
+        <SendFormBody value={value} setValue={setValue} uploadFile={uploadFile} setAccept={setAccept} accept={accept} load={load} setLoad={setLoad}/>
+        { popup && <PopUp load={load} setPopup={setPopup} unicueID={unicueID}/> }
+        </>
     )
 }
 

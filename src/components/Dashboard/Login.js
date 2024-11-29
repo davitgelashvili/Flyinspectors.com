@@ -1,9 +1,12 @@
 import { useState } from "react"
 import TextInput from "../UI/TextInput"
+import { useDispatch } from "react-redux"
+import { userAction } from "../../store/userData"
 
-const Login = ({setLogin}) => {
+const Login = () => {
     const [user, setUser] = useState("info@flyinspectors.com")
     const [pass, setPass] = useState("Flyinspectors2017.")
+    const dispatch = useDispatch()
     return (
         <div>
             <TextInput
@@ -24,7 +27,7 @@ const Login = ({setLogin}) => {
                 />
             <button onClick={() => {
                 if(process.env.REACT_APP_adminUser == user && process.env.REACT_APP_adminPass == pass){
-                    setLogin(true)
+                    dispatch(userAction.changeLogedIn(true))
                 }
             }}>
                 Login

@@ -5,7 +5,7 @@ const TextInput = ({type, value, placeholder, name, icon, onChange}) => {
         case 'select':
             return (
                 <label className={`${styles['textlabel']}`}>
-                    <img src={icon} alt="icon" className={`${styles['textlabel__icon']}`} />
+                    {icon && <img src={icon} alt="icon" className={`${styles['textlabel__icon']}`} />}
                     <select 
                         className={`${styles['textlabel__input']}`}
                         type={type}
@@ -34,7 +34,7 @@ const TextInput = ({type, value, placeholder, name, icon, onChange}) => {
         default:
             return (
                 <label className={`${styles['textlabel']}`}>
-                    <img src={icon} alt="icon" className={`${styles['textlabel__icon']}`} />
+                    {icon && <img src={icon} alt="icon" className={`${styles['textlabel__icon']}`} />}
                     <input 
                         className={`${styles['textlabel__input']}`}
                         type={type}

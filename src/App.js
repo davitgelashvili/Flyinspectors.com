@@ -15,6 +15,9 @@ import BlogPage from "./Pages/Blog page/BlogPage";
 import FaqPage from "./Pages/FAQ page/FaqPage";
 import ContactUs from "./Pages/Contact Us/ContactUs";
 import BlogPageMore from "./Pages/BlogPageMore/BlogPageMore";
+import UserList from "./components/Dashboard/User/List";
+import UserEdit from "./components/Dashboard/User/Edit";
+import "./i18n/i18n";
 
 function App() {
   return (
@@ -38,6 +41,8 @@ function App() {
         />
         <Route path={"/your-rights/lost-luggage"} element={<LostLuggage />} />
         <Route path={"/adminpanel"} element={<AdminPanel />} />
+        <Route path={"/adminpanel/userlist"} element={<UserList />} />
+        <Route path={"/adminpanel/userlist/:id"} element={<UserEdit />} />
         <Route path={"/about-us"} element={<AboutUs />} />
         <Route path={"/about-us/blog"} element={<BlogPage />} />
         <Route path={"/about-us/faq"} element={<FaqPage />} />

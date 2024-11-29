@@ -31,7 +31,7 @@ const Item = () => {
   return (
       <div className="row">
         {data.map((section, index) => (
-          <div className={`col-6`} key={index}>
+          <div className={`col-lg-6`} key={index}>
             <div>
             <h3 className={styles.countryHeader}>{section.country}</h3>
             <div className={styles.cardContainer}>

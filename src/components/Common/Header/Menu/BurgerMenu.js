@@ -1,11 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styles from "./BurgerMenu.module.scss";
+import { useTranslation } from "react-i18next";
 
 const BurgerMenu = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
   const [IsOpen, setIsOpen] = useState(false);
+  const {t} = useTranslation()
 
   const toggleMenu = () => {
     setIsOpen(!IsOpen);
@@ -18,7 +20,7 @@ const BurgerMenu = () => {
   const data = [
     {
       link: "/",
-      title: "Home",
+      title: t('menu.home'),
     },
     {
       title: "Your Rights",

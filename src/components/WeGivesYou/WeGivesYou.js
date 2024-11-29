@@ -50,7 +50,7 @@ const WeGivesYou = () => {
         <div className="row">
           {data?.map((item) => {
             return (
-              <div className="col-lg-4">
+              <div className="col-lg-4" key={item.id}>
                 <Item item={item} />
               </div>
             )
