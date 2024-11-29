@@ -1,16 +1,18 @@
+import { useTranslation } from "react-i18next"
 import Item from "./Item"
 import styles from './OptionsSection.module.scss'
 
 const OptionsSection = () => {
+    const {t} = useTranslation()
     const data = [
         {
-            title: "Flight Delay Compensation",
-            desc: "If your flight delayed for 3+ hours you are eligible for compensation.",
+            title: t('opensection.delay.title'),
+            desc: t('opensection.delay.desc'),
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476179/ic_schedule_24px_1_tanbbs.svg"
         },
         {
-            title: "Flight Cancellation Compensation",
-            desc: "Problem with flight cancellation without prior notice (or less then 14 days)? According to EU regulations, you are eligible for compensation.",
+            title: t('opensection.compensation.title'),
+            desc: t('opensection.compensation.desc'),
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476178/ic_event_24px_d9o56u.svg"
         },
         {
@@ -36,7 +38,7 @@ const OptionsSection = () => {
     ]
     return (
         <div className={styles.OptionsSection}>
-                <h3 className={styles.title}>DO YOU QUALIFY FOR A COMPENSATION</h3>
+                <h3 className={styles.title}>{t('opensection.sectionTitle')}</h3>
             <div className="container">
                 <div className="row">
                     {data?.map((item)=>{
