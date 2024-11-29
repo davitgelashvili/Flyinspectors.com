@@ -21,6 +21,7 @@ const SendForm = () => {
         passportImage: "",
         ticketImage: "",
         otherImage: "",
+        signature: "",
         userId: unicueID,
         firstName: "test",
         lastName: "test",

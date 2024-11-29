@@ -65,6 +65,7 @@ const UserEdit = () => {
                     <p><strong>flightNumber:</strong>{data.flightNumber}</p>
                     <p><strong>problem:</strong>{data.problem}</p>
                     <p><strong>description:</strong>{data.description}</p>
+                    <img src={data.signature} alt='res' />
                 </div>
             </div>
         </div>

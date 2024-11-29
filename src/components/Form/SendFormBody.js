@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import UploadWidget from "../UploadWidget/UploadWidget";
 import DisableUploadWidget from "../UploadWidget/DisableUploadWidget";
 import TextInput from "../UI/TextInput";
-import styles from "./form.module.scss";
 import File from "../UploadWidget/File";
 import SignatureContent from "./SignatureContent";
+import ReactSignatureCanvas from 'react-signature-canvas'
+import styles from './Signature.module.scss'
 
 const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad, load }) => {
+    const [signature, setSignature] = useState()
     const inputs = [
         {
             id: 32345,
@@ -172,7 +174,17 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           }
         </div>
         <div className="col-lg-12">
-          <SignatureContent />
+          <div className={styles.signature__body}>
+            <ReactSignatureCanvas 
+                ref={(ref)=> setSignature(ref)}
+                onEnd={() => {
+                    const res = signature.getTrimmedCanvas().toDataURL('image/png')
+                    setValue({ ...value, "signature": res })
+                }}
+                penColor='green'
+                canvasProps={{width: 500, height: 200, className: 'sigCanvas'}} />
+          </div>
+          {/* <SignatureContent value={value} setValue={setValue}/> */}
           {/* <Signature value={value} valueName={"ticketImage"} setValue={setValue} title={'Electronic signature:'} desc={'Please sign the electronic signature.'}/> */}
         </div>
         <div className="col-lg-12">
