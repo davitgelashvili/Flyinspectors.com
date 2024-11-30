@@ -53,6 +53,7 @@ const UserEdit = () => {
                             <option value={''}>choose status</option>
                             <option value={'In progress'}>In progress</option>
                             <option value={'Done'}>Done</option>
+                            <option value={'Test'}>Test</option>
                         </select>
                         <button onClick={handlClick}>edit</button>
                     </div>
