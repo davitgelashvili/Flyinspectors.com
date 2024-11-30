@@ -17,7 +17,7 @@ function Header() {
 
     return (
         <header className={styles.header}>
-            <div className="container">
+            <div className={styles.container}>
                 <div className={styles.header__content}>
                     <Logo />
                     <BurgerMenu/>
