@@ -25,8 +25,8 @@
 
 .mainDiv {
     display: flex;
+    flex-direction: row;
     max-width: 100%;
-    margin-top: 80px;
 
     &__text {
         font-weight: 400;
@@ -42,6 +42,7 @@
     }
 
     @media (max-width: 768px) {
+    
         &__text {
             font-weight: 400;
             font-size: 11px;
@@ -52,11 +53,25 @@
 
         &__image {
             margin-top: 20px;
-            max-height: 190px;
-            max-width: 158px;
+            max-height: 100%;
+            max-width: 100%;
         }
     }
 }
+
+@media (max-width: 768px) {
+    .mainDiv {
+        display: flex;
+        flex-direction: column;
+
+        &__textArea{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+}
+
 .link {
     text-decoration: none;
     color: inherit;

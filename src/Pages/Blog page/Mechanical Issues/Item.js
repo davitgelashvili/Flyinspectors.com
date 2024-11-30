@@ -11,7 +11,7 @@ const Item = () => {
           alt="Airplane image with logo"
         />
       </div>
-      <div className="">
+      <div className={styles.mainDiv__textArea}>
         <h3 className={styles.services__header}>
           Airports that you may never want to leave{" "}
         </h3>
