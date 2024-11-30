@@ -4,8 +4,8 @@ import BulletPoint from "./BulletPoint.js";
 
 const CompensationEU = () => {
   return (
-    <div>
-      <div className={`${styles.services} container `}>
+    <div className={styles.services}>
+      <div className={`container`}>
         <div className="row">
           <div className="col-lg-6 col-12">
             <BulletPoint />

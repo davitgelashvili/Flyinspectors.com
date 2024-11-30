@@ -6,8 +6,8 @@ import SectionText from "../../../components/SectionTextAndCover/SectionText.js"
 
 const CompensationInfo = () => {
   return (
-    <div>
-      <div className={`${styles.services} container`}>
+    <div className={styles.services}>
+      <div className={`container`}>
         <div className="row">
           <div className="col-lg-6 col-12">
             {/* <img className={styles.image} src={Image} alt="Lost Luggage"></img> */}

@@ -5,12 +5,11 @@ import SectionCover from "../../../components/SectionTextAndCover/SectionCover.j
 
 const TableJust = () => {
   return (
-    <div>
-      <div className={`${styles.services} container `}>
+    <div className={styles.services}>
+      <div className={`container`}>
         <div className="row">
           <div className="col-lg-6 col-12">
             <SectionCover image={image} />
-            {/* <img src={image} alt="AirplanePic"></img> */}
           </div>
           <div className={`${styles.item} col-lg-6 col-12`}>
             <Item />
