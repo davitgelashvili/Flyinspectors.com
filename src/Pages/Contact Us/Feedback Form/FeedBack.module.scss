@@ -1,3 +1,7 @@
+.mainDiv {
+    margin-left: 230px;
+}
+
 .input {
     border: 1px solid #7C8DB0;
     border-radius: 5px;
@@ -42,3 +46,29 @@
 .containerInputs {
     margin-left: 230px;
 }
+
+.submit {
+    line-height: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #0D6693;
+    color: #fff;
+    height: 42px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  
+    &:hover {
+      background-color: #095074;
+      transform: scale(1.05);
+    }
+  
+    &:active {
+      transform: scale(1);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .mainDiv {
+        margin-left: 0;
+    }
+  }

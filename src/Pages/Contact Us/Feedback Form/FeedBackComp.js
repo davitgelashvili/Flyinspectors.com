@@ -2,6 +2,7 @@ import FeedBack from "./FeedBack";
 import styles from "./FeedBack.module.scss";
 function FeedBackComp() {
   return (
+<div className={styles.mainDiv}>
     <div className="mb-5 container row">
       <h3>FeedBack Form</h3>
       <div className="col-lg-6">
@@ -14,9 +15,10 @@ function FeedBackComp() {
           defaultValue="Your Message"
         />
         <br />
-        <button>submit</button>
+        <button className={styles.submit}>Submit</button>
       </div>
       </div>
+</div>
   );
 }
 
