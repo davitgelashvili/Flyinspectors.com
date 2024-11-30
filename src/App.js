@@ -17,11 +17,13 @@ import ContactUs from "./Pages/Contact Us/ContactUs";
 import BlogPageMore from "./Pages/BlogPageMore/BlogPageMore";
 import UserList from "./components/Dashboard/User/List";
 import UserEdit from "./components/Dashboard/User/Edit";
+import ScrollToTop from "./ScrollToTop";// Import the ScrollToTop component
 import "./i18n/i18n";
 
 function App() {
   return (
     <>
+      <ScrollToTop /> {/* Add ScrollToTop */}
       <Header />
       <Routes>
         <Route path={"/"} element={<Main />} />
