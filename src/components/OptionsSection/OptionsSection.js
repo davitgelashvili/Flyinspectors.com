@@ -1,18 +1,20 @@
-import { useTranslation } from "react-i18next"
-import Item from "./Item"
-import styles from './OptionsSection.module.scss'
+import { useTranslation } from "react-i18next";
+import Item from "./Item";
+import styles from './OptionsSection.module.scss';
 
 const OptionsSection = () => {
-    const {t} = useTranslation()
+    const { t } = useTranslation();
+
+    // Static data with keys for translation
     const data = [
         {
-            title: t('opensection.delay.title'),
-            desc: t('opensection.delay.desc'),
+            titleKey: 'opensection.delay.title',
+            descKey: 'opensection.delay.desc',
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476179/ic_schedule_24px_1_tanbbs.svg"
         },
         {
-            title: t('opensection.compensation.title'),
-            desc: t('opensection.compensation.desc'),
+            titleKey: 'opensection.compensation.title',
+            descKey: 'opensection.compensation.desc',
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476178/ic_event_24px_d9o56u.svg"
         },
         {
@@ -35,27 +37,26 @@ const OptionsSection = () => {
             desc: "Was your baggage delayed or arrived damaged? You are eligible for compensation.",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476180/ic_work_24px_kobici.svg"
         },
-    ]
+    ];
+
     return (
         <div className={styles.OptionsSection}>
-                <h3 className={styles.title}>{t('opensection.sectionTitle')}</h3>
+            <h3 className={styles.title}>{t('opensection.sectionTitle')}</h3>
             <div className="container">
                 <div className="row">
-                    {data?.map((item)=>{
-                        return (
-                            <div className="col-lg-4" key={item.title}>
-                                <Item title={item.title} desc={item.desc} icon={item.icon}/>
-                            </div>
-                        )
-                    })}
+                    {data.map((item, index) => (
+                        <div className="col-lg-4" key={index}>
+                            <Item
+                                title={item.titleKey ? t(item.titleKey) : item.title}
+                                desc={item.descKey ? t(item.descKey) : item.desc}
+                                icon={item.icon}
+                            />
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default OptionsSection
-
-
-
-  
+export default OptionsSection;
