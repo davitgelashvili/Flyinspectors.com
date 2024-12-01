@@ -26,7 +26,7 @@ const SignatureContent = ({value, setValue}) => {
                     const res = signature.getTrimmedCanvas().toDataURL('image/png')
                     setData(res)
                 }}
-                penColor='green'
+                penColor='blue'
                 canvasProps={{width: 500, height: 200, className: 'sigCanvas'}} />,
             </div>
             <img src={value.signature} alt='res' />
