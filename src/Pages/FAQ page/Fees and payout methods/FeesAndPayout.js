@@ -4,8 +4,8 @@ import image from "../../../components/Images/PayMethods.png";
 
 const FeesAndPayout = () => {
   return (
-    <div>
-      <div className={`${styles.services} container`}>
+    <div className={styles.services}>
+      <div className={`container`}>
         <div className="">
           <div>
             <h3 className={styles.services__header}>

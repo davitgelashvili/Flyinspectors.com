@@ -3,8 +3,8 @@ import styles from "./CancelledFlights.module.scss";
 
 const CancelledFlights = () => {
   return (
-    <div>
-      <div className={`${styles.services} container`}>
+    <div className={styles.services}>
+      <div className={`container`}>
         <div className="row">
           <div className="col-lg- col-12">
             <h3 className={styles.services__header}>The most common reasons why the flights get cancelled</h3>

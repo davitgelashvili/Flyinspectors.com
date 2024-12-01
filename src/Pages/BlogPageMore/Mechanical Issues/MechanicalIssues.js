@@ -4,8 +4,8 @@ import styles from "./MechanicalIssues.module.scss";
 
 const MechanicalIssues = () => {
   return (
-    <div>
-      <div className={`${styles.services} container`}>
+    <div className={styles.services}>
+      <div className={`container`}>
         <h3 className={styles.services__header}>Mechanical Issues</h3>
         <div className="row">
             <Item />
