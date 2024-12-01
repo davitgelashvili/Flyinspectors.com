@@ -2,12 +2,12 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styles from "./BurgerMenu.module.scss";
 import { useTranslation } from "react-i18next";
-
+import icon from "../../../Images/arrowIcon.png"
 const BurgerMenu = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
   const [IsOpen, setIsOpen] = useState(false);
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setIsOpen(!IsOpen);
@@ -20,7 +20,7 @@ const BurgerMenu = () => {
   const data = [
     {
       link: "/",
-      title: t('menu.home'),
+      title: t("menu.home"),
     },
     {
       title: "Your Rights",
@@ -80,7 +80,13 @@ const BurgerMenu = () => {
                   <Link className={styles.pages} to={item.link}>
                     {item.title}
                   </Link>
-                  {item.dropdown && <span className={styles.arrow}>˅</span>}
+                  {item.dropdown && (
+                    <img
+                      src={icon}
+                      alt="Dropdown Arrow"
+                      className={styles.arrow}
+                    />
+                  )}
                 </div>
                 {item.dropdown && showDropdown && (
                   <ul className={styles.dropdown}>
