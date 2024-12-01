@@ -10,9 +10,14 @@ const Dashboard = () => {
     return (
         <div className="container">
             {user.logedIn ? (
-                <Link to={'userlist'}>
-                    user list
-                </Link>
+                <ul>
+                    <Link to={'userlist'}>
+                        user list
+                    </Link>
+                    <Link to={'services'}>
+                        services list
+                    </Link>
+                </ul>
             ) : (
                 <Login />
             )}

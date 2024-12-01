@@ -42,14 +42,15 @@ function App() {
           element={<MissedConnection />}
         />
         <Route path={"/your-rights/lost-luggage"} element={<LostLuggage />} />
-        <Route path={"/adminpanel"} element={<AdminPanel />} />
-        <Route path={"/adminpanel/userlist"} element={<UserList />} />
-        <Route path={"/adminpanel/userlist/:id"} element={<UserEdit />} />
         <Route path={"/about-us"} element={<AboutUs />} />
         <Route path={"/about-us/blog"} element={<BlogPage />} />
         <Route path={"/about-us/faq"} element={<FaqPage />} />
         <Route path={"/about-us/blog-page-more"} element={<BlogPageMore />} />
         <Route path={"/contact-us"} element={<ContactUs />} />
+        <Route path={"/adminpanel"} element={<AdminPanel />} />
+        <Route path={"/adminpanel/userlist"} element={<UserList />} />
+        <Route path={"/adminpanel/userlist/:id"} element={<UserEdit />} />
+        <Route path={"/adminpanel/services"} element={<UserList />} />
       </Routes>
       <Footer />
     </>
