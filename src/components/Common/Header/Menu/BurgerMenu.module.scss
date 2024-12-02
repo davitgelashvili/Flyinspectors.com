@@ -86,10 +86,36 @@
     display: none;
 }
 
+.logo__img {
+    flex: 1;
+    text-align: center;
+    width: 81px;
+    height: 44px;
+   display: none; 
+  }
+
 @media(max-width: 768px) {
-    .icon {
+
+
+    .logo__img {
         display: block;
-    }
+        flex: 1;
+        text-align: center;
+        width: 81px;
+        height: 44px;
+        padding-right: 5px;
+      }
+
+    .icon { 
+            display: block;
+            cursor: pointer;
+            font-size: 24px;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            z-index: 10;
+
+          }    
 
     .container {
         margin: 10px 0 10px 0;
@@ -179,3 +205,4 @@
         }
     }
 }
+

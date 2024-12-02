@@ -2,7 +2,10 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styles from "./BurgerMenu.module.scss";
 import { useTranslation } from "react-i18next";
-import icon from "../../../Images/arrowIcon.png"
+import icon from "../../../Images/arrowIcon.png";
+import logo from "../Logo/LogoPic/LogoFly.png";
+import iconMenu from "../../../Images/iconMenu.png"
+
 const BurgerMenu = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
@@ -58,6 +61,19 @@ const BurgerMenu = () => {
   return (
     <div className={styles.container}>
       <nav>
+        {/* Logo */}
+        <div className={styles.logo}>
+          <Link to="/">
+            <img src={logo} alt="Logo" className={styles.logo__img} />
+          </Link>
+        </div>
+
+        {/* Icon button */}
+        <div className={styles.icon} onClick={toggleMenu}>
+          <img src={iconMenu} alt="Menu" className={styles.iconMenu} />
+        </div>
+
+        {/* Menu */}
         <ul className={`${styles.nav} ${IsOpen ? styles.open : ""}`}>
           {data?.map((item) => {
             const isActive =
@@ -113,9 +129,6 @@ const BurgerMenu = () => {
             );
           })}
         </ul>
-        <div className={styles.icon} onClick={toggleMenu}>
-          ☰
-        </div>
       </nav>
     </div>
   );

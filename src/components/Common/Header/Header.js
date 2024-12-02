@@ -23,7 +23,7 @@ function Header() {
                     <BurgerMenu/>
                     <div className="d-flex align-items-center">
                         <SubmitLink className={styles.submitlink} />
-                        <div className="">
+                        {/* <div className="">
                             {language === 'ka' ? (
                                 <button onClick={() => dispatch(siteTranslateAction.changeLanguage('en'))}>
                                     Eng
@@ -33,7 +33,7 @@ function Header() {
                                     Geo
                                 </button>
                             )}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
