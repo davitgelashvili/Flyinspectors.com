@@ -1,19 +1,9 @@
 .mainDiv {
-    margin-left: 230px;
+  padding-bottom: 40px
 }
 
-.input {
-    border: 1px solid #7C8DB0;
-    border-radius: 5px;
-    width: 409px;
-    height: 50px;
-    padding: 15px;
-}
-
-.label {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 44px;
+.inputlist {
+  width: 100%;
 }
 
 .textarea {
@@ -43,10 +33,6 @@
       }
 }
 
-.containerInputs {
-    margin-left: 230px;
-}
-
 .submit {
     line-height: 20px;
     cursor: pointer;
@@ -65,10 +51,4 @@
     &:active {
       transform: scale(1);
     }
-  }
-  
-  @media (max-width: 768px) {
-    .mainDiv {
-        margin-left: 0;
-    }
-  }
+}

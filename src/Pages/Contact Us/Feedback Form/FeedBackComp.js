@@ -2,23 +2,12 @@ import FeedBack from "./FeedBack";
 import styles from "./FeedBack.module.scss";
 function FeedBackComp() {
   return (
-<div className={styles.mainDiv}>
-    <div className="mb-5 container row">
+  <div className={styles.mainDiv}>
+    <div className="container">
       <h3 className="mt-5">FeedBack Form</h3>
-      <div className="col-lg-6">
-        <FeedBack />
-      </div>
-      <div className=" d-flex flex-column col-lg-6">
-        <textarea
-          className={styles.textarea}
-          type="text"
-          defaultValue="Your Message"
-        />
-        <br />
-        <button className={styles.submit}>Submit</button>
-      </div>
-      </div>
-</div>
+      <FeedBack />
+    </div>
+  </div>
   );
 }
 

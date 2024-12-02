@@ -3,6 +3,30 @@
     background-color: #F8FAFD;
 }
 
+.item {
+    margin-bottom: 38px;
+}
+
+.icon {
+    min-width: 40px;
+    height: 40px;
+    background-color: #0d6693;
+    padding: 11px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.title {
+    margin: 0;
+}
+
+.desc {
+    margin: 0;
+}
+
 
 .mainDiv {
     box-shadow: 0px 6px 6px 0px #0000000d;

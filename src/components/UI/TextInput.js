@@ -1,6 +1,6 @@
 import styles from './TextInput.module.scss'
 
-const TextInput = ({type, value, placeholder, name, icon, onChange}) => {
+const TextInput = ({type, value, placeholder, name, icon, onChange, label, rows}) => {
     switch (type) {
         case 'select':
             return (
@@ -22,7 +22,7 @@ const TextInput = ({type, value, placeholder, name, icon, onChange}) => {
             return (
                 <label className={`${styles['textlabel']}`}>
                     <textarea
-                        rows={'5'}
+                        rows={rows ? rows : '5'}
                         className={`${styles['textlabel__input']} ${styles['textlabel__textarea']}`}
                         type={type}
                         value={value}
@@ -33,6 +33,8 @@ const TextInput = ({type, value, placeholder, name, icon, onChange}) => {
             )
         default:
             return (
+                <>
+                {label && <p>{label}</p>}
                 <label className={`${styles['textlabel']}`}>
                     {icon && <img src={icon} alt="icon" className={`${styles['textlabel__icon']}`} />}
                     <input 
@@ -43,6 +45,7 @@ const TextInput = ({type, value, placeholder, name, icon, onChange}) => {
                         name={name}
                         onChange={(e) => onChange(e)}/>
                 </label>
+                </>
             )
     }
 }

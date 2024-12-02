@@ -21,6 +21,8 @@ import ScrollToTop from "./ScrollToTop";// Import the ScrollToTop component
 import "./i18n/i18n";
 import ServicesList from "./components/Dashboard/Services/List";
 import ServicesEdit from "./components/Dashboard/Services/Edit";
+import RateList from "./components/Dashboard/Rate/List";
+import RateEdit from "./components/Dashboard/Rate/Edit";
 
 function App() {
   return (
@@ -49,11 +51,17 @@ function App() {
         <Route path={"/about-us/faq"} element={<FaqPage />} />
         <Route path={"/about-us/blog-page-more"} element={<BlogPageMore />} />
         <Route path={"/contact-us"} element={<ContactUs />} />
+
         <Route path={"/adminpanel"} element={<AdminPanel />} />
+        
         <Route path={"/adminpanel/userlist"} element={<UserList />} />
         <Route path={"/adminpanel/userlist/:id"} element={<UserEdit />} />
+
         <Route path={"/adminpanel/services"} element={<ServicesList />} />
         <Route path={"/adminpanel/services/:id"} element={<ServicesEdit />} />
+
+        <Route path={"/adminpanel/rate"} element={<RateList />} />
+        <Route path={"/adminpanel/rate/:id"} element={<RateEdit />} />
       </Routes>
       <Footer />
     </>

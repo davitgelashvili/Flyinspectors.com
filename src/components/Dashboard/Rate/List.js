@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const ServicesList = () => {
+const RateList = () => {
     const [data, setData] = useState([])
 
     useEffect(()=>{
-        fetch('https://flyinspectors-back.vercel.app/services', {
+        fetch('https://flyinspectors-back.vercel.app/rate', {
             method: "GET",
             headers: {
               'Content-type': 'application/json',
@@ -26,8 +26,11 @@ const ServicesList = () => {
                     return (
                         <div className="col-6" key={item._id}>
                             <Link to={item.id}>
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
+                                <h3>
+                                    <strong>name:</strong>
+                                    {item.description}
+                                    <p>{item.title}</p>
+                                </h3>
                             </Link>
                         </div>
                     )
@@ -37,4 +40,4 @@ const ServicesList = () => {
     )
 }
 
-export default ServicesList
+export default RateList
