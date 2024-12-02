@@ -5,8 +5,10 @@ const RateSection = () => {
   return (
     <div>
       <div className={`${styles.services} `}>
-        <div className="row">
-          <Item />
+        <div className="container">
+          <div className="row">
+            <Item />
+          </div>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import TextInput from "../../UI/TextInput";
 import Loading from "../../Loading/Loading";
 
-const ServicesEdit = () => {
+const RateEdit = () => {
     const [data, setData] = useState([])
     const {id} = useParams()
     const [update, setUpdate] = useState(true)
@@ -17,7 +17,7 @@ const ServicesEdit = () => {
     }, [data])
 
     useEffect(()=>{
-        fetch('https://flyinspectors-back.vercel.app/services', {
+        fetch('https://flyinspectors-back.vercel.app/rate', {
             method: "GET",
             headers: {
               'Content-type': 'application/json',
@@ -34,7 +34,7 @@ const ServicesEdit = () => {
     function handlClick (e) {
         e.preventDefault()
         setLoad(true)
-        fetch('https://flyinspectors-back.vercel.app/services/id', {
+        fetch('https://flyinspectors-back.vercel.app/rate/id', {
             method: "PUT",
             headers: {
               'Content-type': 'application/json',
@@ -43,7 +43,8 @@ const ServicesEdit = () => {
             body: JSON.stringify({
                 id: id,
                 title: valueTitle,
-                description: valueDesc
+                description: valueDesc,
+                icon: data.icon
             })
         })
         .then((res) => res.json()).finally(()=>{
@@ -52,12 +53,13 @@ const ServicesEdit = () => {
         })
     }
 
-    console.log(data)
-
     return (
         <div className="container">
             <div className="col-lg-6">
                 <div>
+                    <div>
+                        <p>{data.icon}</p>
+                    </div>
                     <TextInput
                         type={"text"}
                         value={valueTitle}
@@ -85,4 +87,4 @@ const ServicesEdit = () => {
     )
 }
 
-export default ServicesEdit
+export default RateEdit

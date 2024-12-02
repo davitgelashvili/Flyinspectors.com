@@ -11,12 +11,21 @@ const Dashboard = () => {
         <div className="container">
             {user.logedIn ? (
                 <ul>
-                    <Link to={'userlist'}>
-                        user list
-                    </Link>
-                    <Link to={'services'}>
-                        services list
-                    </Link>
+                    <li>
+                        <Link to={'userlist'}>
+                            user list
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={'services'}>
+                            services list
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={'rate'}>
+                            rate list
+                        </Link>
+                    </li>
                 </ul>
             ) : (
                 <Login />

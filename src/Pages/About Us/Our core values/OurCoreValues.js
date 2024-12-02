@@ -6,37 +6,37 @@ const OurCoreValues = () => {
         {
             title: "High effectiveness",
             desc: "If your flight delayed for 3+ hours you are eligible for compensation.",
-            icon: "https://res.cloudinary.com/dkcr1v0dl/image/upload/v1731876432/ic_schedule_24px_cetutr.svg"
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733136703/ic_poll_24px_n6jrcg.png"
         },
         {
             title: "Accessibility",
             desc: "We offer you service in timely manner 7 days a week, 24 hours",
-            icon: ""
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733136704/ic_schedule_24px_semyyr.png"
         },
         {
             title: "Reliable Partner",
             desc: "Our company is a trustworthy and trusted ally in every situation",
-            icon: ""
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733136705/ic_verified_user_24px_h326gi.png"
         },
         {
             title: "Professionalism",
             desc: "Our company is distinguished by qualified and professional lawyers with a high level of knowledge.",
-            icon: ""
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733136701/ic_description_24px_hjqd5t.png"
         },
         {
             title: "No obligations",
             desc: "Our company works on a “no win, no fee” basis. So if we don’t win the case, we won’t charge you any fee for our services",
-            icon: ""
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733136702/ic_local_atm_24px_r3kleu.png"
         },
         {
             title: "Simplicity",
             desc: "Getting compensation with us is very easy. You only need to fill the form and we handle all the other procedures.",
-            icon: ""
+            icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733136701/ic_description_24px_hjqd5t.png"
         },
         {
           title: "Partner companies",
           desc: "We cooperate with the world’s best law firms, this fact gives us the advantage over the airlines, which we use to get your compensation",
-          icon: ""
+          icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733136701/ic_gavel_24px_tlp2cv.png"
       },
     ]
     return (
