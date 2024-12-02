@@ -25,8 +25,8 @@ const ServicesList = () => {
                 {data?.map((item)=>{
                     return (
                         <div className="col-6" key={item._id}>
-                            <Link to={item._id}>
-                                <h2>{item.title} {item.lastName}</h2>
+                            <Link to={item.id}>
+                                <h2>{item.title}</h2>
                                 <h2><strong>desc:</strong>{item.description}</h2>
                             </Link>
                         </div>

@@ -19,6 +19,8 @@ import UserList from "./components/Dashboard/User/List";
 import UserEdit from "./components/Dashboard/User/Edit";
 import ScrollToTop from "./ScrollToTop";// Import the ScrollToTop component
 import "./i18n/i18n";
+import ServicesList from "./components/Dashboard/Services/List";
+import ServicesEdit from "./components/Dashboard/Services/Edit";
 
 function App() {
   return (
@@ -50,7 +52,8 @@ function App() {
         <Route path={"/adminpanel"} element={<AdminPanel />} />
         <Route path={"/adminpanel/userlist"} element={<UserList />} />
         <Route path={"/adminpanel/userlist/:id"} element={<UserEdit />} />
-        <Route path={"/adminpanel/services"} element={<UserList />} />
+        <Route path={"/adminpanel/services"} element={<ServicesList />} />
+        <Route path={"/adminpanel/services/:id"} element={<ServicesEdit />} />
       </Routes>
       <Footer />
     </>
