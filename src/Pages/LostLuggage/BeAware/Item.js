@@ -6,7 +6,7 @@ const Item = () => {
       <div className={styles.headerOfBullet}>
       What to do if the luggage is delayed:
       </div>
-      <ul class={styles.bulletList}>
+      <ul className={styles.bulletList}>
         <li>Hold onto your boarding pass or any document where the ticket reserves are set;</li>
         <li>
         Inform airlines of luggage delay;

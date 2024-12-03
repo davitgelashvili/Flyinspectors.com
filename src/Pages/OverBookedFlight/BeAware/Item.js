@@ -5,7 +5,7 @@ const Item = () => {
     <div className={styles.mainDiv}>
       <h3 className={styles.header}>Be Aware</h3>
       <div>
-      <ul class={styles.bulletList}>
+      <ul className={styles.bulletList}>
         <li>Do not give up your place in exchange for voucher or other things;</li>
         <li>Keep boarding pass and passport;</li>
         <li>Find out the reasons for refusal;</li>

@@ -14,7 +14,7 @@ const BeAware = () => {
           </div>
           <div className={`${styles.item} col-lg-6 col-12`}>
             <SectionText title={'Be Aware'} >
-            <ul class={styles.bulletList}>
+            <ul className={styles.bulletList}>
               <li>Do not give up your place in exchange for voucher or other things;</li>
               <li>Keep boarding pass and passport;</li>
               <li>Find out the reasons for refusal;</li>

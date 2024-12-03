@@ -6,7 +6,7 @@ const Item = () => {
       <h3 className={styles.headerOfQuestion}>
         What should you do if the baggage is damaged?
       </h3>
-      <ul class={styles.bulletList}>
+      <ul className={styles.bulletList}>
         <li>Hold onto your boarding pass or any document where the ticket reserves are set;</li>
         <li>
         Officially report the damage before leaving the airport

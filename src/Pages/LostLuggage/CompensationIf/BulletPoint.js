@@ -6,7 +6,7 @@ const BulletPoint = () => {
       <div className={styles.headerOfBullet}>
       what to do when the airlines lose your luggage:
       </div>
-      <ul class={styles.bulletList}>
+      <ul className={styles.bulletList}>
         <li>Hold onto your boarding pass or any document where the ticket reserves are set;</li>
         <li>
         Create a list of items that you have placed in your lost bag;

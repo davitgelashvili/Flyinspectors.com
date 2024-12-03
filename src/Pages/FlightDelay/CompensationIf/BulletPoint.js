@@ -6,7 +6,7 @@ const BulletPoint = () => {
       <div className={styles.headerOfBullet}>
         You have the right to claim compensation if:
       </div>
-      <ul class={styles.bulletList}>
+      <ul className={styles.bulletList}>
         <li>Your flight arrived at the destination 3&lt; hours later</li>
         <li>Your flight took off in the EU or landed in the EU;</li>
         <li>

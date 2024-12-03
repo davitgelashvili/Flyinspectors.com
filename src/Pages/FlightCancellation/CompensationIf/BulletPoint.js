@@ -6,7 +6,7 @@ const BulletPoint = () => {
       <div className={styles.headerOfBullet}>
         You have the right to claim compensation if:
       </div>
-      <ul class={styles.bulletList}>
+      <ul className={styles.bulletList}>
         <li>Your flight was cancelled without at least 14 days prior notice;</li>
         <li>The flight was cancelled no more than three years ago;</li>
         <li>Flight cancellation is caused by airline;</li>

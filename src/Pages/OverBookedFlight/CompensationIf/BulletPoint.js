@@ -7,7 +7,7 @@ const BulletPoint = () => {
         According to EC 261 law, due to such a flight, you qualify for
         compensation if:
       </div>
-      <ul class={styles.bulletList}>
+      <ul className={styles.bulletList}>
         <li>The flight is carried out inside EU territory;</li>
         <li>
           You have not received a travel voucher or extra compensation from the
