@@ -35,6 +35,9 @@ const SearchForm = () => {
 
     return (
         <div className={styles.search}>
+            <p className={styles.search__text}>
+            Application number (Application number sent to the email address specified in your application)
+            </p>
             <TextInput
                   type={"text"}
                   value={id}
@@ -43,9 +46,6 @@ const SearchForm = () => {
                   icon={''}
                   onChange={e => setId(e.target.value)}
                 />
-            <p className={styles.search__text}>
-            Application number (Application number sent to the email address specified in your application)
-            </p>
             
                 { load ? (
                     <Loading />
@@ -56,7 +56,7 @@ const SearchForm = () => {
                         </div>
                     )
                 )}
-            <button className="search__btn" onClick={handleChange}>search</button>
+            <button className={styles.search__btn} onClick={handleChange}>search</button>
         </div>
     )
 }

@@ -238,6 +238,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
               width: "100%",
               height: "40px",
               marginTop: "20px",
+              cursor: "pointer"
             }}
             onClick={(e) => uploadFile(e)}
           >
