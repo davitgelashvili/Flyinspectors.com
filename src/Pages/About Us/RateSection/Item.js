@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const Item = () => {
   const [data,setData] = useState()
   useEffect(()=>{
-    fetch('https://api.fly.gelashvili.me/rate', {
+    fetch(`${process.env.REACT_APP_API_URL}/rate`, {
       method: "GET",
       headers: {
         'Content-type': 'application/json',

@@ -8,7 +8,7 @@ const UserEdit = () => {
     const [value, setValue] = useState('')
 
     useEffect(()=>{
-        fetch('https://api.fly.gelashvili.me/client', {
+        fetch(`${process.env.REACT_APP_API_URL}/client`, {
             method: "GET",
             headers: {
               'Content-type': 'application/json',
@@ -25,7 +25,7 @@ const UserEdit = () => {
 
     function handlClick (e) {
         e.preventDefault()
-        fetch('https://api.fly.gelashvili.me/client/id', {
+        fetch(`${process.env.REACT_APP_API_URL}/client/id`, {
             method: "PUT",
             headers: {
               'Content-type': 'application/json',

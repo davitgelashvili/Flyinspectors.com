@@ -84,7 +84,7 @@ const SendForm = () => {
         e.preventDefault()
         setPopup(true)
         setLoad(true)
-        fetch('https://api.fly.gelashvili.me/email', {
+        fetch(`${process.env.REACT_APP_API_URL}/email`, {
             method: "POST",
             headers: {
               'Content-type': 'application/json',
@@ -98,7 +98,7 @@ const SendForm = () => {
         .then(res => {
             console.log("send email:", res);
         }).finally(()=>{
-            fetch('https://api.fly.gelashvili.me/client', {
+            fetch(`${process.env.REACT_APP_API_URL}/client`, {
                 method: "POST",
                 headers: {
                   'Content-type': 'application/json',

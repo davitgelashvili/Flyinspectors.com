@@ -10,7 +10,7 @@ const SearchForm = () => {
     function handleChange(e){
         e.preventDefault()
         setLoad(true)
-        fetch('https://api.fly.gelashvili.me/id', {
+        fetch(`${process.env.REACT_APP_API_URL}/id`, {
             method: "POST",
             headers: {
               'Content-type': 'application/json',

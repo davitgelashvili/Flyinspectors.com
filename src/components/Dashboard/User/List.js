@@ -5,7 +5,7 @@ const UserList = () => {
     const [data, setData] = useState([])
 
     useEffect(()=>{
-        fetch('https://api.fly.gelashvili.me/client', {
+        fetch(`${process.env.REACT_APP_API_URL}/client`, {
             method: "GET",
             headers: {
               'Content-type': 'application/json',

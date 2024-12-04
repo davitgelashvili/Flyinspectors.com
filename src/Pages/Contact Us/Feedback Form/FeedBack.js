@@ -13,7 +13,7 @@ function FeedBack() {
   function handlClick (e) {
     e.preventDefault()
     setLoad(true)
-    fetch('https://api.fly.gelashvili.me/contact', {
+    fetch(`${process.env.REACT_APP_API_URL}/contact`, {
         method: "POST",
         headers: {
           'Content-type': 'application/json',

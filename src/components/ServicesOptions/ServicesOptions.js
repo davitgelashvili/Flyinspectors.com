@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const ServicesOptions = () => {
   const [data,setData] = useState()
   useEffect(()=>{
-    fetch('https://api.fly.gelashvili.me/services', {
+    fetch(`${process.env.REACT_APP_API_URL}/services`, {
       method: "GET",
       headers: {
         'Content-type': 'application/json',

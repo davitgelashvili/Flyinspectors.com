@@ -23,7 +23,7 @@ const ServicesEdit = () => {
     }, [data])
 
     useEffect(()=>{
-        fetch('https://api.fly.gelashvili.me/services', {
+        fetch(`${process.env.REACT_APP_API_URL}/services`, {
             method: "GET",
             headers: {
               'Content-type': 'application/json',
@@ -40,7 +40,7 @@ const ServicesEdit = () => {
     function handlClick (e) {
         e.preventDefault()
         setLoad(true)
-        fetch('https://api.fly.gelashvili.me/services/id', {
+        fetch(`${process.env.REACT_APP_API_URL}/services/id`, {
             method: "PUT",
             headers: {
               'Content-type': 'application/json',

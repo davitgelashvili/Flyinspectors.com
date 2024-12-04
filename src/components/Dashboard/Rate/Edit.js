@@ -23,7 +23,7 @@ const RateEdit = () => {
     }, [data])
 
     useEffect(()=>{
-        fetch('https://api.fly.gelashvili.me/rate', {
+        fetch(`${process.env.REACT_APP_API_URL}/rate`, {
             method: "GET",
             headers: {
               'Content-type': 'application/json',
@@ -40,7 +40,7 @@ const RateEdit = () => {
     function handlClick (e) {
         e.preventDefault()
         setLoad(true)
-        fetch('https://api.fly.gelashvili.me/rate/id', {
+        fetch(`${process.env.REACT_APP_API_URL}/rate/id`, {
             method: "PUT",
             headers: {
               'Content-type': 'application/json',
