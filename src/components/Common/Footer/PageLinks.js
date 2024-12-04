@@ -17,7 +17,7 @@ const PageLinks = () => {
             </li>
             <li className={`nav-item mb-2 ${styles.List__item}`}>
               <Link
-                to="/your-rights/submit-claim"
+                to="/submit-claim"
                 className={`nav-link ${styles.List__link}`}
               >
                 Submit claim
@@ -25,7 +25,7 @@ const PageLinks = () => {
             </li>
             <li className={`nav-item mb-2 ${styles.List__item}`}>
               <Link
-                to="/your-rights/contact-us"
+                to="/contact-us"
                 className={`nav-link ${styles.List__link}`}
               >
                 Contact Us
@@ -67,6 +67,15 @@ const PageLinks = () => {
         {/* Column 3 */}
         <div className="col-lg-3 col-6">
           <ul className={`nav flex-column ${styles.List}`}>
+          <li className={`nav-item mb-2 ${styles.List__item}`}>
+              <Link
+                to="/your-rights/overbooked-flight"
+                className={`nav-link ${styles.List__link}`}
+              >
+               overbooked-flight
+              </Link>
+            </li>
+           
             <li className={`nav-item mb-2 ${styles.List__item}`}>
               <Link
                 to="/your-rights/missed-connection"
@@ -75,20 +84,13 @@ const PageLinks = () => {
                 Missed Connection
               </Link>
             </li>
+         
             <li className={`nav-item mb-2 ${styles.List__item}`}>
               <Link
                 to="/your-rights/lost-luggage"
                 className={`nav-link ${styles.List__link}`}
               >
-                Damaged/Lost Luggage
-              </Link>
-            </li>
-            <li className={`nav-item mb-2 ${styles.List__item}`}>
-              <Link
-                to="/your-rights/denied-boarding"
-                className={`nav-link ${styles.List__link}`}
-              >
-                Denied Boarding
+                lost-luggage
               </Link>
             </li>
           </ul>
@@ -98,7 +100,7 @@ const PageLinks = () => {
           <ul className={`nav flex-column ${styles.List}`}>
             <li className={`nav-item mb-2 ${styles.List__item}`}>
               <Link
-                to="/your-rights/blog"
+                to="/about-us/blog"
                 className={`nav-link ${styles.List__link}`}
               >
                 Blog
@@ -106,14 +108,14 @@ const PageLinks = () => {
             </li>
             <li className={`nav-item mb-2 ${styles.List__item}`}>
               <Link
-                to="/your-rights/terms"
+                to="/terms-and-conditions"
                 className={`nav-link ${styles.List__link}`}
               >
                 Terms and Conditions
               </Link>
             </li>
             <li className={`nav-item mb-2 ${styles.List__item}`}>
-              <Link to="#faq-section" className={`nav-link ${styles.List__link}`}>
+              <Link to="/about-us/faq" className={`nav-link ${styles.List__link}`}>
                 FAQ
               </Link>
             </li>
