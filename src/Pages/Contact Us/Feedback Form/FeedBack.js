@@ -12,7 +12,7 @@ function FeedBack() {
 
   function handlClick (e) {
     e.preventDefault()
-    setLoad(true)
+    setLoad(false)
     fetch(`${process.env.REACT_APP_API_URL}/contact`, {
         method: "POST",
         headers: {
@@ -26,8 +26,10 @@ function FeedBack() {
             description: text
         })
     })
-    .then((res) => res.json()).finally(()=>{
-        setLoad(false)
+    .then(res => res.json())
+    .catch(err => console.error(err)) 
+    .finally(() => {
+      setLoad(false);
     })
 }
 

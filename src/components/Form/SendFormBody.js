@@ -7,6 +7,7 @@ import File from "../UploadWidget/File";
 import SignatureContent from "./SignatureContent";
 import ReactSignatureCanvas from 'react-signature-canvas'
 import styles from './Signature.module.scss'
+import { Link } from "react-router-dom";
 
 const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad, load }) => {
   const [signature, setSignature] = useState()
@@ -217,7 +218,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           <label>
             <input type="checkbox" />
             <span>
-            I agree with Terms and Conditions
+            I agree with <Link to={''}>Terms and Conditions</Link>
             </span>
           </label>
         </div>

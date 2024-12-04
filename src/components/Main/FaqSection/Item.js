@@ -16,11 +16,16 @@ const Item = () => {
     },
     {
       header: "WHAT DO I NEED TO RECEIVE COMPENSATION?",
-      content: "Content for the second item.",
+      content: "To start the case is required the copies of the ticket and the passport. We will prepare the following documentation: Declaration of Assignment, POA and Agreement.",
     },
     {
       header: "HOW MUCH AM I ENTITLED TO BE COMPENSATED?",
-      content: "Content for the third item.",
+      content: `
+      The amount of compensation depends on the distance of your flight between airports:
+      In case of a flight is up to 1500 km -250 Euro
+      In case of flights between 1500 – 3500 km – 400 Euro
+      In case of flights over 3500 km-600 Euro
+      Delay at the final destination should be more than 3 hours.`,
     },
   ];
 
