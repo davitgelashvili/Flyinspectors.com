@@ -23,16 +23,16 @@ const SendForm = () => {
         otherImage: "",
         signature: "",
         userId: unicueID,
-        firstName: "test",
-        lastName: "test",
-        phone: "test",
-        email: "test",
-        city: "test",
-        address: "test",
-        problem: "test",
-        flightNumber: "test",
-        date: "test",
-        select: "test",
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        city: "",
+        address: "",
+        problem: "",
+        flightNumber: "",
+        date: "",
+        select: "",
         description: "",
     })
 
@@ -95,9 +95,8 @@ const SendForm = () => {
             })
         })
         .then((res) => res.json())
-        .then(res => {
-            console.log("send email:", res);
-        }).finally(()=>{
+        .finally(()=>{
+            console.log('hereee')
             fetch(`${process.env.REACT_APP_API_URL}/client`, {
                 method: "POST",
                 headers: {
