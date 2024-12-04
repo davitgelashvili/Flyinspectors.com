@@ -1,11 +1,13 @@
 import styles from './TextInput.module.scss'
 
-const TextInput = ({type, value, placeholder, name, icon, onChange, label, rows}) => {
+const TextInput = ({type, value, placeholder, name, icon, onChange, label, rows, selectData}) => {
+    console.log(selectData)
     switch (type) {
         case 'select':
             return (
                 <label className={`${styles['textlabel']}`}>
                     {icon && <img src={icon} alt="icon" className={`${styles['textlabel__icon']}`} />}
+                    {console.log(selectData)}
                     <select 
                         className={`${styles['textlabel__input']}`}
                         type={type}
@@ -13,8 +15,16 @@ const TextInput = ({type, value, placeholder, name, icon, onChange, label, rows}
                         name={name}
                         onChange={(e) => onChange(e)}>
                         <option>{placeholder}</option>
-                        <option>test1</option>
-                        <option>test2</option>
+                            {selectData?.map(_it => {
+                                return (
+                                    <option
+                                        key={_it}
+                                        value={_it}
+                                        >
+                                        {_it}
+                                        </option>
+                                )
+                            })}
                     </select>
                 </label>
             )

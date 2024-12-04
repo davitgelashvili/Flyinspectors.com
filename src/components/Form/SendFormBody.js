@@ -64,6 +64,13 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       name: "problem",
       type: "select",
       value: value.problem,
+      selectData: [
+        'Flight Delay',
+        'Flight Cancel',
+        'OverBooked Flight',
+        'Missed Connection',
+        'lost Luggage'
+      ],
       placeholder: "Select problem",
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/sfew5nqowhazn00o76ho.svg"
     },
@@ -88,6 +95,10 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       name: "select",
       type: "select",
       value: value.select,
+      selectData: [
+        'II have never started process by myself\nor other claim company',
+        'I have already tried to get compensation'
+      ],
       placeholder: "Select",
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/nzxyqpypgliouotsa6ie.svg"
     },
@@ -117,6 +128,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
                   type={input.type}
                   value={input.value}
                   placeholder={input.placeholder}
+                  selectData={input.selectData}
                   name={input.name}
                   icon={input.icon}
                   onChange={handleChange}
@@ -130,6 +142,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
                   type={input.type}
                   value={input.value}
                   placeholder={input.placeholder}
+                  selectData={input.selectData}
                   name={input.name}
                   icon={input.icon}
                   onChange={handleChange}
@@ -174,18 +187,39 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           }
         </div>
         <div className="col-lg-12">
-          <div className={styles.signature__body}>
-            <ReactSignatureCanvas
-              ref={(ref) => setSignature(ref)}
-              onEnd={() => {
-                const res = signature.getTrimmedCanvas().toDataURL('image/png')
-                setValue({ ...value, "signature": res })
-              }}
-              penColor='blue'
-              canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }} />
+          <div className={styles.signature}>  
+            <div className={styles.signature__head}>
+              <p className={styles.signature__title}>
+                <strong>Electronic signature:</strong>
+                <span>
+                  Please sign the electronic signature.
+                </span>
+              </p>
+            </div>
+            <div className={styles.signature__body}>
+              <ReactSignatureCanvas
+                ref={(ref) => setSignature(ref)}
+                onEnd={() => {
+                  const res = signature.getTrimmedCanvas().toDataURL('image/png')
+                  setValue({ ...value, "signature": res })
+                }}
+                penColor='blue'
+                canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }} />
+            </div>
           </div>
           {/* <SignatureContent value={value} setValue={setValue}/> */}
           {/* <Signature value={value} valueName={"ticketImage"} setValue={setValue} title={'Electronic signature:'} desc={'Please sign the electronic signature.'}/> */}
+        </div>
+        <div>
+          <br />
+        </div>
+        <div className="d-flex justify-content-center">
+          <label>
+            <input type="checkbox" />
+            <span>
+            I agree with Terms and Conditions
+            </span>
+          </label>
         </div>
         <div>
           <button
@@ -207,7 +241,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
             }}
             onClick={(e) => uploadFile(e)}
           >
-            {load ? 'იგზავნება' : 'გაგზავნა'}
+            {load ? 'loading' : 'Submit Form'}
           </button>
         </div>
       </div>

@@ -47,8 +47,7 @@ const SendForm = () => {
             value.problem !== "" &&
             value.fightNumber !== "" &&
             value.date !== "" &&
-            value.select !== "" &&
-            value.description !== "" 
+            value.select !== ""
         ){
             setAccept({
                 passport: true,
@@ -82,22 +81,24 @@ const SendForm = () => {
 
     const uploadFile = (e) => {
         e.preventDefault()
-        setPopup(true)
-        setLoad(true)
-        fetch(`${process.env.REACT_APP_API_URL}/email`, {
-            method: "POST",
-            headers: {
-              'Content-type': 'application/json',
-              'Access-Control-Allow-Origin': '*'
-            },
-            body: JSON.stringify({
-                ...value
-            })
-        })
-        .then((res) => res.json())
-        .finally(()=>{
-            console.log('hereee')
-            fetch(`${process.env.REACT_APP_API_URL}/client`, {
+        if(
+            value.firstName !== "" &&
+            value.lastName !== "" &&
+            value.phone !== "" &&
+            value.email !== "" &&
+            value.city !== "" &&
+            value.address !== "" &&
+            value.problem !== "" &&
+            value.fightNumber !== "" &&
+            value.date !== "" &&
+            value.select !== "" &&
+            value.passportImage !== "" &&
+            value.ticketImage !== "" &&
+            value.signature !== ""
+        ) {
+            setPopup(true)
+            setLoad(true)
+            fetch(`${process.env.REACT_APP_API_URL}/email`, {
                 method: "POST",
                 headers: {
                   'Content-type': 'application/json',
@@ -108,13 +109,28 @@ const SendForm = () => {
                 })
             })
             .then((res) => res.json())
-            .then(res => {
-                console.log("save data:", res);
-            }).finally(()=>{
-                setLoad(false)
+            .finally(()=>{
+                console.log('hereee')
+                fetch(`${process.env.REACT_APP_API_URL}/client`, {
+                    method: "POST",
+                    headers: {
+                      'Content-type': 'application/json',
+                      'Access-Control-Allow-Origin': '*'
+                    },
+                    body: JSON.stringify({
+                        ...value
+                    })
+                })
+                .then((res) => res.json())
+                .then(res => {
+                    console.log("save data:", res);
+                }).finally(()=>{
+                    setLoad(false)
+                })
             })
-        })
-
+        }else {
+            console.log('sheavse yvela forma')
+        }
 
     }
     return (

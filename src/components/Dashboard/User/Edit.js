@@ -51,9 +51,14 @@ const UserEdit = () => {
                     <div className="d-flex">
                         <select onChange={(e)=> setValue(e.target.value)}>
                             <option value={''}>choose status</option>
-                            <option value={'In progress'}>In progress</option>
-                            <option value={'Done'}>Done</option>
-                            <option value={'Test'}>Test</option>
+                            <option value={'Application received'}>Application received</option>
+                            <option value={'Case proceedings initiated'}>Case proceedings initiated</option>
+                            <option value={'Rejected by the airline'}>Rejected by the airline</option>
+                            <option value={'Transferred to the legal department'}>Transferred to the legal department</option>
+                            <option value={'Case appealed to a higher authority'}>Case appealed to a higher authority</option>
+                            <option value={'Case is pending in court'}>Case is pending in court</option>
+                            <option value={'Case successfully closed'}>Case successfully closed</option>
+                            <option value={'Case closed'}>Case closed</option>
                         </select>
                         <button onClick={handlClick}>edit</button>
                     </div>
