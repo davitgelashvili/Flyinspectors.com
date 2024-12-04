@@ -108,7 +108,7 @@ const App = () => {
             }`}
             onClick={() => handleOptionClick(index, option.info)}
           >
-            {option.icon}
+            {/* {option.icon} */}
             {option.label}
           </button>
         ))}
