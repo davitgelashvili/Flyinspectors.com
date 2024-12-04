@@ -8,7 +8,7 @@ const UserEdit = () => {
     const [value, setValue] = useState('')
 
     useEffect(()=>{
-        fetch('https://flyinspectors-back.vercel.app/client', {
+        fetch('https://api.fly.gelashvili.me/client', {
             method: "GET",
             headers: {
               'Content-type': 'application/json',
@@ -25,7 +25,7 @@ const UserEdit = () => {
 
     function handlClick (e) {
         e.preventDefault()
-        fetch('https://flyinspectors-back.vercel.app/client/id', {
+        fetch('https://api.fly.gelashvili.me/client/id', {
             method: "PUT",
             headers: {
               'Content-type': 'application/json',

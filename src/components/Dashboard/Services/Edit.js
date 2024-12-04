@@ -12,12 +12,18 @@ const ServicesEdit = () => {
     const [load, setLoad] = useState(false)
 
     useEffect(()=>{
-        setValueTitle(data.title)
-        setValueDesc(data?.description)
+        setValueTitle({
+            en: data?.title?.en,
+            ka: data?.title?.ka
+        })
+        setValueDesc({
+            en: data?.description?.en,
+            ka: data?.description?.ka
+        })
     }, [data])
 
     useEffect(()=>{
-        fetch('https://flyinspectors-back.vercel.app/services', {
+        fetch('https://api.fly.gelashvili.me/services', {
             method: "GET",
             headers: {
               'Content-type': 'application/json',
@@ -34,7 +40,7 @@ const ServicesEdit = () => {
     function handlClick (e) {
         e.preventDefault()
         setLoad(true)
-        fetch('https://flyinspectors-back.vercel.app/services/id', {
+        fetch('https://api.fly.gelashvili.me/services/id', {
             method: "PUT",
             headers: {
               'Content-type': 'application/json',
@@ -42,8 +48,14 @@ const ServicesEdit = () => {
             },
             body: JSON.stringify({
                 id: id,
-                title: valueTitle,
-                description: valueDesc
+                title: {
+                    en: valueTitle.en,
+                    ka: valueTitle.ka
+                },
+                description: {
+                    en: valueDesc.en,
+                    ka: valueDesc.ka
+                }
             })
         })
         .then((res) => res.json()).finally(()=>{
@@ -56,26 +68,67 @@ const ServicesEdit = () => {
 
     return (
         <div className="container">
-            <div className="col-lg-6">
-                <div>
-                    <TextInput
-                        type={"text"}
-                        value={valueTitle}
-                        placeholder={'Enter title'}
-                        name={"title"}
-                        icon={''}
-                        onChange={e => setValueTitle(e.target.value)}
-                        />
+            <div className="row">
+                <div className="col-6">
+                    <div>
+                        <p>eng</p>
+                        <TextInput
+                            type={"text"}
+                            value={valueTitle.en}
+                            placeholder={'Enter title'}
+                            name={"title"}
+                            icon={''}
+                            onChange={e => setValueTitle({
+                                ...valueTitle,
+                                en: e.target.value
+                            })}
+                            />
 
+                        <TextInput
+                            type={"textarea"}
+                            value={valueDesc.en}
+                            placeholder={'Enter desc'}
+                            name={"desc"}
+                            icon={''}
+                            onChange={e => setValueDesc({
+                                ...valueDesc,
+                                en: e.target.value,
+                            })}
+                            />
+                    </div>
+                </div>
+                <div className="col-6">
+                    <div>
+                            <p>ge</p>
                     <TextInput
-                        type={"textarea"}
-                        value={valueDesc}
-                        placeholder={'Enter desc'}
-                        name={"desc"}
-                        icon={''}
-                        onChange={e => setValueDesc(e.target.value)}
-                        />
+                            type={"text"}
+                            value={valueTitle.ka}
+                            placeholder={'Enter title'}
+                            name={"title"}
+                            icon={''}
+                            onChange={e => setValueTitle({
+                                ...valueTitle,
+                                ka: e.target.value
+                            })}
+                            />
+
+                        <TextInput
+                            type={"textarea"}
+                            value={valueDesc.ka}
+                            placeholder={'Enter desc'}
+                            name={"desc"}
+                            icon={''}
+                            onChange={e => setValueDesc({
+                                ...valueDesc,
+                                ka: e.target.value,
+                            })}
+                            />
+                    </div>
+                </div>
+                <div>
+                    <div>
                     {load && <Loading />}
+                    </div>
                     <button onClick={handlClick}>
                         save
                     </button>

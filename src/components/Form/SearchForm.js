@@ -10,7 +10,7 @@ const SearchForm = () => {
     function handleChange(e){
         e.preventDefault()
         setLoad(true)
-        fetch('https://flyinspectors-back.vercel.app/id', {
+        fetch('https://api.fly.gelashvili.me/id', {
             method: "POST",
             headers: {
               'Content-type': 'application/json',

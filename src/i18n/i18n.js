@@ -6,7 +6,7 @@ import opensectionModule from "../components/OptionsSection/opensection.module";
 i18n
     .use(initReactI18next)
     .init({
-        fallbackLng: 'ka',
+        fallbackLng: 'en',
         resources: {
             en: {
                 translation: {

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const Item = () => {
   const [data,setData] = useState()
   useEffect(()=>{
-    fetch('https://flyinspectors-back.vercel.app/rate', {
+    fetch('https://api.fly.gelashvili.me/rate', {
       method: "GET",
       headers: {
         'Content-type': 'application/json',
@@ -38,10 +38,10 @@ const Item = () => {
                     </div>
                     <div className="col-md-8 d-flex align-items-center">
                       <div className="card-body d-flex flex-row align-items-center ms-3">
-                        <h4 className={`card-title ${styles.cardNumber}`}>{item.title}</h4>
+                        <h4 className={`card-title ${styles.cardNumber}`}>{item.title.en}</h4>
                         <br></br>
                         <div className={`card-title ${styles.description}`}>
-                          {item.description}
+                          {item.description.en}
                         </div>
                       </div>
                     </div>

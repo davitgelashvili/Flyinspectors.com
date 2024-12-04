@@ -5,7 +5,7 @@ const RateList = () => {
     const [data, setData] = useState([])
 
     useEffect(()=>{
-        fetch('https://flyinspectors-back.vercel.app/rate', {
+        fetch('https://api.fly.gelashvili.me/rate', {
             method: "GET",
             headers: {
               'Content-type': 'application/json',
@@ -28,8 +28,8 @@ const RateList = () => {
                             <Link to={item.id}>
                                 <h3>
                                     <strong>name:</strong>
-                                    {item.description}
-                                    <p>{item.title}</p>
+                                    {item.description.en}
+                                    <p>{item.title.en}</p>
                                 </h3>
                             </Link>
                         </div>

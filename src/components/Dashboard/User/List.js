@@ -5,7 +5,7 @@ const UserList = () => {
     const [data, setData] = useState([])
 
     useEffect(()=>{
-        fetch('https://flyinspectors-back.vercel.app/client', {
+        fetch('https://api.fly.gelashvili.me/client', {
             method: "GET",
             headers: {
               'Content-type': 'application/json',

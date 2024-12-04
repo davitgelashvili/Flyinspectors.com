@@ -13,7 +13,7 @@ function FeedBack() {
   function handlClick (e) {
     e.preventDefault()
     setLoad(true)
-    fetch('https://flyinspectors-back.vercel.app/contact', {
+    fetch('https://api.fly.gelashvili.me/contact', {
         method: "POST",
         headers: {
           'Content-type': 'application/json',

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const ServicesOptions = () => {
   const [data,setData] = useState()
   useEffect(()=>{
-    fetch('https://flyinspectors-back.vercel.app/services', {
+    fetch('https://api.fly.gelashvili.me/services', {
       method: "GET",
       headers: {
         'Content-type': 'application/json',

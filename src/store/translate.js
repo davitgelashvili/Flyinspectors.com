@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initalData = {
-    language: 'ka'
+    language: 'en'
 }
 
 const siteTranslate = createSlice({

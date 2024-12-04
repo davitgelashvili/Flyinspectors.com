@@ -84,7 +84,7 @@ const SendForm = () => {
         e.preventDefault()
         setPopup(true)
         setLoad(true)
-        fetch('https://flyinspectors-back.vercel.app/email', {
+        fetch('https://api.fly.gelashvili.me/email', {
             method: "POST",
             headers: {
               'Content-type': 'application/json',
@@ -98,7 +98,7 @@ const SendForm = () => {
         .then(res => {
             console.log("send email:", res);
         }).finally(()=>{
-            fetch('https://flyinspectors-back.vercel.app/client', {
+            fetch('https://api.fly.gelashvili.me/client', {
                 method: "POST",
                 headers: {
                   'Content-type': 'application/json',

@@ -5,7 +5,7 @@ const ServicesList = () => {
     const [data, setData] = useState([])
 
     useEffect(()=>{
-        fetch('https://flyinspectors-back.vercel.app/services', {
+        fetch('https://api.fly.gelashvili.me/services', {
             method: "GET",
             headers: {
               'Content-type': 'application/json',
@@ -26,8 +26,8 @@ const ServicesList = () => {
                     return (
                         <div className="col-6" key={item._id}>
                             <Link to={item.id}>
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
+                                <h3>{item.title.en}</h3>
+                                <p>{item.description.en}</p>
                             </Link>
                         </div>
                     )
