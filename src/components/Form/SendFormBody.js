@@ -207,6 +207,9 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
                 penColor='blue'
                 canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }} />
             </div>
+            <div>
+              <button>clear</button>
+            </div>
           </div>
           {/* <SignatureContent value={value} setValue={setValue}/> */}
           {/* <Signature value={value} valueName={"ticketImage"} setValue={setValue} title={'Electronic signature:'} desc={'Please sign the electronic signature.'}/> */}
