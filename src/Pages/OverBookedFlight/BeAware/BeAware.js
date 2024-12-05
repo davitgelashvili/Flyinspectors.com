@@ -9,7 +9,6 @@ const BeAware = () => {
       <div className={`${styles.services} container`}>
         <div className="row">
           <div className="col-lg-6 col-12">
-            {/* <img className={styles.image} src={image} alt="MonitorImage"></img> */}
             <SectionCover image={image} />
           </div>
           <div className={`col-lg-6 col-12`}>

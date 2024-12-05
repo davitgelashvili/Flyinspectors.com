@@ -4,7 +4,8 @@ import Facebook from "../../Images/Facebook.png";
 import Instagram from "../../Images/Instagram.png";
 import Whatsapp from "../../Images/Whatsapp.png";
 import Gmail from "../../Images/Gmail.png";
-import Tiktok from "../../Images/Tiktok.png";
+// import Tiktok from "../../Images/Tiktok.png";
+import Viber from "../../Images/Viber.png"
 
 const SocialMedia = () => {
 
@@ -19,8 +20,8 @@ const SocialMedia = () => {
           </a>
         </li>
         <li className="nav-item ">
-          <a href="https://www.instagram.com/flyinspectors/" className="nav-link p-0 text-body-secondary">
-            <img src={Instagram} alt="Instagram" />
+          <a href="#" className="nav-link p-0 text-body-secondary">
+            <img className={styles.viber} src={Viber} alt="Viber" />
           </a>
         </li>
         <li className="nav-item ">
@@ -33,11 +34,11 @@ const SocialMedia = () => {
             <img src={Gmail} alt="Gmail" />
           </a>
         </li>
-        <li className="nav-item ">
+        {/* <li className="nav-item ">
           <a href="https://www.tiktok.com/@flyinspectors" className="nav-link p-0 text-body-secondary">
             <img src={Tiktok} alt="Tiktok" />
           </a>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
