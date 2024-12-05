@@ -3,8 +3,8 @@ import styles from "./PassLaw.module.scss";
 
 const PassLaw = () => {
   return (
-    <div>
-      <div className={`${styles.services} container`}>
+    <div className={styles.services}>
+      <div className={`container`}>
         <div className="">
           <div className={`${styles.services__item}`}>
             <h4 className={styles.services__header}>Air Passenger Law
