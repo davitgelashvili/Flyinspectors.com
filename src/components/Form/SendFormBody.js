@@ -225,7 +225,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           {/* <Signature value={value} valueName={"ticketImage"} setValue={setValue} title={'Electronic signature:'} desc={'Please sign the electronic signature.'}/> */}
         </div>
         <div>
-          <br />
+          <br /> 
         </div>
         <div className="d-flex justify-content-center">
           <label>
