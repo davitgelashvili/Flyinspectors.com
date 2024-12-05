@@ -4,7 +4,6 @@ import UploadWidget from "../UploadWidget/UploadWidget";
 import DisableUploadWidget from "../UploadWidget/DisableUploadWidget";
 import TextInput from "../UI/TextInput";
 import File from "../UploadWidget/File";
-import SignatureContent from "./SignatureContent";
 import ReactSignatureCanvas from 'react-signature-canvas'
 import styles from './Signature.module.scss'
 import { Link } from "react-router-dom";
@@ -208,7 +207,18 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
                 canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }} />
             </div>
             <div>
-              <button>clear</button>
+              <button style={{
+                marginTop: '20px',
+                backgroundColor: '#4CAF4F',
+                padding: '7px 75px',
+                color: '#fff',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+              onClick={(e)=>{
+                e.preventDefault()
+                signature.clear()
+              }}>clear</button>
             </div>
           </div>
           {/* <SignatureContent value={value} setValue={setValue}/> */}
@@ -221,7 +231,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           <label>
             <input type="checkbox" />
             <span>
-            I agree with <Link to={''}>Terms and Conditions</Link>
+            I agree with <Link to={'/terms-and-conditions'}>Terms and Conditions</Link>
             </span>
           </label>
         </div>
