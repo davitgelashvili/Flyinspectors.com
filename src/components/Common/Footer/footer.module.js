@@ -1,35 +1,35 @@
 module.exports = {
     en: {
-        menu: {
+        footer: {
             home: 'Home',
-            yourrights: 'Your Rights',
+            submitclaim: "Submit Claim",
+            contactus: 'Contact Us',
+            aboutus:"About Us",
             flightdelay:'Flight Delay',
             flightcancellation:'Flight Cancellation',
             overBookedflight:'OverBooked Flight',
             missedconnection:'Missed Connection',
             lostluggage:'Lost Luggage',
-            aboutus:"About Us",
             blog:"Blog",
+            termsandconditions:"Terms and Conditions",
             faq:"FAQ",
-            contactus: 'Contact Us',
-            submitclaim: "Submit Claim",
         }
 
     },
     ka: {
-        menu: {
+        footer: {
             home: 'მთავარი',
-            yourrights: 'თქვენი უფლებები',
+            submitclaim: "შეავსეთ განაცხადი",
+            contactus: 'კონტაქტი',
+            aboutus:"ჩვენს შესახებ",
             flightdelay:'დაგვიანებული ფრენა',
             flightcancellation:'გაუქმებულია ფრენა',
             overBookedflight:'გადაჯავშნილი ფრენა',
             missedconnection:'დამაკავშირებელი ფრენა',
             lostluggage:'დაკარგული ბარგი',
-            aboutus:"ჩვენს შესახებ",
             blog:"ბლოგი",
+            termsandconditions:"წესები და პირობები",
             faq:"FAQ",
-            contactus: 'კონტაქტი',
-            submitclaim: "შეავსეთ განაცხადი",
         }
     }
 }
