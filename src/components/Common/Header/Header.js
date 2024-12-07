@@ -16,7 +16,7 @@ function Header() {
     useEffect(()=>{
         i18n.changeLanguage(language)
         if(windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge'){
-            setLanguageBtn(true)
+            setLanguageBtn(false)
         }
     }, [dispatch, language])
 
@@ -29,7 +29,7 @@ function Header() {
                     <div className="d-flex align-items-center">
                         <SubmitLink className={styles.submitlink} />
                         {
-                            languageBtn || !languageBtn && (
+                            languageBtn && (
                                 <div className="">
                                     {language === 'ka' ? (
                                         <button onClick={() => dispatch(siteTranslateAction.changeLanguage('en'))}>

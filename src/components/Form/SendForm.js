@@ -105,27 +105,43 @@ const SendForm = ({setFormActive}) => {
                   'Access-Control-Allow-Origin': '*'
                 },
                 body: JSON.stringify({
-                    ...value
+                    ...value,
+
                 })
             })
             .then((res) => res.json())
             .finally(()=>{
-                fetch(`${process.env.REACT_APP_API_URL}/client`, {
+                fetch(`${process.env.REACT_APP_API_URL}/sendtoclient`, {
                     method: "POST",
                     headers: {
                       'Content-type': 'application/json',
                       'Access-Control-Allow-Origin': '*'
                     },
                     body: JSON.stringify({
-                        ...value
+                        userId: value.userId,
+                        firstName: value.firstName,
+                        email: value.email
                     })
                 })
                 .then((res) => res.json())
-                .then(res => {
-                    console.log("save data");
-                }).finally(()=>{
-                    setLoad(false)
-                    setValue(defaultValue)
+                .finally(()=>{
+                    fetch(`${process.env.REACT_APP_API_URL}/client`, {
+                        method: "POST",
+                        headers: {
+                          'Content-type': 'application/json',
+                          'Access-Control-Allow-Origin': '*'
+                        },
+                        body: JSON.stringify({
+                            ...value
+                        })
+                    })
+                    .then((res) => res.json())
+                    .then(res => {
+                        console.log("save data");
+                    }).finally(()=>{
+                        setLoad(false)
+                        setValue(defaultValue)
+                    })
                 })
             })
         }else {
