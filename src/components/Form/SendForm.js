@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import SendFormBody from "./SendFormBody"
 import PopUp from "./PopUp"
 
-const SendForm = () => {
+const SendForm = ({setFormActive}) => {
     const [load, setLoad] = useState(false)
     const [popup, setPopup] = useState(false)
     const [unicueID, setUnicueID] = useState(
@@ -136,7 +136,7 @@ const SendForm = () => {
     return (
         <>
         <SendFormBody value={value} setValue={setValue} uploadFile={uploadFile} setAccept={setAccept} accept={accept} load={load} setLoad={setLoad}/>
-        { popup && <PopUp load={load} setPopup={setPopup} unicueID={unicueID}/> }
+        { popup && <PopUp load={load} setPopup={setPopup} unicueID={unicueID} setFormActive={setFormActive}/> }
         </>
     )
 }

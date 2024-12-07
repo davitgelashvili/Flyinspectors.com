@@ -21,7 +21,7 @@ const Form = () => {
                 <div className={`${styles['form__body']}`}>
                     {
                         formActive ? (
-                            <SendForm />
+                            <SendForm setFormActive={setFormActive} />
                         ) : (
                             <SearchForm />
                         )

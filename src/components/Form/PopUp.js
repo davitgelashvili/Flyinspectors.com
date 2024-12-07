@@ -1,7 +1,7 @@
 import Loading from '../Loading/Loading'
 import styles from './PopUp.module.scss'
 
-const PopUp = ({setPopup, load, unicueID}) => {
+const PopUp = ({setPopup, load, unicueID, setFormActive}) => {
     return (
         <div className={styles.popup}>
             <div className={styles.popup__bg}></div>
@@ -20,6 +20,7 @@ const PopUp = ({setPopup, load, unicueID}) => {
                     </p>
                     <button onClick={() => {
                         setPopup(false)
+                        setFormActive(false)
                     }}>close</button>
                 </div>
             )}
