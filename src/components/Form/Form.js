@@ -21,18 +21,18 @@ const Form = () => {
                 <div className={`${styles['form__body']}`}>
                     {
                         formActive ? (
-                            <SendForm/>
+                            <SendForm />
                         ) : (
                             <SearchForm />
                         )
                     }
                 </div>
             </div>
-            <div className="row mt-5 mb-5">
-                <div className=" mt-5 col-lg-5 col-12 ">
+            <div className="row">
+                <div className="col-lg-6">
                     <ContactSubmitPage/>
                 </div>
-                <div className="mt-5 col-lg-7 col-12">
+                <div className="col-lg-6">
                     <Map/>
                 </div>
             </div>

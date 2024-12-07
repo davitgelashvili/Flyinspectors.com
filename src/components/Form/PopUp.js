@@ -18,7 +18,9 @@ const PopUp = ({setPopup, load, unicueID}) => {
                     <p className={styles.popup__id}>
                     ID: <span>{unicueID}</span>
                     </p>
-                    <button onClick={() => setPopup(false)}>close</button>
+                    <button onClick={() => {
+                        setPopup(false)
+                    }}>close</button>
                 </div>
             )}
         </div>

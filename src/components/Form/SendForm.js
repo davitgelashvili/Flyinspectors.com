@@ -35,6 +35,7 @@ const SendForm = () => {
         select: "",
         description: "",
     })
+    const [defaultValue, setDefaultValue] = useState(value)
 
     useEffect(()=>{
         if(
@@ -76,7 +77,6 @@ const SendForm = () => {
                 other: false
             })
         }
-        console.log(value)
     }, [value])
 
     const uploadFile = (e) => {
@@ -110,7 +110,6 @@ const SendForm = () => {
             })
             .then((res) => res.json())
             .finally(()=>{
-                console.log('hereee')
                 fetch(`${process.env.REACT_APP_API_URL}/client`, {
                     method: "POST",
                     headers: {
@@ -123,9 +122,10 @@ const SendForm = () => {
                 })
                 .then((res) => res.json())
                 .then(res => {
-                    console.log("save data:", res);
+                    console.log("save data");
                 }).finally(()=>{
                     setLoad(false)
+                    setValue(defaultValue)
                 })
             })
         }else {

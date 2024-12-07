@@ -215,7 +215,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
                 border: 'none',
                 cursor: 'pointer'
               }}
-              onClick={(e)=>{
+              onClick={e=>{
                 e.preventDefault()
                 signature.clear()
               }}>clear</button>
@@ -231,7 +231,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           <label>
             <input type="checkbox" />
             <span>
-            I agree with <Link to={'/terms-and-conditions'}>Terms and Conditions</Link>
+            I agree with <Link target="_blank" to={'/terms-and-conditions'}>Terms and Conditions</Link>
             </span>
           </label>
         </div>

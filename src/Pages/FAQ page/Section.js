@@ -4,7 +4,6 @@ const Section = ({item}) =>{
             hii
             <h1>{item?.sectionTitle}</h1>
             {item?.list?.map((li) => {
-                console.log(item)
                 return (
                     <div className="item">
                         <div className="item__head">

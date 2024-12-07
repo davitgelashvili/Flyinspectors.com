@@ -6,11 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { siteTranslateAction } from "../../../store/translate";
 import { useEffect } from "react";
 import i18n from "../../../i18n/i18n";
+import { useLocation } from "react-router-dom";
 
 function Header() {
     const dispatch = useDispatch()
+    const url = useLocation()
     const {language} = useSelector( state => state.translate)
-
+    console.log(url)
     useEffect(()=>{
         i18n.changeLanguage(language)
     }, [dispatch, language])

@@ -1,13 +1,11 @@
 import styles from './TextInput.module.scss'
 
 const TextInput = ({type, value, placeholder, name, icon, onChange, label, rows, selectData}) => {
-    console.log(selectData)
     switch (type) {
         case 'select':
             return (
                 <label className={`${styles['textlabel']}`}>
                     {icon && <img src={icon} alt="icon" className={`${styles['textlabel__icon']}`} />}
-                    {console.log(selectData)}
                     <select 
                         className={`${styles['textlabel__input']}`}
                         type={type}
