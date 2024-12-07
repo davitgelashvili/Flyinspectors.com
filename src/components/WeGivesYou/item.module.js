@@ -1,31 +1,9 @@
 module.exports = {
     en: {
-        opensection: {
-            sectionTitle: 'DO YOU QUALIFY FOR A COMPENSATION',
-            delay: {
-                title: "Flight Delay Compensation",
-                desc: "If your flight is delayed by 3+ hours, according to EU regulations, you are entitled to compensation in the amount of 250-600 euros.",
-            },
-            compensation: {
-                title: "Flight Cancellation Compensation",
-                desc: "Your flight was delayed and you didn't receive at least 14 days' notice? You're entitled to compensation.",
-            },
-            missedconnectioncompensation: {
-                title: "Missed Connection Compensation",
-                desc: "Missed your connecting flight due to a flight delay? You may be entitled to flight compensation."
-            },
-            overbookingcompensation: {
-                title: "Overbooking Compensation",
-                desc: "Did you show up on time for your flight but couldn't board due to lack of available seats? You are entitled to flight compensation."
-            },
-            compensationfordeniedboarding: {
-                title: "Compensation for denied boarding",
-                desc: "Were you denied boarding and given no reason or an insufficient reason? You are entitled to compensation."
-            },
-            delayedbaggagecompensation: {
-                title: "Delayed baggage compensation",
-                desc: "Did your checked baggage arrive late or damaged? You are entitled to compensation."
-            }
+        section: {
+            title1:"Yourself",
+            subtitles1:"Overwhelming, annoying, time consuming",
+
         }
     },
     ka: {

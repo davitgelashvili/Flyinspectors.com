@@ -4,17 +4,19 @@ const Item = ({ title, desc }) => {
   return (
     <div className={styles.mainDiv}>
       <h3 className={styles.header}> WHY FLYINSPECTORS?</h3>
-      <p className={styles.Item}>
-        When struggling with flight-related problem, most of the passengers
-        don't even know they are eligible for compensation. let alone the
-        resources they need to determine if they qualify for it. You may need
-        legal expertise and a lot of time to get familiar with the flight
-        regulations and your rights as an airline passenger.<br></br>{" "}
-        Fortunately, there is easier solution, Flyinspectors are experts in
-        this field. We can ease the process of getting the flight compensation
-        you may qualify for. And it's completely free for you, we only take
-        fee of 25% in case of success. Are we not successful, you pay nothing.
-      </p>
+      <div className={styles.Item}>
+        <p>
+          Most passengers are unaware of their rights when it comes to flight-related issues. Not to mention the resources available to determine if they are entitled to flight compensation. You may need to consult a lawyer to understand the EU regulations and your rights as an air passenger.
+
+          Fortunately, there is an easy solution. Flyinspectors are experts in this field. We can make it easy for you to get your flight compensation. It is completely free for you, we only take a 25% commission if we are successful.
+
+          We have helped many passengers, and we can help you too!
+
+          8 out of 10 passengers who have tried to get compensation on their own say that the airline refused or even didn’t respond.
+
+          We will make sure that our customers are not treated this way!
+        </p>
+      </div>
     </div>
   );
 };
