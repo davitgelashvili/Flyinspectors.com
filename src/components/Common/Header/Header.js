@@ -4,17 +4,20 @@ import SubmitLink from "../../UI/SubmitLink";
 import BurgerMenu from "./Menu/BurgerMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { siteTranslateAction } from "../../../store/translate";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import i18n from "../../../i18n/i18n";
-import { useLocation } from "react-router-dom";
 
 function Header() {
     const dispatch = useDispatch()
-    const url = useLocation()
     const {language} = useSelector( state => state.translate)
-    console.log(url)
+    const windowUrl = window.location.host
+    const [languageBtn, setLanguageBtn] = useState(false);
+
     useEffect(()=>{
         i18n.changeLanguage(language)
+        if(windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge'){
+            setLanguageBtn(true)
+        }
     }, [dispatch, language])
 
     return (
@@ -25,17 +28,21 @@ function Header() {
                     <BurgerMenu/>
                     <div className="d-flex align-items-center">
                         <SubmitLink className={styles.submitlink} />
-                        {/* <div className="">
-                            {language === 'ka' ? (
-                                <button onClick={() => dispatch(siteTranslateAction.changeLanguage('en'))}>
-                                    Eng
-                                </button>
-                            ) : (
-                                <button onClick={() => dispatch(siteTranslateAction.changeLanguage('ka'))}>
-                                    Geo
-                                </button>
-                            )}
-                        </div> */}
+                        {
+                            languageBtn || !languageBtn && (
+                                <div className="">
+                                    {language === 'ka' ? (
+                                        <button onClick={() => dispatch(siteTranslateAction.changeLanguage('en'))}>
+                                            Eng
+                                        </button>
+                                    ) : (
+                                        <button onClick={() => dispatch(siteTranslateAction.changeLanguage('ka'))}>
+                                            Geo
+                                        </button>
+                                    )}
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
             </div>
