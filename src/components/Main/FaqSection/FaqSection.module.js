@@ -1,9 +1,9 @@
 module.exports = {
     en: {
-        faxsection: {
+        faqsection: {
+            title: 'FREQUENTLY ASKED QUESTIONS',
             header1: "IN WHICH CASES, CAN I CLAIM COMPENSATION",
-            conten1:
-                "When struggling with flight-related problem, most of the passengers don’t even know they are eligible for compensation. let alone the resources they need to determine if they qualify for it. You may need legal expertise and a lot of time to get familiar with the flight regulations and your rights as an airline passenger.Fortunately, there is easier solution, Flyinspectors are experts in this field. We can ease the process of getting the flight compensation you may qualify for. And it’s completely free for you, we only take fee of 25% in case of success. Are we not successful, you pay nothing.",
+            content1: "When struggling with flight-related problem, most of the passengers don’t even know they are eligible for compensation. let alone the resources they need to determine if they qualify for it. You may need legal expertise and a lot of time to get familiar with the flight regulations and your rights as an airline passenger.Fortunately, there is easier solution, Flyinspectors are experts in this field. We can ease the process of getting the flight compensation you may qualify for. And it’s completely free for you, we only take fee of 25% in case of success. Are we not successful, you pay nothing.",
             header2: "WHAT DO I NEED TO RECEIVE COMPENSATION?",
             content2: "To start the case is required the copies of the ticket and the passport. We will prepare the following documentation: Declaration of Assignment, POA and Agreement.",
             header3: "HOW MUCH AM I ENTITLED TO BE COMPENSATED?",
@@ -18,9 +18,10 @@ module.exports = {
         }
     },
     ka: {
-        faxsection: {
+        faqsection: {
+            title: 'FREQUENTLY ASKED QUESTIONS',
             header1: "რა შემთხვევაში შემიძლია მივიღო კომპენსაცია",
-            conten1:
+            content1:
                 "ფრენის კომპენსაცია მგზავრს ეკუთვნის თუ რეისი დანიშნულების ადგილამდე დაგვიანდა მინიმუმ 3 საათით. იმ შემთხვევაშიც, თუ საწყისი ფრენა დაგვიანდა 3 საათზე ნაკლები დროით, მაგრამ ამის გამო დაგაგვიანდათ დამაკავშირებელ ფრენაზე და შედეგად საბოლოო დანიშნულების ადგილამდე ჩაფრენა დაგიგვიანდათ 3 საათზე მეტი დროით.თვითმფრინავში ჩასხდომაზე  მოხდა  უარის თქმა თავისუფალი ადგილების არარსებობის გამო.ავიაკომპანიას აქვს ვალდებულება მგზავრს მიაწოდოს ინფორმაცია რეისის გაუქმების თაობაზე, რეისამდე არანაკლებ 14 დღისა, წინააღმდეგ შემთხვევაში, მგზავრს აქვს უფლება მოითხოვოს კომპენსაცია.",
             header2: "რა მჭირდება კომპენსაციის მისაღებად?",
             content2: "საქმის წარმოების დასაწყებად საჭიროა ბილეთის და პასპორტის ასლი. რის შემდეგაც მომზადდება დოკუმენტაცია: ხელშეკრულება, ცესია და მინდობილობა.",
