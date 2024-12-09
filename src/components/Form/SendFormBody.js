@@ -96,7 +96,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       type: "select",
       value: value.select,
       selectData: [
-        'II have never started process by myself\nor other claim company',
+        'I have never started process by myself\nor other claim company',
         'I have already tried to get compensation'
       ],
       placeholder: "Select",
@@ -157,10 +157,10 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
               accept.ticket ? (
                 <File title={'Passport Photo'} name={'IMG 1'} />
               ) : (
-                <UploadWidget value={value} valueName={"passportImage"} setValue={setValue} title={'Passport Photo'} name={'Upload Photo'} />
+                <UploadWidget value={value} valueName={"passportImage"} setValue={setValue} title={'Passport Photo'} name={'Format: JPEG,PNG,JPG'} />
               )
             ) : (
-              <DisableUploadWidget title={'Passport Photo'} name={'0 Upload Photo'} />
+              <DisableUploadWidget title={'Passport Photo '} name={'Format: JPEG,PNG,JPG'} />
             )
           }
         </div>
@@ -170,19 +170,19 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
               accept.other ? (
                 <File title={'Passport Photo'} name={'IMG 2'} />
               ) : (
-                <UploadWidget value={value} valueName={"ticketImage"} setValue={setValue} title={'Ticket'} name={'Upload Ticket'} />
+                <UploadWidget value={value} valueName={"ticketImage"} setValue={setValue} title={'Ticket'} name={'Format: JPEG,PNG,JPG'} />
               )
             ) : (
-              <DisableUploadWidget title={'Ticket'} name={'0 Upload Ticket'} />
+              <DisableUploadWidget title={'Ticket'} name={'Format: JPEG,PNG,JPG'} />
             )
           }
         </div>
         <div className="col-lg-12">
           {
             accept.other ? (
-              <UploadWidget value={value} valueName={"otherImage"} setValue={setValue} title={'Other documents'} name={'Upload Picture'} />
+              <UploadWidget value={value} valueName={"otherImage"} setValue={setValue} title={'Other documents'} name={'Format: JPEG,PNG,JPG'} />
             ) : (
-              <DisableUploadWidget title={'Other documents'} name={'0 Upload Picture'} />
+              <DisableUploadWidget title={'Other documents'} name={'Format: JPEG,PNG,JPG'} />
             )
           }
         </div>
