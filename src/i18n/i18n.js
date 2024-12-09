@@ -2,9 +2,23 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import header from '../components/Common/Header/header.module'
 import opensectionModule from "../components/OptionsSection/opensection.module";
+import whyweModule from "../components/WhyWe/whywe.module";
+import FaqSectionModule from "../components/Main/FaqSection/FaqSection.module";
+import WeGivesYouModule from "../components/WeGivesYou/WeGivesYou.module";
+import KnowsYourRightsModule from "../components/Knows Your Rights/components/KnowsYourRights.module";
 import CompensationInfoModule from "../Pages/FlightDelay/CompensationInfo/CompensationInfo.module";
 import CompensationIfModule from "../Pages/FlightDelay/CompensationIf/CompensationIf.module";
 import CompensationHowMuchModule from "../Pages/FlightDelay/CompensationHowMuch/CompensationHowMuch.module";
+import BeAwareModule from "../Pages/FlightDelay/BeAware/BeAware.module";
+import FlightCancellationCompensationInfo from "../Pages/FlightCancellation/CompensationInfo/CompensationInfo.module";
+import FlightCancellationCompensationif from "../Pages/FlightCancellation/CompensationIf/CompensationIf.module";
+import FlightCancellationCompensationHowMuch from "../Pages/FlightCancellation/CompensationHowMuch/CompensationHowMuch.module";
+import FlightCancellationBeAware from "../Pages/FlightCancellation/BeAware/BeAware.module";
+
+import AboutUsSectionModule from "../Pages/About Us/ABout Us Section/AboutUsSection.module";
+import OurCoreValuesModule from "../Pages/About Us/Our core values/OurCoreValues.module";
+import ContactUsSectionModule from "../Pages/Contact Us/Contact Us Section/ContactUsSection.module";
+import FeedBackCompModule from "../Pages/Contact Us/Feedback Form/FeedBackComp.module";
 
 i18n
     .use(initReactI18next)
@@ -15,18 +29,50 @@ i18n
                 translation: {
                     ...header.en,
                     ...opensectionModule.en,
+                    ...whyweModule.en,
+                    ...FaqSectionModule.en,
+                    ...WeGivesYouModule.en,
+                    ...KnowsYourRightsModule.en,
+
                     ...CompensationInfoModule.en,
                     ...CompensationIfModule.en,
-                    ...CompensationHowMuchModule.en
+                    ...CompensationHowMuchModule.en,
+                    ...BeAwareModule.en,
+
+                    ...FlightCancellationCompensationInfo.en,
+                    ...FlightCancellationCompensationif.en,
+                    ...FlightCancellationCompensationHowMuch.en,
+                    ...FlightCancellationBeAware.en,
+
+                    ...AboutUsSectionModule.en,
+                    ...OurCoreValuesModule.en,
+                    ...ContactUsSectionModule.en,
+                    ...FeedBackCompModule.en
                 }
             },
             ka: {
                 translation: {
                     ...header.ka,
                     ...opensectionModule.ka,
+                    ...whyweModule.ka,
+                    ...FaqSectionModule.ka,
+                    ...WeGivesYouModule.ka,
+                    ...KnowsYourRightsModule.ka,
+
                     ...CompensationInfoModule.ka,
                     ...CompensationIfModule.ka,
-                    ...CompensationHowMuchModule.ka
+                    ...CompensationHowMuchModule.ka,
+                    ...BeAwareModule.ka,
+
+                    ...FlightCancellationCompensationInfo.ka,
+                    ...FlightCancellationCompensationif.ka,
+                    ...FlightCancellationCompensationHowMuch.ka,
+                    ...FlightCancellationBeAware.ka,
+
+                    ...AboutUsSectionModule.ka,
+                    ...OurCoreValuesModule.ka,
+                    ...ContactUsSectionModule.ka,
+                    ...FeedBackCompModule.ka
                 }
             }
         }

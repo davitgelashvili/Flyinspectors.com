@@ -1,14 +1,13 @@
 module.exports = {
     en: {
-        section1: {
+        KnowsYourRights: {
+            title: 'KNOWS YOUR RIGHTS',
             header: "Be Aware",
-            content: ` Thousands of people every day struggle with the flight problems, yet
-          95% of them don’t know their rights. Here is all the information you
-          need to get to know EC 261 regulation, and be aware of your rights as
-          an airline passenger.`,
-        },
-
-        section2:{
+            content: ` 
+                Thousands of people every day struggle with the flight problems, yet
+                95% of them don’t know their rights. Here is all the information you
+                need to get to know EC 261 regulation, and be aware of your rights as
+                an airline passenger.`,
             lable1:"Flight Delay",
             info1:"Thousands of people every day struggle with the flight problems, yet 95% of them don’t know their rights. Here is all the information you need to get to know EC 261 regulation, and be aware of your rights as an airline passenger.",
             lable2:"Flight Cancellation",
@@ -19,18 +18,13 @@ module.exports = {
             info4: "A lot of travelers leave their luggage for airlines to handle, there are cases when the luggage is lost, delayed or damaged.",
             lable5:"Denied Boarding",
             info5:"Airlines tend to overbook their flights, and sometimes it so happens that when you show up to your flight there is no more room for you, so you are denied boarding, with or without the reason explained to you. Either way you are eligible for a compensation."
-
         }
-
     },
     ka: {
-        section1: {
-            header: "იცოდეთ თქვენი უფლებები",
+        KnowsYourRights: {
+            title: 'იცოდეთ თქვენი უფლებები',
+            header: "Be Aware",
             content: ` ყოველდღიურად ათასობით მგზავრი ეყრება ფრენასთან დაკავშირებულ პრობლემებს, ამის მიუხედავად 95%-მა არ იცის თავიანთი, როგორც მგზავრის, უფლებები. აქ იხილავთ ინფორმაციას რაც საჭიროა იმისთვის, რომ გაეცნოთ EC 261 რეგულაციას, იცოდეთ თქვენი უფლებები და როდის გეკუთვნით ფრენის კომპენსაცია.`,
-        },
-     
-
-        section2:{
             lable1:"ფრენის დაგვინება",
             info1:"ავიახაზები ყოველთვის პუნქტუალურები არ არიან და ფრენის დაგვიანებები ხდება. ეს ხშირად უმნიშვნელოა, მაგრამ შესაძლოა ზოგჯერ ჩვენს გეგმებს საფრთე შეუქმნან. ასეთ შემთხვევებში თქვენ შესაძლოა გეკუთვნოდეთ ფრენის კომპენსაცია.",
             lable2:"ფრენის გადადება",
@@ -41,8 +35,6 @@ module.exports = {
             info4: "უამრავ მგზავრს უწევს თავიანთი ბარგის ავიახაზებისთვის მინდობა, ზოგჯერ კი მათი დაზიანება და დაკარგვა ხდება. ასეთ შემთხვევაში თქვენ გეკუთვნით ბარგის კომპენსაცია.",
             lable5:"რეისზე არ დაშვება",
             info5:"ავიახაზები ხშირად იმაზე მეტ ბილეთს ყიდიან, ვიდრე რეისზე ადგილია. ამიტომ ხშირად ხდება, რომ თვითმფრინავში ადგილი აღარ არის. თქვენ კი მიზეზის გარეშე ან არასაკმარისი მიზეზით უარს გეუბნებიან ჩასხდომაზე. ასეთ შემთხვევაში თქვენ გეკუთვნით კომპენსაცია"
-
         }
-
     }
 }

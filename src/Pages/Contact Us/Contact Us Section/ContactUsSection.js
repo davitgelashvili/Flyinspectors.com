@@ -3,8 +3,10 @@ import styles from "./ContactUs.module.scss";
 import image from "../../../components/Images/PicOfSupport.png";
 import SectionCover from "../../../components/SectionTextAndCover/SectionCover.js";
 import SectionText from "../../../components/SectionTextAndCover/SectionText.js";
+import { useTranslation } from "react-i18next";
 
 const ContactUsSection = () => {
+  const {t} = useTranslation()
   return (
     <div className={styles.services}>
       <div className={`container`}>
@@ -13,7 +15,7 @@ const ContactUsSection = () => {
             <SectionCover image={image} />
           </div>
           <div className={`col-lg-7 col-12`}>
-            <SectionText title={'Contact Us'}>
+            <SectionText title={t('ContactUs.sectionTitle')}>
               <div className="row">
                 <Item />
               </div>

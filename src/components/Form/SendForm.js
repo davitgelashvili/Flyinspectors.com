@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react"
 import SendFormBody from "./SendFormBody"
 import PopUp from "./PopUp"
+import { useSelector } from "react-redux"
 
 const SendForm = ({setFormActive}) => {
+    const windowUrl = window.location.host
+    const {language} = useSelector( state => state.translate)
     const [load, setLoad] = useState(false)
     const [popup, setPopup] = useState(false)
     const [unicueID, setUnicueID] = useState(
@@ -118,9 +121,28 @@ const SendForm = ({setFormActive}) => {
                       'Access-Control-Allow-Origin': '*'
                     },
                     body: JSON.stringify({
-                        userId: value.userId,
-                        firstName: value.firstName,
-                        email: value.email
+                        email: value.email,
+                        text: `
+                            ${language === 'ka' ? (
+                                `
+                                    <p>მოგესალმებით ${value.firstName}</p>
+                                    <p>თქვენი განაცხადი მიღებულია Flyinspectors ში.</p>
+                                    <p>თქვენი საქმის ნომერია: <strong> ${value.userId}</strong></p>
+                                    <p>სტატუსი შეგიძლიათ შეამოწმოთ შემდეგ ბმულზე: www.${windowUrl}/submit-claim</p>
+                                    <p>პატივისცემით</p>
+                                    <p>Flyinspectors</p>
+                                `
+                            ) : (
+                                `
+                                    <p>Dear ${value.firstName}</p>
+                                    <p>We have successfully received your application.</p>
+                                    <p>Your case number is: <strong> ${value.userId}</strong></p>
+                                    <p>You can check case status anytime to the following link: www.${windowUrl}/submit-claim</p>
+                                    <p>Best regards</p>
+                                    <p>Flyinspectors</p>
+                                `
+                            )}
+                        `
                     })
                 })
                 .then((res) => res.json())

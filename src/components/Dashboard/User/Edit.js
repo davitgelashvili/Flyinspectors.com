@@ -71,7 +71,12 @@ const UserEdit = () => {
                     <p><strong>flightNumber:</strong>{data.flightNumber}</p>
                     <p><strong>problem:</strong>{data.problem}</p>
                     <p><strong>description:</strong>{data.description}</p>
-                    <img src={data.signature} alt='res' />
+                    <div className="d-flex align-items-start">
+                        {data.passportImage && <img src={data.passportImage} alt='res' style={{width: '100px'}} />}
+                        {data.ticketImage && <img src={data.ticketImage} alt='res' style={{width: '100px'}}/>}
+                        {data.otherImage && <img src={data.otherImage} alt='res' style={{width: '100px'}}/>}
+                        {data.signature && <img src={data.signature} alt='res' style={{width: '100px'}}/>}
+                    </div>
                 </div>
             </div>
         </div>

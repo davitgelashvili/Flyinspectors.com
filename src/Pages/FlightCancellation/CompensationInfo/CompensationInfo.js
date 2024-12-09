@@ -3,8 +3,10 @@ import styles from "./CompensationInfo.module.scss";
 import image from "../../../components/Images/EarthPic.png";
 import SectionCover from "../../../components/SectionTextAndCover/SectionCover.js";
 import SectionText from "../../../components/SectionTextAndCover/SectionText.js";
+import { useTranslation } from "react-i18next";
 
 const CompensationInfo = () => {
+  const {t} = useTranslation()
   return (
     <div className={styles.services}>
       <div className={`container`}>
@@ -14,26 +16,21 @@ const CompensationInfo = () => {
           </div>
           <div className={`col-lg-6 col-12`}>
             <SectionText
-              title={"Flight Cancellation Compensation of up to 600 EUR"}
+              title={t('FlightCancellationCompensationInfo.title')}
             >
               <div className={styles.item}>
                 <h4>
-                  Just like delays, flight cancellations happen. And it's not
-                  rare.
+                  {t('FlightCancellationCompensationInfo.name1')}
                 </h4>
                 <br></br>
                 <p>
-                  Flight cancellations can happen without prior notice, which
-                  can harm your travel plans. The European Union Act 261 in such
-                  cases allows up to 600 EUR compensation.
+                {t('FlightCancellationCompensationInfo.desc1')}
                 </p>
                 <br></br>
-                <h4>Which airlines can you get compensation from.</h4>
+                <h4>{t('FlightCancellationCompensationInfo.name2')}</h4>
                 <br></br>
                 <p>
-                  According to EC 261 law, compensation coverage depends on the
-                  origin of the airline and the flight direction. For details
-                  see the chart
+                {t('FlightCancellationCompensationInfo.desc2')}
                 </p>
               </div>
             </SectionText>

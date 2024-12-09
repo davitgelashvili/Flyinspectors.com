@@ -2,8 +2,10 @@ import { useState } from "react";
 import TextInput from "../../../components/UI/TextInput";
 import styles from "./FeedBack.module.scss";
 import Loading from "../../../components/Loading/Loading";
+import { useTranslation } from "react-i18next";
 
 function FeedBack() {
+  const {t} = useTranslation()
   const [load, setLoad] = useState(false)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -42,7 +44,7 @@ function FeedBack() {
               value={name}
               placeholder={'Enter your name'}
               name={"name"}
-              label={"First and Middle Name"}
+              label={t('FeedBackComp.fullname')}
               icon={''}
               onChange={e => setName(e.target.value)}
             />
@@ -51,7 +53,7 @@ function FeedBack() {
               value={email}
               placeholder={'Enter your email'}
               name={"email"}
-              label={"E-mail"}
+              label={t('FeedBackComp.email')}
               icon={''}
               onChange={e => setEmail(e.target.value)}
             />
@@ -60,7 +62,7 @@ function FeedBack() {
               value={subject}
               placeholder={'Enter subject'}
               name={"subject"}
-              label={"Subject"}
+              label={t('FeedBackComp.subject')}
               icon={''}
               onChange={e => setSubject(e.target.value)}
             />
@@ -78,7 +80,7 @@ function FeedBack() {
               onChange={e => setText(e.target.value)}
             />
             {load && <Loading />}
-            <button className={styles.submit} onClick={handlClick}>Submit</button>
+            <button className={styles.submit} onClick={handlClick}>{t('FeedBackComp.submit')}</button>
           </div>
         </div>
       </div>

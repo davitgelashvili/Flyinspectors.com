@@ -1,16 +1,18 @@
+import { useTranslation } from "react-i18next";
 import styles from "./CompensationIf.module.scss";
 
 const BulletPoint = () => {
+  const {t} = useTranslation()
   return (
     <div>
       <div className={styles.headerOfBullet}>
-        You have the right to claim compensation if:
+        {t('FlightCancellationCompensationIf.title')}
       </div>
       <ul className={styles.bulletList}>
-        <li>Your flight was cancelled without at least 14 days prior notice;</li>
-        <li>The flight was cancelled no more than three years ago;</li>
-        <li>Flight cancellation is caused by airline;</li>
-        <li>Even if the airline offered you a voucher for food and hotel.</li>
+        <li>{t('FlightCancellationCompensationIf._1')}</li>
+        <li>{t('FlightCancellationCompensationIf._2')}</li>
+        <li>{t('FlightCancellationCompensationIf._3')}</li>
+        <li>{t('FlightCancellationCompensationIf._4')}</li>
       </ul>
     </div>
   );

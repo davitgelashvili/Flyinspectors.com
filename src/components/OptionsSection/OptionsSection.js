@@ -8,33 +8,33 @@ const OptionsSection = () => {
     // Static data with keys for translation
     const data = [
         {
-            titleKey: 'opensection.delay.title',
-            descKey: 'opensection.delay.desc',
+            title: 'opensection.delay.title',
+            desc: 'opensection.delay.desc',
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476179/ic_schedule_24px_1_tanbbs.svg"
         },
         {
-            titleKey: 'opensection.compensation.title',
-            descKey: 'opensection.compensation.desc',
+            title: 'opensection.compensation.title',
+            desc: 'opensection.compensation.desc',
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476178/ic_event_24px_d9o56u.svg"
         },
         {
-            title: "Missed Connection Compensation",
-            desc: "Missed connecting flight because of flight delay? You are eligible for a compensation.",
+            title: "opensection.missedconnectioncompensation.title",
+            desc: "opensection.missedconnectioncompensation.desc",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476178/ic_local_airport_24px_1_usunmk.svg"
         },
         {
-            title: "Overbooking Compensation",
-            desc: "Missed your flight because it was overbooked? You are eligible for a compensation.",
+            title: "opensection.overbookingcompensation.title",
+            desc: "opensection.overbookingcompensation.desc",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476178/ic_group_24px_kortma.svg"
         },
         {
-            title: "Denied Boarding Compensation",
-            desc: "You were denied boarding a plane without any apparent reason or no reason at all? You are eligible for EU flight compensation.",
+            title: "opensection.compensationfordeniedboarding.title",
+            desc: "opensection.compensationfordeniedboarding.desc",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476179/ic_not_interested_24px_cgrdlv.svg"
         },
         {
-            title: "Delayed Baggage Compensation",
-            desc: "Was your baggage delayed or arrived damaged? You are eligible for compensation.",
+            title: "opensection.delayedbaggagecompensation.title",
+            desc: "opensection.delayedbaggagecompensation.desc",
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1732476180/ic_work_24px_kobici.svg"
         },
     ];
@@ -47,8 +47,8 @@ const OptionsSection = () => {
                     {data.map((item, index) => (
                         <div className="col-lg-4" key={index}>
                             <Item
-                                title={item.titleKey ? t(item.titleKey) : item.title}
-                                desc={item.descKey ? t(item.descKey) : item.desc}
+                                title={t(item.title)}
+                                desc={t(item.desc)}
                                 icon={item.icon}
                             />
                         </div>

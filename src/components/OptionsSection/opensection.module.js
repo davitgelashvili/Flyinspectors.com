@@ -1,7 +1,7 @@
 module.exports = {
     en: {
         opensection: {
-            sectionTitle: 'DO YOU QUALIFY FOR A COMPENSATION',
+            sectionTitle: 'DO YOU QUALIFY FOR A COMPENSATION?',
             delay: {
                 title: "Flight Delay Compensation",
                 desc: "If your flight is delayed by 3+ hours, according to EU regulations, you are entitled to compensation in the amount of 250-600 euros.",
@@ -30,7 +30,7 @@ module.exports = {
     },
     ka: {
         opensection: {
-            sectionTitle: 'ქართული ტექსტი',
+            sectionTitle: 'გეკუთვნით ფრენის კომპენსაცია?',
             delay: {
                 title: "დაგვიანებული ფრენის კომპენსაცია",
                 desc: "თუ თქვენმა ფრენამ დაიგვიანა 3+ საათი, ევროკავშირის რეგულაციის მიხედვით თქვენ გეკუთვნით კომპენსაცია 250-600 ევროს ოდენობით.",
