@@ -100,23 +100,25 @@ const App = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.container__options}>
-        {options.map((option, index) => (
-          <button
-            key={index}
-            className={`${styles.container__option} ${
-              activeIndex === index ? styles.active : ""
-            }`}
-            onClick={() => handleOptionClick(index, option.info)}
-          >
-            {/* {option.icon} */}
-            {option.label}
-          </button>
-        ))}
-      </div>
-      <div className={styles.container__infoarea}>
-        <p className={styles.container__info}>{info}</p>
+    <div className={styles.item} >
+      <div className={styles.container}>
+        <div className={styles.container__options}>
+          {options.map((option, index) => (
+            <button
+              key={index}
+              className={`${styles.container__option} ${
+                activeIndex === index ? styles.active : ""
+              }`}
+              onClick={() => handleOptionClick(index, option.info)}
+            >
+              {/* {option.icon} */}
+              {option.label}
+            </button>
+          ))}
+        </div>
+        <div className={styles.container__infoarea}>
+          <p className={styles.container__info}>{info}</p>
+        </div>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ const KnowsYourRights = () => {
           <div className="col-lg-5">
             <Item />
           </div>
-          <div className={`${styles.item} col-lg-7 col-12`}>
+          <div className={`col-lg-7 col-12`}>
             <MenuItem />
           </div>
         </div>

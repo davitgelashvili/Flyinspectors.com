@@ -1,18 +1,18 @@
+import { useTranslation } from "react-i18next";
 import styles from "./CompensationHowMuch.module.scss";
 
 const BulletPoint = () => {
+  const {t} = useTranslation()
   return (
     <div>
       <div className={styles.headerOfBullet}>
-        How much compensation should you get for flight delay?
+        {t('FlightCancellationCompensationHowMuch._h1')}
       </div>
       <div className={styles.headerOfBullet}>
-      For flights covered by EU law EC 261, any delay longer than three hours
-      and any cancellation without at least 14 days prior entitles you to a financial compensation.
+        {t('FlightCancellationCompensationHowMuch._h2')}
       </div>
       <div className={styles.headerOfBullet}>
-      The amount of flight compensation you receive depends on the duration of the 
-      delay and the distance of your flight. For details see the chart:
+        {t('FlightCancellationCompensationHowMuch._h3')}
       </div>
     </div>
   );
