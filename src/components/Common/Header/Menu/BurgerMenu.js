@@ -26,35 +26,26 @@ const BurgerMenu = () => {
       title: t("menu.home"),
     },
     {
-      title: "Your Rights",
+      title: t("menu.yourrights"),
       dropdown: [
-        { link: "/your-rights/flight-delay", title: "Flight Delay" },
-        {
-          link: "/your-rights/flight-cancellation",
-          title: "Flight Cancellation",
-        },
-        { link: "/your-rights/overbooked-flight", title: "OverBooked Flight" },
-        { link: "/your-rights/missed-connection", title: "Missed Connection" },
-        { link: "/your-rights/lost-luggage", title: "Lost Luggage" },
+        { link: "/your-rights/flight-delay", title: t("menu.flightdelay") },
+        { link: "/your-rights/flight-cancellation", title: t("menu.flightcancellation") },
+        { link: "/your-rights/overbooked-flight", title: t("menu.overBookedflight") },
+        { link: "/your-rights/missed-connection", title: t("menu.missedconnection") },
+        { link: "/your-rights/lost-luggage", title: t("menu.lostluggage") },
       ],
     },
     {
-      title: "About Us",
+      title: t("menu.aboutus"),
       dropdown: [
-        { link: "/about-us", title: "About Us" },
-        {
-          link: "/about-us/blog",
-          title: "Blog",
-        },
-        {
-          link: "/about-us/faq",
-          title: "FAQ",
-        },
+        { link: "/about-us", title: t("menu.aboutus") },
+        { link: "/about-us/blog", title: t("menu.blog") },
+        { link: "/about-us/faq", title: t("menu.faq") },
       ],
     },
     {
       link: "/contact-us",
-      title: "Contact Us",
+      title: t("menu.contactus"),
     },
   ];
 

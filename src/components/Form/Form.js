@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import {useState } from "react"
 import SendForm from "./SendForm"
 import SearchForm from "./SearchForm"
 import styles from './form.module.scss'
