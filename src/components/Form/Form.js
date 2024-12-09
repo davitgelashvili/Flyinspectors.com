@@ -8,8 +8,8 @@ const Form = () => {
     const [formActive, setFormActive] = useState(true)
 
     return (
-        <div className="container">
-            <div  className={`${styles['form']}`}>
+        <div className="container" >
+            <div  className={`${styles['form']}`} style={{marginTop:"20px", marginBottom:"40px"}}>
                 <div className={`${styles['form__head']}`}>
                     <div className={`${styles['form__head--btn']} ${formActive && styles['active']}`} onClick={() => setFormActive(true)}>
                         Fill Form
@@ -28,7 +28,7 @@ const Form = () => {
                     }
                 </div>
             </div>
-            <div className="row">
+            <div className="row" style={{marginBottom:"40px"}}>
                 <div className="col-lg-6">
                     <ContactSubmitPage/>
                 </div>
