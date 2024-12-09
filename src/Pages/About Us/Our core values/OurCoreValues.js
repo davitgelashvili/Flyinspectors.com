@@ -1,16 +1,18 @@
 import Item from "./Item"
 import styles from './OurCoreValues.module.scss'
+import { useTranslation } from "react-i18next";
 
 const OurCoreValues = () => {
+    const {t} = useTranslation()
     const data = [
         {
-            title: "High effectiveness",
-            desc: "If your flight delayed for 3+ hours you are eligible for compensation.",
+            title: t('OurCoreValues._1.title'),
+            desc: t('OurCoreValues._1.desc'),
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733136703/ic_poll_24px_n6jrcg.png"
         },
         {
-            title: "Accessibility",
-            desc: "We offer you service in timely manner 7 days a week, 24 hours",
+            title: t('OurCoreValues._2.title'),
+            desc: t('OurCoreValues._2.desc'),
             icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733136704/ic_schedule_24px_semyyr.png"
         },
         {
@@ -41,7 +43,7 @@ const OurCoreValues = () => {
     ]
     return (
         <div className={styles.OptionsSection}>
-                <h3 className={styles.title}>DO YOU QUALIFY FOR A COMPENSATION</h3>
+                <h3 className={styles.title}>{t('OurCoreValues.title')}</h3>
             <div className="container">
                 <div className="row d-flex justify-content-center">
                     {data?.map((item)=>{

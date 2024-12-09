@@ -3,12 +3,12 @@ module.exports = {
         OurCoreValues: {
             title: `DO YOU QUALIFY FOR A COMPENSATION`,
             _1: {
-                title: ``,
-                desc: ``
+                title: `High effectiveness`,
+                desc: `If your flight delayed for 3+ hours you are eligible for compensation.`
             },
             _2: {
-                title: ``,
-                desc: ``
+                title: `Accessibility`,
+                desc: `We offer you service in timely manner 7 days a week, 24 hours`
             },
             _3: {
                 title: ``,
@@ -35,14 +35,14 @@ module.exports = {
     },
     ka: {
         OurCoreValues: {
-            title: `DO YOU QUALIFY FOR A COMPENSATION`,
+            title: `გდსგსდჰფდჰდფ`,
             _1: {
-                title: ``,
-                desc: ``
+                title: `დადადსა`,
+                desc: `გაგაგად`
             },
             _2: {
-                title: ``,
-                desc: ``
+                title: `ფდსგდს`,
+                desc: `სადდადა`
             },
             _3: {
                 title: ``,

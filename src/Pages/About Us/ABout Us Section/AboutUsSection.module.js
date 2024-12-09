@@ -1,14 +1,14 @@
 module.exports = {
     en: {
         AboutSection: {
-            title: ``,
-            desc: ``
+            title: `About Us`,
+            desc: `“We have means to ease the process of getting the rightful compensation for our customers.”`
         }
     },
     ka: {
         AboutSection: {
-            title: ``,
-            desc: ``
+            title: `ჩვენს შესახებ`,
+            desc: `დასდსადას`
         }
     },
 }
