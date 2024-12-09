@@ -135,6 +135,9 @@ const UserEdit = () => {
                     <p style={{ fontSize: "14px", color: "red", marginBottom: "4px" }}>
                         <strong>Problem:</strong> {data.problem}
                     </p>
+                    <p style={{ fontSize: "14px", color: "black", marginBottom: "4px" }}>
+                        <strong>Description:</strong> {data.description}
+                    </p>
                     <div className="d-flex align-items-start" style={{ gap: "10px", marginTop: "10px" }}>
                         {data.passportImage && (
                             <img src={data.passportImage} alt="Passport" style={{ width: "100px", height:"100%", borderRadius: "4px" }} />

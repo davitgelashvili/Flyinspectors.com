@@ -90,7 +90,7 @@ const UserList = () => {
                     marginTop: "20px",
                 }}
             >
-                {displayData?.map((item) => (
+                {[...displayData].reverse().map((item) => (
                     <div
                         key={item._id}
                         style={{
