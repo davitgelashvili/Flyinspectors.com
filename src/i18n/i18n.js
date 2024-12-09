@@ -20,6 +20,8 @@ import OurCoreValuesModule from "../Pages/About Us/Our core values/OurCoreValues
 import ContactUsSectionModule from "../Pages/Contact Us/Contact Us Section/ContactUsSection.module";
 import FeedBackCompModule from "../Pages/Contact Us/Feedback Form/FeedBackComp.module";
 
+import OverBookedCompensationInfo from "../Pages/OverBookedFlight/CompensationInfo/CompensationInfo.module";
+
 i18n
     .use(initReactI18next)
     .init({
@@ -47,7 +49,9 @@ i18n
                     ...AboutUsSectionModule.en,
                     ...OurCoreValuesModule.en,
                     ...ContactUsSectionModule.en,
-                    ...FeedBackCompModule.en
+                    ...FeedBackCompModule.en,
+
+                    ...OverBookedCompensationInfo.en
                 }
             },
             ka: {
@@ -72,7 +76,9 @@ i18n
                     ...AboutUsSectionModule.ka,
                     ...OurCoreValuesModule.ka,
                     ...ContactUsSectionModule.ka,
-                    ...FeedBackCompModule.ka
+                    ...FeedBackCompModule.ka,
+
+                    ...OverBookedCompensationInfo.ka
                 }
             }
         }

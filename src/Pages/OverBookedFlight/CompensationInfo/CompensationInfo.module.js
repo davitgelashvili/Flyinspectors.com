@@ -1,20 +1,19 @@
 module.exports = {
     en: {
         OverBookedCompensationInfo: {
-            title: `gsdgsdgds`,
-            name1: `dgsddsgds`,
-            desc1: `gsdgsdgd`,
-            name2: `gdsgsgsd`,
-            desc2: `gsdgsdgsddgds`
+            sectionTitle: `Overbooked Flight Compensation`,
+            title: `The “overbooked” flight is called a flight where more tickets are sold 
+            than real places are in the plane.`,
+            desc: `In this case you may face the problem - you have a ticket, 
+          but your place is already taken. EU legislation EC 261, provides 
+          for up to 600 compensation for such cases.`,
         }
     },
     ka: {
         OverBookedCompensationInfo: {
-            title: `დსად`,
-            name1: `სდგსდ`,
-            desc1: `გდსსდ`,
-            name2: `ჰსფგს`,
-            desc2: `გდსგს:`
+            sectionTitle: `დსად`,
+            title: `სდგსდ`,
+            desc: `გდსსდ`,
         }
     }
 }
