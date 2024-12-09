@@ -1,86 +1,158 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const UserEdit = () => {
-    const [data, setData] = useState([])
-    const {id} = useParams()
-    const [update, setUpdate] = useState(true)
-    const [value, setValue] = useState('')
+    const [data, setData] = useState({});
+    const { id } = useParams();
+    const [update, setUpdate] = useState(true);
+    const [value, setValue] = useState("");
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/client`, {
             method: "GET",
             headers: {
-              'Content-type': 'application/json',
-              'Access-Control-Allow-Origin': '*'
-            }
+                "Content-type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+            },
         })
-        .then((res) => res.json())
-        .then(res => {
-            console.log(res)
-            const x = res.filter(item => item.userId == id)
-            setData(...x)
-        })
-    }, [update])
+            .then((res) => res.json())
+            .then((res) => {
+                const user = res.find((item) => item.userId == id);
+                setData(user || {});
+            });
+    }, [update]);
 
-    function handlClick (e) {
-        e.preventDefault()
+    function handleClick(e) {
+        e.preventDefault();
         fetch(`${process.env.REACT_APP_API_URL}/client/id`, {
             method: "PUT",
             headers: {
-              'Content-type': 'application/json',
-              'Access-Control-Allow-Origin': '*'
+                "Content-type": "application/json",
+                "Access-Control-Allow-Origin": "*",
             },
             body: JSON.stringify({
                 userId: id,
-                status: value
-            })
+                status: value,
+            }),
         })
-        .then((res) => res.json()).finally(()=>{
-            setUpdate(!update)
-
-        })
+            .then((res) => res.json())
+            .finally(() => {
+                setUpdate(!update);
+            });
     }
 
     return (
         <div className="container">
-            <div className="col-lg-6">
-                <div>
-                    <h2>{data.firstName} {data.lastName}</h2>
-                    <h2><strong>status:</strong>{data.status}</h2>
-                    <div className="d-flex">
-                        <select onChange={(e)=> setValue(e.target.value)}>
-                            <option value={''}>choose status</option>
-                            <option value={'Application received'}>Application received</option>
-                            <option value={'Case proceedings initiated'}>Case proceedings initiated</option>
-                            <option value={'Rejected by the airline'}>Rejected by the airline</option>
-                            <option value={'Transferred to the legal department'}>Transferred to the legal department</option>
-                            <option value={'Case appealed to a higher authority'}>Case appealed to a higher authority</option>
-                            <option value={'Case is pending in court'}>Case is pending in court</option>
-                            <option value={'Case successfully closed'}>Case successfully closed</option>
-                            <option value={'Case closed'}>Case closed</option>
+            <div className="user-list" style={{ display: "grid", gap: "20px", marginTop: "20px" , marginBottom:"20px"}}>
+                <div
+                    style={{
+                        border: "1px solid #ddd",
+                        borderRadius: "8px",
+                        padding: "20px",
+                        backgroundColor: "#f9f9f9",
+                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                    }}
+                >
+                    <h2
+                        style={{
+                            fontSize: "20px",
+                            fontWeight: "bold",
+                            marginBottom: "8px",
+                        }}
+                    >
+                        {data.firstName} {data.lastName}
+                    </h2>
+                    <h2
+                        style={{
+                            fontSize: "16px",
+                            color: "blue",
+                            marginBottom: "8px",
+                        }}
+                    >
+                        <strong>Status:</strong> {data.status}
+                    </h2>
+                    <div className="d-flex align-items-center" style={{ marginBottom: "16px" }}>
+                        <select
+                            onChange={(e) => setValue(e.target.value)}
+                            style={{
+                                padding: "8px",
+                                borderRadius: "4px",
+                                border: "1px solid #ccc",
+                                marginRight: "10px",
+                            }}
+                        >
+                            <option value="">Choose status</option>
+                            <option value="Application received">Application received</option>
+                            <option value="Case proceedings initiated">Case proceedings initiated</option>
+                            <option value="Rejected by the airline">Rejected by the airline</option>
+                            <option value="Transferred to the legal department">Transferred to the legal department</option>
+                            <option value="Case appealed to a higher authority">Case appealed to a higher authority</option>
+                            <option value="Case is pending in court">Case is pending in court</option>
+                            <option value="Case successfully closed">Case successfully closed</option>
+                            <option value="Case closed">Case closed</option>
                         </select>
-                        <button onClick={handlClick}>edit</button>
+                        <button
+                            onClick={handleClick}
+                            style={{
+                                padding: "8px 16px",
+                                borderRadius: "4px",
+                                border: "none",
+                                backgroundColor: "#007bff",
+                                color: "#fff",
+                                cursor: "pointer",
+                            }}
+                        >
+                            Edit
+                        </button>
                     </div>
-                    <h2><strong>user ID:</strong>{data.userId}</h2>
-                    <p><strong>emaill:</strong>{data.email}</p>
-                    <p><strong>phone:</strong>{data.phone}</p>
-                    <p><strong>address:</strong>{data.date}</p>
-                    <p><strong>date:</strong>{data.date}</p>
-                    <p><strong>city:</strong>{data.city}</p>
-                    <p><strong>flightNumber:</strong>{data.flightNumber}</p>
-                    <p><strong>problem:</strong>{data.problem}</p>
-                    <p><strong>description:</strong>{data.description}</p>
-                    <div className="d-flex align-items-start">
-                        {data.passportImage && <img src={data.passportImage} alt='res' style={{width: '100px'}} />}
-                        {data.ticketImage && <img src={data.ticketImage} alt='res' style={{width: '100px'}}/>}
-                        {data.otherImage && <img src={data.otherImage} alt='res' style={{width: '100px'}}/>}
-                        {data.signature && <img src={data.signature} alt='res' style={{width: '100px'}}/>}
+                    <h2
+                        style={{
+                            fontSize: "16px",
+                            color: "green",
+                            marginBottom: "8px",
+                        }}
+                    >
+                        <strong>User ID:</strong> {data.userId}
+                    </h2>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
+                        <strong>Email:</strong> {data.email}
+                    </p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
+                        <strong>Phone:</strong> {data.phone}
+                    </p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
+                        <strong>Address:</strong> {data.address}
+                    </p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
+                        <strong>Date:</strong> {data.date}
+                    </p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
+                        <strong>City:</strong> {data.city}
+                    </p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
+                        <strong>Flight Number:</strong> {data.flightNumber}
+                    </p>
+                    <p style={{ fontSize: "14px", color: "red", marginBottom: "4px" }}>
+                        <strong>Problem:</strong> {data.problem}
+                    </p>
+                    <div className="d-flex align-items-start" style={{ gap: "10px", marginTop: "10px" }}>
+                        {data.passportImage && (
+                            <img src={data.passportImage} alt="Passport" style={{ width: "100px", height:"100%", borderRadius: "4px" }} />
+                        )}
+                        {data.ticketImage && (
+                            <img src={data.ticketImage} alt="Ticket" style={{ width: "100px", borderRadius: "4px" }} />
+                        )}
+                        {data.otherImage && (
+                            <img src={data.otherImage} alt="Other" style={{ width: "100px", borderRadius: "4px" }} />
+                        )}
+                        {data.signature && (
+                            <img src={data.signature} alt="Signature" style={{ width: "100px", borderRadius: "4px" }} />
+                        )}
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default UserEdit
+export default UserEdit;

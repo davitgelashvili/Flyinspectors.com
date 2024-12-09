@@ -7,7 +7,7 @@ import { useSelector } from "react-redux"
 const Dashboard = () => {
     const user = useSelector(state => state.userData)
     return (
-        <div className="container" style={{ padding: "20px" }}>
+        <div className="container" style={{ padding: "200px" }}>
             {user.logedIn ? (
                 <ul
                     style={{
