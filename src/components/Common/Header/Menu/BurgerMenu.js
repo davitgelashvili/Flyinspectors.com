@@ -2,15 +2,21 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styles from "./BurgerMenu.module.scss";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { siteTranslateAction } from "../../../../store/translate";
 import icon from "../../../Images/arrowIcon.png";
 import logo from "../Logo/LogoPic/LogoFly.png";
-import iconMenu from "../../../Images/iconMenu.png"
+import iconMenu from "../../../Images/iconMenu.png";
+import engFlag from "../../../../assetss/images/brtsh.jpg";
+import geoFlag from "../../../../assetss/images/geo.jpg";
 
 const BurgerMenu = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
   const [IsOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const { language } = useSelector((state) => state.translate);
 
   const toggleMenu = () => {
     setIsOpen(!IsOpen);
@@ -119,6 +125,40 @@ const BurgerMenu = () => {
               </li>
             );
           })}
+          {/* Language Toggle */}
+          <li className={styles.languageToggle}>
+            {language === "ka" ? (
+              <img
+                src={engFlag}
+                alt="English"
+                onClick={() =>
+                  dispatch(siteTranslateAction.changeLanguage("en"))
+                }
+                style={{
+                  cursor: "pointer",
+                  width: "40px",
+                  height: "25px",
+                  border: "1px solid #ccc",
+                  borderRadius: "3px",
+                }}
+              />
+            ) : (
+              <img
+                src={geoFlag}
+                alt="Georgian"
+                onClick={() =>
+                  dispatch(siteTranslateAction.changeLanguage("ka"))
+                }
+                style={{
+                  cursor: "pointer",
+                  width: "40px",
+                  height: "25px",
+                  border: "1px solid #ccc",
+                  borderRadius: "3px",
+                }}
+              />
+            )}
+          </li>
         </ul>
       </nav>
     </div>

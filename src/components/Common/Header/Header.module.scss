@@ -20,22 +20,30 @@
     }
 }
 
-.submitlink {
-    padding: 6px 31px;
+.sublng {
+    display: flex;
+    align-items: center;
 }
 
-@media(max-width: 768px) {
-    .header__content {
-        display: flex;
-        justify-content: space-between; 
-        flex-wrap: wrap; 
-        align-items: center;
-        gap: 8px; 
-        width: 100%; 
-        padding: 0 8px;
+.submitlink {
+    padding: 6px 31px;
+    font-size: 1rem; // Default font size
+    background-color: #007bff; // Example background color
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #0056b3; // Example hover color
     }
+}
+
+@media (max-width: 640px) {
     .submitlink {
         margin-right: 90px;
+        padding: 4px 20px; // Adjust padding for smaller screens
+        font-size: 0.9rem; // Adjust font size for smaller screens
     }
 
     .container {
@@ -44,5 +52,9 @@
 
     .submitlink {
         flex: 0 1 auto;
+    }
+
+    .language {
+        display: none;
     }
 }
