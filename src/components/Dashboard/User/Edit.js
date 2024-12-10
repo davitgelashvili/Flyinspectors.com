@@ -33,12 +33,13 @@ const UserEdit = () => {
             body: JSON.stringify({
                 userId: id,
                 status: value,
+                oldStatus: data.status
             }),
         })
-            .then((res) => res.json())
-            .finally(() => {
-                setUpdate(!update);
-            });
+        .then((res) => res.json())
+        .finally(() => {
+            setUpdate(!update);
+        });
     }
 
     return (
@@ -69,6 +70,7 @@ const UserEdit = () => {
                             marginBottom: "8px",
                         }}
                     >
+                        <p>old status:{data.oldStatus}</p>
                         <strong>Status:</strong> {data.status}
                     </h2>
                     <div className="d-flex align-items-center" style={{ marginBottom: "16px" }}>

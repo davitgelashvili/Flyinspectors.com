@@ -37,6 +37,7 @@ const SendForm = ({setFormActive}) => {
         date: "",
         select: "",
         description: "",
+        oldStatus: "In progress",
     })
     const [defaultValue, setDefaultValue] = useState(value)
 

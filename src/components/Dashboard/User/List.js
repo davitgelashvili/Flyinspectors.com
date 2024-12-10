@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TextInput from "../../UI/TextInput";
+import Loading from "../../Loading/Loading";
 
 const UserList = () => {
     const [data, setData] = useState([]);
     const [filtered, setFiltered] = useState([]);
     const [search, setSearch] = useState("");
+    const [res, setRes] = useState(true)
+    const [load, setLoad] = useState(false)
 
     // Fetch user data
     useEffect(() => {
@@ -19,8 +22,10 @@ const UserList = () => {
             .then((res) => res.json())
             .then((res) => {
                 setData(res);
+            }).finally(()=>{
+                setLoad(false)
             });
-    }, []);
+    }, [res]);
 
     // Search filter
     function handleSearch(e) {
@@ -36,26 +41,22 @@ const UserList = () => {
     }
 
     // Delete user
-    const handleDelete = (id) => {
-        fetch(`${process.env.REACT_APP_API_URL}/client/${id}`, {
-            method: "DELETE",
+    const handleDelete = (user) => {
+        setLoad(true)
+        fetch(`${process.env.REACT_APP_API_URL}/delete`, {
+            method: "PUT",
             headers: {
                 "Content-type": "application/json",
                 "Access-Control-Allow-Origin": "*",
             },
+            body: JSON.stringify({
+                userId: user.userId,
+            }),
         })
-            .then((res) => {
-                if (res.ok) {
-                    // Remove the user from the local state
-                    setData((prevData) => prevData.filter((item) => item._id !== id));
-                    setFiltered((prevFiltered) =>
-                        prevFiltered.filter((item) => item._id !== id)
-                    );
-                } else {
-                    console.error("Failed to delete user");
-                }
-            })
-            .catch((err) => console.error(err));
+        .then((res) => res.json())
+        .finally(() => {
+            setRes(!res);
+        });
     };
 
     const displayData = search ? filtered : data;
@@ -124,6 +125,7 @@ const UserList = () => {
                                     marginBottom: "8px",
                                 }}
                             >
+                                <p>old status:{item.oldStatus}</p>
                                 <strong>Status:</strong> {item.status}
                             </h2>
                             <h2
@@ -199,8 +201,9 @@ const UserList = () => {
                                 <strong>Problem:</strong> {item.problem}
                             </p>
                         </Link>
+                        {load && <Loading />}
                         <button
-                            onClick={() => handleDelete(item._id)}
+                            onClick={() => handleDelete(item)}
                             style={{
                                 marginTop: "10px",
                                 padding: "8px 16px",
