@@ -21,6 +21,7 @@ import ContactUsSectionModule from "../Pages/Contact Us/Contact Us Section/Conta
 import FeedBackCompModule from "../Pages/Contact Us/Feedback Form/FeedBackComp.module";
 
 import OverBookedCompensationInfo from "../Pages/OverBookedFlight/CompensationInfo/CompensationInfo.module";
+import OverBookedCompensationIfModule from "../Pages/OverBookedFlight/CompensationIf/CompensationIf.module";
 
 i18n
     .use(initReactI18next)
@@ -51,7 +52,8 @@ i18n
                     ...ContactUsSectionModule.en,
                     ...FeedBackCompModule.en,
 
-                    ...OverBookedCompensationInfo.en
+                    ...OverBookedCompensationInfo.en,
+                    ...OverBookedCompensationIfModule.en
                 }
             },
             ka: {
@@ -78,7 +80,8 @@ i18n
                     ...ContactUsSectionModule.ka,
                     ...FeedBackCompModule.ka,
 
-                    ...OverBookedCompensationInfo.ka
+                    ...OverBookedCompensationInfo.ka,
+                    ...OverBookedCompensationIfModule.ka
                 }
             }
         }
