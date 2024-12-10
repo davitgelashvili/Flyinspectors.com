@@ -30,6 +30,8 @@ import MissedConnectionCompensationIfModule from "../Pages/MissedConnection/Comp
 import MissedConnectionCompensationUSAModule from "../Pages/MissedConnection/CompensationUSA/CompensationUSA.module";
 import MissedConnectionCompensationEUModule from "../Pages/MissedConnection/CompensationEU/CompensationEU.module";
 import MissedConnectionBeAwareModule from "../Pages/MissedConnection/BeAware/BeAware.module";
+import LostLuggageModule from "../Pages/LostLuggage/LostLuggage.module";
+
 i18n
     .use(initReactI18next)
     .init({
@@ -68,7 +70,8 @@ i18n
                     ...MissedConnectionCompensationIfModule.en,
                     ...MissedConnectionCompensationUSAModule.en,
                     ...MissedConnectionCompensationEUModule.en,
-                    ...MissedConnectionBeAwareModule.en
+                    ...MissedConnectionBeAwareModule.en,
+                    ...LostLuggageModule.en
                 }
             },
             ka: {
@@ -104,7 +107,9 @@ i18n
                     ...MissedConnectionCompensationIfModule.ka,
                     ...MissedConnectionCompensationUSAModule.ka,
                     ...MissedConnectionCompensationEUModule.ka,
-                    ...MissedConnectionBeAwareModule.ka
+                    ...MissedConnectionBeAwareModule.ka,
+                    ...LostLuggageModule.ka
+
                 }
             }
         }

@@ -1,20 +1,18 @@
+import { useTranslation } from "react-i18next";
 import styles from "./CompensationIf.module.scss";
 
 const Item = () => {
+  const {t} = useTranslation()
   return (
     <div>
       <h3 className={styles.headerOfQuestion}>
-        What should you do if the baggage is damaged?
+        {t('LostLuggageCompensationIf.name')}
       </h3>
       <ul className={styles.bulletList}>
-        <li>Hold onto your boarding pass or any document where the ticket reserves are set;</li>
-        <li>
-        Officially report the damage before leaving the airport
-        </li>
-        <li>
-        Fill out a damage claim form
-        </li>
-        <li>Present your bags for inspection so they can be repaired or replaced</li>
+        <li>{t('LostLuggageCompensationIf.desc1')}</li>
+        <li>{t('LostLuggageCompensationIf.desc2')}</li>
+        <li>{t('LostLuggageCompensationIf.desc3')}</li>
+        <li>{t('LostLuggageCompensationIf.desc4')}</li>
       </ul>
     </div>
   );

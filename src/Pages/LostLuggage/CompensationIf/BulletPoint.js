@@ -1,22 +1,22 @@
+import { useTranslation } from "react-i18next";
 import styles from "./CompensationIf.module.scss";
 
 const BulletPoint = () => {
+  const {t} = useTranslation()
   return (
     <div>
       <div className={styles.headerOfBullet}>
-      what to do when the airlines lose your luggage:
+      {t('LostLuggageCompensationIf.title')}
       </div>
       <ul className={styles.bulletList}>
-        <li>Hold onto your boarding pass or any document where the ticket reserves are set;</li>
+        <li>{t('LostLuggageCompensationIf._1')}</li>
         <li>
-        Create a list of items that you have placed in your lost bag;
+        {t('LostLuggageCompensationIf._2')}
         </li>
         <li>
-        Submit a list of missing items, boarding pass and luggage check to airline representatives.
+        {t('LostLuggageCompensationIf._3')}
         </li>
-        <li>
-          If the missing items were primary consumption or items that are 
-          vital for you, ask for immediate remuneration.</li>
+        <li>{t('LostLuggageCompensationIf._4')}</li>
       </ul>
     </div>
   );

@@ -2,9 +2,11 @@ import styles from "./CompensationInfo.module.scss";
 import Image from "../../../components/Images/LostLuggage.png";
 import SectionCover from "../../../components/SectionTextAndCover/SectionCover.js";
 import SectionText from "../../../components/SectionTextAndCover/SectionText.js";
+import { useTranslation } from "react-i18next";
 
 
 const CompensationInfo = () => {
+  const {t} = useTranslation()
   return (
     <div className={styles.services}>
       <div className={`container`}>
@@ -14,10 +16,10 @@ const CompensationInfo = () => {
             <SectionCover image={Image} />
           </div>
           <div className={`${styles.item} col-lg-6 col-12`}>
-            <SectionText title={'Lost Luggage Compensation'}>
+            <SectionText title={t('LostLuggageCompensationInfo.title')}>
             <div className={styles.item}>
-              <h4>When using air transport, one of the most common problems 
-                is the lose of luggage, delay and damage. Such cases are completely compensable.
+              <h4>
+                {t('LostLuggageCompensationInfo.desc')}
               </h4>
             </div>
             </SectionText>
