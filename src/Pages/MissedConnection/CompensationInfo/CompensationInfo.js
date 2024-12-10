@@ -2,9 +2,11 @@ import styles from "./CompensationInfo.module.scss";
 import Image from "../../../components/Images/FirstImage.png"
 import SectionCover from "../../../components/SectionTextAndCover/SectionCover.js";
 import SectionText from "../../../components/SectionTextAndCover/SectionText.js";
+import { useTranslation } from "react-i18next";
 
 
 const CompensationInfo = () => {
+  const {t} = useTranslation()
   return (
     <div className={styles.services}>
       <div className={`container`}>
@@ -14,19 +16,14 @@ const CompensationInfo = () => {
             <SectionCover image={Image} />
           </div>
           <div className={`col-lg-6 col-12`}>
-            <SectionText title={'Missed Connection Compensation'}>
+            <SectionText title={t('MissedConnectionCompensationInfo.title')}>
             <div className={styles.item}>
           <h4>
-          Connecting flight ("Transit flight"), which is not direct 
-          flight and takes at least one crossing to the destination.
+          {t('MissedConnectionCompensationInfo.name')}
           </h4>
           <br></br>
           <p>
-          In this case you may face the problem – you have a ticket, 
-          but your place is already taken. EU legislation EC 261,
-           provides for up to 600 compensation for such cases.
-
-
+          {t('MissedConnectionCompensationInfo.desc')}
           </p>
         </div>
             </SectionText>

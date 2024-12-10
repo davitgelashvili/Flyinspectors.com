@@ -1,10 +1,11 @@
+import { useTranslation } from "react-i18next";
 import styles from "./CompensationUSA.module.scss";
 
 const BulletPoint = () => {
+  const {t} = useTranslation()
   return (
       <div className={styles.headerOfBullet}>
-        In the United States, the amount of compensation depends on the two factors – 
-        the destinations and the direction of flight. For details see the chart:
+        {t('MissedConnectionCompensationUSA.text')}
       </div>
   );
 };

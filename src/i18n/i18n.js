@@ -22,7 +22,14 @@ import FeedBackCompModule from "../Pages/Contact Us/Feedback Form/FeedBackComp.m
 
 import OverBookedCompensationInfo from "../Pages/OverBookedFlight/CompensationInfo/CompensationInfo.module";
 import OverBookedCompensationIfModule from "../Pages/OverBookedFlight/CompensationIf/CompensationIf.module";
-
+import CompensationUSAModule from "../Pages/OverBookedFlight/CompensationUSA/CompensationUSA.module";
+import CompensationEUModule from "../Pages/OverBookedFlight/CompensationEU/CompensationEU.module";
+import OverBookedBeAwareModule from "../Pages/OverBookedFlight/BeAware/BeAware.module";
+import MissedConnectionCompensationInfo from "../Pages/MissedConnection/CompensationInfo/CompensationInfo.module";
+import MissedConnectionCompensationIfModule from "../Pages/MissedConnection/CompensationIf/CompensationIf.module";
+import MissedConnectionCompensationUSAModule from "../Pages/MissedConnection/CompensationUSA/CompensationUSA.module";
+import MissedConnectionCompensationEUModule from "../Pages/MissedConnection/CompensationEU/CompensationEU.module";
+import MissedConnectionBeAwareModule from "../Pages/MissedConnection/BeAware/BeAware.module";
 i18n
     .use(initReactI18next)
     .init({
@@ -53,7 +60,15 @@ i18n
                     ...FeedBackCompModule.en,
 
                     ...OverBookedCompensationInfo.en,
-                    ...OverBookedCompensationIfModule.en
+                    ...OverBookedCompensationIfModule.en,
+                    ...CompensationUSAModule.en,
+                    ...CompensationEUModule.en,
+                    ...OverBookedBeAwareModule.en,
+                    ...MissedConnectionCompensationInfo.en,
+                    ...MissedConnectionCompensationIfModule.en,
+                    ...MissedConnectionCompensationUSAModule.en,
+                    ...MissedConnectionCompensationEUModule.en,
+                    ...MissedConnectionBeAwareModule.en
                 }
             },
             ka: {
@@ -81,7 +96,15 @@ i18n
                     ...FeedBackCompModule.ka,
 
                     ...OverBookedCompensationInfo.ka,
-                    ...OverBookedCompensationIfModule.ka
+                    ...OverBookedCompensationIfModule.ka,
+                    ...CompensationUSAModule.ka,
+                    ...CompensationEUModule.ka,
+                    ...OverBookedBeAwareModule.ka,
+                    ...MissedConnectionCompensationInfo.ka,
+                    ...MissedConnectionCompensationIfModule.ka,
+                    ...MissedConnectionCompensationUSAModule.ka,
+                    ...MissedConnectionCompensationEUModule.ka,
+                    ...MissedConnectionBeAwareModule.ka
                 }
             }
         }

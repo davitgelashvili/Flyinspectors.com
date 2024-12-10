@@ -3,8 +3,10 @@ import image from "../../../components/Images/casesCompleted.png";
 import emotions from "../../../components/Images/emotionsPic.png";
 import rate from "../../../components/Images/ratePic.png";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const Item = () => {
+  const { language } = useSelector(state => state.translate)
   const [data,setData] = useState()
   useEffect(()=>{
     fetch(`${process.env.REACT_APP_API_URL}/rate`, {
@@ -38,10 +40,10 @@ const Item = () => {
                     </div>
                     <div className="col-md-8 d-flex align-items-center">
                       <div className="card-body d-flex flex-row align-items-center ms-3">
-                        <h4 className={`card-title ${styles.cardNumber}`}>{item.title.en}</h4>
+                        <h4 className={`card-title ${styles.cardNumber}`}>{item.title[language]}</h4>
                         <br></br>
                         <div className={`card-title ${styles.description}`}>
-                          {item.description.en}
+                          {item.description[language]}
                         </div>
                       </div>
                     </div>

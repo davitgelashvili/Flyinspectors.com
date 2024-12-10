@@ -1,11 +1,13 @@
+import { useTranslation } from "react-i18next";
 import styles from "./CompensationEU.module.scss";
 
 const BulletPoint = () => {
+  const {t} = useTranslation()
   return (
     <div className={styles.headerOfBullet}>
       <div >
-      In case of the EU, it depends on two factors - 
-      flight distance and flight boundaries. See the chart:
+      {t('MissedConnectionCompensationUSA.text')}
+      
       </div>
     </div>
   );

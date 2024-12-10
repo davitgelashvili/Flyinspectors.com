@@ -1,23 +1,22 @@
+import { useTranslation } from "react-i18next";
 import styles from "./CompensationIf.module.scss";
 
 const BulletPoint = () => {
+  const {t} = useTranslation()
   return (
     <div>
       <div className={styles.headerOfBullet}>
-      According to EC 261 law, due to such a flight, 
-      you qualify for compensation if:
+      {t('MissedConnectionCompensationIf.title')}
       </div>
       <ul className={styles.bulletList}>
-        <li>The flight is carried out inside EU territory;</li>
+        <li>{t('MissedConnectionCompensationIf._1')}</li>
         <li>
-          You have not received a travel voucher or extra compensation from the
-          airline;
+        {t('MissedConnectionCompensationIf._2')}
         </li>
         <li>
-          The denial to sit down was not due to your reasons, for example by
-          arriving late or not having a passport;;
+        {t('MissedConnectionCompensationIf._3')}
         </li>
-        <li>If such an incident occurred during the last 3 years.</li>
+        <li>{t('MissedConnectionCompensationIf._4')}</li>
       </ul>
     </div>
   );
