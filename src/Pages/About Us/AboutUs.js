@@ -5,7 +5,9 @@ import RateSection from "./RateSection/RateSection";
 function AboutUs() {
   return (
     <div>
-      <AboutUsSection />
+     <div style={{marginBottom:"20px"}}>
+     <AboutUsSection />
+     </div>
       <RateSection />
       <OurCoreValues />
     </div>

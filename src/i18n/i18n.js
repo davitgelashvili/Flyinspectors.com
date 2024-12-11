@@ -31,6 +31,7 @@ import MissedConnectionCompensationUSAModule from "../Pages/MissedConnection/Com
 import MissedConnectionCompensationEUModule from "../Pages/MissedConnection/CompensationEU/CompensationEU.module";
 import MissedConnectionBeAwareModule from "../Pages/MissedConnection/BeAware/BeAware.module";
 import LostLuggageModule from "../Pages/LostLuggage/LostLuggage.module";
+import footerModule from "../components/Common/Footer/footer.module";
 
 i18n
     .use(initReactI18next)
@@ -71,7 +72,8 @@ i18n
                     ...MissedConnectionCompensationUSAModule.en,
                     ...MissedConnectionCompensationEUModule.en,
                     ...MissedConnectionBeAwareModule.en,
-                    ...LostLuggageModule.en
+                    ...LostLuggageModule.en,
+                    ...footerModule.en,
                 }
             },
             ka: {
@@ -108,7 +110,8 @@ i18n
                     ...MissedConnectionCompensationUSAModule.ka,
                     ...MissedConnectionCompensationEUModule.ka,
                     ...MissedConnectionBeAwareModule.ka,
-                    ...LostLuggageModule.ka
+                    ...LostLuggageModule.ka,
+                    ...footerModule.ka,
 
                 }
             }
