@@ -22,7 +22,7 @@ const UserList = () => {
             .then((res) => res.json())
             .then((res) => {
                 setData(res);
-            }).finally(()=>{
+            }).finally(() => {
                 setLoad(false)
             });
     }, [res]);
@@ -53,10 +53,10 @@ const UserList = () => {
                 userId: user.userId,
             }),
         })
-        .then((res) => res.json())
-        .finally(() => {
-            setRes(!res);
-        });
+            .then((res) => res.json())
+            .finally(() => {
+                setRes(!res);
+            });
     };
 
     const displayData = search ? filtered : data;
@@ -91,7 +91,7 @@ const UserList = () => {
                     marginTop: "20px",
                 }}
             >
-                {[...displayData].reverse().map((item) => (
+                {[...displayData].reverse().map((item, index) => (
                     <div
                         key={item._id}
                         style={{
@@ -102,6 +102,16 @@ const UserList = () => {
                             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                         }}
                     >
+                        <p
+                            style={{
+                                fontSize: "18px",
+                                fontWeight: "bold",
+                                marginBottom: "12px",
+                                color: "#555",
+                            }}
+                        >
+                            #{displayData.length - index}
+                        </p>
                         <Link
                             to={item.userId}
                             style={{
@@ -125,7 +135,7 @@ const UserList = () => {
                                     marginBottom: "8px",
                                 }}
                             >
-                                <p>old status:{item.oldStatus}</p>
+                                <p>Old Status: {item.oldStatus}</p>
                                 <strong>Status:</strong> {item.status}
                             </h2>
                             <h2

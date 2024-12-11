@@ -15,7 +15,7 @@ const BeAware = () => {
             <SectionCover image={image} />
           </div>
           <div className={`col-lg-6 col-12`}>
-            <SectionText title={'Be Aware'}>
+            <SectionText title={t('Be Aware')}>
               <ul className={styles.bulletList}>
                 <li>{t('OverBookedBeAware._1')}</li>
                 <li>{t('OverBookedBeAware._2')}</li>
