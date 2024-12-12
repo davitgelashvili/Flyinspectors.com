@@ -17,7 +17,7 @@ import ContactUs from "./Pages/Contact Us/ContactUs";
 import BlogPageMore from "./Pages/BlogPageMore/BlogPageMore";
 import UserList from "./components/Dashboard/User/List";
 import UserEdit from "./components/Dashboard/User/Edit";
-import ScrollToTop from "./ScrollToTop";// Import the ScrollToTop component
+import ScrollToTop from "./ScrollToTop"; // Import the ScrollToTop component
 import "./i18n/i18n";
 import ServicesList from "./components/Dashboard/Services/List";
 import ServicesEdit from "./components/Dashboard/Services/Edit";
@@ -26,6 +26,9 @@ import RateEdit from "./components/Dashboard/Rate/Edit";
 import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
 import ContactList from "./components/Dashboard/ContactList/List";
 import ContactEdit from "./components/Dashboard/ContactList/Edit";
+import BlogPageMoreAirports from "./Pages/BlogPageMore Airports/BlogPageMore";
+import BlogPageMorePets from "./Pages/BlogPageMore Pets/BlogPageMorePets";
+import BlogPageMorePilots from "./Pages/BlogPageMore Pilots/BlogPageMorePilots";
 
 function App() {
   return (
@@ -53,11 +56,20 @@ function App() {
         <Route path={"/about-us/blog"} element={<BlogPage />} />
         <Route path={"/about-us/faq"} element={<FaqPage />} />
         <Route path={"/about-us/blog-page-more"} element={<BlogPageMore />} />
+        <Route
+          path={"/about-us/blog-page-more-airports"}
+          element={<BlogPageMoreAirports />}
+        />
+        <Route path={"/about-us/blog-page-more-pets"} element={<BlogPageMorePets/>} />
+        <Route path={"/about-us/blog-page-more-pilots"} element={<BlogPageMorePilots/>} />
         <Route path={"/contact-us"} element={<ContactUs />} />
-        <Route path={"/terms-and-conditions"} element={<TermsAndConditions />} />
+        <Route
+          path={"/terms-and-conditions"}
+          element={<TermsAndConditions />}
+        />
 
         <Route path={"/adminpanel"} element={<AdminPanel />} />
-        
+
         <Route path={"/adminpanel/userlist"} element={<UserList />} />
         <Route path={"/adminpanel/userlist/:id"} element={<UserEdit />} />
 
@@ -70,7 +82,6 @@ function App() {
         <Route path={"/adminpanel/contact"} element={<ContactList />} />
         <Route path={"/adminpanel/contact/edit"} element={<ContactEdit />} />
         <Route path={"/*"} element={<Main />} />
-
       </Routes>
       <Footer />
     </>

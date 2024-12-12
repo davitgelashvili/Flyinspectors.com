@@ -5,13 +5,9 @@ const CancelledFlights = () => {
   return (
     <div className={styles.services}>
       <div className={`container`}>
+        <h3 className={styles.services__header}>The most common reasons why the flights get cancelled</h3>
         <div className="row">
-          <div className="col-lg- col-12">
-            <h3 className={styles.services__header}>The most common reasons why the flights get cancelled</h3>
-          </div>
-          <div className={`${styles.item} col-lg-6 col-12`}>
-            <Item />
-          </div>
+          <Item />
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@
         flex-direction: column;
 
 
-        &__textArea{
+        &__textArea {
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -51,6 +51,7 @@
     }
 
     &__image {
+        padding-top: 30px;
         height: 318px;
         width: 550px;
     }
