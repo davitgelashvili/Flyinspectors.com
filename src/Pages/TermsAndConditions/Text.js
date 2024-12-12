@@ -1,6 +1,31 @@
+import { useEffect, useState } from "react";
+
 function Text() {
+    const [data, setData] = useState()
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_API_URL}/conditions`, {
+          method: "GET",
+          headers: {
+            "Content-type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            setData(res);
+            console.log("save data:", res);
+          });
+      }, []);
     return (
         <div className="container">
+            {data?.map((item)=>{
+                return (
+                    <div key={item._id}>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                    </div>
+                )
+            })}
 			<h3>Article 1: Definitions</h3>
             <p>1.1 “Agreement”: an agreement between a Client and Flyinpectors that is reached after the acceptance of these Terms by the Client. For Justice as a Service the Agreement shall be considered reached, when the Client has signed the Assignment Form or an Authority Document in addition to accepting these Terms.</p>
             <p>1.2 “Flyinspectors”: Aviation + LLC, a company incorporated in Georgia with its registered at 34 Tornike Eristavi Str, Chiatura, Georgia, 5500</p>
