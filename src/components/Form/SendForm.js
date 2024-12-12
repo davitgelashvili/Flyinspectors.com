@@ -37,7 +37,7 @@ const SendForm = ({setFormActive}) => {
         date: "",
         select: "",
         description: "",
-        oldStatus: "In progress",
+        oldStatus: "Application has received",
     })
     const [defaultValue, setDefaultValue] = useState(value)
 
@@ -96,8 +96,6 @@ const SendForm = ({setFormActive}) => {
             value.fightNumber !== "" &&
             value.date !== "" &&
             value.select !== "" &&
-            value.passportImage !== "" &&
-            value.ticketImage !== "" &&
             value.signature !== ""
         ) {
             setPopup(true)
