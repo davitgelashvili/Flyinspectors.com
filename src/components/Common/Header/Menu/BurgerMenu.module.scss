@@ -84,11 +84,6 @@
     }
 }
 
-.icon {
-    font-size: 24px;
-    cursor: pointer;
-    display: none;
-}
 
 .logo__img {
     flex: 1;
@@ -98,28 +93,9 @@
     display: none;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 991px) {
 
-
-    .logo__img {
-        display: block;
-        flex: 1;
-        text-align: center;
-        width: 66px;
-        height: 44px;
-        padding-right: 5px;
-    }
-
-    .icon {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-        position: absolute;
-        right: 20px;
-        top: 10px;
-        z-index: 10;
-
-    }
+    
 
     .container {
         margin: 10px 0 10px 0;

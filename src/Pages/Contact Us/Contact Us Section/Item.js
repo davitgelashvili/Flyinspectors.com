@@ -1,26 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ContactUs.module.scss";
 import { useTranslation } from "react-i18next";
 
 const Item = () => {
+  const [data, setData] = useState()
   const {t} = useTranslation()
-  const data = [
+  const list = [
     {
       country: t('ContactUs.georgia'),
       cards: [
         {
           label: t('ContactUs.mob'),
-          value: "+995 593 00 03 94",
+          value: data?.call?.ka          ,
           icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733137843/ic_call_24px_cnlpgo.png",
         },
         {
           label: t('ContactUs.email'),
-          value: "info@flyinspectors.com",
+          value: data?.email?.ka,
           icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733137844/ic_markunread_24px_x9usk2.png",
         },
         {
           label: t('ContactUs.address'),
-          value: "5 Iuri Gagarini Street, Tbilisi, Georgia",
+          value: data?.address?.ka,
           icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733137844/ic_room_24px_hoqod0.png",
         },
       ],
@@ -30,27 +31,43 @@ const Item = () => {
       cards: [
         {
           label: t('ContactUs.mob'),
-          value: "+995 0322 19 53 29",
+          value: data?.call?.en,
           icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733137843/ic_call_24px_cnlpgo.png",
         },
         {
           label: t('ContactUs.email'),
-          value: "info@flyinspectors.com",
+          value: data?.email?.en,
           icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733137844/ic_markunread_24px_x9usk2.png",
         },
         {
           label: t('ContactUs.address'),
-          value:
-            "363 Chapter Road, London, England NW2 5ND",
+          value: data?.address?.en,
           icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1733137844/ic_room_24px_hoqod0.png",
         },
       ],
     },
   ];
 
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}/contactlist`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res[0]);
+        console.log("save data:", res);
+      });
+  }, []);
+
+  console.log(data)
+
   return (
     <>
-      {data.map((section, index) => (
+      {list.map((section, index) => (
         <div className={`col-lg-6`} key={index}>
           <div>
             <h3 className={""}>{section.country}</h3>

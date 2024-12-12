@@ -2,13 +2,15 @@
     max-width: 163px;
     margin: 0;
 
+    a {
+      display: block;
+    }
+
     &__img {
       width: 100%;
     }
-  }
 
-  @media(max-width: 768px) {
-    .logo {
-      display: none;
+    @media (max-width: 500px) {
+      max-width: 100px;
     }
   }

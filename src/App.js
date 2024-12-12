@@ -24,6 +24,8 @@ import ServicesEdit from "./components/Dashboard/Services/Edit";
 import RateList from "./components/Dashboard/Rate/List";
 import RateEdit from "./components/Dashboard/Rate/Edit";
 import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
+import ContactList from "./components/Dashboard/ContactList/List";
+import ContactEdit from "./components/Dashboard/ContactList/Edit";
 
 function App() {
   return (
@@ -64,6 +66,9 @@ function App() {
 
         <Route path={"/adminpanel/rate"} element={<RateList />} />
         <Route path={"/adminpanel/rate/:id"} element={<RateEdit />} />
+
+        <Route path={"/adminpanel/contact"} element={<ContactList />} />
+        <Route path={"/adminpanel/contact/edit"} element={<ContactEdit />} />
         <Route path={"/*"} element={<Main />} />
 
       </Routes>

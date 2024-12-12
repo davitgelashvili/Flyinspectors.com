@@ -5,15 +5,12 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { siteTranslateAction } from "../../../../store/translate";
 import icon from "../../../Images/arrowIcon.png";
-import logo from "../Logo/LogoPic/LogoFly.png";
-import iconMenu from "../../../Images/iconMenu.png";
 import engFlag from "../../../../assetss/images/brtsh.jpg";
 import geoFlag from "../../../../assetss/images/geo.jpg";
 
-const BurgerMenu = () => {
+const BurgerMenu = ({IsOpen, setIsOpen}) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
-  const [IsOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { language } = useSelector((state) => state.translate);
@@ -58,17 +55,9 @@ const BurgerMenu = () => {
   return (
     <div className={styles.container}>
       <nav>
-        {/* Logo */}
-        <div className={styles.logo}>
-          <Link to="/">
-            <img src={logo} alt="Logo" className={styles.logo__img} />
-          </Link>
-        </div>
+        
 
-        {/* Icon button */}
-        <div className={styles.icon} onClick={toggleMenu}>
-          <img src={iconMenu} alt="Menu" className={styles.iconMenu} />
-        </div>
+        
 
         {/* Menu */}
         <ul className={`${styles.nav} ${IsOpen ? styles.open : ""}`}>
@@ -125,40 +114,7 @@ const BurgerMenu = () => {
               </li>
             );
           })}
-          {/* Language Toggle */}
-          <li className={styles.languageToggle}>
-            {language === "ka" ? (
-              <img
-                src={engFlag}
-                alt="English"
-                onClick={() =>
-                  dispatch(siteTranslateAction.changeLanguage("en"))
-                }
-                style={{
-                  cursor: "pointer",
-                  width: "40px",
-                  height: "25px",
-                  border: "1px solid #ccc",
-                  borderRadius: "3px",
-                }}
-              />
-            ) : (
-              <img
-                src={geoFlag}
-                alt="Georgian"
-                onClick={() =>
-                  dispatch(siteTranslateAction.changeLanguage("ka"))
-                }
-                style={{
-                  cursor: "pointer",
-                  width: "40px",
-                  height: "25px",
-                  border: "1px solid #ccc",
-                  borderRadius: "3px",
-                }}
-              />
-            )}
-          </li>
+          
         </ul>
       </nav>
     </div>
