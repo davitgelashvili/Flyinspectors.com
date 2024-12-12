@@ -1,6 +1,7 @@
 import Item from "./Item.js";
 import styles from "./CompensationHowMuch.module.scss";
 import BulletPoint from "./BulletPoint.js";
+import Tabletwo from "../../../components/Tables/tabletwo/tabletwo.js";
 
 const CompensationHowMuch = () => {
   return (
@@ -11,7 +12,7 @@ const CompensationHowMuch = () => {
             <BulletPoint />
           </div>
           <div className={`col-lg-7 col-12`}>
-            <Item />
+            <Tabletwo/>
           </div>
         </div>
       </div>

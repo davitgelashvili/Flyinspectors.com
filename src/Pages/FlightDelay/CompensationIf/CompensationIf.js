@@ -1,6 +1,6 @@
-import Item from "./Item.js";
 import styles from "./CompensationIf.module.scss";
 import BulletPoint from "./BulletPoint.js";
+import Tableone from "../../../components/Tables/tableone/tableone.js";
 
 const CompensationIf = () => {
   return (
@@ -11,8 +11,9 @@ const CompensationIf = () => {
             <BulletPoint />
           </div>
           <div className={`col-lg-7 col-12`}>
-            <Item />
+            <Tableone/>
           </div>
+         
         </div>
       </div>
     </div>
