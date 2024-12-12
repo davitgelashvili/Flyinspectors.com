@@ -87,6 +87,22 @@ const Dashboard = () => {
                             contact List
                         </Link>
                     </li>
+                    <li>
+                        <Link
+                            to={'condition'}
+                            style={{
+                                textDecoration: "none",
+                                color: "#007BFF",
+                                fontSize: "18px",
+                                fontWeight: "bold",
+                                transition: "color 0.3s"
+                            }}
+                            onMouseOver={(e) => (e.target.style.color = "#0056b3")}
+                            onMouseOut={(e) => (e.target.style.color = "#007BFF")}
+                        >
+                            Condition List
+                        </Link>
+                    </li>
                 </ul>
             ) : (
                 <div

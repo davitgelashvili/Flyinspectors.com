@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import styles from "./ContactUs.module.scss";
 import { useTranslation } from "react-i18next";
 
-const Item = () => {
+const ContactList = () => {
+  const windowUrl = window.location.host
+  const [lang,setLang] = useState(true)
   const [data, setData] = useState()
   const {t} = useTranslation()
   const list = [
@@ -63,15 +65,18 @@ const Item = () => {
       });
   }, []);
 
-  console.log(data)
+  if (windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge') {
+    setLang(true)
+  }
 
   return (
     <>
-      {list.map((section, index) => (
-        <div className={`col-lg-6`} key={index}>
+      {lang ? (
+        <>
+        <div className={`col-lg-6`}>
           <div>
-            <h3 className={""}>{section.country}</h3>
-            {section.cards.map((card, cardIndex) => (
+            <h3 className={""}>{list[0].country}</h3>
+            {list[0].cards.map((card, cardIndex) => (
               <div
                 className={`${styles.item} d-flex align-items-center`}
                 key={cardIndex}
@@ -87,9 +92,50 @@ const Item = () => {
             ))}
           </div>
         </div>
-      ))}
+        <div className={`col-lg-6`}>
+          <div>
+            <h3 className={""}>{list[1].country}</h3>
+            {list[1].cards.map((card, cardIndex) => (
+              <div
+                className={`${styles.item} d-flex align-items-center`}
+                key={cardIndex}
+              >
+                <div className={styles.icon}>
+                  <img src={card.icon} alt="icon" />
+                </div>
+                <div className={styles.text}>
+                  <h5 className={styles.title}>{card.label}</h5>
+                  <p className={styles.desc}>{card.value}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        </>
+        
+      ) : (
+        <div className={`col-lg-6`}>
+          <div>
+            <h3 className={""}>{list[1].country}</h3>
+            {list[0].cards.map((card, cardIndex) => (
+              <div
+                className={`${styles.item} d-flex align-items-center`}
+                key={cardIndex}
+              >
+                <div className={styles.icon}>
+                  <img src={card.icon} alt="icon" />
+                </div>
+                <div className={styles.text}>
+                  <h5 className={styles.title}>{card.label}</h5>
+                  <p className={styles.desc}>{card.value}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </>
   );
 };
 
-export default Item;
+export default ContactList;

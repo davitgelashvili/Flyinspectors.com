@@ -11,6 +11,7 @@ const UploadWidget = ({value, valueName, setValue, title, name}) => {
             uploadPreset: 'hi5bzww0',
             sources: ['local'],
             multiple: false,
+            clientAllowedFormats: ["jpg", "jpeg", "png"],
             maxFiles: 1
         }, function(err, result){
             if(result?.data?.info?.files) {
