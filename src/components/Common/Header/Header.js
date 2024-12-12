@@ -12,7 +12,7 @@ function Header() {
     const dispatch = useDispatch()
     const { language } = useSelector(state => state.translate)
     const windowUrl = window.location.host
-    const [languageBtn, setLanguageBtn] = useState(false);
+    const [languageBtn, setLanguageBtn] = useState(true);
     const [IsOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
