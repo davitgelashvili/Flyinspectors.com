@@ -13,7 +13,9 @@ function OverBooked() {
       <CompensationInfo />
       <CompensationIf />
       <TableJust/>
+      <div style={{marginBottom:"50px"}}>
       <CompensationUSA />
+      </div>
       <CompensationEU/>
       <BeAware />
     </div>

@@ -10,6 +10,7 @@ function AboutUs() {
      </div>
       <RateSection />
       <OurCoreValues />
+     
     </div>
   );
 }
