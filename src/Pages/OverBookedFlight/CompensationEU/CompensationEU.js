@@ -12,7 +12,7 @@ const CompensationEU = () => {
     if (windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge'){
       setTable(true)
     }else {
-      setTable(false)
+      setTable(true)
     }
 
   }, [])

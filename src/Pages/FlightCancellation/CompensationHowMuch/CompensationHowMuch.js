@@ -3,6 +3,8 @@ import styles from "./CompensationHowMuch.module.scss";
 import BulletPoint from "./BulletPoint.js";
 import { useEffect, useState } from "react";
 import TableTwo from "../../../components/Tables/tabletwo/tabletwo.js";
+import Tablefour from "../../../components/Tables/tablefour/Tablefour.js";
+import TableThree from "../../../components/Tables/tablethree/tablethree.js";
 
 const CompensationHowMuch = () => {
   const [table, setTable] = useState(true)
@@ -12,7 +14,7 @@ const CompensationHowMuch = () => {
     if (windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge'){
       setTable(true)
     }else {
-      setTable(false)
+      setTable(true)
     }
 
   }, [])
@@ -24,7 +26,7 @@ const CompensationHowMuch = () => {
             <BulletPoint />
           </div>
           <div className={`col-lg-7 col-12`}>
-            {table && <TableTwo />}
+            {table && <TableThree />}
             {!table && <Item />}
           </div>
         </div>
