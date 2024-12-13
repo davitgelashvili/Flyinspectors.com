@@ -33,6 +33,12 @@ import MissedConnectionBeAwareModule from "../Pages/MissedConnection/BeAware/BeA
 import LostLuggageModule from "../Pages/LostLuggage/LostLuggage.module";
 import footerModule from "../components/Common/Footer/footer.module";
 
+import tableoneModule from "../components/Tables/tableone/tableone.module";
+import tabletwoModule from "../components/Tables/tabletwo/tabletwo.module";
+import tablethreeModule from "../components/Tables/tablethree/tablethree.module";
+import tablefourModule from "../components/Tables/tablefour/tablefour.module";
+import TablefiveModule from "../components/Tables/tablefive/Tablefive.module";
+
 i18n
     .use(initReactI18next)
     .init({
@@ -75,6 +81,12 @@ i18n
                     ...LostLuggageModule.en,
                     ...footerModule.en,
 
+                    ...tableoneModule.en,
+                    ...tabletwoModule.en,
+                    ...tablethreeModule.en,
+                    ...tablefourModule.en,
+                    ...TablefiveModule.en,
+
 
                     
                 }
@@ -116,6 +128,11 @@ i18n
                     ...LostLuggageModule.ka,
                     ...footerModule.ka,
 
+                    ...tableoneModule.ka,
+                    ...tabletwoModule.ka,
+                    ...tablethreeModule.ka,
+                    ...tablefourModule.ka,
+                    ...TablefiveModule.ka,
                 }
             }
         }

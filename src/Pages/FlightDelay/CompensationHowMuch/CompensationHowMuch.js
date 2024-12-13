@@ -2,8 +2,20 @@ import Item from "./Item.js";
 import styles from "./CompensationHowMuch.module.scss";
 import BulletPoint from "./BulletPoint.js";
 import Tabletwo from "../../../components/Tables/tabletwo/tabletwo.js";
+import { useEffect, useState } from "react";
 
 const CompensationHowMuch = () => {
+  const [table, setTable] = useState(true)
+  const windowUrl = window.location.host
+
+  useEffect(()=>{
+    if (windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge'){
+      setTable(true)
+    }else {
+      setTable(false)
+    }
+
+  }, [])
   return (
     <div className={styles.services}>
       <div className= "container">
@@ -12,7 +24,8 @@ const CompensationHowMuch = () => {
             <BulletPoint />
           </div>
           <div className={`col-lg-7 col-12`}>
-            <Tabletwo/>
+            {table && <Tabletwo/>}
+            {!table && <Item/>}
           </div>
         </div>
       </div>

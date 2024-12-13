@@ -1,8 +1,22 @@
 import Item from "./Item.js";
 import styles from "./CompensationUSA.module.scss";
 import BulletPoint from "./BulletPoint.js";
+import { useEffect, useState } from "react";
+import TableThree from "../../../components/Tables/tablethree/tablethree.js";
+import Tablefour from "../../../components/Tables/tablefour/Tablefour.js";
 
 const CompensationUSA = () => {
+  const [table, setTable] = useState(true)
+  const windowUrl = window.location.host
+
+  useEffect(()=>{
+    if (windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge'){
+      setTable(true)
+    }else {
+      setTable(false)
+    }
+
+  }, [])
   return (
     <div className={styles.services}>
       <div className={`container `}>
@@ -11,7 +25,8 @@ const CompensationUSA = () => {
             <BulletPoint />
           </div>
           <div className={`${styles.item} col-lg-6 col-12`}>
-            <Item />
+            {table && <Tablefour />}
+            {!table && <Item />}
           </div>
         </div>
       </div>
