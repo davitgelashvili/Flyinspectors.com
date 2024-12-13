@@ -16,7 +16,6 @@ const ServicesOptions = () => {
     .then((res) => res.json())
     .then(res => {
         setData(res)
-        console.log("save data:", res);
     })
   }, [])
   // const data = [
@@ -45,6 +44,7 @@ const ServicesOptions = () => {
         </div>
         <div className="row">
           {data?.map((item) => {
+            console.log(item)
             return (
               <div className="col-lg-4" key={item.id}>
                 <Item title={item.title} desc={item.description} icon={item.icon} />
