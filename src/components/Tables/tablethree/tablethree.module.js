@@ -1,6 +1,6 @@
 module.exports = {
     en: {
-        tableerti: {
+        tableerthree: {
             header1: `Destination/Airline origin`,
             header2: `Registered in EU`,
             header3: `Registered outside EU`,
@@ -26,7 +26,7 @@ module.exports = {
         }
     },
     ka: {
-        tableerti: {
+        tableerthree: {
             header1: `მანძილი`,
             header2: `დაგვიანება`,
             header3: `კომპენსაციის ოდენობა`,

@@ -1,40 +1,38 @@
-import React from 'react'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from "./CompensationHowMuch.module.scss";
 
+const TableTwo = () => {
+    const { t } = useTranslation();
 
-const tabletwo = () => {
     return (
         <table className={styles.table}>
             <thead>
                 <tr>
-                    <th className={styles.header}>Distance/Delay</th>
-                    <th className={styles.headerLg}>Flight delay</th>
-                    <th className={styles.header}>Compensation amount</th>
-                    
+                    <th className={styles.header}>{t('tableetwo.header1')}</th>
+                    <th className={styles.headerLg}>{t('tableetwo.header2')}</th>
+                    <th className={styles.header}>{t('tableetwo.header3')}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td className={styles.cell}>Less than 1500km</td>
-                    <td className={styles.cell}>More than 3 hours</td>
-                    <td className={styles.cell}>EUR 250</td>
-                  
+                    <td className={styles.cell}>{t('tableetwo.cell1')}</td>
+                    <td className={styles.cell}>{t('tableetwo.cell2')}</td>
+                    <td className={styles.cell}>{t('tableetwo.cell3')}</td>
                 </tr>
                 <tr>
-                    <td className={styles.cell}>1500-3500km ourside EU</td>
-                    <td className={styles.cell}>More than 3 hours</td>
-                    <td className={styles.cell}>EUR 400</td>
-           
+                    <td className={styles.cell}>{t('tableetwo.cell4')}</td>
+                    <td className={styles.cell}>{t('tableetwo.cell5')}</td>
+                    <td className={styles.cell}>{t('tableetwo.cell6')}</td>
                 </tr>
                 <tr>
-                    <td className={styles.cell}>More than 3500km outside EU</td>
-                    <td className={styles.cell}>More than 3 hours</td>
-                    <td className={styles.cell}>EUR 600</td>
-          
+                    <td className={styles.cell}>{t('tableetwo.cell7')}</td>
+                    <td className={styles.cell}>{t('tableetwo.cell8')}</td>
+                    <td className={styles.cell}>{t('tableetwo.cell9')}</td>
                 </tr>
             </tbody>
         </table>
     );
-}
+};
 
-export default tabletwo
+export default TableTwo;

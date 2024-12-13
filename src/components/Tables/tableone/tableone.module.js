@@ -1,6 +1,6 @@
 module.exports = {
     en: {
-        tableerti: {
+        tableeone: {
             header1: `Destination/Airline origin`,
             header2: `Registered in EU`,
             header3: `Registered outside EU`,
@@ -20,7 +20,7 @@ module.exports = {
         }
     },
     ka: {
-        tableerti: {
+        tableeone: {
             header1: `მიმართულება/ავიახაზების წარმომავლობა`,
             header2: `EU/საქართველოში რეგისტირებული`,
             header3: `EU/საქართველოს გარეთ რეგისტრირებული`,

@@ -1,54 +1,53 @@
-import React from 'react'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from "./CompensationHowMuch.module.scss";
 
-const tablethree = () => {
+const TableThree = () => {
+    const { t } = useTranslation();
+
     return (
         <table className={styles.table}>
-        <thead>
-            <tr>
-                <th className={styles.header}>Distance/Delay</th>
-                <th className={styles.headerLg}>Flight delay</th>
-                <th className={styles.header}>Compensation amount</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className={styles.cell}>Less than 1500km</td>
-                <td className={styles.cell}>More than 3 hours</td>
-                <td className={styles.cell}>EUR 250</td>
-                 
-            </tr>
-            <tr>
-                <td className={styles.cell}>1500-3500km ourside EU</td>
-                <td className={styles.cell}>More than 3 hours</td>
-                <td className={styles.cell}>EUR 400</td>
-            </tr>
-            <tr>
-                <td className={styles.cell}>More than 3500km outside EU</td>
-                <td className={styles.cell}>More than 3 hours</td>
-                <td className={styles.cell}>EUR 600</td>          
-            </tr>
-            <tr>
-                <td className={styles.cell}>Less than 1500km</td>
-                <td className={styles.cell}>less than 3 hours</td>
-                <td className={styles.cell}>EUR 125</td>              
-            </tr>
-            <tr>
-                <td className={styles.cell}>1500-3500km ourside EU</td>
-                <td className={styles.cell}>less than 3 hours</td>
-                <td className={styles.cell}>EUR 200</td>
-                
-            </tr>
-            <tr>
-                <td className={styles.cell}>More than 3500km outside EU</td>
-                <td className={styles.cell}>less than 3 hours</td>
-                <td className={styles.cell}>EUR 300</td>
-                
-            </tr>
-        </tbody>
-    </table>
+            <thead>
+                <tr>
+                    <th className={styles.header}>{t('tableerthree.header1')}</th>
+                    <th className={styles.headerLg}>{t('tableerthree.header2')}</th>
+                    <th className={styles.header}>{t('tableerthree.header3')}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td className={styles.cell}>{t('tableerthree.cell1')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell2')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell3')}</td>
+                </tr>
+                <tr>
+                    <td className={styles.cell}>{t('tableerthree.cell4')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell5')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell6')}</td>
+                </tr>
+                <tr>
+                    <td className={styles.cell}>{t('tableerthree.cell7')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell8')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell9')}</td>
+                </tr>
+                <tr>
+                    <td className={styles.cell}>{t('tableerthree.cell10')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell11')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell12')}</td>
+                </tr>
+                <tr>
+                    <td className={styles.cell}>{t('tableerthree.cell13')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell14')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell15')}</td>
+                </tr>
+                <tr>
+                    <td className={styles.cell}>{t('tableerthree.cell16')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell17')}</td>
+                    <td className={styles.cell}>{t('tableerthree.cell18')}</td>
+                </tr>
+            </tbody>
+        </table>
     );
-}
+};
 
-export default tablethree
+export default TableThree;

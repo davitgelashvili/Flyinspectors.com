@@ -74,6 +74,9 @@ i18n
                     ...MissedConnectionBeAwareModule.en,
                     ...LostLuggageModule.en,
                     ...footerModule.en,
+
+
+                    
                 }
             },
             ka: {

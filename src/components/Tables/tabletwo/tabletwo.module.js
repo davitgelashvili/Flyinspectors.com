@@ -1,6 +1,6 @@
 module.exports = {
     en: {
-        tableerti: {
+        tableetwo: {
             header1: `Distance/Delay`,
             header2: `Flight delay`,
             header3: `Compensation amount`,
@@ -17,7 +17,7 @@ module.exports = {
         }
     },
     ka: {
-        tableerti: {
+        tableetwo: {
             header1: `მანძილი`,
             header2: `დაგვიანება`,
             header3: `კომპენსაციის ოდენობა`,
