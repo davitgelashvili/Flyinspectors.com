@@ -32,9 +32,9 @@ const tableone = () => {
                         <td className={styles.cell}>Not Compensable</td>
                     </tr>
                     <tr>
-                        <td className={styles.cellLast}>From outside EU to outside EU</td>
-                        <td className={styles.cellLast}>Not Compensable</td>
-                        <td className={styles.cellLast}>Not Compensable</td>
+                        <td className={styles.cell}>From outside EU to outside EU</td>
+                        <td className={styles.cell}>Not Compensable</td>
+                        <td className={styles.cell}>Not Compensable</td>
                     </tr>
                 </tbody>
             </table>

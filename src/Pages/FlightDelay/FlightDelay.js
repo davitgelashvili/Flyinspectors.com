@@ -3,6 +3,7 @@ import CompensationHowMuch from "./CompensationHowMuch/CompensationHowMuch";
 import BeAware from "./BeAware/BeAware";
 import CompensationInfo from "./CompensationInfo/CompensationInfo";
 import styles from "./FlightDelay.module.scss"
+import Tablethree from "../../components/Tables/tablethree/tablethree"
 
 function FlightDelay() {
   return (
@@ -11,6 +12,7 @@ function FlightDelay() {
       <CompensationIf />
       <CompensationHowMuch />
       <BeAware />
+      <Tablethree/>
     </div>
   );
 }
