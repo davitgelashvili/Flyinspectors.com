@@ -2,6 +2,7 @@ import styles from './Search.module.scss'
 import { useEffect, useState } from "react"
 import TextInput from "../UI/TextInput"
 import Loading from "../Loading/Loading"
+import Progress from './Progress'
 
 const SearchForm = () => {
     const [id, setId] = useState("")
@@ -51,9 +52,7 @@ const SearchForm = () => {
                     <Loading />
                 ) : (
                     data && (
-                        <div className={styles.search__status}>
-                            {data?.status}
-                        </div>
+                        <Progress status={data?.status}/>
                     )
                 )}
             <button className={styles.search__btn} onClick={handleChange}>search</button>

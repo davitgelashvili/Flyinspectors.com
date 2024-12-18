@@ -24,7 +24,7 @@ const ConditionsList = () => {
       <h3 style={{ color: "#007bff" }}><Link to={'add'}>add</Link></h3>
     {data?.map((item) => (
       <Link
-        to={'edit'}
+        to={item._id}
         key={item._id}
         className="d-flex justify-content-between" 
         style={{
@@ -53,7 +53,7 @@ const ConditionsList = () => {
               marginBottom: "10px",
             }}
           >
-            {item.title}
+            {item.title.en}
           </h3>
           <h3
             style={{
@@ -63,7 +63,7 @@ const ConditionsList = () => {
               marginBottom: "10px",
             }}
           >
-            {item.description}
+            {item.description.en}
           </h3>
         </div>
 

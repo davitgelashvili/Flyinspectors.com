@@ -86,7 +86,7 @@ function App() {
         <Route path={"/adminpanel/contact/edit"} element={<ContactEdit />} />
 
         <Route path={"/adminpanel/condition"} element={<ConditionsList />} />
-        <Route path={"/adminpanel/condition/edit"} element={<ConditionsEdit />} />
+        <Route path={"/adminpanel/condition/:id"} element={<ConditionsEdit />} />
         <Route path={"/adminpanel/condition/add"} element={<ConditionsAdd />} />
         <Route path={"/*"} element={<Main />} />
       </Routes>

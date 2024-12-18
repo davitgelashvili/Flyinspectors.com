@@ -18,7 +18,7 @@ function Header() {
     useEffect(() => {
         i18n.changeLanguage(language)
         if (windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge') {
-            setLanguageBtn(false)
+            setLanguageBtn(true)
         }
     }, [dispatch, language])
 
