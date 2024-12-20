@@ -10,14 +10,18 @@ import iconMenu from "../../Images/iconMenu.png";
 
 function Header() {
     const dispatch = useDispatch()
-    const { language } = useSelector(state => state.translate)
+    let {language}  = useSelector(state => state.translate)
     const windowUrl = window.location.host
-    const [languageBtn, setLanguageBtn] = useState(true);
+    const [languageBtn, setLanguageBtn] = useState(false);
     const [IsOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         i18n.changeLanguage(language)
         if (windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge') {
+            setLanguageBtn(true)
+        }
+
+        if (windowUrl === 'localhost:3000') {
             setLanguageBtn(true)
         }
     }, [dispatch, language])

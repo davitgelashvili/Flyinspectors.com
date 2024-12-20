@@ -39,6 +39,9 @@ import tablethreeModule from "../components/Tables/tablethree/tablethree.module"
 import tablefourModule from "../components/Tables/tablefour/tablefour.module";
 import TablefiveModule from "../components/Tables/tablefive/Tablefive.module";
 
+import SubmitLinkModule from "../components/UI/SubmitLink.module";
+import FormModule from "../components/Form/Form.module";
+
 i18n
     .use(initReactI18next)
     .init({
@@ -87,6 +90,8 @@ i18n
                     ...tablefourModule.en,
                     ...TablefiveModule.en,
 
+                    ...SubmitLinkModule.en,
+                    ...FormModule.en,
 
                     
                 }
@@ -133,6 +138,9 @@ i18n
                     ...tablethreeModule.ka,
                     ...tablefourModule.ka,
                     ...TablefiveModule.ka,
+
+                    ...SubmitLinkModule.ka,
+                    ...FormModule.ka,
                 }
             }
         }

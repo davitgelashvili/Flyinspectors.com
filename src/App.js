@@ -32,8 +32,32 @@ import BlogPageMorePilots from "./Pages/BlogPageMore Pilots/BlogPageMorePilots";
 import ConditionsList from "./components/Dashboard/Conditions/List";
 import ConditionsEdit from "./components/Dashboard/Conditions/Edit";
 import ConditionsAdd from "./components/Dashboard/Conditions/Add";
+import { useDispatch } from "react-redux";
+import { siteTranslateAction } from "./store/translate";
+import { useEffect } from "react";
 
 function App() {
+  const windowUrl = window.location.host
+  const dispatch = useDispatch()
+
+  useEffect(()=> {
+    if(windowUrl === `flyinpectors.com`){
+      dispatch(siteTranslateAction.changeLanguage('en'))
+    }
+    
+    if(windowUrl === `flyinpectors.ge`){
+      dispatch(siteTranslateAction.changeLanguage('ka'))
+    }
+    
+    if(windowUrl === `flyinpectors.co.uk`){
+      dispatch(siteTranslateAction.changeLanguage('en'))
+    }
+    
+    if(windowUrl === 'localhost:3000' || windowUrl === 'http://127.0.0.1/'){
+      dispatch(siteTranslateAction.changeLanguage('en'))
+    }
+  }, [dispatch])
+
   return (
     <>
       <ScrollToTop /> {/* Add ScrollToTop */}
