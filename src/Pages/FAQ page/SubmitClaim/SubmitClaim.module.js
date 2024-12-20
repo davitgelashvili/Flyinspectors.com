@@ -1,6 +1,6 @@
 module.exports = {
     en: {
-        Sbumitclaim:
+        SubmitClaim:
         {
             title1:"Can I request reimbursement for the additional cost?",
             desc1: "Yes, if you have saved your receipts, you can request reimbursement from the airline.",
@@ -25,7 +25,7 @@ module.exports = {
 
     },
     ka: {
-        Sbumitclaim:
+        SubmitClaim:
         {
             title1: "შემიძლია მატებითი ხარჯის ანაზღაურების მოთხოვნა?",
             desc1: "დიახ, იმ შემთხვევაში თუ შენახული გაქვთ ჩეკები, შესაძლებელია თქვენს მიერ გაწეული ხარჯის ანაზღაურების მოთხოვნა ავიაკომპანიისთვის.",

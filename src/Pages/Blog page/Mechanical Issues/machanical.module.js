@@ -7,7 +7,8 @@ module.exports = {
           both security and passport check, pass all necessary stages. These
           everything may be exhausting. But there are some airports out there
           that you may never want to leave. These airports were built to impress
-          travelers, not just to shuttle them around the world.`
+          travelers, not just to shuttle them around the world.`,
+           read: `Read More`
         }
     
     },
@@ -19,7 +20,8 @@ module.exports = {
             როგორც უსაფრთხოების, ასევე პასპორტის შემოწმება, გაივლის ყველა საჭირო ეტაპს. ესენი
             ყველაფერი შეიძლება დამღლელი იყოს. მაგრამ არსებობს რამდენიმე აეროპორტი
              რომ შეიძლება არასოდეს გინდოდეს წამოსვლა. ეს აეროპორტები აშენდა შთაბეჭდილების მოხდენის მიზნით
-             მოგზაურებს, არა მხოლოდ მათ მთელს მსოფლიოში გადაადგილებისთვის.`
+             მოგზაურებს, არა მხოლოდ მათ მთელს მსოფლიოში გადაადგილებისთვის.`,
+            read: `ნახვა`
 
         }
        

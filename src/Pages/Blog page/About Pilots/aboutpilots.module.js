@@ -10,6 +10,7 @@ module.exports = {
           most astonishing facts about pilots. Who knows, maybe after reading
           this article you will be able to add some new facts about aviation and
           pilot profession to your knowledge pool.`,
+          read: `Read More`
         }
 
     },
@@ -24,6 +25,7 @@ module.exports = {
          ყველაზე გასაოცარი ფაქტები მფრინავების შესახებ. ვინ იცის, იქნებ წაკითხვის შემდეგ
          ამ სტატიაში თქვენ შეძლებთ დაამატოთ რამდენიმე ახალი ფაქტი ავიაციის შესახებ და
           პილოტის პროფესია თქვენი ცოდნის ფონდში.`,
+           read: `ნახვა`
         }
 
     }

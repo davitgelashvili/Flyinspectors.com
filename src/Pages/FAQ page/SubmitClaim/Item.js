@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./SubmitClaim.module.scss";
 
 const Item = () => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(null); // Track the active collapse index
 
   const toggleCollapse = (index) => {
@@ -10,52 +12,40 @@ const Item = () => {
 
   const data = [
     {
-      title: "HOW MUCH IS YOUR SERVICE FEE?",
-      desc: "Our service fee is 25%, which will be deducted from Flight Compensation.",
+      title: t("SubmitClaim.title1"),
+      desc: t("SubmitClaim.desc1"),
     },
     {
-      title: "WILL I STILL HAVE TO PAY IF THE CASE IS LOST?",
-      desc: "Flyinspectors works on a 'no win, no fee' basis. So if we don’t win the case, we won’t charge you any fee for our services — that’s part of Flyinspectors promise.",
+      title: t("SubmitClaim.title2"),
+      desc: t("SubmitClaim.desc2"),
     },
     {
-      title: "CAN YOU TRANSFER MONEY TO SOMEONE ELSE'S NAME?",
-      desc: "Yes, we can transfer money, in case, you will provide the ID card of the person to whom we should make the transfer.",
+      title: t("SubmitClaim.title3"),
+      desc: t("SubmitClaim.desc3"),
     },
     {
-      title: "HOW MUCH AM I ENTITLED TO BE COMPENSATED?",
-      desc: "The amount of compensation depends on the distance of your flight between airports:",
-      points: [
-        "In case of a flight is up to 1500 km -250 Euro",
-        "In case of flights between 1500 – 3500 km – 400 Euro",
-        "In case of flights over 3500 km-600 Euro",
-      ],
+      title: t("SubmitClaim.title4"),
+      desc: t("SubmitClaim.desc4"),
     },
     {
-      title: "WHAT DO I NEED TO RECEIVE COMPENSATION?",
-      desc: "To start the case is required the copies of the ticket and the passport. We will prepare the following documentation: Declaration of Assignment, POA and Agreement.",
+      title: t("SubmitClaim.title5"),
+      desc: t("SubmitClaim.desc5"),
     },
     {
-      title: "IN WHICH CASES CAN I CLAIM COMPENSATION?",
-      desc: "The compensation is eligible to claim in case of the following circumstances:",
-      points: [
-        "The flight is delayed at least 3 hours.",
-        "Delayed flight causes you to miss your connection and arrive at your final destination 3 or more hours later than scheduled.",
-        "You were denied boarding because the flight was overbooked.",
-        "Flight cancellation qualifies for compensation when the airline has given you less than 14 days’ notice.",
-      ],
+      title: t("SubmitClaim.title6"),
+      desc: t("SubmitClaim.desc6"),
     },
     {
-      title: "IN WHICH CASES IS COMPENSATION NOT ELIGIBLE?",
-      desc: "Following situations are not subject of compensation:",
-      points: ["Strikes by airport employees or air traffic control", "Extreme weather conditions"],
+      title: t("SubmitClaim.title7"),
+      desc: t("SubmitClaim.desc7"),
     },
     {
-      title: "WHAT DO I NEED TO RECEIVE COMPENSATION?",
-      desc: "To start the case is required the copies of the ticket and the passport. We will prepare the following documentation: Declaration of Assignment, POA and Agreement.",
+      title: t("SubmitClaim.title8"),
+      desc: t("SubmitClaim.desc8"),
     },
     {
-      title: "WHAT DO I NEED TO RECEIVE COMPENSATION?",
-      desc: "To start the case is required the copies of the ticket and the passport. We will prepare the following documentation: Declaration of Assignment, POA and Agreement.",
+      title: t("SubmitClaim.title9"),
+      desc: t("SubmitClaim.desc9"),
     },
   ];
 

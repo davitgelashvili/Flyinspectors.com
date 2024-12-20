@@ -41,6 +41,11 @@ import TablefiveModule from "../components/Tables/tablefive/Tablefive.module";
 
 import SubmitLinkModule from "../components/UI/SubmitLink.module";
 import FormModule from "../components/Form/Form.module";
+import AboutPilots from "../Pages/Blog page/About Pilots/aboutpilots.module";
+import cancelledflightsModule from "../Pages/Blog page/CancelledFlights/cancelledflights.module";
+import MechanicalIssues from "../Pages/Blog page/Mechanical Issues/machanical.module";
+import PetsInPlanes from "../Pages/Blog page/Pets in planes/petsinplanes.module";
+import SubmitClaimModule from "../Pages/FAQ page/SubmitClaim/SubmitClaim.module";
 
 i18n
     .use(initReactI18next)
@@ -93,7 +98,13 @@ i18n
                     ...SubmitLinkModule.en,
                     ...FormModule.en,
 
-                    
+
+                    ...AboutPilots.en,
+                    ...cancelledflightsModule.en,
+                    ...MechanicalIssues.en,
+                    ...PetsInPlanes.en,
+                    ...SubmitClaimModule.en,
+
                 }
             },
             ka: {
@@ -141,6 +152,14 @@ i18n
 
                     ...SubmitLinkModule.ka,
                     ...FormModule.ka,
+
+
+                    ...AboutPilots.ka,
+                    ...cancelledflightsModule.ka,
+                    ...MechanicalIssues.ka,
+                    ...PetsInPlanes.ka,
+                    ...SubmitClaimModule.ka
+
                 }
             }
         }

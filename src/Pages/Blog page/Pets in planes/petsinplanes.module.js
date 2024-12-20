@@ -6,7 +6,8 @@ module.exports = {
           identified by an electronic chip. It should also possess a European
           passport. Provided and completed by an authorized veterinarian, the
           passport identifies your pet and certifies that it is properly
-          vaccinated.`
+          vaccinated.`,
+           read: `Read More`
         }
 
     },
@@ -18,7 +19,8 @@ module.exports = {
           იდენტიფიცირებული ელექტრონული ჩიპით. მას ასევე უნდა ჰქონდეს ევროპული
           პასპორტი. მოწოდებული და დასრულებული უფლებამოსილი ვეტერინარის მიერ,
           პასპორტი განსაზღვრავს თქვენს შინაურ ცხოველს და ადასტურებს, რომ ის სწორად არის
-          ვაქცინირებული.`
+          ვაქცინირებული.`,
+           read: `ნახვა`
         }
 
     }

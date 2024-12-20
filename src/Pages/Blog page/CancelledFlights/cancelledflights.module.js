@@ -7,7 +7,8 @@ module.exports = {
          Everything is ready and only thing you have to do, is to go to the airport and get in 
          your plane.
         What is the worst that may happen when you are going to start your trip? – Words on 
-        the huge screen: …..flight cancelled!`
+        the huge screen: …..flight cancelled!`,
+         read: `Read More`
         }
     },
     ka: {
@@ -17,7 +18,8 @@ module.exports = {
              ყველაფერი მზად არის და ერთადერთი რაც უნდა გააკეთო არის აეროპორტში წასვლა და შესვლა
             შენი თვითმფრინავი.
             რა არის ყველაზე უარესი, რაც შეიძლება მოხდეს, როდესაც აპირებთ მოგზაურობის დაწყებას? - სიტყვები
-            უზარმაზარი ეკრანი: …..ფრენა გაუქმდა!`
+            უზარმაზარი ეკრანი: …..ფრენა გაუქმდა!`,
+             read: `ნახვა`
         }
 
     }
