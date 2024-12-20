@@ -6,7 +6,7 @@ module.exports = {
     },
     ka: {
         SubmitLink: {
-            text: "განაცხადის შევსება"
+            text: "შევსება"
         }
     }
 }

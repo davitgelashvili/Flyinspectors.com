@@ -4,18 +4,20 @@ import SearchForm from "./SearchForm"
 import styles from './form.module.scss'
 import ContactSubmitPage from "./ContactSubmitPage"
 import Map from "./Map"
+import { useTranslation } from "react-i18next"
 const Form = () => {
     const [formActive, setFormActive] = useState(true)
+    const {t} = useTranslation()
 
     return (
         <div className="container" >
             <div  className={`${styles['form']}`} style={{marginTop:"20px", marginBottom:"40px"}}>
                 <div className={`${styles['form__head']}`}>
                     <div className={`${styles['form__head--btn']} ${formActive && styles['active']}`} onClick={() => setFormActive(true)}>
-                        Fill Form
+                        {t('submitForm.name1')}
                     </div>
                     <div className={`${styles['form__head--btn']} ${!formActive && styles['active']}`}  onClick={() => setFormActive(false)}>
-                        Check The Status
+                    {t('submitForm.name2')}
                     </div>
                 </div>
                 <div className={`${styles['form__body']}`}>

@@ -1,11 +1,13 @@
+import { useTranslation } from "react-i18next";
 import ContactList from "../../Pages/Contact Us/Contact Us Section/ContactList";
 import styles from "./ContactSubmitPage.module.scss";
 
 const ContactSubmitPage = () => {
+  const {t} = useTranslation()
   return (
     <div className={styles.mainDiv}>
       <h3 className={styles.header}>
-          Contact Details
+          {t('submitForm.contacttitle')}
       </h3>
       <div className={styles.item}>
         <div className="row">

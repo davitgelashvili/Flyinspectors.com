@@ -7,8 +7,10 @@ import File from "../UploadWidget/File";
 import ReactSignatureCanvas from 'react-signature-canvas'
 import styles from './Signature.module.scss'
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad, load }) => {
+  const {t} = useTranslation()
   const [signature, setSignature] = useState()
   const inputs = [
     {
@@ -16,7 +18,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       name: "firstName",
       type: "text",
       value: value.firstName,
-      placeholder: "Firstname",
+      placeholder: t('submitForm.firstname'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600392/Form%20icons/ijhlmpfbajgs0ypeymoy.svg"
     },
     {
@@ -24,7 +26,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       name: "lastName",
       type: "text",
       value: value.lastName,
-      placeholder: "LastName",
+      placeholder: t('submitForm.lastname'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600392/Form%20icons/ijhlmpfbajgs0ypeymoy.svg"
     },
     {
@@ -32,7 +34,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       name: "phone",
       type: "text",
       value: value.phone,
-      placeholder: "Phone",
+      placeholder: t('submitForm.phone'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600390/Form%20icons/ifezno0nleyy8tyuclzg.svg"
     },
     {
@@ -40,7 +42,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       name: "email",
       type: "text",
       value: value.email,
-      placeholder: "Email",
+      placeholder: t('submitForm.email'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/nslmitrcambiai6wmfen.svg"
     },
     {
@@ -48,7 +50,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       name: "city",
       type: "text",
       value: value.city,
-      placeholder: "City",
+      placeholder: t('submitForm.city'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/kuhub9sf2shcfwtecvy9.svg"
     },
     {
@@ -56,7 +58,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       name: "address",
       type: "text",
       value: value.address,
-      placeholder: "Address",
+      placeholder: t('submitForm.address'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/chfs24yjcgkltrezdbzn.svg"
     },
     {
@@ -71,7 +73,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
         'Missed Connection',
         'lost Luggage'
       ],
-      placeholder: "Select problem",
+      placeholder: t('submitForm.problem'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/sfew5nqowhazn00o76ho.svg"
     },
     {
@@ -79,7 +81,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       name: "flightNumber",
       type: "text",
       value: value.flightNumber,
-      placeholder: "FlightNumber",
+      placeholder: t('submitForm.number'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600391/Form%20icons/mn0qzrqet0padkpm6rgj.svg"
     },
     {
@@ -99,7 +101,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
         'I have never started process by myself\nor other claim company',
         'I have already tried to get compensation'
       ],
-      placeholder: "Select",
+      placeholder: t('submitForm.select'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/nzxyqpypgliouotsa6ie.svg"
     },
     {
@@ -107,7 +109,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       name: "description",
       type: "textarea",
       value: value.description,
-      placeholder: "Describe the  problem",
+      placeholder: t('submitForm.desc'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/nzxyqpypgliouotsa6ie.svg"
     },
 
@@ -155,12 +157,12 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           {
             accept.passport ? (
               accept.ticket ? (
-                <File title={'Passport Photo'} name={'IMG 1'} />
+                <File title={t('submitForm.passport')} name={'IMG 1'} />
               ) : (
-                <UploadWidget value={value} valueName={"passportImage"} setValue={setValue} title={'Passport Photo'} name={'Format: JPEG,PNG,JPG'} />
+                <UploadWidget value={value} valueName={"passportImage"} setValue={setValue} title={t('submitForm.passport')} name={'Format: JPEG,PNG,JPG'} />
               )
             ) : (
-              <DisableUploadWidget title={'Passport Photo '} name={'Format: JPEG,PNG,JPG'} />
+              <DisableUploadWidget title={t('submitForm.passport')} name={'Format: JPEG,PNG,JPG'} />
             )
           }
         </div>
@@ -168,21 +170,21 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           {
             accept.ticket ? (
               accept.other ? (
-                <File title={'Passport Photo'} name={'IMG 2'} />
+                <File title={t('submitForm.ticket')} name={'IMG 2'} />
               ) : (
-                <UploadWidget value={value} valueName={"ticketImage"} setValue={setValue} title={'Ticket'} name={'Format: JPEG,PNG,JPG'} />
+                <UploadWidget value={value} valueName={"ticketImage"} setValue={setValue} title={t('submitForm.ticket')} name={'Format: JPEG,PNG,JPG'} />
               )
             ) : (
-              <DisableUploadWidget title={'Ticket'} name={'Format: JPEG,PNG,JPG'} />
+              <DisableUploadWidget title={t('submitForm.ticket')} name={'Format: JPEG,PNG,JPG'} />
             )
           }
         </div>
         <div className="col-lg-12">
           {
             accept.other ? (
-              <UploadWidget value={value} valueName={"otherImage"} setValue={setValue} title={'Other documents'} name={'Format: JPEG,PNG,JPG'} />
+              <UploadWidget value={value} valueName={"otherImage"} setValue={setValue} title={t('submitForm.other')} name={'Format: JPEG,PNG,JPG'} />
             ) : (
-              <DisableUploadWidget title={'Other documents'} name={'Format: JPEG,PNG,JPG'} />
+              <DisableUploadWidget title={t('submitForm.other')} name={'Format: JPEG,PNG,JPG'} />
             )
           }
         </div>
@@ -190,9 +192,9 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           <div className={styles.signature}>  
             <div className={styles.signature__head}>
               <p className={styles.signature__title}>
-                <strong>Electronic signature:</strong>
+                <strong>{t('submitForm.signatureTitle')}</strong>
                 <span>
-                  Please sign the electronic signature.
+                  {t('submitForm.signatureText')}
                 </span>
               </p>
             </div>
@@ -218,7 +220,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
               onClick={e=>{
                 e.preventDefault()
                 signature.clear()
-              }}>clear</button>
+              }}>{t('submitForm.clear')}</button>
             </div>
           </div>
           {/* <SignatureContent value={value} setValue={setValue}/> */}
@@ -231,7 +233,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           <label>
             <input type="checkbox" />
             <span>
-            I agree with <Link target="_blank" to={'/terms-and-conditions'}>Terms and Conditions</Link>
+            {t('submitForm.iagree')} <Link target="_blank" to={'/terms-and-conditions'}>{t('submitForm.terms')}</Link>
             </span>
           </label>
         </div>
@@ -256,7 +258,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
             }}
             onClick={(e) => uploadFile(e)}
           >
-            {load ? 'loading' : 'Submit Form'}
+            {load ? 'loading' : t('submitForm.submit')}
           </button>
         </div>
       </div>

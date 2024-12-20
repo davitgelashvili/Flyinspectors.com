@@ -100,7 +100,7 @@ const App = () => {
   };
 
   return (
-    <div className={styles.item} >
+    <div>
       <div className={styles.container}>
         <div className={styles.container__options}>
           {options.map((option, index) => (

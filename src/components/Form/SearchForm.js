@@ -3,8 +3,10 @@ import { useEffect, useState } from "react"
 import TextInput from "../UI/TextInput"
 import Loading from "../Loading/Loading"
 import Progress from './Progress'
+import { useTranslation } from 'react-i18next'
 
 const SearchForm = () => {
+    const {t} = useTranslation()
     const [id, setId] = useState("")
     const [data, setData] = useState()
     const [load, setLoad] = useState(false)
@@ -36,13 +38,11 @@ const SearchForm = () => {
 
     return (
         <div className={styles.search}>
-            <p className={styles.search__text}>
-            Application number (Application number sent to the email address specified in your application)
-            </p>
+            <p className={styles.search__text}>{t('submitForm.searchDesc')}</p>
             <TextInput
                   type={"text"}
                   value={id}
-                  placeholder={'Enter Aplication number'}
+                  placeholder={t('submitForm.searchValue')}
                   name={"id"}
                   icon={''}
                   onChange={e => setId(e.target.value)}
@@ -55,7 +55,7 @@ const SearchForm = () => {
                         <Progress status={data?.status}/>
                     )
                 )}
-            <button className={styles.search__btn} onClick={handleChange}>search</button>
+            <button className={styles.search__btn} onClick={handleChange}>{t('submitForm.submit')}</button>
         </div>
     )
 }
