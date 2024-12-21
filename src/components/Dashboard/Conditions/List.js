@@ -45,26 +45,22 @@ const ConditionsList = () => {
         }
       >
         <div>
-          <h3
-            style={{
-              fontSize: "18px",
-              fontWeight: "bold",
-              color: "#007bff",
-              marginBottom: "10px",
-            }}
-          >
-            {item.title.en}
-          </h3>
-          <h3
-            style={{
-              fontSize: "18px",
-              fontWeight: "bold",
-              color: "#007bff",
-              marginBottom: "10px",
-            }}
-          >
-            {item.description.en}
-          </h3>
+          <div style={{
+            width: '450px',
+            height: '44px',
+            overflow: 'hidden',
+          }}>
+            <p style={{lineHeight: '22px',  height: '22px', overflow: 'hidden', margin: 0}}>{item.title.ka}</p>
+            <p style={{lineHeight: '22px', height: '22px', overflow: 'hidden', margin: 0}}>{item.title.en}</p>
+          </div>
+          <div style={{
+            width: '450px',
+            height: '44px',
+            overflow: 'hidden',
+          }}>
+            <p style={{lineHeight: '22px', height: '22px', overflow: 'hidden', margin: 0}}>{item.description.ka}</p>
+            <p style={{lineHeight: '22px', height: '22px', overflow: 'hidden', margin: 0}}>{item.description.en}</p>
+          </div>
         </div>
 
           
