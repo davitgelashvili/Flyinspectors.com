@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
+import { HelmetProvider } from 'react-helmet-async';
 import Footer from "./components/Common/Footer/Footer";
 import Header from "./components/Common/Header/Header";
 import Main from "./Pages/Main/Main";
@@ -36,6 +37,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { siteTranslateAction } from "./store/translate";
 import { useEffect } from "react";
 import i18n from "./i18n/i18n";
+import MetaTags from "./MetaTags";
 
 function App() {
   let {language}  = useSelector(state => state.translate)
@@ -69,7 +71,7 @@ function App() {
   // }, [dispatch, windowUrl, language])
 
   return (
-    <>
+    <HelmetProvider>
       <ScrollToTop /> {/* Add ScrollToTop */}
       <Header />
       <Routes>
@@ -125,7 +127,7 @@ function App() {
         <Route path={"/*"} element={<Main />} />
       </Routes>
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }
 
