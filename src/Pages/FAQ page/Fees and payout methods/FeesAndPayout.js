@@ -7,14 +7,7 @@ const FeesAndPayout = () => {
     <div className={styles.services}>
       <div className={`container`}>
         <div className="">
-          {/* <div>
-            <h3 className={styles.services__header}>
-              Have You Question For Us?
-            </h3>
-          </div>
-          <h4 className={styles.services__answer}>
-            You Can Find Your Answers Here
-          </h4> */}
+    
           <div className={`${styles.services__item}`}>
         
             <Item />
