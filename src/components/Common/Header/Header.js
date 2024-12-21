@@ -7,24 +7,56 @@ import { useEffect, useState } from "react";
 import i18n from "../../../i18n/i18n";
 import Language from "./Language/Language";
 import iconMenu from "../../Images/iconMenu.png";
+import { siteTranslateAction } from "../../../store/translate";
 
 function Header() {
     const dispatch = useDispatch()
     let {language}  = useSelector(state => state.translate)
-    const windowUrl = window.location.host
+    const windowUrl =  window.location.hostname
+    const domain = windowUrl.replace(/^www\./, '');
     const [languageBtn, setLanguageBtn] = useState(true);
     const [IsOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        i18n.changeLanguage(language)
-        if (windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge') {
-            setLanguageBtn(true)
+    useEffect(()=> {
+        console.log(windowUrl == 'flyinspectors.ge', windowUrl, 'flyinspectors.ge')
+        if(windowUrl == 'flyinspectors.com'){
+            dispatch(siteTranslateAction.changeLanguage('en'))
+        }
+        
+        if(windowUrl == 'flyinspectors.ge'){
+          dispatch(siteTranslateAction.changeLanguage('ka'))
+        }
+        
+        if(windowUrl == 'flyinspectors.co.uk'){
+            setLanguageBtn(false)
+          dispatch(siteTranslateAction.changeLanguage('en'))
+        }
+    
+        if(windowUrl == 'localhost'){
+          dispatch(siteTranslateAction.changeLanguage('en'))
+        }
+    
+        if(windowUrl == '127.0.0.1'){
+            setLanguageBtn(false)
+          dispatch(siteTranslateAction.changeLanguage('ka'))
         }
 
-        if (windowUrl === 'localhost:3000') {
-            setLanguageBtn(true)
-        }
-    }, [dispatch, language])
+      }, [dispatch, windowUrl])
+
+      useEffect(()=>{
+        i18n.changeLanguage(language)
+      }, [language])
+
+    // useEffect(() => {
+    //     i18n.changeLanguage(language)
+    //     if (windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge') {
+    //         setLanguageBtn(true)
+    //     }
+
+    //     if (windowUrl === 'localhost:3000') {
+    //         setLanguageBtn(true)
+    //     }
+    // }, [dispatch, language])
 
     const toggleMenu = () => {
         setIsOpen(!IsOpen);

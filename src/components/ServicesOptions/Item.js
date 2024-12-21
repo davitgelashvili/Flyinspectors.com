@@ -7,11 +7,8 @@ const Item = ({title, desc}) => {
     const { language } = useSelector(state => state.translate)
     const [lang, setLang] = useState('')
 
-    console.log('language:', language)
     useEffect(() => {
         setLang(language)
-        console.log('language:', language)
-        console.log('lang:', lang)
     }, [language])
     return (
         <div className={styles.item}>

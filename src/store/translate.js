@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let initalData = {
-    language: 'en'
+    language: ''
 }
 
 

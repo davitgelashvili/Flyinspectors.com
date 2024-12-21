@@ -3,7 +3,7 @@ import styles from "./ContactUs.module.scss";
 import { useTranslation } from "react-i18next";
 
 const ContactList = () => {
-  const windowUrl = window.location.host
+  const windowUrl =  window.location.hostname
   const [lang,setLang] = useState(true)
   const [data, setData] = useState()
   const {t} = useTranslation()
@@ -65,9 +65,28 @@ const ContactList = () => {
       });
   }, []);
 
-  if (windowUrl === 'flyinpectors.com' || windowUrl === 'flyinpectors.ge') {
-    setLang(true)
-  }
+  useEffect(()=> {
+    if(windowUrl == 'flyinspectors.com'){
+      setLang(true)
+    }
+    
+    if(windowUrl == 'flyinspectors.ge'){
+      setLang(true)
+    }
+    
+    if(windowUrl == 'flyinspectors.co.uk'){
+      setLang(false)
+    }
+
+    if(windowUrl == 'localhost'){
+      setLang(true)
+    }
+
+    if(windowUrl == '127.0.0.1'){
+      setLang(false)
+    }
+
+  }, [windowUrl])
 
   return (
     <>
@@ -117,7 +136,7 @@ const ContactList = () => {
         <div className={`col-lg-6`}>
           <div>
             <h3 className={""}>{list[1].country}</h3>
-            {list[0].cards.map((card, cardIndex) => (
+            {list[1].cards.map((card, cardIndex) => (
               <div
                 className={`${styles.item} d-flex align-items-center`}
                 key={cardIndex}

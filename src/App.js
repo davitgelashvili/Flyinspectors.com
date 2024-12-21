@@ -32,31 +32,41 @@ import BlogPageMorePilots from "./Pages/BlogPageMore Pilots/BlogPageMorePilots";
 import ConditionsList from "./components/Dashboard/Conditions/List";
 import ConditionsEdit from "./components/Dashboard/Conditions/Edit";
 import ConditionsAdd from "./components/Dashboard/Conditions/Add";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { siteTranslateAction } from "./store/translate";
 import { useEffect } from "react";
+import i18n from "./i18n/i18n";
 
 function App() {
-  const windowUrl = window.location.host
+  let {language}  = useSelector(state => state.translate)
+  const windowUrl =  window.location.hostname
+  const domain = windowUrl.replace(/^www\./, '');
   const dispatch = useDispatch()
 
-  useEffect(()=> {
-    if(windowUrl === `flyinpectors.com`){
-      dispatch(siteTranslateAction.changeLanguage('en'))
-    }
+  // useEffect(()=> {
+  //   console.log(windowUrl == 'flyinspectors.ge', windowUrl, 'flyinspectors.ge')
+  //   if(windowUrl == 'flyinspectors.com'){
+  //     dispatch(siteTranslateAction.changeLanguage('en'))
+  //   }
     
-    if(windowUrl === `flyinpectors.ge`){
-      dispatch(siteTranslateAction.changeLanguage('ka'))
-    }
+  //   if(windowUrl == 'flyinspectors.ge'){
+  //     dispatch(siteTranslateAction.changeLanguage('ka'))
+  //   }
     
-    if(windowUrl === `flyinpectors.co.uk`){
-      dispatch(siteTranslateAction.changeLanguage('en'))
-    }
-    
-    if(windowUrl === 'localhost:3000' || windowUrl === 'http://127.0.0.1/'){
-      dispatch(siteTranslateAction.changeLanguage('en'))
-    }
-  }, [dispatch])
+  //   if(windowUrl == 'flyinspectors.co.uk'){
+  //     dispatch(siteTranslateAction.changeLanguage('en'))
+  //   }
+
+  //   if(windowUrl == 'localhost'){
+  //     dispatch(siteTranslateAction.changeLanguage('en'))
+  //   }
+
+  //   if(windowUrl == '127.0.0.1'){
+  //     dispatch(siteTranslateAction.changeLanguage('ka'))
+  //   }
+
+  //   i18n.changeLanguage(language)
+  // }, [dispatch, windowUrl, language])
 
   return (
     <>
