@@ -46,6 +46,9 @@ import cancelledflightsModule from "../Pages/Blog page/CancelledFlights/cancelle
 import MechanicalIssues from "../Pages/Blog page/Mechanical Issues/machanical.module";
 import PetsInPlanes from "../Pages/Blog page/Pets in planes/petsinplanes.module";
 import SubmitClaimModule from "../Pages/FAQ page/SubmitClaim/SubmitClaim.module";
+import DocprivacyModule from "../Pages/FAQ page/Documents and privacy/Docprivacy.module";
+import PassModule from "../Pages/FAQ page/Air passenger Law/Pass.module";
+import FeesandPayoutModule from "../Pages/FAQ page/Fees and payout methods/FeesandPayout.module";
 
 i18n
     .use(initReactI18next)
@@ -104,6 +107,10 @@ i18n
                     ...MechanicalIssues.en,
                     ...PetsInPlanes.en,
                     ...SubmitClaimModule.en,
+                    ...DocprivacyModule.en,
+                    ...PassModule.en,
+
+                    ...FeesandPayoutModule.en,
 
                 }
             },
@@ -158,7 +165,10 @@ i18n
                     ...cancelledflightsModule.ka,
                     ...MechanicalIssues.ka,
                     ...PetsInPlanes.ka,
-                    ...SubmitClaimModule.ka
+                    ...SubmitClaimModule.ka,
+                    ...DocprivacyModule.ka,
+                    ...PassModule.ka,
+                    ...FeesandPayoutModule.ka,
 
                 }
             }

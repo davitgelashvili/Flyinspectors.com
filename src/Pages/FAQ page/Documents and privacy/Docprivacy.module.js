@@ -11,6 +11,7 @@ module.exports = {
             desc3:  `From our side, we only request the documentation that is necessary to open a case with the airline. Our company cares about protecting your personal safety, therefore the documentation is stored securely in our database, the documentation is sent only to those persons who are involved in the dispute and help you receive compensation. Our system is protected by EU data protection regulation.`,
             title4: `Who signs in the case of minors?`,
             desc4: `In the case of minors, the parent/guardian signs.`,
+            header:`Documents and Privacy`,
          
         }
 
@@ -25,6 +26,7 @@ module.exports = {
             desc3:  `ჩვენი მხრიდან, ხდება მხოლოდ იმ დოკუმენტაციის მოთხოვნა, რომელიც საჭიროა ქეისის გასახსნელად ავიაკომპანიასთან.  ჩვენი კომპანია ზრუნავს თქვენი პერსონალური უსაფრხოების დაცვაზე, შესაბამისად დოკუმენტაცია შეინახება უსაფრთხოდ ჩვენს ბაზაში, დოკუმენტაციის გაგზავნა ხდება, მხოლოდ იმ პირებისთვის ვინც ჩართულია დავაში და გეხმარებათ კომპანსაციის მიღებაში. ჩვენი სისტემა დაცულია EU data protection regulation -ით.`,
             title4: `ვინ აწერს ხელს არასრულწლოვვანების შემთხვევაში`,
             desc4: `არასრულწლოვვანების შემთხვევაში ხელს აწერს მშობელი/მეურვე.`,
+            header:`დოკუმენტები და კონფიდენციალურობა`,
         }
 
     }

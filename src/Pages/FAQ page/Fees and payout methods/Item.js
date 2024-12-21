@@ -1,58 +1,68 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./FeesAndPayout.module.scss";
 
 const Item = () => {
+  const { t } = useTranslation(); // Import the translation function
   const [activeIndex, setActiveIndex] = useState(null); // Track the active collapse index
 
   const toggleCollapse = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  // Create the data array dynamically using translations
   const data = [
     {
-      title: "HOW MUCH IS YOUR SERVICE FEE?",
-      desc: "Our service fee is 25%, which will be deducted from Flight Compensation.",
+      title: t("fessand.title1"),
+      desc: t("fessand.desc1"),
     },
     {
-      title: "WILL I STILL HAVE TO PAY IF THE CASE IS LOST?",
-      desc: "Flyinspectors works on a 'no win, no fee' basis. So if we don’t win the case, we won’t charge you any fee for our services — that’s part of Flyinspectors promise.",
+      title: t("fessand.title2"),
+      desc: t("fessand.desc2"),
     },
     {
-      title: "CAN YOU TRANSFER MONEY TO SOMEONE ELSE'S NAME?",
-      desc: "Yes, we can transfer money, in case, you will provide the ID card of the person to whom we should make the transfer.",
+      title: t("fessand.title3"),
+      desc: t("fessand.desc3"),
     },
     {
-      title: "HOW MUCH AM I ENTITLED TO BE COMPENSATED?",
-      desc: "The amount of compensation depends on the distance of your flight between airports:",
+      title: t("fessand.title4"),
+      desc: t("fessand.desc4"),
       points: [
-        "In case of a flight is up to 1500 km -250 Euro",
-        "In case of flights between 1500 – 3500 km – 400 Euro",
-        "In case of flights over 3500 km-600 Euro",
+        t("fessand.points4[0]"),
+        t("fessand.points4[1]"),
+        t("fessand.points4[2]"),
       ],
     },
     {
-      title: "WHAT DO I NEED TO RECEIVE COMPENSATION?",
-      desc: "To start the case is required the copies of the ticket and the passport. We will prepare the following documentation: Declaration of Assignment, POA and Agreement.",
+      title: t("fessand.title5"),
+      desc: t("fessand.desc5"),
     },
     {
-      title: "IN WHICH CASES CAN I CLAIM COMPENSATION?",
-      desc: "The compensation is eligible to claim in case of the following circumstances:",
+      title: t("fessand.title6"),
+      desc: t("fessand.desc6"),
       points: [
-        "The flight is delayed at least 3 hours.",
-        "Delayed flight causes you to miss your connection and arrive at your final destination 3 or more hours later than scheduled.",
-        "You were denied boarding because the flight was overbooked.",
-        "Flight cancellation qualifies for compensation when the airline has given you less than 14 days’ notice.",
+        t("fessand.points6[0]"),
+        t("fessand.points6[1]"),
+        t("fessand.points6[2]"),
+        t("fessand.points6[3]"),
       ],
     },
     {
-      title: "IN WHICH CASES IS COMPENSATION NOT ELIGIBLE?",
-      desc: "Following situations are not subject of compensation:",
-      points: ["Strikes by airport employees or air traffic control", "Extreme weather conditions"],
+      title: t("fessand.title7"),
+      desc: t("fessand.desc7"),
+      points: [
+        t("fessand.points7[0]"),
+        t("fessand.points7[1]"),
+      ],
     },
   ];
 
+  // Header translation
+  const header = t("fessand.header");
+
   return (
     <div>
+      <h4 className={styles.services__header}>{header}</h4>
       {data.map((item, index) => (
         <div key={index}>
           <div className={styles.itemContainer}>

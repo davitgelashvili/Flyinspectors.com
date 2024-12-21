@@ -7,8 +7,7 @@ const PassLaw = () => {
       <div className={`container`}>
         <div className="">
           <div className={`${styles.services__item}`}>
-            <h4 className={styles.services__header}>Air Passenger Law
-            </h4>
+            
             <Item />
           </div>
         </div>

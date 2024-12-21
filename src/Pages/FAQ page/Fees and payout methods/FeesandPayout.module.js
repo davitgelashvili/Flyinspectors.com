@@ -31,6 +31,7 @@ module.exports = {
                 "Strikes by airport employees or air traffic control",
                 "Extreme weather conditions",
             ],
+            header:`Fees And Payout Methods`
         },
 
     },
@@ -66,6 +67,7 @@ module.exports = {
                 "აეროპორტის თანამშრომლების ან საჰაერო მოძრაობის კონტროლის გაფიცვები",
                 "ექსტრემალური ამინდის პირობები",
             ],
+            header:`მოსაკრებლები და გადახდის მეთოდები`
         },
 
     },
