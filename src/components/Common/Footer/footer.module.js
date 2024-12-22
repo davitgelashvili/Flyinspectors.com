@@ -29,7 +29,7 @@ module.exports = {
             lostluggage:'დაკარგული ბარგი',
             blog:"ბლოგი",
             termsandconditions:"წესები და პირობები",
-            faq:"FAQ",
+            faq:"კითხვები",
         }
     }
 }

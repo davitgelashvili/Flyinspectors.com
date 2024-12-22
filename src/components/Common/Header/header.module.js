@@ -27,7 +27,7 @@ module.exports = {
             lostluggage:'დაკარგული ბარგი',
             aboutus:"ჩვენს შესახებ",
             blog:"ბლოგი",
-            faq:"FAQ",
+            faq:"კითხვები",
             contactus: 'კონტაქტი',
             submitclaim: "შეავსეთ განაცხადი",
         }
