@@ -18,6 +18,7 @@ const ConditionsEdit = () => {
         en: data?.description?.en,
         ka: data?.description?.ka,
       });
+      console.log(data)
     }, [data]);
 
     useEffect(() => {
@@ -31,12 +32,15 @@ const ConditionsEdit = () => {
             .then((res) => res.json())
             .then((res) => {
                 const user = res.find((item) => item._id == id);
-                setData(user || {});
-            });
+                setData(user);
+            }).finally(()=>{
+              console.log(data)
+            })
     }, [update]);
 
     function handleClick(e) {
-        e.preventDefault();
+      e.preventDefault();
+      console.log(title, description)
         fetch(`${process.env.REACT_APP_API_URL}/conditions`, {
             method: "PUT",
             headers: {
@@ -44,6 +48,7 @@ const ConditionsEdit = () => {
                 "Access-Control-Allow-Origin": "*",
             },
             body: JSON.stringify({
+                _id: data._id,
                 title: title,
                 description: description
             }),
@@ -105,7 +110,7 @@ const ConditionsEdit = () => {
                   icon=""
                   rows={50}
                   onChange={(e) =>
-                    setdescription({ ...title, ka: e.target.value })
+                    setdescription({ ...description, ka: e.target.value })
                   }
                 />
               </div>
