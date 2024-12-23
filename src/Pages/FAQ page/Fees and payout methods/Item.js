@@ -28,9 +28,9 @@ const Item = () => {
       title: t("fessand.title4"),
       desc: t("fessand.desc4"),
       points: [
-        t("fessand.points4[0]"),
-        t("fessand.points4[1]"),
-        t("fessand.points4[2]"),
+        t("fessand.points4.pn1"),
+        t("fessand.points4.pn2"),
+        t("fessand.points4.pn3"),
       ],
     },
     {
@@ -41,18 +41,18 @@ const Item = () => {
       title: t("fessand.title6"),
       desc: t("fessand.desc6"),
       points: [
-        t("fessand.points6[0]"),
-        t("fessand.points6[1]"),
-        t("fessand.points6[2]"),
-        t("fessand.points6[3]"),
+        t("fessand.points6.pn1"),
+        t("fessand.points6.pn2"),
+        t("fessand.points6.pn3"),
+        t("fessand.points6.pn4"),
       ],
     },
     {
       title: t("fessand.title7"),
       desc: t("fessand.desc7"),
       points: [
-        t("fessand.points7[0]"),
-        t("fessand.points7[1]"),
+        t("fessand.points7.pn1"),
+        t("fessand.points7.pn2"),
       ],
     },
   ];

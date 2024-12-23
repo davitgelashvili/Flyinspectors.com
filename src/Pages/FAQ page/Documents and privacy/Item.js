@@ -30,12 +30,12 @@ const Item = () => {
     },
   ];
 
-  const header = t("Docprivacy.header");
+
 
   return (
     <div>
 
-      <h4 className={styles.services__header}>{header}</h4>
+   
       {data.map((item, index) => (
         <div key={index}>
           <div className={styles.itemContainer}>
