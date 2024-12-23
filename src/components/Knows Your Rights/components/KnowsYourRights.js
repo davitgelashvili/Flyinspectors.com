@@ -15,7 +15,9 @@ const KnowsYourRights = () => {
         </h3>
         <div className="row">
           <div className="col-lg-5">
-            <Item />
+      <div style={{marginBottom:"50px"}}>
+      <Item />
+      </div>
           </div>
           <div className={`col-lg-7 col-12`}>
             <MenuItem />

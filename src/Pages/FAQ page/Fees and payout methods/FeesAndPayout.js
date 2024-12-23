@@ -13,7 +13,7 @@ const FeesAndPayout = () => {
             <Item />
           </div>
         </div>
-        <img src={image} className={styles.services__image} alt="PayMethods" />
+        {/* <img src={image} className={styles.services__image} alt="PayMethods" /> */}
       </div>
     </div>
   );

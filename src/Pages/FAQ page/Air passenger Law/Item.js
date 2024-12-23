@@ -28,6 +28,10 @@ const Item = () => {
       title: t("pases.title4"),
       desc: t("pases.desc4"),
     },
+    {
+      title: t("pases.title5"),
+      desc: t("pases.desc5"),
+    },
   ];
 
   // Header translation
@@ -35,7 +39,6 @@ const Item = () => {
 
   return (
     <div>
-      <h4 className={styles.services__header}>{header}</h4>
       {data.map((item, index) => (
         <div key={index}>
           <div className={styles.itemContainer}>
