@@ -1,5 +1,5 @@
 .logo {
-    max-width: 163px;
+    max-width: 150px;
     margin: 0;
 
     a {
@@ -10,7 +10,7 @@
       width: 100%;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width:768px) {
       max-width: 100px;
     }
   }
