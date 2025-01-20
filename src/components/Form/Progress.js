@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from './Progress.module.scss'
+import { useSelector } from "react-redux"
 
 const Progress = ({status}) => {
+    const {language} = useSelector( state => state.translate)
     const statusData = [
         'Application received',
         'Case proceedings initiated',
@@ -13,6 +15,42 @@ const Progress = ({status}) => {
         'Case closed',
     ]
     const [step, setStep] = useState(status)
+
+    useEffect(()=>{
+        if(language === 'ka'){
+            if(status === statusData[0]){
+                setStep('განაცხადი მიღებულია')
+            }
+
+            if(status === statusData[1]){
+                setStep('საქმის წარმოება დაიწყო')
+            }
+
+            if(status === statusData[2]){
+                setStep('უარყოფილია ავიაკომპანიის მიერ')
+            }
+
+            if(status === statusData[3]){
+                setStep('გადაყვანილია იურიდიულ განყოფილებაში')
+            }
+
+            if(status === statusData[4]){
+                setStep('საქმემ მიმართა ზემდგომ ორგანოს')
+            }
+
+            if(status === statusData[5]){
+                setStep('საქმე სასამართლოშია განხილული')
+            }
+
+            if(status === statusData[6]){
+                setStep('საქმე წარმატებით დაიხურა')
+            }
+
+            if(status === statusData[7]){
+                setStep('საქმე დახურულია')
+            }
+        }
+    },[status])
     
     return (
         <>
@@ -29,7 +67,7 @@ const Progress = ({status}) => {
         </div>
         <div className={` ${styles['steps']} `}>
             <div className={` ${styles['steps__step']} `}>
-                <div className={`${styles['steps__step-name']} `}>{status}</div>
+                <div className={`${styles['steps__step-name']} `}>{step}</div>
             </div>
         </div>
         </>

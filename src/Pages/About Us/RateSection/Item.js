@@ -39,9 +39,8 @@ const Item = () => {
                       />
                     </div>
                     <div className="col-md-8 d-flex align-items-center">
-                      <div className="card-body d-flex flex-row align-items-center ms-3">
+                      <div className="card-body ms-3">
                         <h4 className={`card-title ${styles.cardNumber}`}>{item.title[language]}</h4>
-                        <br></br>
                         <div className={`card-title ${styles.description}`}>
                           {item.description[language]}
                         </div>

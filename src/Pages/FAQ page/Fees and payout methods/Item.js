@@ -50,10 +50,10 @@ const Item = () => {
     {
       title: t("fessand.title7"),
       desc: t("fessand.desc7"),
-      points: [
-        t("fessand.points7.pn1"),
-        t("fessand.points7.pn2"),
-      ],
+      // points: [
+      //   t("fessand.points7.pn1"),
+      //   t("fessand.points7.pn2"),
+      // ],
     },
   ];
 
