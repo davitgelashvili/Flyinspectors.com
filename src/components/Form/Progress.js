@@ -49,8 +49,10 @@ const Progress = ({status}) => {
             if(status === statusData[7]){
                 setStep('საქმე დახურულია')
             }
+        }else {
+            setStep(status)
         }
-    },[status])
+    },[status, language])
     
     return (
         <>

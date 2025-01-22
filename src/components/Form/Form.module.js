@@ -25,6 +25,17 @@ module.exports = {
             contacttitle: "Contact Details",
             searchDesc: 'Application number (Application number sent to the email address specified in your application)',
             searchValue: 'Enter Aplication number',
+            problemData: {
+                1:'Flight Delay',
+                2:'Flight Cancel',
+                3:'OverBooked Flight',
+                4:'Missed Connection',
+                5:'lost Luggage'
+            },
+            selectData: {
+                1:'I have never started process by myself\nor other claim company',
+                2:'I have already tried to get compensation'
+            }
         }
     },
     ka: {
@@ -53,6 +64,17 @@ module.exports = {
             contacttitle: 'კონტაქტი',
             searchDesc: 'განაცხადის ნომერი (აპლიკაციის ნომერი იგზავნება თქვენს განაცხადში მითითებულ ელ.ფოსტის მისამართზე)',
             searchValue: 'შეიყვანეთ განცხადების ნომერი',
+            problemData: {
+                1:'ფრენის დაგვიანება',
+                2:'ფრენის გაუქმება',
+                3:'გადაჯავშნილი ფრენა',
+                4:'გამოტოვებული კავშირი',
+                5:'დაკარგული ბარგი'
+            },
+            selectData: {
+                1:'არასდროს დამიწყია პროცესი ჩემით ან სხვა კომპანიის საშუალებით',
+                2:'უკვე ვცადე კომპენსაციის მიღება'
+            }
         }
     }
 }

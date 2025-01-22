@@ -67,11 +67,11 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       type: "select",
       value: value.problem,
       selectData: [
-        'Flight Delay',
-        'Flight Cancel',
-        'OverBooked Flight',
-        'Missed Connection',
-        'lost Luggage'
+        t('submitForm.problemData.1'),
+        t('submitForm.problemData.2'),
+        t('submitForm.problemData.3'),
+        t('submitForm.problemData.4'),
+        t('submitForm.problemData.5'),
       ],
       placeholder: t('submitForm.problem'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/sfew5nqowhazn00o76ho.svg"
@@ -98,8 +98,8 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
       type: "select",
       value: value.select,
       selectData: [
-        'I have never started process by myself\nor other claim company',
-        'I have already tried to get compensation'
+        t('submitForm.selectData.1'),
+        t('submitForm.selectData.2'),
       ],
       placeholder: t('submitForm.select'),
       icon: "https://res.cloudinary.com/dluqxr8lw/image/upload/v1731600393/Form%20icons/nzxyqpypgliouotsa6ie.svg"
