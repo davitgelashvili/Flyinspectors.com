@@ -12,7 +12,7 @@ const UserList = () => {
 
     // Fetch user data
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}/client`, {
+        fetch(`${process.env.REACT_APP_API_URL}/client?page=1&limit=5`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json",
@@ -61,6 +61,8 @@ const UserList = () => {
 
     const displayData = search ? filtered : data;
 
+    console.log(displayData)
+
     return (
         <div className="container" style={{ marginBottom: "20px" }}>
             <div className="row">
@@ -91,7 +93,7 @@ const UserList = () => {
                     marginTop: "20px",
                 }}
             >
-                {[...displayData].reverse().map((item, index) => (
+                {displayData?.data?.reverse().map((item, index) => (
                     <div
                         key={item._id}
                         style={{
@@ -110,7 +112,7 @@ const UserList = () => {
                                 color: "#555",
                             }}
                         >
-                            #{displayData.length - index}
+                            #{displayData.data.length - index}
                         </p>
                         <Link
                             to={item.userId}
