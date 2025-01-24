@@ -8,11 +8,14 @@ const UserList = () => {
     const [filtered, setFiltered] = useState([]);
     const [search, setSearch] = useState("");
     const [res, setRes] = useState(true)
-    const [load, setLoad] = useState(false)
+    const [load, setLoad] = useState(true)
+    const [page, setPage] = useState(1)
+    // const [totalPage, setTotalPage] = useState(0)
 
     // Fetch user data
+    // ?page=${page}&limit=50
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}/client?page=1&limit=5`, {
+        fetch(`${process.env.REACT_APP_API_URL}/client`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json",
@@ -25,7 +28,7 @@ const UserList = () => {
             }).finally(() => {
                 setLoad(false)
             });
-    }, [res]);
+    }, [res, page]);
 
     // Search filter
     function handleSearch(e) {
@@ -56,12 +59,13 @@ const UserList = () => {
             .then((res) => res.json())
             .finally(() => {
                 setRes(!res);
+                setLoad(false)
             });
     };
 
     const displayData = search ? filtered : data;
 
-    console.log(displayData)
+    // console.log(displayData)
 
     return (
         <div className="container" style={{ marginBottom: "20px" }}>
@@ -93,7 +97,8 @@ const UserList = () => {
                     marginTop: "20px",
                 }}
             >
-                {displayData?.data?.reverse().map((item, index) => (
+                {load && <Loading />}
+                {displayData?.reverse().map((item, index) => (
                     <div
                         key={item._id}
                         style={{
@@ -112,7 +117,7 @@ const UserList = () => {
                                 color: "#555",
                             }}
                         >
-                            #{displayData.data.length - index}
+                            #{displayData.length - index}
                         </p>
                         <Link
                             to={item.userId}
@@ -231,6 +236,13 @@ const UserList = () => {
                     </div>
                 ))}
             </div>
+            {/* <div>
+                {page > 1 && <button onClick={()=>setPage(page - 1)}>back</button>}
+                {page && <button onClick={()=>setPage(page + 1)}>next</button>}
+                <p>page now: {page}</p>
+                <p>total page: {data?.pagination?.totalPages}</p>
+                
+            </div> */}
         </div>
     );
 };
