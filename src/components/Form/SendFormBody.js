@@ -262,7 +262,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           </button>
         </div>
       </div>
-
+      
     </form>
   );
 };

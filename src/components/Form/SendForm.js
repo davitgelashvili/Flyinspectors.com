@@ -2,8 +2,24 @@ import { useEffect, useState } from "react"
 import SendFormBody from "./SendFormBody"
 import PopUp from "./PopUp"
 import { useSelector } from "react-redux"
+import { useTranslation } from "react-i18next";
 
 const SendForm = ({setFormActive}) => {
+    const {t} = useTranslation()
+    var newDate = new Date()
+    var month = newDate.getMonth()
+    var day = newDate.getDate()
+    var year = newDate.getFullYear()
+    month = month + 1
+    if(month < 10){
+        month = 0 + '' +month
+    }
+
+    if(day < 10){
+        day = 0 + '' +day
+    }
+    const fullDate = year + '-'+ month + '-' + day
+
     const windowUrl = window.location.host
     const {language} = useSelector( state => state.translate)
     const [load, setLoad] = useState(false)
@@ -20,6 +36,7 @@ const SendForm = ({setFormActive}) => {
         ticket: false,
         other: false
     })
+    const [message, setMessage] = useState(false)
     const [value, setValue] = useState({
         passportImage: "",
         ticketImage: "",
@@ -38,10 +55,17 @@ const SendForm = ({setFormActive}) => {
         select: "",
         description: "",
         oldStatus: "Application has received",
+        createDate: fullDate
     })
     const [defaultValue, setDefaultValue] = useState(value)
 
     useEffect(()=>{
+        setTimeout(() => setMessage(false), 3000);
+    }, [message])
+    
+
+    useEffect(()=>{
+        console.log(value)
         if(
             value.firstName !== "" &&
             value.lastName !== "" &&
@@ -166,6 +190,7 @@ const SendForm = ({setFormActive}) => {
                 })
             })
         }else {
+            setMessage(true)
             console.log('sheavse yvela forma')
         }
 
@@ -174,6 +199,13 @@ const SendForm = ({setFormActive}) => {
         <>
         <SendFormBody value={value} setValue={setValue} uploadFile={uploadFile} setAccept={setAccept} accept={accept} load={load} setLoad={setLoad}/>
         { popup && <PopUp load={load} setPopup={setPopup} unicueID={unicueID} setFormActive={setFormActive}/> }
+        { message && (
+            <div className="message">
+                <div className="message__item">
+                    <p>{t('submitForm.formmessage')}</p>
+                </div>
+            </div>
+        )}
         </>
     )
 }

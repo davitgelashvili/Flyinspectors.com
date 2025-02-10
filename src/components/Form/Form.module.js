@@ -35,7 +35,8 @@ module.exports = {
             selectData: {
                 1:'I have never started process by myself\nor other claim company',
                 2:'I have already tried to get compensation'
-            }
+            },
+            formmessage: 'Fill in all fields'
         }
     },
     ka: {
@@ -74,7 +75,8 @@ module.exports = {
             selectData: {
                 1:'არასდროს დამიწყია პროცესი ჩემით ან სხვა კომპანიის საშუალებით',
                 2:'უკვე ვცადე კომპენსაციის მიღება'
-            }
+            },
+            formmessage: 'შეავსეთ ყველა ველი'
         }
     }
 }

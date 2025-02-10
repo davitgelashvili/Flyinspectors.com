@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { downloadExcel } from "react-export-table-to-excel";
 
 const UserEdit = () => {
+    const header = [
+        'firstName',
+        'lastName'
+    ];
+    const [body, setBody] = useState([])
+    const [body2, setBody2] = useState([])
     const [data, setData] = useState({});
     const { id } = useParams();
     const [update, setUpdate] = useState(true);
     const [value, setValue] = useState("");
+    const [finish, setfinish] = useState(true)
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/client`, {
@@ -19,8 +27,20 @@ const UserEdit = () => {
             .then((res) => {
                 const user = res.find((item) => item.userId == id);
                 setData(user || {});
-            });
+            }).finally(()=>{
+                setUpdate(!update)
+                setfinish(!finish)
+            })
     }, [update]);
+
+    useEffect(()=>{
+        setBody([
+            [data.firstName, data.lastName], 
+        ])
+        setBody2([
+            {firstName: data.firstName, lastName: data.lastName},
+        ])
+    }, [finish])
 
     function handleClick(e) {
         e.preventDefault();
@@ -42,6 +62,22 @@ const UserEdit = () => {
         });
     }
 
+    function handleDownloadExcel() {
+        console.log(body)
+        console.log(body2)
+        downloadExcel({
+          fileName: new Date().getTime(),
+          sheet: "client",
+          tablePayload: {
+            header,
+            // accept two different data structures
+            body: body || body2,
+            // body: testbody || testbody2,
+            // body: body
+          },
+        });
+    }
+
     return (
         <div className="container">
             <div className="user-list" style={{ display: "grid", gap: "20px", marginTop: "20px" , marginBottom:"20px"}}>
@@ -54,6 +90,7 @@ const UserEdit = () => {
                         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                     }}
                 >
+                    <button onClick={handleDownloadExcel}>download excel</button>
                     <h2
                         style={{
                             fontSize: "20px",

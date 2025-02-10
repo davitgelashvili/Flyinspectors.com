@@ -2,19 +2,44 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TextInput from "../../UI/TextInput";
 import Loading from "../../Loading/Loading";
+import Item from "./Item";
+import { downloadExcel } from "react-export-table-to-excel";
 
 const UserList = () => {
-    const [data, setData] = useState([]);
-    const [filtered, setFiltered] = useState([]);
-    const [search, setSearch] = useState("");
-    const [res, setRes] = useState(true)
-    const [load, setLoad] = useState(true)
-    const [page, setPage] = useState(1)
-    // const [totalPage, setTotalPage] = useState(0)
+    var newDate = new Date()
+    var month = newDate.getMonth()
+    var day = newDate.getDate()
+    var year = newDate.getFullYear()
+    month = month + 1
+    if(month < 10){
+        month = 0 + '' +month
+    }
 
-    // Fetch user data
-    // ?page=${page}&limit=50
+    if(day < 10){
+        day = 0 + '' +day
+    }
+    const fullDate = year + '-'+ month + '-' + day
+
+    const excelHeader = [
+        'firstName',
+        'lastName'
+    ];
+    const [excelBody, setExcelBody] = useState([])
+    const [data, setData] = useState([]);
+    const [searchText, setSearchText] = useState("")
+    const [resetData, setResetData] = useState(true)
+    const [load, setLoad] = useState(true)
+    const [startDate, setStartDate] = useState(fullDate)
+    const [endDate, setEndDate] = useState(fullDate)
+    console.log()
+    
     useEffect(() => {
+        setLoad(true)
+        setData([])
+        setSearchText('')
+        setStartDate(fullDate)
+        setEndDate(fullDate)
+
         fetch(`${process.env.REACT_APP_API_URL}/client`, {
             method: "GET",
             headers: {
@@ -22,26 +47,48 @@ const UserList = () => {
                 "Access-Control-Allow-Origin": "*",
             },
         })
-            .then((res) => res.json())
-            .then((res) => {
-                setData(res);
-            }).finally(() => {
-                setLoad(false)
-            });
-    }, [res, page]);
+        .then((res) => res.json())
+        .then((res) => {
+            setData(res);
+        }).finally(() => {
+            setLoad(false)
+        });
+    }, [resetData]);
+
+    useEffect(()=>{
+        setExcelBody(data)
+    }, [data])
+
+    function handleDownloadExcel() {
+        console.log(excelBody)
+        downloadExcel({
+          fileName: new Date().getTime(),
+          sheet: "client",
+          tablePayload: {
+            header: excelHeader,
+            // accept two different data structures
+            // body: excelBody || excelBody2,
+            // body: testbody || testbody2,
+            body: excelBody
+          },
+        });
+    }
+
 
     // Search filter
-    function handleSearch(e) {
-        const query = e.target.value.toLowerCase();
-        setSearch(query);
-
-        const results = data.filter(
-            (item) =>
-                item.userId.toString().includes(query) ||
-                item.email?.toLowerCase().includes(query)
-        );
-        setFiltered(results);
+    function clickSearchText() {
+        const newSearch = data.filter((item) => item.userId.toString().includes(searchText) || item.email?.toLowerCase().includes(searchText));
+        setData(newSearch);
     }
+
+    function clickSearchDate(){
+        const newFilter = data.filter((item) => 
+            ( new Date(startDate).getTime() <= new Date(item.createDate).getTime() && new Date(endDate).getTime() >= new Date(item.createDate).getTime() ) ||
+            new Date(startDate).getTime() <= new Date(item.createDate).getTime()
+        )
+        setData(newFilter);
+    }
+
 
     // Delete user
     const handleDelete = (user) => {
@@ -58,191 +105,71 @@ const UserList = () => {
         })
             .then((res) => res.json())
             .finally(() => {
-                setRes(!res);
+                setResetData(!resetData);
                 setLoad(false)
             });
     };
 
-    const displayData = search ? filtered : data;
-
-    // console.log(displayData)
 
     return (
         <div className="container" style={{ marginBottom: "20px" }}>
             <div className="row">
-                <div className="col-7">
-                    <div
-                        style={{ width: "50%", marginTop: "50px" }}
-                        className="d-flex align-items-center"
-                    >
+                <div className="col-12">
+                    <div>
+                        <button onClick={() => setResetData(!resetData)}>clear</button>
+                        <button onClick={handleDownloadExcel}>download excel</button>
+                    </div>
+                </div>
+                <div className="col-3">
+                    <div>
                         <TextInput
-                            type={"text"}
-                            value={search}
-                            placeholder={"Enter User ID or Email"}
-                            name={"search"}
+                            type={"date"}
+                            value={startDate}
+                            placeholder={"start date"}
+                            name={"startdate"}
                             icon={""}
-                            onChange={(e) => {
-                                handleSearch(e);
-                            }}
+                            label={"start date"}
+                            onChange={(e) => setStartDate(e.target.value)}
+                        />
+                        <button onClick={clickSearchDate}>filter</button>
+                    </div>
+                </div>
+                <div className="col-5">
+                    <div>
+                        <TextInput
+                            type={"date"}
+                            value={endDate}
+                            placeholder={"end date"}
+                            name={"enddate"}
+                            icon={""}
+                            label={"end date"}
+                            onChange={(e) => setEndDate(e.target.value)}
                         />
                     </div>
                 </div>
-            </div>
-            <div
-                className="user-list"
-                style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(2, 1fr)",
-                    gap: "20px",
-                    marginTop: "20px",
-                }}
-            >
-                {load && <Loading />}
-                {displayData?.reverse().map((item, index) => (
-                    <div
-                        key={item._id}
-                        style={{
-                            border: "1px solid #ddd",
-                            borderRadius: "8px",
-                            padding: "20px",
-                            backgroundColor: "#f9f9f9",
-                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                        }}
-                    >
-                        <p
-                            style={{
-                                fontSize: "18px",
-                                fontWeight: "bold",
-                                marginBottom: "12px",
-                                color: "#555",
-                            }}
-                        >
-                            #{displayData.length - index}
-                        </p>
-                        <Link
-                            to={item.userId}
-                            style={{
-                                textDecoration: "none",
-                                color: "inherit",
-                            }}
-                        >
-                            <h2
-                                style={{
-                                    fontSize: "20px",
-                                    fontWeight: "bold",
-                                    marginBottom: "8px",
-                                }}
-                            >
-                                {item.firstName} {item.lastName}
-                            </h2>
-                            <h2
-                                style={{
-                                    fontSize: "16px",
-                                    color: "blue",
-                                    marginBottom: "8px",
-                                }}
-                            >
-                                <p>Old Status: {item.oldStatus}</p>
-                                <strong>Status:</strong> {item.status}
-                            </h2>
-                            <h2
-                                style={{
-                                    fontSize: "16px",
-                                    color: "green",
-                                    marginBottom: "8px",
-                                }}
-                            >
-                                <strong>User ID:</strong> {item.userId}
-                            </h2>
-                            <p
-                                style={{
-                                    fontSize: "14px",
-                                    color: "#333",
-                                    marginBottom: "4px",
-                                }}
-                            >
-                                <strong>Email:</strong> {item.email}
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: "14px",
-                                    color: "#333",
-                                    marginBottom: "4px",
-                                }}
-                            >
-                                <strong>Phone:</strong> {item.phone}
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: "14px",
-                                    color: "#333",
-                                    marginBottom: "4px",
-                                }}
-                            >
-                                <strong>Address:</strong> {item.address}
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: "14px",
-                                    color: "#333",
-                                    marginBottom: "4px",
-                                }}
-                            >
-                                <strong>Date:</strong> {item.date}
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: "14px",
-                                    color: "#333",
-                                    marginBottom: "4px",
-                                }}
-                            >
-                                <strong>City:</strong> {item.city}
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: "14px",
-                                    color: "#333",
-                                    marginBottom: "4px",
-                                }}
-                            >
-                                <strong>Flight Number:</strong> {item.flightNumber}
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: "14px",
-                                    color: "red",
-                                    marginBottom: "4px",
-                                }}
-                            >
-                                <strong>Problem:</strong> {item.problem}
-                            </p>
-                        </Link>
-                        {load && <Loading />}
-                        <button
-                            onClick={() => handleDelete(item)}
-                            style={{
-                                marginTop: "10px",
-                                padding: "8px 16px",
-                                backgroundColor: "#ff4d4f",
-                                color: "#fff",
-                                border: "none",
-                                borderRadius: "4px",
-                                cursor: "pointer",
-                            }}
-                        >
-                            Delete
+                <div className="col-4">
+                    <div>
+                        <TextInput
+                            type={"text"}
+                            value={searchText}
+                            label={"search user id or email"}
+                            placeholder={"Enter User ID or Email"}
+                            name={"search"}
+                            icon={""}
+                            onChange={(e) => setSearchText(e.target.value)}
+                        />
+                        <button onClick={clickSearchText}>
+                            search
                         </button>
                     </div>
+                </div>
+                <div className="col-12">
+                    {load && <Loading />}
+                </div>
+                {data?.reverse().map((item, index) => (
+                    <Item key={item._id} item={item} handleDelete={handleDelete} load={load}/>
                 ))}
             </div>
-            {/* <div>
-                {page > 1 && <button onClick={()=>setPage(page - 1)}>back</button>}
-                {page && <button onClick={()=>setPage(page + 1)}>next</button>}
-                <p>page now: {page}</p>
-                <p>total page: {data?.pagination?.totalPages}</p>
-                
-            </div> */}
         </div>
     );
 };
