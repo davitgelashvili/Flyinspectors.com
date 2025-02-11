@@ -21,8 +21,27 @@ const UserList = () => {
     const fullDate = year + '-'+ month + '-' + day
 
     const excelHeader = [
+        '_id',
+        'passportImage',
+        'ticketImage',
+        'otherImage',
+        'signature',
+        'userId',
         'firstName',
-        'lastName'
+        'lastName',
+        'phone',
+        'email',
+        'city',
+        'address',
+        'problem',
+        'flightNumber',
+        'date',
+        'select',
+        'description',
+        'status',
+        'oldStatus',
+        'createDate',
+        '__v'
     ];
     const [excelBody, setExcelBody] = useState([])
     const [data, setData] = useState([]);
@@ -57,6 +76,7 @@ const UserList = () => {
 
     useEffect(()=>{
         setExcelBody(data)
+        console.log(data)
     }, [data])
 
     function handleDownloadExcel() {
