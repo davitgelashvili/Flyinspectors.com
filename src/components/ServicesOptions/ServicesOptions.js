@@ -44,7 +44,6 @@ const ServicesOptions = () => {
         </div>
         <div className="row">
           {data?.map((item) => {
-            console.log(item)
             return (
               <div className="col-lg-4" key={item.id}>
                 <Item title={item.title} desc={item.description} icon={item.icon} />

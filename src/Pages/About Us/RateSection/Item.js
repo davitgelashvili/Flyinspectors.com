@@ -19,7 +19,6 @@ const Item = () => {
     .then((res) => res.json())
     .then(res => {
         setData(res)
-        console.log("save data:", res);
     })
   }, [])
   

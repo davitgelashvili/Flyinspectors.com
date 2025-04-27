@@ -1,6 +1,6 @@
 import styles from './TextInput.module.scss'
 
-const TextInput = ({type, value, placeholder, name, icon, onChange, label, rows, selectData}) => {
+const TextInput = ({type, value, placeholder, name, icon, onChange, label, rows, selectData, title, fileName}) => {
     switch (type) {
         case 'select':
             return (
@@ -33,10 +33,31 @@ const TextInput = ({type, value, placeholder, name, icon, onChange, label, rows,
                         rows={rows ? rows : '5'}
                         className={`${styles['textlabel__input']} ${styles['textlabel__textarea']}`}
                         type={type}
-                        value={value}
+                        value={value || ''}
                         placeholder={placeholder}
                         name={name}
                         onChange={(e) => onChange(e)}></textarea>
+                </label>
+            )
+        case 'file':
+            return (
+                <label className={styles.uploadwidget}>
+                    <p className={styles.uploadwidget__title}>{title}</p>
+                    {/* {value.valueName !== undefined && "erti" } */}
+                    <div className={`${styles.uploadwidget__btn}`}>
+                        <input 
+                            className={`${styles.uploadwidget__input}`}
+                            type={type}
+                            value={value}
+                            placeholder={placeholder}
+                            name={name}
+                            onChange={(e) => onChange(e)}/>
+                            {fileName[name] === '' ? (
+                                'Format: JPEG,PNG,JPG'
+                            ) : (
+                                fileName[name]
+                            )}
+                    </div>
                 </label>
             )
         default:

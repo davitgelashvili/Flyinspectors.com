@@ -3,44 +3,26 @@ import { useParams } from "react-router-dom";
 import { downloadExcel } from "react-export-table-to-excel";
 
 const UserEdit = () => {
-    const header = [
-        'firstName',
-        'lastName'
-    ];
-    const [body, setBody] = useState([])
-    const [body2, setBody2] = useState([])
+    const header = ['firstName', 'lastName'];
+    const [body, setBody] = useState([]);
     const [data, setData] = useState({});
     const { id } = useParams();
-    const [update, setUpdate] = useState(true);
     const [value, setValue] = useState("");
-    const [finish, setfinish] = useState(true)
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}/client`, {
-            method: "GET",
+        fetch(`${process.env.REACT_APP_API_URL}/id`, {
+            method: "POST",
             headers: {
                 "Content-type": "application/json",
-                "Access-Control-Allow-Origin": "*",
             },
+            body: JSON.stringify({ userId: id }),
         })
             .then((res) => res.json())
             .then((res) => {
-                const user = res.find((item) => item.userId == id);
-                setData(user || {});
-            }).finally(()=>{
-                setUpdate(!update)
-                setfinish(!finish)
-            })
-    }, [update]);
-
-    useEffect(()=>{
-        setBody([
-            [data.firstName, data.lastName], 
-        ])
-        setBody2([
-            {firstName: data.firstName, lastName: data.lastName},
-        ])
-    }, [finish])
+                setData(res);
+                setBody([[res.firstName, res.lastName]]);
+            });
+    }, [id]);
 
     function handleClick(e) {
         e.preventDefault();
@@ -53,61 +35,54 @@ const UserEdit = () => {
             body: JSON.stringify({
                 userId: id,
                 status: value,
-                oldStatus: data.status
+                oldStatus: data.status,
             }),
         })
-        .then((res) => res.json())
-        .finally(() => {
-            setUpdate(!update);
-        });
+            .then((res) => res.json())
+            .then(() => {
+                // Refresh data after update
+                return fetch(`${process.env.REACT_APP_API_URL}/id`, {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json",
+                    },
+                    body: JSON.stringify({ userId: id }),
+                });
+            })
+            .then((res) => res.json())
+            .then((updatedData) => {
+                setData(updatedData);
+                setBody([[updatedData.firstName, updatedData.lastName]]);
+            });
     }
 
     function handleDownloadExcel() {
-        console.log(body)
-        console.log(body2)
         downloadExcel({
-          fileName: new Date().getTime(),
-          sheet: "client",
-          tablePayload: {
-            header,
-            // accept two different data structures
-            body: body || body2,
-            // body: testbody || testbody2,
-            // body: body
-          },
+            fileName: new Date().getTime(),
+            sheet: "client",
+            tablePayload: {
+                header,
+                body,
+            },
         });
     }
 
     return (
         <div className="container">
-            <div className="user-list" style={{ display: "grid", gap: "20px", marginTop: "20px" , marginBottom:"20px"}}>
-                <div
-                    style={{
-                        border: "1px solid #ddd",
-                        borderRadius: "8px",
-                        padding: "20px",
-                        backgroundColor: "#f9f9f9",
-                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    }}
-                >
-                    <button onClick={handleDownloadExcel}>download excel</button>
-                    <h2
-                        style={{
-                            fontSize: "20px",
-                            fontWeight: "bold",
-                            marginBottom: "8px",
-                        }}
-                    >
+            <div className="user-list" style={{ display: "grid", gap: "20px", marginTop: "20px", marginBottom: "20px" }}>
+                <div style={{
+                    border: "1px solid #ddd",
+                    borderRadius: "8px",
+                    padding: "20px",
+                    backgroundColor: "#f9f9f9",
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                }}>
+                    {/* <button onClick={handleDownloadExcel}>download excel</button> */}
+                    <h2 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "8px" }}>
                         {data.firstName} {data.lastName}
                     </h2>
-                    <h2
-                        style={{
-                            fontSize: "16px",
-                            color: "blue",
-                            marginBottom: "8px",
-                        }}
-                    >
-                        <p>old status:{data.oldStatus}</p>
+                    <h2 style={{ fontSize: "16px", color: "blue", marginBottom: "8px" }}>
+                        <p>old status: {data.oldStatus}</p>
                         <strong>Status:</strong> {data.status}
                     </h2>
                     <div className="d-flex align-items-center" style={{ marginBottom: "16px" }}>
@@ -144,42 +119,20 @@ const UserEdit = () => {
                             Edit
                         </button>
                     </div>
-                    <h2
-                        style={{
-                            fontSize: "16px",
-                            color: "green",
-                            marginBottom: "8px",
-                        }}
-                    >
+                    <h2 style={{ fontSize: "16px", color: "green", marginBottom: "8px" }}>
                         <strong>User ID:</strong> {data.userId}
                     </h2>
-                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
-                        <strong>Email:</strong> {data.email}
-                    </p>
-                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
-                        <strong>Phone:</strong> {data.phone}
-                    </p>
-                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
-                        <strong>Address:</strong> {data.address}
-                    </p>
-                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
-                        <strong>Date:</strong> {data.date}
-                    </p>
-                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
-                        <strong>City:</strong> {data.city}
-                    </p>
-                    <p style={{ fontSize: "14px", marginBottom: "4px" }}>
-                        <strong>Flight Number:</strong> {data.flightNumber}
-                    </p>
-                    <p style={{ fontSize: "14px", color: "red", marginBottom: "4px" }}>
-                        <strong>Problem:</strong> {data.problem}
-                    </p>
-                    <p style={{ fontSize: "14px", color: "black", marginBottom: "4px" }}>
-                        <strong>Description:</strong> {data.description}
-                    </p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}><strong>Email:</strong> {data.email}</p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}><strong>Phone:</strong> {data.phone}</p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}><strong>Address:</strong> {data.address}</p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}><strong>Date:</strong> {data.date}</p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}><strong>City:</strong> {data.city}</p>
+                    <p style={{ fontSize: "14px", marginBottom: "4px" }}><strong>Flight Number:</strong> {data.flightNumber}</p>
+                    <p style={{ fontSize: "14px", color: "red", marginBottom: "4px" }}><strong>Problem:</strong> {data.problem}</p>
+                    <p style={{ fontSize: "14px", color: "black", marginBottom: "4px" }}><strong>Description:</strong> {data.description}</p>
                     <div className="d-flex align-items-start" style={{ gap: "10px", marginTop: "10px" }}>
                         {data.passportImage && (
-                            <img src={data.passportImage} alt="Passport" style={{ width: "100px", height:"100%", borderRadius: "4px" }} />
+                            <img src={data.passportImage} alt="Passport" style={{ width: "100px", height: "100%", borderRadius: "4px" }} />
                         )}
                         {data.ticketImage && (
                             <img src={data.ticketImage} alt="Ticket" style={{ width: "100px", borderRadius: "4px" }} />

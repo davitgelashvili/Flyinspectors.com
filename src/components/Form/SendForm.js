@@ -53,7 +53,7 @@ const SendForm = ({setFormActive}) => {
         flightNumber: "",
         date: "",
         select: "",
-        description: "",
+        description: null,
         oldStatus: "Application has received",
         createDate: fullDate
     })

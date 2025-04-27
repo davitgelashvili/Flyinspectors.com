@@ -18,7 +18,6 @@ const ConditionsEdit = () => {
         en: data?.description?.en,
         ka: data?.description?.ka,
       });
-      console.log(data)
     }, [data]);
 
     useEffect(() => {
@@ -40,7 +39,6 @@ const ConditionsEdit = () => {
 
     function handleClick(e) {
       e.preventDefault();
-      console.log(title, description)
         fetch(`${process.env.REACT_APP_API_URL}/conditions`, {
             method: "PUT",
             headers: {

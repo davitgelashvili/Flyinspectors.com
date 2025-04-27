@@ -5,7 +5,7 @@ import { userAction } from "../../store/userData"
 
 const Login = () => {
     const [user, setUser] = useState("info@flyinspectors.com")
-    const [pass, setPass] = useState("Flyinspectors2017.")
+    const [pass, setPass] = useState("")
     const dispatch = useDispatch()
     return (
         <div>

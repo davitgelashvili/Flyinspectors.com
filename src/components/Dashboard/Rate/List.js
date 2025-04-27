@@ -15,7 +15,6 @@ const RateList = () => {
       .then((res) => res.json())
       .then((res) => {
         setData(res);
-        console.log("Fetched data:", res);
       });
   }, []);
 

@@ -25,15 +25,14 @@ const SearchForm = () => {
         })
         .then((res) => res.json())
         .then(res => {
-            setData(...res)
-            console.log("save data:", res);
+            setData(res)
         }).finally(()=>{
             setLoad(false)
         })
     }
 
     useEffect(()=>{
-        console.log(data)
+        console.log('data')
     }, [data])
 
     return (

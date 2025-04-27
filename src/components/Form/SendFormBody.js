@@ -8,9 +8,15 @@ import ReactSignatureCanvas from 'react-signature-canvas'
 import styles from './Signature.module.scss'
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import imageToBase64 from 'image-to-base64/browser';
 
 const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad, load }) => {
   const {t} = useTranslation()
+  const [fileName, setFileName] = useState({
+    passportImage: "",
+    ticketImage: "",
+    otherImage: "",
+  })
   const [signature, setSignature] = useState()
   const inputs = [
     {
@@ -116,8 +122,43 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
   ]
 
   const handleChange = (e) => {
+    if(
+      e.target.name === 'passportImage' ||
+      e.target.name === 'ticketImage' ||
+      e.target.name === 'otherImage'
+    ){
+      var file = e.target.files[0];
+      var reader = new FileReader();
+      reader.onloadend = function() {
+        setValue({ ...value, [e.target.name]: reader.result })
+        setFileName({ ...fileName, [e.target.name]: file.name })
+      }
+      reader.readAsDataURL(file);
+    }
     setValue({ ...value, [e.target.name]: e.target.value });
   };
+
+
+  // function encodeImageFileAsURL(element) {
+  //   var file = element.files[0];
+  //   var reader = new FileReader();
+  //   reader.onloadend = function() {
+  //     console.log('RESULT', reader.result)
+  //   }
+  //   reader.readAsDataURL(file);
+  // }
+
+// imageToBase64(value.ticketImage) // Path to the image
+//     .then(
+//         (response) => {
+//             console.log(response); // "cGF0aC90by9maWxlLmpwZw=="
+//         }
+//     )
+//     .catch(
+//         (error) => {
+//             console.log(error); // Logs an error if there was one
+//         }
+//     )
 
   return (
     <form>
@@ -154,39 +195,37 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           }
         })}
         <div className="col-lg-6">
-          {
-            accept.passport ? (
-              accept.ticket ? (
-                <File title={t('submitForm.passport')} name={'IMG 1'} />
-              ) : (
-                <UploadWidget value={value} valueName={"passportImage"} setValue={setValue} title={t('submitForm.passport')} name={'Format: JPEG,PNG,JPG'} />
-              )
-            ) : (
-              <DisableUploadWidget title={t('submitForm.passport')} name={'Format: JPEG,PNG,JPG'} />
-            )
-          }
+          <TextInput
+            type={'file'}
+            value={''}
+            placeholder={'img'}
+            name={'passportImage'}
+            onChange={handleChange}
+            title={t('submitForm.passport')}
+            fileName={fileName}
+          />
         </div>
         <div className="col-lg-6">
-          {
-            accept.ticket ? (
-              accept.other ? (
-                <File title={t('submitForm.ticket')} name={'IMG 2'} />
-              ) : (
-                <UploadWidget value={value} valueName={"ticketImage"} setValue={setValue} title={t('submitForm.ticket')} name={'Format: JPEG,PNG,JPG'} />
-              )
-            ) : (
-              <DisableUploadWidget title={t('submitForm.ticket')} name={'Format: JPEG,PNG,JPG'} />
-            )
-          }
+          <TextInput
+            type={'file'}
+            value={''}
+            placeholder={'img'}
+            name={'ticketImage'}
+            onChange={handleChange}
+            title={t('submitForm.ticket')}
+            fileName={fileName}
+          />
         </div>
-        <div className="col-lg-12">
-          {
-            accept.other ? (
-              <UploadWidget value={value} valueName={"otherImage"} setValue={setValue} title={t('submitForm.other')} name={'Format: JPEG,PNG,JPG'} />
-            ) : (
-              <DisableUploadWidget title={t('submitForm.other')} name={'Format: JPEG,PNG,JPG'} />
-            )
-          }
+        <div className="col-lg-6">
+          <TextInput
+            type={'file'}
+            value={''}
+            placeholder={'img'}
+            name={'otherImage'}
+            onChange={handleChange}
+            title={t('submitForm.other')}
+            fileName={fileName}
+          />
         </div>
         <div className="col-lg-12">
           <div className={styles.signature}>  

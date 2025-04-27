@@ -22,7 +22,7 @@ const UploadWidget = ({value, valueName, setValue, title, name}) => {
             }
         })
 
-    useEffect(()=>{console.log(value.passportImage, valueName)}, [value])
+    useEffect(()=>{console.log('value.passportImage, valueName')}, [value])
     return (
         <label className={styles.uploadwidget}>
             <p className={styles.uploadwidget__title}>{title}</p>

@@ -15,7 +15,6 @@ const ServicesList = () => {
       .then((res) => res.json())
       .then((res) => {
         setData(res);
-        console.log("save data:", res);
       });
   }, []);
 
