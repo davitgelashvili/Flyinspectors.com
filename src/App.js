@@ -38,6 +38,7 @@ import { siteTranslateAction } from "./store/translate";
 import { useEffect } from "react";
 import i18n from "./i18n/i18n";
 import MetaTags from "./MetaTags";
+import SignaturePage from "./Pages/Signature/Signature";
 
 function App() {
   let {language}  = useSelector(state => state.translate)
@@ -76,6 +77,7 @@ function App() {
       <Header />
       <Routes>
         <Route path={"/"} element={<Main />} />
+        <Route path={"/signature"} element={<SignaturePage />} />
         <Route path={"/submit-claim"} element={<SubmitClaim />} />
         <Route path={"/your-rights/flight-delay"} element={<FlightDelay />} />
         <Route
