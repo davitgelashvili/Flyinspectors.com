@@ -9,9 +9,11 @@ import styles from './Signature.module.scss'
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import imageToBase64 from 'image-to-base64/browser';
+import imageCompression from 'browser-image-compression';
+import UploadImage from "../UploadWidget/UploadWidget";
 
 const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad, load }) => {
-  const {t} = useTranslation()
+  const { t } = useTranslation()
   const [fileName, setFileName] = useState({
     passportImage: "",
     ticketImage: "",
@@ -121,21 +123,47 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
 
   ]
 
-  const handleChange = (e) => {
-    if(
+
+  const handleChange = async (e) => {
+    if (
       e.target.name === 'passportImage' ||
       e.target.name === 'ticketImage' ||
       e.target.name === 'otherImage'
-    ){
-      var file = e.target.files[0];
-      var reader = new FileReader();
-      reader.onloadend = function() {
-        setValue({ ...value, [e.target.name]: reader.result })
-        setFileName({ ...fileName, [e.target.name]: file.name })
+    ) {
+      const file = e.target.files[0];
+
+      if (file) {
+        if (!file.type.startsWith('image/')) {
+          alert('not accept)');
+          return;
+        }
+
+        try {
+          // კომპრესიის პარამეტრები
+          const options = {
+            maxSizeMB: 0.5, // მაქსიმალური ფაილის ზომა 0.5MB
+            maxWidthOrHeight: 400, // მაქსიმალური ზომა 800px
+            useWebWorker: true,
+          };
+
+          // ფაილის კომპრესია
+          const compressedFile = await imageCompression(file, options);
+
+          // კომპრესირებული ფაილის გადაყვანა Base64-ში
+          const reader = new FileReader();
+          reader.onloadend = function () {
+            setValue({ ...value, [e.target.name]: reader.result });
+            setFileName({ ...fileName, [e.target.name]: file.name });
+          };
+          reader.readAsDataURL(compressedFile);
+
+        } catch (error) {
+          console.error("Image compression error:", error);
+        }
       }
-      reader.readAsDataURL(file);
+    } else {
+      setValue({ ...value, [e.target.name]: e.target.value });
     }
-    setValue({ ...value, [e.target.name]: e.target.value });
   };
 
 
@@ -148,17 +176,17 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
   //   reader.readAsDataURL(file);
   // }
 
-// imageToBase64(value.ticketImage) // Path to the image
-//     .then(
-//         (response) => {
-//             console.log(response); // "cGF0aC90by9maWxlLmpwZw=="
-//         }
-//     )
-//     .catch(
-//         (error) => {
-//             console.log(error); // Logs an error if there was one
-//         }
-//     )
+  // imageToBase64(value.ticketImage) // Path to the image
+  //     .then(
+  //         (response) => {
+  //             console.log(response); // "cGF0aC90by9maWxlLmpwZw=="
+  //         }
+  //     )
+  //     .catch(
+  //         (error) => {
+  //             console.log(error); // Logs an error if there was one
+  //         }
+  //     )
 
   return (
     <form>
@@ -195,6 +223,31 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           }
         })}
         <div className="col-lg-6">
+          <UploadImage
+            title={t('submitForm.passport')}
+            value={value}
+            setValue={setValue}
+            valueName="passportImage"
+          />
+        </div>
+        <div className="col-lg-6">
+          <UploadImage
+            title={t('submitForm.ticket')}
+            value={value}
+            setValue={setValue}
+            valueName="ticketImage"
+          />
+        </div>
+        <div className="col-lg-6">
+          <UploadImage
+            title={t('submitForm.other')}
+            value={value}
+            setValue={setValue}
+            valueName="otherImage"
+          />
+        </div>
+
+        {/* <div className="col-lg-6">
           <TextInput
             type={'file'}
             value={''}
@@ -203,6 +256,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
             onChange={handleChange}
             title={t('submitForm.passport')}
             fileName={fileName}
+            setFileName={setFileName}
           />
         </div>
         <div className="col-lg-6">
@@ -226,9 +280,9 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
             title={t('submitForm.other')}
             fileName={fileName}
           />
-        </div>
+        </div> */}
         <div className="col-lg-12">
-          <div className={styles.signature}>  
+          <div className={styles.signature}>
             <div className={styles.signature__head}>
               <p className={styles.signature__title}>
                 <strong>{t('submitForm.signatureTitle')}</strong>
@@ -256,23 +310,23 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
                 border: 'none',
                 cursor: 'pointer'
               }}
-              onClick={e=>{
-                e.preventDefault()
-                signature.clear()
-              }}>{t('submitForm.clear')}</button>
+                onClick={e => {
+                  e.preventDefault()
+                  signature.clear()
+                }}>{t('submitForm.clear')}</button>
             </div>
           </div>
           {/* <SignatureContent value={value} setValue={setValue}/> */}
           {/* <Signature value={value} valueName={"ticketImage"} setValue={setValue} title={'Electronic signature:'} desc={'Please sign the electronic signature.'}/> */}
         </div>
         <div>
-          <br /> 
+          <br />
         </div>
         <div className="d-flex justify-content-center">
           <label>
             <input type="checkbox" />
             <span>
-            {t('submitForm.iagree')} <Link target="_blank" to={'/terms-and-conditions'}>{t('submitForm.terms')}</Link>
+              {t('submitForm.iagree')} <Link target="_blank" to={'/terms-and-conditions'}>{t('submitForm.terms')}</Link>
             </span>
           </label>
         </div>
@@ -301,7 +355,7 @@ const SendFormBody = ({ value, setValue, uploadFile, accept, setAccept, setLoad,
           </button>
         </div>
       </div>
-      
+
     </form>
   );
 };

@@ -51,6 +51,8 @@ const TextInput = ({type, value, placeholder, name, icon, onChange, label, rows,
                             value={value}
                             placeholder={placeholder}
                             name={name}
+                            // accept="image/*"
+                            accept="image/jpeg, image/png"
                             onChange={(e) => onChange(e)}/>
                             {fileName[name] === '' ? (
                                 'Format: JPEG,PNG,JPG'

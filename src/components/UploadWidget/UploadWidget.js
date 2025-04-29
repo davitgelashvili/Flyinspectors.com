@@ -1,40 +1,63 @@
-import { useEffect, useRef, useState } from "react"
-import styles from './UploadWidget.module.scss'
+import { useState } from "react";
+import styles from './UploadWidget.module.scss';
 
-const UploadWidget = ({value, valueName, setValue, title, name}) => {
-    const cloudinaryRef = useRef()
-    const widgetRef = useRef()
+const UploadImage = ({ value, setValue, valueName, title, name }) => {
+    const [loading, setLoading] = useState(false);
 
-    cloudinaryRef.current = window.cloudinary
-        widgetRef.current = cloudinaryRef.current.createUploadWidget({
-            cloudName: 'dluqxr8lw',
-            uploadPreset: 'hi5bzww0',
-            sources: ['local'],
-            multiple: false,
-            clientAllowedFormats: ["jpg", "jpeg", "png"],
-            maxFiles: 1
-        }, function(err, result){
-            if(result?.data?.info?.files) {
+    const handleChange = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        setLoading(true);
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "hi5bzww0"); // შენი upload preset
+        formData.append("cloud_name", "dluqxr8lw");   // შენი cloud name
+
+        try {
+            const res = await fetch("https://api.cloudinary.com/v1_1/dluqxr8lw/image/upload", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await res.json();
+            if (data.secure_url) {
                 setValue({
                     ...value,
-                    [valueName]: result?.data?.info?.files?.[0]?.uploadInfo?.secure_url
-                })
+                    [valueName]: data.secure_url
+                });
+            } else {
+                console.error("Upload error:", data);
             }
-        })
+        } catch (err) {
+            console.error("Upload failed:", err);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-    useEffect(()=>{console.log('value.passportImage, valueName')}, [value])
+    console.log(valueName)
+
     return (
         <label className={styles.uploadwidget}>
             <p className={styles.uploadwidget__title}>{title}</p>
-            {value.valueName !== undefined && "erti" }
-            <button className={styles.uploadwidget__btn} onClick={(e) => {
-                widgetRef.current.open()
-                e.preventDefault()
-            }}>
-                {name}
-            </button>
-        </label>
-    )
-}
+            <div className={`${styles.uploadwidget__btn}`}>
 
-export default UploadWidget
+                <input
+                    className={`${styles.uploadwidget__input}`}
+                    type={'file'}
+                    accept="image/*"
+                    // accept="image/jpeg, image/png"
+                    onChange={handleChange}
+                    style={{ display: "none" }}
+                    id={`upload-${valueName}`}
+                />
+                Format: JPEG,PNG
+
+            </div>
+        </label>
+
+    );
+};
+
+export default UploadImage;

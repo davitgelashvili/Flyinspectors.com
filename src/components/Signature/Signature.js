@@ -1,9 +1,10 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import styles from './Signature.module.scss'
 import { useTranslation } from 'react-i18next'
 import TextInput from '../UI/TextInput'
 import ReactSignatureCanvas from 'react-signature-canvas'
 import { Link } from 'react-router-dom'
+import Loading from '../Loading/Loading'
 
 const Signature = () => {
     const { t } = useTranslation()
@@ -29,6 +30,7 @@ const Signature = () => {
 
     const signatureRef = useRef()
     const [signature, setSignature] = useState()
+    const [load, setLoad] = useState(false)
 
     const inputs = [
         {
@@ -50,8 +52,10 @@ const Signature = () => {
     ]
 
     const handleChange = (e) => {
-        setValue({ ...value, [e.target.name]: e.target.value });
-        console.log(value)
+        setValue({
+            ...value,
+            [e.target.name]: e.target.value
+        });
     }
 
     const uploadFile = (e) => {
@@ -61,6 +65,7 @@ const Signature = () => {
             value.lastName !== "" &&
             value.signature !== ""
         ) {
+            setLoad(true)
             fetch(`${process.env.REACT_APP_API_URL}/email`, {
                 method: "POST",
                 headers: {
@@ -69,12 +74,19 @@ const Signature = () => {
                 },
                 body: JSON.stringify({
                     ...value,
-
+                    userId: value['firstName'] + ' ' + value['lastName']
                 })
             })
                 .then((res) => res.json())
                 .finally(() => {
-                    console.log('gagazavnilia')
+                    setLoad(false)
+                    setValue({
+                        ...value,
+                        firstName: '',
+                        lastName: '',
+                        signature: '',
+                    });
+                    signature.clear()
                 })
         } else {
             console.log('sheavse yvela forma')
@@ -145,29 +157,31 @@ const Signature = () => {
                 </div>
 
                 <div>
-                    <button
-                        style={{
-                            border: "none",
-                            lineHeight: "24px",
-                            fontSize: "16px",
-                            fontWeight: 700,
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",  // Centers text horizontally
-                            textAlign: "center",       // Ensures the text is centered
-                            borderRadius: "6px",
-                            backgroundColor: "#FD9B28",
-                            color: "#FFFFFF",
-                            width: "100%",
-                            height: "40px",
-                            marginTop: "20px",
-                            cursor: "pointer"
-                        }}
-                        onClick={(e) => uploadFile(e)}
-                    >
-                        {/* {load ? 'loading' : t('submitForm.submit')} */}
-                        {t('submitForm.submit')}
-                    </button>
+                    {!load ? (
+                        <button
+                            style={{
+                                border: "none",
+                                lineHeight: "24px",
+                                fontSize: "16px",
+                                fontWeight: 700,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",  // Centers text horizontally
+                                textAlign: "center",       // Ensures the text is centered
+                                borderRadius: "6px",
+                                backgroundColor: "#FD9B28",
+                                color: "#FFFFFF",
+                                width: "100%",
+                                height: "40px",
+                                marginTop: "20px",
+                                cursor: "pointer"
+                            }}
+                            onClick={(e) => uploadFile(e)}
+                        >{t('submitForm.submit')}</button>
+                    ) : (
+                        <Loading />
+                    )}
+
                 </div>
             </div>
         </div>
