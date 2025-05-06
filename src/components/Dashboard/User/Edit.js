@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { downloadExcel } from "react-export-table-to-excel";
 
 const UserEdit = () => {
@@ -22,7 +22,7 @@ const UserEdit = () => {
                 setData(res);
                 setBody([[res.firstName, res.lastName]]);
             });
-    }, [id]);
+    }, [id, data]);
 
     function handleClick(e) {
         e.preventDefault();
@@ -67,9 +67,20 @@ const UserEdit = () => {
         });
     }
 
+    useEffect(()=>{console.log(1)},[id])
+
+    const navigate = useNavigate();
+
+    const goBack = () => {
+        navigate(-1);  // ეს აქ დაბრუნებას გულისხმობს
+    };
+
     return (
         <div className="container">
             <div className="user-list" style={{ display: "grid", gap: "20px", marginTop: "20px", marginBottom: "20px" }}>
+            <div>
+                <button onClick={goBack}>Back</button>
+            </div>
                 <div style={{
                     border: "1px solid #ddd",
                     borderRadius: "8px",

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import styles from './UploadWidget.module.scss';
+import Loading from "../Loading/Loading";
 
 const UploadImage = ({ value, setValue, valueName, title, name }) => {
     const [loading, setLoading] = useState(false);
+    const now = new Date();
+    const folderName = now.getTime();
 
     const handleChange = async (e) => {
         const file = e.target.files[0];
@@ -13,12 +16,13 @@ const UploadImage = ({ value, setValue, valueName, title, name }) => {
         formData.append("file", file);
         formData.append("upload_preset", "hi5bzww0"); // შენი upload preset
         formData.append("cloud_name", "dluqxr8lw");   // შენი cloud name
+        formData.append("public_id", `${folderName}/${folderName}`);
 
         try {
             const res = await fetch("https://api.cloudinary.com/v1_1/dluqxr8lw/image/upload", {
                 method: "POST",
                 body: formData
-            });
+            })
 
             const data = await res.json();
             if (data.secure_url) {
@@ -52,7 +56,8 @@ const UploadImage = ({ value, setValue, valueName, title, name }) => {
                     style={{ display: "none" }}
                     id={`upload-${valueName}`}
                 />
-                Format: JPEG,PNG
+                {!loading && 'Format: JPEG,PNG'}
+                {loading && <Loading />}
 
             </div>
         </label>

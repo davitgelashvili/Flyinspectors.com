@@ -24,7 +24,7 @@ const UserList = () => {
     const [startDate, setStartDate] = useState(fullDate);
     const [endDate, setEndDate] = useState(fullDate);
     const [page, setPage] = useState(1);
-    const [limit] = useState(3);
+    const [limit, setLimit] = useState(3);
     const [totalPages, setTotalPages] = useState(1);
     const [reverse] = useState(true);
 
@@ -56,7 +56,7 @@ const UserList = () => {
             })
             .catch(console.error)
             .finally(() => setLoad(false));
-    }, [page, resetData]);
+    }, [page, resetData, limit]);
 
     useEffect(() => {
         setExcelBody(data);
@@ -153,12 +153,6 @@ const UserList = () => {
     return (
         <div className="container" style={{ marginBottom: "20px" }}>
             <div className="row">
-                <div className="col-12">
-                    <div>
-                        <button onClick={() => handleClear()}>clear</button>
-                        <button onClick={handleDownloadExcel}>download excel</button>
-                    </div>
-                </div>
                 <div className="col-3">
                     <div>
                         <TextInput
@@ -199,6 +193,19 @@ const UserList = () => {
                         />
                         <button onClick={clickSearchText}>search</button>
                     </div>
+                </div>
+                
+                <div className="col-12 d-flex justify-content-between" style={{marginTop: '20px', padding: '20px 0', borderTop: '1px solid grey'}}>
+                    <div>
+                        <button onClick={() => handleClear()}>clear</button>
+                        <button onClick={handleDownloadExcel}>download excel</button>
+                    </div>
+
+                    <select onChange={(e) => setLimit(e.target.value)}>
+                        <option value={3}>3</option>
+                        <option value={10}>10</option>
+                        <option value={20}>20</option>
+                    </select>
                 </div>
                 <div className="col-12">
                     {load && <Loading />}
